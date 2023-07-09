@@ -3,6 +3,10 @@ title: "Making shareable documents with Quarto"
 subtitle: "Create open-source tutorials, onboarding docs, and much more"
 ---
 
+## Site under construction…
+
+This Quarto-based web-site is being converted from the [template at OpenScapes](https://openscapes.github.io/quarto-website-tutorial/) to new forms that will replace the [Ultimate Consequences website](https://ultimateconsequences.github.io) and likely serve as a personal blog for Carwil at carwilb.github.io. For now, **do not cite or link to anything here** as the **URLs will not persist** as they are. Any NASA-related material on this site is from the website-tutorial and no claims are being made of any affiliation between NASA, Ultimate Consequences, and/or Carwil.
+
 ## Welcome {#welcome}
 
 It's possible to create beautiful documentation to share online with [Quarto](https://quarto.org) that auto-updates with [GitHub](http://github.com). This is very new and incredibly cool. This tutorial is an example of a quarto website --- it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.
