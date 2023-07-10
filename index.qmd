@@ -3,7 +3,7 @@ title: "Making shareable documents with Quarto"
 subtitle: "Create open-source tutorials, onboarding docs, and much more"
 ---
 
-## Site under construction…
+## Site under construction… 
 
 This Quarto-based web-site is being converted from the [template at OpenScapes](https://openscapes.github.io/quarto-website-tutorial/) to new forms that will replace the [Ultimate Consequences website](https://ultimateconsequences.github.io) and likely serve as a personal blog for Carwil at carwilb.github.io. For now, **do not cite or link to anything here** as the **URLs will not persist** as they are. Any NASA-related material on this site is from the website-tutorial and no claims are being made of any affiliation between NASA, Ultimate Consequences, and/or Carwil.
 
