@@ -2,34 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://openscapes.github.io/quarto-website-tutorial/learning-more.html</loc>
-    <lastmod>2023-07-10T05:42:44.772Z</lastmod>
+    <lastmod>2023-07-10T15:09:27.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openscapes.github.io/quarto-website-tutorial/ultimate-consequences/index.html</loc>
+    <lastmod>2023-07-10T15:09:26.329Z</lastmod>
   </url>
   <url>
     <loc>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/jupyter.html</loc>
-    <lastmod>2023-07-10T05:42:43.840Z</lastmod>
+    <lastmod>2023-07-10T15:09:23.497Z</lastmod>
   </url>
   <url>
     <loc>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/rstudio.html</loc>
-    <lastmod>2023-07-10T05:42:42.828Z</lastmod>
+    <lastmod>2023-07-10T15:09:22.365Z</lastmod>
   </url>
   <url>
     <loc>https://openscapes.github.io/quarto-website-tutorial/transition-from-rmarkdown.html</loc>
-    <lastmod>2023-07-10T05:42:41.868Z</lastmod>
+    <lastmod>2023-07-10T15:09:21.273Z</lastmod>
   </url>
   <url>
     <loc>https://openscapes.github.io/quarto-website-tutorial/index.html</loc>
-    <lastmod>2023-07-10T05:42:39.388Z</lastmod>
+    <lastmod>2023-07-10T15:09:17.921Z</lastmod>
   </url>
   <url>
     <loc>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/index.html</loc>
-    <lastmod>2023-07-10T05:42:42.320Z</lastmod>
+    <lastmod>2023-07-10T15:09:21.789Z</lastmod>
   </url>
   <url>
     <loc>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/browser.html</loc>
-    <lastmod>2023-07-10T05:42:43.232Z</lastmod>
+    <lastmod>2023-07-10T15:09:22.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openscapes.github.io/quarto-website-tutorial/ultimate-consequences/Codebook-current.html</loc>
+    <lastmod>2023-07-10T15:09:25.897Z</lastmod>
   </url>
   <url>
     <loc>https://openscapes.github.io/quarto-website-tutorial/explore.html</loc>
-    <lastmod>2023-07-10T05:42:44.412Z</lastmod>
+    <lastmod>2023-07-10T15:09:27.009Z</lastmod>
   </url>
 </urlset>
