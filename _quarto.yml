@@ -37,11 +37,13 @@ website:
       - href: index.qmd
         text: Welcome
       - explore.qmd
-      - section: quarto-workflows/index.qmd
+      - section: ultimate-consequences/index.md
+        contents: 
+          - ultimate-consequences/Codebook-current.md
+          - ultimate-consequences/Nested-Table.Rmd
+      - section: ultimate-consequences/index.
         contents: 
           - quarto-workflows/browser.md
-          - quarto-workflows/rstudio.qmd
-          - quarto-workflows/jupyter.md 
       - learning-more.qmd
       - href: transition-from-rmarkdown.qmd
         text: Transition from Rmd
