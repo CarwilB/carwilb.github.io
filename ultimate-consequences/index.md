@@ -27,5 +27,5 @@ This website is here to provide access to:
 ## Video introduction to the project
 
 ```         
-{{< video https://www.youtube.com/watch?v=W_cCUbSOSqs >}}
+{% include youtube.html id="W_cCUbSOSqs" %}
 ```
