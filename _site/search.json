@@ -481,5 +481,12 @@
     "title": "Quarto workflows",
     "section": "",
     "text": "How do you work in Quarto? You can use whichever tool you’re comfortable with (RStudio, Jupyter, GitHub, VS Code, etc). Developing your quarto site will have the same basic workflow, no matter which tool you use. It is very iterative, and each is explored more below.\n\nAuthoring: write text, code, images, etc in a file. Supported files include .md, .Rmd, .qmd, .ipynb…\nUpdate _quarto.yml as needed (for example, if you’ve created a new file you’d like included in your site)\nRender individual files and/or the whole website\nRepeat, repeat, repeat\nCommit and push your website to GitHub, your updates will publish automatically!\nRepeat all of the above to make the website as you’d like!\n\nNote: if editing from your internet browser we won’t render in Step 3. That step will not be separate, but combined with Step 5, which will only require a commit, not a push."
+  },
+  {
+    "objectID": "ultimate-consequences/Nested-Table.html",
+    "href": "ultimate-consequences/Nested-Table.html",
+    "title": "Directory of individual deaths, summarized by event",
+    "section": "",
+    "text": "Chronological view of events and deaths\nThis table can be ordered by any of its variables and searched by the text variables as well as the year. At the bottom you can choose how many events to show, or page through the events.\nUsing the triangles at left, you can access the individual deaths.\n\n\n\n\n\nEntries: data/"
   }
 ]

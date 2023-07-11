@@ -3,8 +3,8 @@ project:
   
 website: 
   page-navigation: true
-  title: "Making sharable documents with Quarto" 
-  site-url: "https://openscapes.github.io/quarto-website-tutorial" 
+  title: "Quarto Website Testbed" 
+  site-url: "https://carwilb.github.io/quarto-website" 
   repo-url: https://github.com/openscapes/quarto-website-tutorial 
   repo-actions: [edit, issue]
   
@@ -13,6 +13,7 @@ website:
     left: "&copy; CC-By Openscapes, 2022"
     
   sidebar:
+    title: "Quarto Web Test"
     logo: "images/carwil-bjork-james-hex.png"
     pinned: true
     align: center
@@ -41,6 +42,7 @@ website:
         contents: 
           - ultimate-consequences/Codebook-current.md
           - ultimate-consequences/Project-Overview.md
+          - ultimate-consequences/Nested-Table.Rmd
       - section: quarto-workflows/index.md
         contents: 
           - quarto-workflows/browser.md
