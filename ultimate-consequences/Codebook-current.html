@@ -29,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../quarto-workflows/browser.html" rel="next">
+<link href="../ultimate-consequences/Project-Overview.html" rel="next">
 <link href="../ultimate-consequences/index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -67,7 +67,6 @@ ul.task-list li input[type="checkbox"] {
 </head>
 
 <body class="nav-sidebar docked">
-
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -136,14 +135,17 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">ultimate-consequences/Nested-Table.Rmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../ultimate-consequences/Project-Overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ultimate Consequences Project Overview</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">ultimate-consequences/index.</span></a>
+ <span class="menu-text">quarto-workflows/index.md</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -181,7 +183,15 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#data-variables-and-coding-advice" id="toc-data-variables-and-coding-advice" class="nav-link active" data-scroll-target="#data-variables-and-coding-advice">Data Variables and Coding Advice</a>
   <ul class="collapse">
-  <li><a href="#when" id="toc-when" class="nav-link" data-scroll-target="#when">When:</a></li>
+  <li><a href="#events" id="toc-events" class="nav-link" data-scroll-target="#events">Events:</a>
+  <ul class="collapse">
+  <li><a href="#event-title" id="toc-event-title" class="nav-link" data-scroll-target="#event-title">Event Title</a></li>
+  </ul></li>
+  <li><a href="#when" id="toc-when" class="nav-link" data-scroll-target="#when">When:</a>
+  <ul class="collapse">
+  <li><a href="#date-of-violence" id="toc-date-of-violence" class="nav-link" data-scroll-target="#date-of-violence">Date of violence</a></li>
+  <li><a href="#date-of-death" id="toc-date-of-death" class="nav-link" data-scroll-target="#date-of-death">Date of death</a></li>
+  </ul></li>
   <li><a href="#who-victimdeceased-individual" id="toc-who-victimdeceased-individual" class="nav-link" data-scroll-target="#who-victimdeceased-individual">Who: Victim/Deceased individual</a>
   <ul class="collapse">
   <li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names">Names</a></li>
@@ -202,9 +212,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#where" id="toc-where" class="nav-link" data-scroll-target="#where">Where:</a>
   <ul class="collapse">
   <li><a href="#location-information" id="toc-location-information" class="nav-link" data-scroll-target="#location-information">Location information</a></li>
-  <li><a href="#municipality-province-department" id="toc-municipality-province-department" class="nav-link" data-scroll-target="#municipality-province-department">Municipality, Province, Department</a></li>
   </ul></li>
-  <li><a href="#level-of-certainty-re-perpetrator" id="toc-level-of-certainty-re-perpetrator" class="nav-link" data-scroll-target="#level-of-certainty-re-perpetrator">Level of Certainty re: Perpetrator</a></li>
+  <li><a href="#certainty-re-perpetrator" id="toc-certainty-re-perpetrator" class="nav-link" data-scroll-target="#certainty-re-perpetrator">Certainty re: Perpetrator</a></li>
   <li><a href="#accountability-processes" id="toc-accountability-processes" class="nav-link" data-scroll-target="#accountability-processes">Accountability Processes</a>
   <ul class="collapse">
   <li><a href="#disciplinary-accountability" id="toc-disciplinary-accountability" class="nav-link" data-scroll-target="#disciplinary-accountability">Disciplinary Accountability</a></li>
@@ -227,12 +236,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#follow-ups-and-cross-references" id="toc-follow-ups-and-cross-references" class="nav-link" data-scroll-target="#follow-ups-and-cross-references">Follow-ups and cross-references</a></li>
   <li><a href="#external-cross-reference-navarro-2006" id="toc-external-cross-reference-navarro-2006" class="nav-link" data-scroll-target="#external-cross-reference-navarro-2006">External cross-reference: Navarro 2006</a></li>
   </ul></li>
-  <li><a href="#variables-under-development" id="toc-variables-under-development" class="nav-link" data-scroll-target="#variables-under-development">Variables under development</a></li>
   <li><a href="#deprecated-variables" id="toc-deprecated-variables" class="nav-link" data-scroll-target="#deprecated-variables">Deprecated variables</a>
   <ul class="collapse">
   <li><a href="#killings-in-cold-blood" id="toc-killings-in-cold-blood" class="nav-link" data-scroll-target="#killings-in-cold-blood">Killings in “cold blood”</a></li>
   <li><a href="#outcome-variables" id="toc-outcome-variables" class="nav-link" data-scroll-target="#outcome-variables">Outcome variables</a></li>
   </ul></li>
+  <li><a href="#variables-under-development" id="toc-variables-under-development" class="nav-link" data-scroll-target="#variables-under-development">Variables under development</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/openscapes/quarto-website-tutorial/edit/main/ultimate-consequences/Codebook-current.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/openscapes/quarto-website-tutorial/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -260,6 +269,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-variables-and-coding-advice" class="level1">
 <h1>Data Variables and Coding Advice</h1>
 <p>An initial spreadsheet of when, who, where, how, responsible party, in order of left to right in spreadsheet</p>
+<section id="events" class="level2">
+<h2 class="anchored" data-anchor-id="events">Events:</h2>
+<p>The database treats events as a fundamental unit. <em>Event</em> is a term with many definitions in the study of social movements and contentious politics from the pivotal historical moment to the action at a single time and place as recorded by news media, but the meaning used in the database is perhaps best captured by Charles Tilly’s term <em>episodes</em>: ”bounded sequences of continuous interaction.” Bolivian mass mobilisation is organized in a routine sequence — collective organisation, mass mobilisation, escalation of tactics, negotiation, and concessions — and organizers work to propel the process forward repeatedly until the target, usually the government, gives in. Repressive force seeks to interrupt this process, usually by punishing movements in the mobilisation or escalation stages. For purposes of the database, we treat a relatively continuous series of actions as a single episode or event, unless and until it is interrupted by demobilisation.</p>
+<section id="event-title" class="level3">
+<h3 class="anchored" data-anchor-id="event-title">Event Title</h3>
 <ul>
 <li><code>event_title</code>: <em>Provides location and general theme of event</em></li>
 </ul>
@@ -269,14 +283,21 @@ ul.task-list li input[type="checkbox"] {
 <p>It should not name the form of violence unless it is unusual.</p>
 <p><strong>Unique</strong> means that each event_title is distinct from all others in the dataset. Where needed add the year at the end of the event_title, then month or month pair. For example “Gas War 2003”, “CSUTCB mobilization April 2000.”</p>
 <p>The variables, and this document are segmented into sections, each of which comprise several variables.</p>
+</section>
+</section>
 <section id="when" class="level2">
 <h2 class="anchored" data-anchor-id="when">When:</h2>
+<section id="date-of-violence" class="level3">
+<h3 class="anchored" data-anchor-id="date-of-violence">Date of violence</h3>
 <ul>
 <li><code>year</code></li>
 <li><code>month</code></li>
 <li><code>day</code>: Date of the incident that caused death</li>
 </ul>
 <p>Integer values. Four-digit years, months from 1 to 12, days from 1 to 31.</p>
+</section>
+<section id="date-of-death" class="level3">
+<h3 class="anchored" data-anchor-id="date-of-death">Date of death</h3>
 <ul>
 <li>DayLater: <code>later_year</code>, <code>later_month</code>, <code>later_day</code>: Date of death, if the person died after the incident due to its consequences.</li>
 </ul>
@@ -285,13 +306,15 @@ ul.task-list li input[type="checkbox"] {
 <p><em>In the narrative:</em> State the time if available.</p>
 <p><em>Future options:</em> Integrate with temporal sequence of the larger conflict (i.e., chronology of conflict could be an extended text field or link to other material)</p>
 </section>
+</section>
 <section id="who-victimdeceased-individual" class="level2">
 <h2 class="anchored" data-anchor-id="who-victimdeceased-individual">Who: Victim/Deceased individual</h2>
 <p>Note that we may choose to apply the term “victim” to deliberate deaths, according to whatever categories we choose, but the generic category in the dataset is “deceased.”</p>
 <section id="names" class="level3">
 <h3 class="anchored" data-anchor-id="names">Names</h3>
 <ul>
-<li><code>dec_firstname</code>, <code>dec_surnames</code>: Broken into first names, surnames.</li>
+<li><code>dec_firstname</code> All first and middle names</li>
+<li><code>dec_surnames</code>: All surnames, including patronymic and matronymic surnames.</li>
 </ul>
 <p>Do not use <code>?</code> to indicate uncertainty. Use parentheses <code>()</code> or slashes <code>/</code> instead.</p>
 <p>If more than one name is found in the box:</p>
@@ -349,8 +372,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Image of contemporary groups provided by Wikipedia</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/codebook/indigenous-group-names.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">List of Indigenous Peoples of Bolivia from Wikipedia</figcaption>
+<p><img src=".png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><img src="../images/codebook/indigenous-group-names.png" class="img-fluid figure-img" alt="List of Indigenous Peoples of Bolivia from Wikipedia"></figcaption>
 </figure>
 </div>
 <ul>
@@ -590,21 +613,18 @@ We presume that when sources describe a group the victim was part of as armed, b
 <li><p><code>community</code> Urban neighborhood or rural community</p></li>
 </ul>
 <p>Nearly all urban places have neighborhood names. Many rural communities are smaller units than municipalities.</p>
-</section>
-<section id="municipality-province-department" class="level3">
-<h3 class="anchored" data-anchor-id="municipality-province-department">Municipality, Province, Department</h3>
 <ul>
 <li><code>municipality</code></li>
 <li><code>province</code></li>
 <li><code>department</code></li>
 </ul>
 <p>We use Spanish accents: Potosí, not Potosi. Never write “X Municipality,” just X is fine. Complete <a href="https://en.wikipedia.org/wiki/Municipalities_of_Bolivia"><em>list of municipalities</em></a>. Complete <a href="https://en.wikipedia.org/wiki/Provinces_of_Bolivia"><em>list of provinces</em></a>, with a lovely table of municipalities and cantons (submunicipal sections). Wikipedia (usually English, sometimes German) and several other Google-able websites can locate obscure communities. Be forewarned that many new settlements (urban neighborhoods, recent agrarian settlements in Chapare and the east) are named after other ones, so do not Google a community name and “learn” from the search that it is located in another department across the country. If in doubt, check in about this.</p>
-<p>The number of municipalities in Bolivia has risen from an initial twenty-four (in 1994) to 327 (in 2005), to 337 (in April 2010), to 339 (as of August 2010). Where municipal boundaries have changed, use the municipality at the time of the event. If you look up a rural community in a post-2011 reference work to find the municipality, but the event is before 2011, make a note in “complications” saying so.</p>
+<p>The number of municipalities in Bolivia has risen from an initial twenty-four (in 1994) to 327 (in 2005), to 337 (in April 2010), to 339 (as of August 2010). Where municipal boundaries have changed, we use specific locality to specify the current, smaller municipality. But if no information is available on a smaller scale than the municipality name, we use the named municipality. If you look up a rural community in a post-2011 reference work to find the municipality, but the event is before 2011, make a note in “complications” saying so.</p>
 <p>Provincial and departmental boundaries (where set and undisputed) have been unchanged through this period.</p>
 </section>
 </section>
-<section id="level-of-certainty-re-perpetrator" class="level2">
-<h2 class="anchored" data-anchor-id="level-of-certainty-re-perpetrator">Level of Certainty re: Perpetrator</h2>
+<section id="certainty-re-perpetrator" class="level2">
+<h2 class="anchored" data-anchor-id="certainty-re-perpetrator">Certainty re: Perpetrator</h2>
 <p>These fields allow us to specify the reasons for confidence in identifying who was the perpetrator of violence, the kind of information they used, and whether responsibility has been denied.</p>
 <ul>
 <li><code>highest_source</code></li>
@@ -851,10 +871,6 @@ We presume that when sources describe a group the victim was part of as armed, b
 <p>This column tracks which deaths listed there appear in which lines in our dataset. Several discrepancies have been identified as we have researched this list.</p>
 </section>
 </section>
-<section id="variables-under-development" class="level2">
-<h2 class="anchored" data-anchor-id="variables-under-development">Variables under development</h2>
-<p>None right now.</p>
-</section>
 <section id="deprecated-variables" class="level2">
 <h2 class="anchored" data-anchor-id="deprecated-variables">Deprecated variables</h2>
 <p>These variables are no longer in use in the database.</p>
@@ -873,9 +889,13 @@ We presume that when sources describe a group the victim was part of as armed, b
 <li><p><strong>Partial movement success</strong></p></li>
 <li><p><code>outcomes</code>: Capsule summary of protest event outcome</p></li>
 </ul>
-
-
 </section>
+</section>
+<section id="variables-under-development" class="level2">
+<h2 class="anchored" data-anchor-id="variables-under-development">Variables under development</h2>
+<p>None right now.</p>
+
+
 </section>
 </section>
 
@@ -1235,8 +1255,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../quarto-workflows/browser.html" class="pagination-link">
-        <span class="nav-page-text">From the Browser</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ultimate-consequences/Project-Overview.html" class="pagination-link">
+        <span class="nav-page-text">Ultimate Consequences Project Overview</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
