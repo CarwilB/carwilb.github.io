@@ -7,6 +7,11 @@ nav_exclude: true
 
 An initial spreadsheet of when, who, where, how, responsible party, in order of left to right in spreadsheet
 
+## Events:
+The database treats events as a fundamental unit. _Event_ is a term with many definitions in the study of social movements and contentious politics from the pivotal historical moment to the action at a single time and place as recorded by news media, but the meaning used in the database is perhaps best captured by Charles Tilly’s term _episodes_: ”bounded sequences of continuous interaction.”  Bolivian mass mobilisation is organized in a routine sequence — collective organisation, mass mobilisation, escalation of tactics, negotiation, and concessions — and organizers work to propel the process forward repeatedly until the target, usually the government, gives in. Repressive force seeks to interrupt this process, usually by punishing movements in the mobilisation or escalation stages. For purposes of the database, we treat a relatively continuous series of actions as a single episode or event, unless and until it is interrupted by demobilisation. 
+
+### Event Title
+
 * `event_title`: *Provides location and general theme of event*
  
 **Event titles are brief, unique textual identifiers** that should readily bring to mind the event (especially if the reader has heard of it before), and inform us as to what makes it distinctive. Therefore, unlike other elements of this codebook, there is rarely a single right answer. Also, we should be working to make these titles distinct, so when there are a lot of parallel events, we will need to be more specific.
@@ -22,13 +27,14 @@ An initial spreadsheet of when, who, where, how, responsible party, in order of 
 The variables, and this document are segmented into sections, each of which comprise several variables.
 
 ## When:
-
+### Date of violence
 * `year`
 * `month`
 * `day`: Date of the incident that caused death
 
 Integer values. Four-digit years, months from 1 to 12, days from 1 to 31.
 
+###  Date of death
 * DayLater: `later_year`, `later_month`, `later_day`: Date of death, if the person died after the incident due to its consequences. 
 
 Occasionally, we have an indeterminate date. Code these with the known information: October 2003 as 2003\|10\|\[blank\]. Use “or”, as in October 5 or 6 or 7, 2006 as 2006\|10\|5 or 6. 
@@ -45,7 +51,8 @@ Note that we may choose to apply the term "victim" to deliberate deaths, accordi
 
 ### Names
 
-* `dec_firstname`, `dec_surnames`: Broken into first names, surnames. 
+* `dec_firstname` All first and middle names
+* `dec_surnames`: All surnames, including patronymic and matronymic surnames. 
 
 Do not use `?` to indicate uncertainty. Use parentheses `()` or slashes `/` instead.
 
@@ -119,7 +126,7 @@ Options: Mestizo/Creole, Afro-Bolivian, *or indigenous group name like* Quechua,
 
 Image of contemporary groups provided by Wikipedia
 
-![List of Indigenous Peoples of Bolivia from Wikipedia](../images/codebook/indigenous-group-names.png)
+![![List of Indigenous Peoples of Bolivia from Wikipedia](../images/codebook/indigenous-group-names.png)]()
 
 * `dec_residence`: Indicates place of residence, not origin
 
@@ -395,18 +402,17 @@ Use this information to create a Geo-tag if possible: We’re not implementing t
 
 Nearly all urban places have neighborhood names. Many rural communities are smaller units than municipalities.
 
-### Municipality, Province, Department
 * `municipality`
 * `province`
 * `department`
 
 We use Spanish accents: Potosí, not Potosi. Never write “X Municipality,” just X is fine. Complete [*list of municipalities*](https://en.wikipedia.org/wiki/Municipalities_of_Bolivia). Complete [*list of provinces*](https://en.wikipedia.org/wiki/Provinces_of_Bolivia), with a lovely table of municipalities and cantons (submunicipal sections). Wikipedia (usually English, sometimes German) and several other Google-able websites can locate obscure communities. Be forewarned that many new settlements (urban neighborhoods, recent agrarian settlements in Chapare and the east) are named after other ones, so do not Google a community name and “learn” from the search that it is located in another department across the country. If in doubt, check in about this.
 
-The number of municipalities in Bolivia has risen from an initial twenty-four (in 1994) to 327 (in 2005), to 337 (in April 2010), to 339 (as of August 2010). Where municipal boundaries have changed, use the municipality at the time of the event. If you look up a rural community in a post-2011 reference work to find the municipality, but the event is before 2011, make a note in “complications” saying so.
+The number of municipalities in Bolivia has risen from an initial twenty-four (in 1994) to 327 (in 2005), to 337 (in April 2010), to 339 (as of August 2010). Where municipal boundaries have changed, we use specific locality to specify the current, smaller municipality. But if no information is available on a smaller scale than the municipality name, we use the named municipality. If you look up a rural community in a post-2011 reference work to find the municipality, but the event is before 2011, make a note in “complications” saying so.
 
 Provincial and departmental boundaries (where set and undisputed) have been unchanged through this period.
 
-## Level of Certainty re: Perpetrator
+## Certainty re: Perpetrator
 
 These fields allow us to specify the reasons for confidence in identifying who was the perpetrator of violence, the kind of information they used, and whether responsibility has been denied.
 
@@ -651,9 +657,6 @@ There is a mulitpage numbered list of deaths in Navarro Miranda, César. _Críme
 
 This column tracks which deaths listed there appear in which lines in our dataset. Several discrepancies have been identified as we have researched this list.
 
-## Variables under development
-None right now.
-
 ## Deprecated variables
 These variables are no longer in use in the database.
 
@@ -672,3 +675,6 @@ This is one possible emergent categories that do correspond to individual deaths
  - **Partial movement success**
  
 * `outcomes`: Capsule summary of protest event outcome
+
+## Variables under development
+None right now.

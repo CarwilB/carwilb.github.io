@@ -40,8 +40,8 @@ website:
       - section: ultimate-consequences/index.md
         contents: 
           - ultimate-consequences/Codebook-current.md
-          - ultimate-consequences/Nested-Table.Rmd
-      - section: ultimate-consequences/index.
+          - ultimate-consequences/Project-Overview.md
+      - section: quarto-workflows/index.md
         contents: 
           - quarto-workflows/browser.md
       - learning-more.qmd
