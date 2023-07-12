@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quarto Website Testbed - Codebook for Ultimate Consequences</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ultimate-consequences/Project-Overview.html" rel="next">
+<link href="../ultimate-consequences/index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ultimate-consequences/index.html">Ultimate Consequences</a></li><li class="breadcrumb-item"><a href="../ultimate-consequences/Codebook-current.html">Codebook for Ultimate Consequences</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/carwil-bjork-james-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Quarto Web Test</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://ultimateconsequences.github.io" rel="" title="Ultimate Consequences Project Website" class="quarto-navigation-tool px-1" aria-label="Ultimate Consequences Project Website"><i class="bi bi-globe"></i></a>
+    <a href="https://woborders.blog" rel="" title="Carwil without Borders" class="quarto-navigation-tool px-1" aria-label="Carwil without Borders"><i class="bi bi-wordpress"></i></a>
+    <a href="https://mastodon.online/@Carwil" rel="" title="Carwil on Mastodon" class="quarto-navigation-tool px-1" aria-label="Carwil on Mastodon"><i class="bi bi-mastodon"></i></a>
+    <a href="https://twitter.com/CarwilBJ" rel="" title="Carwil Bjork-James on Twitter" class="quarto-navigation-tool px-1" aria-label="Carwil Bjork-James on Twitter"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../explore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Explore and setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../ultimate-consequences/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ultimate Consequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ultimate-consequences/Codebook-current.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Codebook for Ultimate Consequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ultimate-consequences/Project-Overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ultimate Consequences Project Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ultimate-consequences/Nested-Table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Directory of individual deaths, summarized by event</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">quarto-workflows/index.md</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quarto-workflows/browser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From the Browser</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../learning-more.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning more</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transition-from-rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transition from Rmd</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-variables-and-coding-advice" id="toc-data-variables-and-coding-advice" class="nav-link active" data-scroll-target="#data-variables-and-coding-advice">Data Variables and Coding Advice</a>
+  <ul class="collapse">
+  <li><a href="#events" id="toc-events" class="nav-link" data-scroll-target="#events">Events:</a>
+  <ul class="collapse">
+  <li><a href="#event-title" id="toc-event-title" class="nav-link" data-scroll-target="#event-title">Event Title</a></li>
+  </ul></li>
+  <li><a href="#when" id="toc-when" class="nav-link" data-scroll-target="#when">When:</a>
+  <ul class="collapse">
+  <li><a href="#date-of-violence" id="toc-date-of-violence" class="nav-link" data-scroll-target="#date-of-violence">Date of violence</a></li>
+  <li><a href="#date-of-death" id="toc-date-of-death" class="nav-link" data-scroll-target="#date-of-death">Date of death</a></li>
+  </ul></li>
+  <li><a href="#who-victimdeceased-individual" id="toc-who-victimdeceased-individual" class="nav-link" data-scroll-target="#who-victimdeceased-individual">Who: Victim/Deceased individual</a>
+  <ul class="collapse">
+  <li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names">Names</a></li>
+  <li><a href="#internal-unique-identifiers" id="toc-internal-unique-identifiers" class="nav-link" data-scroll-target="#internal-unique-identifiers">Internal unique identifier(s)</a></li>
+  <li><a href="#demographic-characteristics" id="toc-demographic-characteristics" class="nav-link" data-scroll-target="#demographic-characteristics">Demographic characteristics</a></li>
+  </ul></li>
+  <li><a href="#affiliation" id="toc-affiliation" class="nav-link" data-scroll-target="#affiliation">Affiliation</a></li>
+  <li><a href="#quasilogical-variables" id="toc-quasilogical-variables" class="nav-link" data-scroll-target="#quasilogical-variables">Quasilogical variables</a></li>
+  <li><a href="#how" id="toc-how" class="nav-link" data-scroll-target="#how">How:</a>
+  <ul class="collapse">
+  <li><a href="#cause-of-death-practical" id="toc-cause-of-death-practical" class="nav-link" data-scroll-target="#cause-of-death-practical">Cause of death (practical)</a></li>
+  <li><a href="#cause-of-death-medical" id="toc-cause-of-death-medical" class="nav-link" data-scroll-target="#cause-of-death-medical">Cause of death (medical)</a></li>
+  <li><a href="#munition" id="toc-munition" class="nav-link" data-scroll-target="#munition">Munition</a></li>
+  <li><a href="#weapons" id="toc-weapons" class="nav-link" data-scroll-target="#weapons">Weapons</a></li>
+  </ul></li>
+  <li><a href="#perpetrator" id="toc-perpetrator" class="nav-link" data-scroll-target="#perpetrator">Perpetrator</a></li>
+  <li><a href="#intentionality" id="toc-intentionality" class="nav-link" data-scroll-target="#intentionality">Intentionality</a></li>
+  <li><a href="#where" id="toc-where" class="nav-link" data-scroll-target="#where">Where:</a>
+  <ul class="collapse">
+  <li><a href="#location-information" id="toc-location-information" class="nav-link" data-scroll-target="#location-information">Location information</a></li>
+  </ul></li>
+  <li><a href="#certainty-re-perpetrator" id="toc-certainty-re-perpetrator" class="nav-link" data-scroll-target="#certainty-re-perpetrator">Certainty re: Perpetrator</a></li>
+  <li><a href="#accountability-processes" id="toc-accountability-processes" class="nav-link" data-scroll-target="#accountability-processes">Accountability Processes</a>
+  <ul class="collapse">
+  <li><a href="#disciplinary-accountability" id="toc-disciplinary-accountability" class="nav-link" data-scroll-target="#disciplinary-accountability">Disciplinary Accountability</a></li>
+  <li><a href="#judicial-accountability" id="toc-judicial-accountability" class="nav-link" data-scroll-target="#judicial-accountability">Judicial Accountability</a></li>
+  <li><a href="#other-accountability-reporting-and-compensation" id="toc-other-accountability-reporting-and-compensation" class="nav-link" data-scroll-target="#other-accountability-reporting-and-compensation">Other Accountability: Reporting and compensation</a></li>
+  </ul></li>
+  <li><a href="#analytical-variables" id="toc-analytical-variables" class="nav-link" data-scroll-target="#analytical-variables">Analytical Variables</a>
+  <ul class="collapse">
+  <li><a href="#presidential-administration" id="toc-presidential-administration" class="nav-link" data-scroll-target="#presidential-administration">Presidential Administration</a></li>
+  <li><a href="#protest-campaign-and-domain" id="toc-protest-campaign-and-domain" class="nav-link" data-scroll-target="#protest-campaign-and-domain">Protest campaign and domain</a></li>
+  <li><a href="#political-assassination" id="toc-political-assassination" class="nav-link" data-scroll-target="#political-assassination">Political Assassination</a></li>
+  <li><a href="#state-responsibility-three-variables" id="toc-state-responsibility-three-variables" class="nav-link" data-scroll-target="#state-responsibility-three-variables">State responsibility: three variables</a></li>
+  </ul></li>
+  <li><a href="#affiliation-during-periods-of-polarization" id="toc-affiliation-during-periods-of-polarization" class="nav-link" data-scroll-target="#affiliation-during-periods-of-polarization">Affiliation during periods of polarization</a></li>
+  <li><a href="#narrative-details" id="toc-narrative-details" class="nav-link" data-scroll-target="#narrative-details">Narrative details</a>
+  <ul class="collapse">
+  <li><a href="#complications" id="toc-complications" class="nav-link" data-scroll-target="#complications">Complications</a></li>
+  <li><a href="#notesnarratives" id="toc-notesnarratives" class="nav-link" data-scroll-target="#notesnarratives">Notes/Narratives</a></li>
+  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references">Bibliographic references</a></li>
+  <li><a href="#follow-ups-and-cross-references" id="toc-follow-ups-and-cross-references" class="nav-link" data-scroll-target="#follow-ups-and-cross-references">Follow-ups and cross-references</a></li>
+  <li><a href="#external-cross-reference-navarro-2006" id="toc-external-cross-reference-navarro-2006" class="nav-link" data-scroll-target="#external-cross-reference-navarro-2006">External cross-reference: Navarro 2006</a></li>
+  </ul></li>
+  <li><a href="#deprecated-variables" id="toc-deprecated-variables" class="nav-link" data-scroll-target="#deprecated-variables">Deprecated variables</a>
+  <ul class="collapse">
+  <li><a href="#killings-in-cold-blood" id="toc-killings-in-cold-blood" class="nav-link" data-scroll-target="#killings-in-cold-blood">Killings in “cold blood”</a></li>
+  <li><a href="#outcome-variables" id="toc-outcome-variables" class="nav-link" data-scroll-target="#outcome-variables">Outcome variables</a></li>
+  </ul></li>
+  <li><a href="#variables-under-development" id="toc-variables-under-development" class="nav-link" data-scroll-target="#variables-under-development">Variables under development</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/openscapes/quarto-website-tutorial/edit/main/ultimate-consequences/Codebook-current.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/openscapes/quarto-website-tutorial/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Codebook for Ultimate Consequences</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="data-variables-and-coding-advice" class="level1">
+<h1>Data Variables and Coding Advice</h1>
+<p>An initial spreadsheet of when, who, where, how, responsible party, in order of left to right in spreadsheet</p>
+<section id="events" class="level2">
+<h2 class="anchored" data-anchor-id="events">Events:</h2>
+<p>The database treats events as a fundamental unit. <em>Event</em> is a term with many definitions in the study of social movements and contentious politics from the pivotal historical moment to the action at a single time and place as recorded by news media, but the meaning used in the database is perhaps best captured by Charles Tilly’s term <em>episodes</em>: “bounded sequences of continuous interaction.” Bolivian mass mobilisation is organized in a routine sequence — collective organisation, mass mobilisation, escalation of tactics, negotiation, and concessions — and organizers work to propel the process forward repeatedly until the target, usually the government, gives in. Repressive force seeks to interrupt this process, usually by punishing movements in the mobilisation or escalation stages. For purposes of the database, we treat a relatively continuous series of actions as a single episode or event, unless and until it is interrupted by demobilisation.</p>
+<section id="event-title" class="level3">
+<h3 class="anchored" data-anchor-id="event-title">Event Title</h3>
+<ul>
+<li><code>event_title</code>: <em>Provides location and general theme of event</em></li>
+</ul>
+<p><strong>Event titles are brief, unique textual identifiers</strong> that should readily bring to mind the event (especially if the reader has heard of it before), and inform us as to what makes it distinctive. Therefore, unlike other elements of this codebook, there is rarely a single right answer. Also, we should be working to make these titles distinct, so when there are a lot of parallel events, we will need to be more specific.</p>
+<p>Use well-known names for events, if possible.</p>
+<p>The event_title should state the <em>scope</em> of the conflict; name a locality or workplace if the conflict (or the notable deadly violence) is local. If the conflict is widespread, it should more often name the movement involved. It should name the social movement sector involved if relevant.</p>
+<p>It should not name the form of violence unless it is unusual.</p>
+<p><strong>Unique</strong> means that each event_title is distinct from all others in the dataset. Where needed add the year at the end of the event_title, then month or month pair. For example “Gas War 2003”, “CSUTCB mobilization April 2000.”</p>
+<p>The variables, and this document are segmented into sections, each of which comprise several variables.</p>
+</section>
+</section>
+<section id="when" class="level2">
+<h2 class="anchored" data-anchor-id="when">When:</h2>
+<section id="date-of-violence" class="level3">
+<h3 class="anchored" data-anchor-id="date-of-violence">Date of violence</h3>
+<ul>
+<li><code>year</code></li>
+<li><code>month</code></li>
+<li><code>day</code>: Date of the incident that caused death</li>
+</ul>
+<p>Integer values. Four-digit years, months from 1 to 12, days from 1 to 31.</p>
+</section>
+<section id="date-of-death" class="level3">
+<h3 class="anchored" data-anchor-id="date-of-death">Date of death</h3>
+<ul>
+<li>DayLater: <code>later_year</code>, <code>later_month</code>, <code>later_day</code>: Date of death, if the person died after the incident due to its consequences.</li>
+</ul>
+<p>Occasionally, we have an indeterminate date. Code these with the known information: October 2003 as 2003|10|[blank]. Use “or”, as in October 5 or 6 or 7, 2006 as 2006|10|5 or 6.</p>
+<p><em>Handling in R:</em> Currently, our coding takes the first number in a textual date, retains the whole text as a note about the year, month, or day. Blank dates are automatically turned into a note reading “Unknown year” etc.</p>
+<p><em>In the narrative:</em> State the time if available.</p>
+<p><em>Future options:</em> Integrate with temporal sequence of the larger conflict (i.e., chronology of conflict could be an extended text field or link to other material)</p>
+</section>
+</section>
+<section id="who-victimdeceased-individual" class="level2">
+<h2 class="anchored" data-anchor-id="who-victimdeceased-individual">Who: Victim/Deceased individual</h2>
+<p>Note that we may choose to apply the term “victim” to deliberate deaths, according to whatever categories we choose, but the generic category in the dataset is “deceased.”</p>
+<section id="names" class="level3">
+<h3 class="anchored" data-anchor-id="names">Names</h3>
+<ul>
+<li><code>dec_firstname</code> All first and middle names</li>
+<li><code>dec_surnames</code>: All surnames, including patronymic and matronymic surnames.</li>
+</ul>
+<p>Do not use <code>?</code> to indicate uncertainty. Use parentheses <code>()</code> or slashes <code>/</code> instead.</p>
+<p>If more than one name is found in the box:</p>
+<ul>
+<li><p>FirstName (other FirstName)- implies we think the victim’s name is the name outside of the parentheses, but a report may have indicated an alternate name</p></li>
+<li><p>FirstName / FirstName -implies that we have no idea which of the two is correct</p></li>
+<li><p>If there are slashes in both first name and surname, they should be read as paired. A / B ; C / D, means the name is either A B or C D.</p></li>
+<li><p>For last name use one of the following: PatronymicSurname MatronymicSurname</p>
+<ul>
+<li><p>PSurname (PSurname alt) MSurname</p></li>
+<li><p>PSurname MSurname (PSurname MSurname both alt)</p></li>
+<li><p>PSurname MSurname (MSurname alt)</p></li>
+<li><p>SingularSurname (SingularSurname alt)</p></li>
+</ul></li>
+</ul>
+<p>For now, <strong>include</strong> names used in sources that are <strong>plausible misspellings</strong> among these alternative names (e.g., Miguel | Northfuster (Northdufter) Kerer). Likewise the <strong>multiple names for someone who has not been positively identified</strong>: Juan Carlos / Corado / Corado / NN | Ventura / Vilca / Veizaga / Fernández / Bejarano.</p>
+<p>When we have <em>explicit reporting</em> that a name was wrong, put the correct name in the name field and <strong>describe the misidentification</strong> in Complications: Gustavo | Cartagena Trujillo | Victim initially misidentified as “Edgar Vidal Rocha.”</p>
+</section>
+<section id="internal-unique-identifiers" class="level3">
+<h3 class="anchored" data-anchor-id="internal-unique-identifiers">Internal unique identifier(s)</h3>
+<ul>
+<li><code>id_indiv</code> — A unique identifier for each individual in the dataset that allows for cross referencing as the dataset evolves.</li>
+</ul>
+<p>We want to be able to track changes in knowledge about individuals, for all fields including their names, so we assign each individual a unique identifier. This means that if their name changes, we change their inclusion status in the database (because, for example, we determine their death was accidental, or were misreported as dead), regroup them with different events, or determine that they are in fact a duplicate of another person, we can link that individual across different versions of the dataset.</p>
+<p>Unique IDs will also be assigned to individuals in the “Excluded from current analysis” tab once that tab is refactored to include all existing variables.</p>
+<p>Individual ID (<code>id_indiv</code>) will take the form of the lowercase letter i followed by five numerical digits.</p>
+<ul>
+<li><strong>i</strong> — is for individual (a conveniently bilingual first letter)</li>
+<li><strong>First two digits</strong> assigned by year and allowing the research team to keep the unique ID’s roughly chronological without generating confusion among uninformed researchers.
+<ul>
+<li><strong>01</strong> Indicates an unknown year</li>
+<li><strong>02</strong> corresponds to <strong>1982</strong>;</li>
+<li><em>10</em> corresponds to 1990; <em>20</em> to 2000; <em>30</em> to 2010; <em>40</em> to 2020. So, deaths in 2019 would typically begin i39</li>
+</ul></li>
+<li><strong>Last three digits</strong> are assigned sequentially in rough chronological order, beginnig with <strong>001</strong>.
+<ul>
+<li>Where multiple events are occurring simultaneously, we will try to number sequentially within the events first.</li>
+</ul></li>
+<li><strong>Every line</strong> in the dataset gets an individual ID, <em>including</em> unconfirmed = TRUE, intentionality = Nonconflict accident, etc.</li>
+</ul>
+</section>
+<section id="demographic-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="demographic-characteristics">Demographic characteristics</h3>
+<ul>
+<li><code>dec_age</code>: reported age</li>
+<li><code>dec_alt_age</code>: alternatively reported ages</li>
+</ul>
+<p>Expressed as an integer. Unless under two years, then we may also have a fraction in twelths.</p>
+<p><strong>Data entry for months:</strong> Type: &lt;equals&gt; &lt;number of months&gt; &lt;division slash&gt; 12. So, six months: “=6/12.”</p>
+<ul>
+<li><code>dec_gender</code>: gender</li>
+</ul>
+<p>Options: M, F, text explanation</p>
+<ul>
+<li><code>dec_ethnicity</code>: ethnicity</li>
+</ul>
+<p>Options: Mestizo/Creole, Afro-Bolivian, <em>or indigenous group name like</em> Quechua, Aymara, Yuracaré.</p>
+<ul>
+<li><p><strong>For indigenous groups</strong>, use names as listed first in the following table. Use accents. Hyphenate if a mix of the above, and join alphabetically: Aymara-Guaraní.</p></li>
+<li><p><strong>For immigrant ethnicities</strong> use Adjective-Bolivian: Palestinian-Bolivian.</p></li>
+<li><p><strong>Foreign ethnicities of non-citizens:</strong> Adjective. <strong>Multiples:</strong> Adjective/Adjective.</p>
+<ul>
+<li><p>If there are two or more ethnicities coinciding: hyphens (or slashes for foreigners)</p></li>
+<li><p>If we are not sure which of two ethnicities we use “or”</p></li>
+<li><p>If any uncertainty, leave blank until more information is found.</p></li>
+</ul></li>
+</ul>
+<p>Image of contemporary groups provided by Wikipedia</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><img src="../images/codebook/indigenous-group-names.png" class="img-fluid figure-img" alt="List of Indigenous Peoples of Bolivia from Wikipedia"></figcaption>
+</figure>
+</div>
+<ul>
+<li><code>dec_residence</code>: Indicates place of residence, not origin</li>
+</ul>
+<p>Provide the most specific location as is know. For example, if community is known, provide community. If it is not known “Municipality” is fine; “Municipality, Department” where ambiguous. “Department” where that’s all we know.</p>
+<p>If there’s a longer story (e.g., a Huanuni miner of El Alto origin), list their current long-term residence (Huanuni, Oruro) in this field and add to the notes.</p>
+<ul>
+<li><code>dec_nationality</code>: nationality</li>
+</ul>
+<p>Proper noun of the country in English, not an adjective: Bolivia, Peru, United States, etc. Reported dual nationals get slashes: France/Bolivia.</p>
+</section>
+</section>
+<section id="affiliation" class="level2">
+<h2 class="anchored" data-anchor-id="affiliation">Affiliation</h2>
+<p><mark>To Do:</mark> specifically we need to make sure cocaleros and campesinos are coded correctly and check to see if anyone needs to be coded as private security.</p>
+<ul>
+<li><code>dec_affiliation</code>, <code>dec_spec_affiliation</code>: categorical and specific affiliation</li>
+</ul>
+<p><code>dec_affiliation</code> is a broad sectoral group. It uses the same categories as for <code>perp_affiliation</code></p>
+<p><em>Use one of the following</em></p>
+<ol type="1">
+<li><p>Cocalero</p></li>
+<li><p>Campesino (includes CSUTCB, CONAMAQ, CSCIB)</p></li>
+<li><p>Lowland Indigenous (not Quechua, Uru, or Aymara, even if members of these groups are living in the lowlands)</p></li>
+<li><p>Highland Indigenous (only Layme, Qaqachaka, Jukumani, and related communities involved in the Oruro–Potosí boundary disputes and Guerra de los Ayllus)</p></li>
+<li><p>Miner</p></li>
+<li><p>Factory Worker</p></li>
+<li><p>Transport Worker — includes taxi and trufi drivers, bus drivers, cargo truck drivers, and railworkers.</p></li>
+<li><p>Teacher —The Magisterio and the Normalistas (“teachers” in training from this perspective)</p></li>
+<li><p>Landowner — a class designation to be used when relevant, e.g., for the San Julián blockade</p></li>
+<li><p>Urban Movement (not more specifically identiifed above)</p></li>
+<li><p>Partisan, a non-officeholding militant or agent of a political party</p></li>
+<li><p>Student: Engaged in collective student protest (as a student). Protesting students in larger movements should be folded in to categories above. If not protesting but are a bystander can note student in specific affiliation category</p></li>
+<li><p>Journalist</p></li>
+<li><p>Civilian (implies non-protester)</p></li>
+<li><p>Protester (if not identifiable by one of the above categories)</p></li>
+<li><p>Security Force: Someone employed by the State, either as a police officer or within the military</p></li>
+<li><p>Private Security: Security personnel employed privately, not by the State (new and not yet recoded)</p></li>
+<li><p>Government Officeholder</p></li>
+<li><p>Government Employee (i.e., not in security forces or in an elected role)</p></li>
+<li><p>Armed Actor (member of organized armed groups, including generally politically left “guerrilla,” generally politically right “paramilitary” groups, and extra official perpetrators of violence “sicarios”)</p></li>
+<li><p>Narcotrafficker: Individual involved in drug trade</p></li>
+</ol>
+<p>We want to be able to ascertain whether any person is <em>security forces</em> (Security Force, Private Security), someone else in an organized armed organization (Armed Actor), or <em>state civilian official</em> (Government Officeholder, Government Employee) or a [non-state] <em>civilian</em>. Analysis on this nt should be possible using this variable, grouping some categories together.</p>
+<ul>
+<li><p><code>dec_spec_affiliation</code>: The name of the specific organization/party/branch of security etc. The more exact or specified affiliation emerging from the victim’s overarching affliation</p></li>
+<li><p><code>dec_title</code>: title or occupation: Refers to their title within the organization they are affiliated with. Such as rank in military or congressional position.</p></li>
+</ul>
+<p>If they are an officer within a union and the union is acting in the conflict, this is their title within the union: “Director of Conflicts,” “Vice President”. Otherwise, indicate their title at work: factory foreman. If they die as workers not engaged in collective action (e.g., victims of the fire in the El Alto municipal building), do not seek out a movement affiliation, use their job title as best you can describe it, or simply state “municipal employee.”</p>
+<p>If they are a civilian or protester, use this field to state their occupation if known.</p>
+</section>
+<section id="quasilogical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="quasilogical-variables">Quasilogical variables</h2>
+<p><em>Note:</em> The following descriptions apply to the multiple variables that assess whether a condition is true. Currently that includes: <code>victim_armed</code>, <code>weapon</code>, <code>denial</code>, <code>pol_assassination</code>, <code>state_perpetrator</code>.</p>
+<p>The options are as follows:</p>
+<ul>
+<li><p><strong>Yes</strong> <em>- sources confirm to be true.</em></p></li>
+<li><p><strong>No</strong> <em>- sources confirm to be false</em></p></li>
+<li><p><strong>Presumed Yes</strong> / <strong>Presumed No</strong> – A conclusion that we draw about the variable based on other facts of the case, in a systematic way. For example, for victim_armed, presumed yes/no *indicates that the victim falls into a category which would predispose them to having or not having a weapon even if such was not indicated.</p></li>
+<li><p><strong>Likely Yes</strong> / <strong>Likely No</strong> – Indicates that the researcher is making a judgment based on the source information provided. <em>Explanations of these judgment calls should be written in parentheses (if brief), or into the narrative for the event.</em></p></li>
+<li><p><strong>Disputed</strong> – Indicates that various sources state or imply opposite conclusions and we as researchers don’t have strong enough information to judge.</p></li>
+</ul>
+<p>If there is simply insufficient information to know the answer, leave the box blank.</p>
+<ul>
+<li><strong>Uncertain</strong> has been <mark>deprecated and should be removed from the database.</mark></li>
+</ul>
+</section>
+<section id="how" class="level2">
+<h2 class="anchored" data-anchor-id="how">How:</h2>
+<p>Variables included in this category: cause_death, cause_medical, live_ammunition, victim_armed, weapon, denial, pol_assassination, state_perpetrator﻿</p>
+<p><em>Note:</em> This is the first place where we may maintain a default set of exclusions from further analysis</p>
+<section id="cause-of-death-practical" class="level3">
+<h3 class="anchored" data-anchor-id="cause-of-death-practical">Cause of death (practical)</h3>
+<ul>
+<li><code>cause_death</code>: brief, nominal description of what (usually external) act caused the death/death causing injury: The goal is to describe the external act that happened- what was enacted on the person. For example- if a person died in a fire the cause of death would be the building burning. The Medical cause of death would be burns.</li>
+</ul>
+<p>If coinciding factors resulted in a death, a comma is used to symbolize plurality. Ex. (gunshot, impact)= (gunshot and impact).</p>
+<p>If reports consistently note two different causes of death and the exact cause is not known a slash is used to denote OR. Ex. (gunshot/beating)= (gunshot or beating).</p>
+<p>Blank spaces indicate that cause of death is unknown.</p>
+<p>Causes of death include the following. This list is not exhaustive; other categories not listed below, but included in the database are self-explanatory.</p>
+<ol type="1">
+<li><p><strong>Induced health crisis:</strong> (induced via social circumstances including extra stress due to protest conditions or previous accident or injury sustained in a political event)</p></li>
+<li><p><strong>Illness:</strong> An illness that occured during but not as a result of political events</p></li>
+<li><p><strong>Lack of necessary care:</strong> (lack of needed care due to difficulty reaching care and/or external forces preventing care. If the person was injured and then prevented from reaching necessary care, the injury is listed first in cause of death and more specific circumstances are detailed in the notes).</p></li>
+<li><p><strong>Gunshot:</strong> Fatal wound incurred from a gun (live ammunition)</p></li>
+<li><p><strong>Impact:</strong> hit with an object thrown or projected at them during protest (rocks, stones, tear gas canister). Not from a gun or interpersonal beating.</p></li>
+<li><p><strong>Assault:</strong> signifies an attack that can include both a beating and weapons such as knifes and machetes</p></li>
+<li><p><strong>Beating:</strong> No weapons were used, violent interpersonal force</p></li>
+<li><p><strong>Vehicle:</strong> Incident involving a vehicle. Specifics of death are noted in parentheses, ie: hit by car (which implies that the individual was not in a car when struck; car crash (the individual was in a car when struck); dragged (individual was not in a car when dragging occurred).</p></li>
+<li><p><strong>Explosion:</strong> Any explosion caused by a variety of weapons, (IED, gas station, grenade, dynamite, etc.)</p></li>
+<li><p><strong>Non-conflict</strong>: Indicates that the death occurred outside of a conflict or political situation</p></li>
+<li><p><strong>[Blank]:</strong> Left blank if precise cause of death is unknown</p></li>
+</ol>
+</section>
+<section id="cause-of-death-medical" class="level3">
+<h3 class="anchored" data-anchor-id="cause-of-death-medical">Cause of death (medical)</h3>
+<ul>
+<li><code>cause_medical</code>: brief, nominal description of the medical cause of the death</li>
+</ul>
+<p>A succinct medical description of why the person died; what hospitals report or what appears in an autopsy. Generally a noun phrase laden with jargon.</p>
+<p>Given the technical language, it’s generally good to keep untranslated language here, unless we are really confident of the wording.</p>
+</section>
+<section id="munition" class="level3">
+<h3 class="anchored" data-anchor-id="munition">Munition</h3>
+<p>‘munition’ assesses whether live ammunition and other dangerous explosives were used in the killing. The order below indicates both relative danger and a prioritization for coding. (That is, if someone was both shot with live ammunition and teargassed, we code “Live ammunition” (1) instead of “Tear gas” (3).)</p>
+<p>Formerly <code>live_ammunition</code>; Alluvial2.Rmd has code to deal with both cases.</p>
+<ul>
+<li><code>munition</code>: (note that explosive is a new category)</li>
+</ul>
+<p>Denotes if live ammunition was used and other categories of ammunition.</p>
+<ol type="1">
+<li><p><strong>Live ammunition:</strong> live ammunition / standard gunshot. “Bala,” “balazo,” “proyectil arma de fuego,” “raffaga” in sources all count as yes. So do descriptions involving named types of guns.</p></li>
+<li><p><strong>Explosive:</strong> Indicates an explosive not fired as a projectile: grenades, dynamite, homemade explosive device (“explosivo casero,” “cazabobos”), bomb vest.</p></li>
+<li><p><strong>Less lethal munition:</strong> non-“live ammunition” projectile. Non-lethal/less-lethal munitions (tear gas canister, rubber or wooden bullets). “Perdigón” (marble/shot), “balín” (rubber bullet/plastic bullet/shot) in description.</p></li>
+<li><p><strong>Tear gas</strong>: Tear gas (not the canister)</p></li>
+<li><p><strong>Other violence:</strong> (was <strong>“N/A”</strong>) No munitions of any kind are involved but physical violence still took place. Ex. Torture, beating, vehicle, stabbing, arson. As such, this category still indicates some form of interpersonal interaction/violence.</p></li>
+<li><p><strong>None:</strong> No weapon at all was used. Death was the result of illness or fall, drowning, electrocution, etc.</p></li>
+<li><p>[Blank] — We don’t know what weapon was used.</p></li>
+<li><p><strong>Likely [category name]</strong> as described for quasilogicals</p></li>
+<li><p>Two potential possibilties are linked with <strong>or</strong></p></li>
+</ol>
+</section>
+<section id="weapons" class="level3">
+<h3 class="anchored" data-anchor-id="weapons">Weapons</h3>
+<ul>
+<li><code>victim_armed</code>: Quasilogical on whether the decedent was armed</li>
+</ul>
+<ol type="1">
+<li><strong>Yes</strong> <em>only if</em> carrying a gun. “Presumed Yes,” if member of a security force, but we lack specific information. No if non-lethal/less-lethal munitions.</li>
+<li><strong>Disarmed</strong> — an additional value that indicates that the subject carried a lethal weapon, but was disarmed of it prior to being killed.</li>
+<li><strong>With Explosive</strong> — If the victim carried an explosive not fired as a projectile: grenades, dynamite, homemade explosive device (“explosivo casero,” “cazabobos”), bomb vest.</li>
+<li><strong>Presumed Yes</strong> — We presume that state security force members are armed. (Though obviously we don’t ignore evidence to the contrary.)<br>
+We presume that when sources describe a group the victim was part of as armed, but do not specifically note that the victim was armed, the victim was armed.</li>
+<li><strong>Presumed No</strong> — We presume uninvolved bystanders, children, and those engaged in explicitly non-confrontational protest (e.g., hunger strikers) are unarmed.</li>
+<li><strong>Likely Yes, Likely No, Disputed, blank</strong> as described for quasilogicals</li>
+</ol>
+<ul>
+<li><code>weapon</code>: What weapon was used? Nominal factor. Weapon listed when in need of clarification. If the death could have been caused by more than one option, a slash is used to indicate alternatives. Options, in priority order:</li>
+</ul>
+<ol type="1">
+<li><strong>Bullet</strong> — Always the term for gunfire with live ammunition. We’re completely un-interested in descriptions of the firing weapons. No “rifles,” “pistols” etc.</li>
+<li><strong>Less-lethal munition</strong> —If specific munition is not known “less lethal munition” is used. If specific munition is known it is listed.</li>
+<li>Non-lethal/less-lethal munitions options include: (rubber or wooden bullets). “Perdigón” (marble/shot), “balín” (rubber bullet/plastic bullet/shot) in description. Also includes bladed weapons such as knifes and machetes. But not tear gas or teargas canisters, which get their own categories.</li>
+</ol>
+<ul>
+<li><p><strong>Tear-gas canister</strong> — for effects of its physical impact</p></li>
+<li><p><strong>Tear gas</strong> (no hyphen) — for effects of inhalation</p></li>
+<li><p><strong>Explosive</strong>- cazabobos, grenade etc.</p></li>
+<li><p><strong>Projectile</strong> — things that are thrown, hurled, or slingshotted. Specific weapon listed in parentheses</p></li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Arson-</strong> Purposefully induced fire</li>
+<li><strong>Torture</strong>- Denotes that torture is specifically noted in the reports of the death. No researcher judgment was made in the term.</li>
+<li><strong>Strangulation-</strong> Some weapon was used to strangle the victim</li>
+<li><strong>Beating</strong> — no weapons, but violent interpersonal force</li>
+<li><strong>Non-conflict accident-</strong> Death was caused outside of a conflict incident</li>
+<li><strong>Fall-</strong> Denotes that the victim fell from some surface(often while fleeing conflict repression). From where the victim fell is indicated in ().</li>
+<li><strong>Vehicle:</strong> Some type of vehicle accident was involved. The type of incident is indicated in ().</li>
+<li><strong>Gas station explosion</strong></li>
+<li><strong>Stones/rocks</strong></li>
+<li><strong>None:</strong> No weapon was involved. Includes drowning, some falls etc.</li>
+<li><strong>Blank:</strong> The specific weapon used is unknown</li>
+</ol>
+<p>Priority order means that if something matches two of the options listed here, we report the first one. So yes, a tear-gas canister is a projectile, but we don’t have to say both.</p>
+</section>
+</section>
+<section id="perpetrator" class="level2">
+<h2 class="anchored" data-anchor-id="perpetrator">Perpetrator</h2>
+<ul>
+<li><code>perp_catgory</code>: Type: Individual/Group/None: Was the killing done by one person, by a group acting together, or not the result of external action.</li>
+</ul>
+<ol type="1">
+<li><strong>Individual</strong> includes solitary acts of violence. It also includes instances where a group is protesting/repressing, but only one person deploys lethal force. Also includes instances in which a conflict accident occurs (such as faulty manipulation of dynamite)</li>
+<li><strong>Group</strong> includes any time when a group is engaged in common violence towards the victim or the group the victim is a part of.</li>
+<li><strong>Self</strong> Intentionally deadly acts of self-sacrifice. Neither includes conflict accidents (such as faulty manipulation of dynamite), nor unforeseen losses in acts of self-risking protest</li>
+<li><strong>None</strong> should be used whenever there is no external act of violence: death on hunger strike, from exposure to cold, electrocution on an electric fence.</li>
+</ol>
+<ul>
+<li><code>perp_group</code> is a specific organization.</li>
+</ul>
+<p>If known, the specific branch of the military is listed. If not known, “State security” is listed. Where multiple organizations or security forces collaborate, list them all here.</p>
+<ol type="1">
+<li><strong>Presumed:</strong> Indicates that a conclusion that we draw about the variable based on other facts of the case, in a systematic way. For example, for victim_armed, presumed yes/no <em>indicates that the victim falls into a category which would predispose them to having or not having a weapon even if such was not indicated. <strong>These rules should be written into the codebook</strong>, and should be relatively strong.</em></li>
+<li><strong>Likely</strong> <em>– Indicates that the researcher is making a judgment based on the source information provided. <strong>Explanations of these judgment calls should be written in parentheses (if brief), or into the narrative for the event.</strong></em></li>
+<li>Leave blank if unclear or unknown If multiple groups involved use comma to denote AND. If unsure about potential groups involved use / to denote OR.</li>
+</ol>
+<ul>
+<li><code>perp_affiliation</code> is a broad sectoral group. Same categories as for <code>dec_affiliation</code>. See above.</li>
+</ul>
+</section>
+<section id="intentionality" class="level2">
+<h2 class="anchored" data-anchor-id="intentionality">Intentionality</h2>
+<ul>
+<li><code>intentionality</code> indicates if the violence inflicted on the victim was an intended consequence.</li>
+</ul>
+<p>Options: <em>If weapon, arson, or assault involved…</em></p>
+<ol type="1">
+<li><strong>Direct</strong>: Deadly force was used deliberately, and they were struck. This <em>includes</em> cases where the weapon (e.g.&nbsp;a teargas canister or tear gas itself) is usually nonlethal. We can assess such cases by looking at the weapons involved. This also includes victims of beatings, assaults, deaths from physical confrontations (unless the victim is a bystander). This also <em>includes</em> instances of mistaken identification.</li>
+<li><strong>Bystander</strong>: A deliberate attack that killed someone outside of the conflict (e.g.&nbsp;Victor Hugo Daza in 2000)</li>
+<li>Re: journalists, mediators, etc.: Let’s flag these as “<strong>Direct on journalist/mediator/etc</strong>” and try to see if there’s something to figure out. From what I can tell, there are several instances of deliberately targeted journalists (Encinas, the Alta Loma journalist guide, Radio Municipal death, etc.). I’m not sure there is a clear instance of a bystander.</li>
+<li><strong>Conflict Accident</strong>: Any unintended death that occurs through no deliberate attempt to harm, but which was perpetrated by someone engaging in the conflict. e.g., weapons misfires, dynamite that explodes in the hand of a protester). <em>Includes “Friendly fire”</em>: Any unintended death that was caused through acts of violence, but which was perpetrated by someone engaging in the conflict and which strikes someone with whom they are acting together.</li>
+</ol>
+<p><em>Regardless of whether a weapon was involved…</em> 5. <strong>Self-sacrifice</strong>: includes starvation in hunger strike, suicide (related to conflict incident), or intentionally self-inflicted death with a weapon . Explicitly excludes accidental self-inflicted death with a weapon (those are conflict accidents).</p>
+<p><em>When no weapon is involved…</em> 6. <strong>Conflict Accident</strong>: Any unintended death that occurs through no deliberate attempt to harm, but which was perpetrated by someone engaging in the conflict. e.g., protesters pull down a wall, but kill someone in the process; electrocution in the process of scaling a secured facility) 7. <strong>Non-conflict Accident</strong>: Any unintended death that occurs through no deliberate attempt to harm, and outside the context of open physical confrontation: e.g., car crash into a protest march (which the driver was not targeting) 8. <strong>Non-conflict:</strong> Any other death whose causes can’t be traced to acts of conflict, but for which the word “accidental” is inappropriate. Includes situations where a medical situation leads to death, but is not traceable to the privations of conflict. And situations where interpersonal violence is not related to political conflict (e.g., armed robbery), and cases of non-conflict-driven suicides. 9. <strong>Incidental</strong>: Any indirect consequence of intended acts upon the participants. Deaths from the privations of nationwide marches, or due to the follow-on trauma of police raid. (or if someone had died in Chaparina when the police blockaded the marchers and denied access to food). Includes deaths to children of participants collateral to their acts. 10. <strong>Collateral</strong>: Any indirect consequence of intended acts upon non-participants. Deaths from lack of medical attention due to blockades, consequences of re-routed plane flights, etc.</p>
+<p>&gt;&gt; Possibility of unknown or disputed causality, as in the case of Campanas during the Water War. Weapon is “hanging”; Intentionality is disputed between direct/self-sacrifice.</p>
+</section>
+<section id="where" class="level2">
+<h2 class="anchored" data-anchor-id="where">Where:</h2>
+<section id="location-information" class="level3">
+<h3 class="anchored" data-anchor-id="location-information">Location information</h3>
+<p>Use this information to create a Geo-tag if possible: We’re not implementing this for now, but it’s desirable for later in the project. Please add further information not captured in these fields to Notes.</p>
+<ul>
+<li><p><code>place</code>: A named or described place</p></li>
+<li><p><code>location_precision</code>: How specific is the geocoded address. Refers to columns to the right, not to <code>place</code></p>
+<ul>
+<li><code>address</code>: Specific address, eg: <code>1 Main St.</code><br>
+</li>
+<li><code>poi_small</code>: A small nt of interest, eg: <code>Jim's Pizza</code>.<br>
+</li>
+<li><code>intersection</code>: Intersection of two roads, eg: <code>6th Avenue and Izabel Street</code><br>
+</li>
+<li><code>block</code>: Block level address, eg: <code>100 Block of Main St.</code><br>
+</li>
+<li><code>poi_large</code>: A large nt of interest, eg: <code>Central Mall</code>.<br>
+</li>
+<li><code>road</code>: Road name, eg: <code>Glenwood Drive</code><br>
+</li>
+<li><code>community</code>: Neighborhood or rural community</li>
+<li><code>town</code>: Specifically the town or urban area associated with municipality</li>
+<li><code>rural_zone</code>: The rural portion of the place named</li>
+<li><code>municipalty</code>, <code>province</code>, <code>department</code>: Only specified to these legal areas<br>
+</li>
+<li><code>region</code>: A larger-than municipality region, like the Chapare or the La Paz Yungas.</li>
+</ul></li>
+<li><p><code>address</code>: Street Address / Intersection. A street, intersection, or street address</p></li>
+<li><p><code>community</code> Urban neighborhood or rural community</p></li>
+</ul>
+<p>Nearly all urban places have neighborhood names. Many rural communities are smaller units than municipalities.</p>
+<ul>
+<li><code>municipality</code></li>
+<li><code>province</code></li>
+<li><code>department</code></li>
+</ul>
+<p>We use Spanish accents: Potosí, not Potosi. Never write “X Municipality,” just X is fine. Complete <a href="https://en.wikipedia.org/wiki/Municipalities_of_Bolivia"><em>list of municipalities</em></a>. Complete <a href="https://en.wikipedia.org/wiki/Provinces_of_Bolivia"><em>list of provinces</em></a>, with a lovely table of municipalities and cantons (submunicipal sections). Wikipedia (usually English, sometimes German) and several other Google-able websites can locate obscure communities. Be forewarned that many new settlements (urban neighborhoods, recent agrarian settlements in Chapare and the east) are named after other ones, so do not Google a community name and “learn” from the search that it is located in another department across the country. If in doubt, check in about this.</p>
+<p>The number of municipalities in Bolivia has risen from an initial twenty-four (in 1994) to 327 (in 2005), to 337 (in April 2010), to 339 (as of August 2010). Where municipal boundaries have changed, we use specific locality to specify the current, smaller municipality. But if no information is available on a smaller scale than the municipality name, we use the named municipality. If you look up a rural community in a post-2011 reference work to find the municipality, but the event is before 2011, make a note in “complications” saying so.</p>
+<p>Provincial and departmental boundaries (where set and undisputed) have been unchanged through this period.</p>
+</section>
+</section>
+<section id="certainty-re-perpetrator" class="level2">
+<h2 class="anchored" data-anchor-id="certainty-re-perpetrator">Certainty re: Perpetrator</h2>
+<p>These fields allow us to specify the reasons for confidence in identifying who was the perpetrator of violence, the kind of information they used, and whether responsibility has been denied.</p>
+<ul>
+<li><code>highest_source</code></li>
+</ul>
+<p>The strongest source naming the perpetrator as the database does.</p>
+<ul>
+<li><code>certainty_level</code>: Level of Certainty Re Perpetrator</li>
+</ul>
+<p>Generally, Suspected &lt; Alleged &lt; Reported &lt; Audiovisual documentation &lt; Investigated &lt; Admitted &lt; Convicted. <em>Indicate highest level and explain in “Strongest Source”</em></p>
+<ol type="1">
+<li><strong>Suspected</strong> — A source suspects (without saying definitively) that a person or party was responsible for the killing</li>
+<li><strong>Alleged</strong> — A source (often non-neutral) alleges that a person or party was responsible for the killing. (Does not require a legal allegation.</li>
+<li><strong>Reported</strong> — A reputable, neutral source has stated that the person or party was responsible for the killing. This level encompasses most news reporting.</li>
+<li><strong>Audiovisual documentation</strong> — There is direct video, photographic, or (less common) audio evidences that the person or party was responsible for the killing.</li>
+<li><strong>Investigated</strong> — A reputable source has investigated the incident and concluded that the person or party was responsible for the killing.</li>
+<li><strong>Admitted</strong> — The responsible party acknowledges responsibility. Includes recorded statements, confessions, and guilty pleas. While this is a higher level of certainty, investigations that conclude this kind of evidence is inaccurate (e.g., coerced or false) may override such statements.</li>
+<li><strong>Convicted</strong> — A reputable judicial process, following a prior investigation, held the party responsible.</li>
+</ol>
+<ul>
+<li><code>denial</code> Did the perpetrator or affiliates deny responsibility?</li>
+</ul>
+<ol type="1">
+<li><strong>No</strong> — Perpetrator (or their hierarchical superior) does not deny responsibility for the injury/death. Essentially only use this when there is an admission of responsibility.</li>
+<li><strong>Yes</strong> — Perpetrator (or their hierarchical superior) denies responsibility for the injury/death or claims it from alternate causes that what victim’s family/friends/fellow protesters claim. All details should be spelled out in the denied_by column in the formats: <strong>Official Title John Q. Denier: “Quote saying we didn’t do it”</strong> or <strong>Official Title John Q. Denier (brief summary of denial story)</strong>.</li>
+<li><strong>Partial</strong> — Denied some aspect of the story-use of specific weapon or culpability. No denial of events but denial of responsibility or an aspect of the narrative.</li>
+<li><strong>Likely Yes, Likely No, Disputed, blank</strong> as described for quasilogicals</li>
+</ol>
+<p><strong>If we accept the denial as genuinely factual, we don’t include it here.</strong> In that case the falsely accused perpetrator doesn’t appear as the “perpetrator” at all.</p>
+<p>There is no pressure to convert blanks into “No.” Only <em>affirmative evidence</em> of accepted responsibility gets a no. We should expect there will be many blanks here.</p>
+<p><strong>Note on disputed vs denial:</strong> This research project takes responsibility for evaluating categorical variables. If we are indicating “disputed,” that means not only is the answer disputed, but also that we cannot resolve the dispute. On the other hand, we have a variable for “denial” in the database that will absorb explanations by interested parties that are judged implausible. There are many cases when officials (and occasionally other responsible parties) make claims that deny their responsibility and put it on the victims. Those will be recorded as full or partial denials in the denial variable, and explained in the denied_by variable. (For a detailed explanation of the thought process involved in this, see “Why I evaluated the government claims that protesters”shot one another” as a denial rather than throwing all the facts in question” <a href="https://woborders.blog/2020/01/04/2019-crisis-deaths-analysis/"><em>here</em></a>).</p>
+<ul>
+<li><code>denied_by</code> Attribute the denial to a person or institution.</li>
+</ul>
+</section>
+<section id="accountability-processes" class="level2">
+<h2 class="anchored" data-anchor-id="accountability-processes">Accountability Processes</h2>
+<p>General approach is to modify yes / no structure as described below. Unknown is blank.</p>
+<section id="disciplinary-accountability" class="level3">
+<h3 class="anchored" data-anchor-id="disciplinary-accountability">Disciplinary Accountability</h3>
+<ul>
+<li><p><code>disciplinary_acct</code> Internal accountability process within a state institution</p></li>
+<li><p><strong>Specify accountability process</strong>: e.g., <strong>Internal investigation, suspended, fired.</strong> Keep this short but tell us the topline details. e.g., <strong>“All involved officers suspended”</strong></p></li>
+<li><p><strong>No</strong> — Only when we have sources asserting no accountability.</p></li>
+</ul>
+</section>
+<section id="judicial-accountability" class="level3">
+<h3 class="anchored" data-anchor-id="judicial-accountability">Judicial Accountability</h3>
+<ul>
+<li><p><code>judicial_acct</code> Judicial process, successful or unsuccessful, domestic or international</p></li>
+<li><p><strong>Specify forum and current outcome:</strong>: e.g., <strong>Criminal indictment, US Federal Court case filed..</strong> Keep this short but tell us the topline details. Describe in detail in the notes.</p></li>
+<li><p>Eventually, we want to have clarity about when these efforts were frustrated, but for now just clearly state things like <strong>acquitted</strong>.</p></li>
+<li><p><strong>No</strong> — Only when we have sources asserting no accountability.</p></li>
+</ul>
+</section>
+<section id="other-accountability-reporting-and-compensation" class="level3">
+<h3 class="anchored" data-anchor-id="other-accountability-reporting-and-compensation">Other Accountability: Reporting and compensation</h3>
+<ul>
+<li><code>hr_report</code> Human rights reporting and investigation</li>
+</ul>
+<p>Refers only to reporting that was specific to the incident, often with an investigative team focusing on the event.</p>
+<ul>
+<li><p><code>victim_compensated</code> Material compensation for the victim’s family</p></li>
+<li><p><strong>Yes</strong> — With topline details in parentheses</p></li>
+<li><p><strong>No</strong> — If evidence or our knowledge make clear that there was no material compensation.</p></li>
+</ul>
+</section>
+</section>
+<section id="analytical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-variables">Analytical Variables</h2>
+<section id="presidential-administration" class="level3">
+<h3 class="anchored" data-anchor-id="presidential-administration">Presidential Administration</h3>
+<ul>
+<li><code>pres_admin</code> Which presidency was active during the event</li>
+</ul>
+<p>A very straightforward mapping to time period. Do not consider the “president in exercise” when a president is out of the country. Should match list on the “By Presidency” tab.</p>
+<ul>
+<li>René Barrientos</li>
+<li>Luis Adolfo Siles Salinas</li>
+<li>Alfredo Ovando Candía</li>
+<li>Juan José Torres</li>
+<li>Hugo Banzer (1st)</li>
+<li>Juan Pereda</li>
+<li>David Padilla (Chairman of the Military Junta)</li>
+<li>Wálter Guevara</li>
+<li>Alberto Natusch</li>
+<li>Lydia Gueiler Tejada</li>
+<li>Luis García Meza Tejada (2nd)</li>
+<li>Junta of Commanders of the Armed Forces 1981</li>
+<li>Celso Torrelio</li>
+<li>Guido Vildoso</li>
+<li>Hernán Siles Zuazo</li>
+<li>Víctor Paz Estenssoro</li>
+<li>Jaime Paz Zamora</li>
+<li>Gonzalo Sanchez de Lozada (1st)</li>
+<li>Hugo Banzer (2nd)</li>
+<li>Jorge Quiroga</li>
+<li>Gonzalo Sanchez de Lozada (2nd)</li>
+<li>Carlos Diego Mesa Gisbert</li>
+<li>Eduardo Rodriguez</li>
+<li>Evo Morales</li>
+<li>Interim military government</li>
+<li>Jeanine Áñez</li>
+<li>Luis Arce</li>
+</ul>
+<p><mark>These names—imported from Wikipedia—have some inconsistencies in the Spanish naming conventions, as well as confusion about why we’ve numbered Banzer “2nd” (he served before the study period). While we’ve deferred to them so far, we should probably clean them up and make required changes to the code before our release.</mark></p>
+</section>
+<section id="protest-campaign-and-domain" class="level3">
+<h3 class="anchored" data-anchor-id="protest-campaign-and-domain">Protest campaign and domain</h3>
+<p>Generally, there will be a nesting of event_title, protest_campaign, protest_domain.</p>
+<ul>
+<li><code>protest_campaign</code>: A unique identifier that indicates the specific topic over which conflict emerged. Campaign is determined through identifying overarching demands, complaints, or tension that sparked the conflict.</li>
+</ul>
+<p>This field is left blank in cases where the victim died in custody, enough information is not known to detail a specific campaign, or in non-conflict related accidents such as the journalist suicide with explosive device.</p>
+<ul>
+<li><code>protest_domain</code> Broad arena of political struggle, combining multiple campaigns.</li>
+</ul>
+<p>Explanations given for domains as needed (if they are not self implied)</p>
+<p>Current list: - Coca: Conflicts involving disputes over right to grow coca - Gas wars - Rural Land: Conflicts over territorial borders/boundaries occurring in rural areas. For example, the Laymi-Qaqachaka confrontations. - Partisan Politics - Mining - Economic Policies - Labor - Peasant - Municipal governance: Disputes or conflicts over elected officials in the municipal government. - Urban land: Conflicts over territorial borders or land ownership in urban areas. For example, the Pampa San Miguel urban land conflict. - Drug Trade - Guerilla - Ethno-Ecological: Mobilizations over the protection of the environment and/or protection or authority over cultural connections to land and environmental resources. For example, the TIPNIS mobilizations. - Local Development - Disabled: Mobilizations surrounding the rights of those with disabilities - Paramilitary - Contraband - Education</p>
+</section>
+<section id="political-assassination" class="level3">
+<h3 class="anchored" data-anchor-id="political-assassination">Political Assassination</h3>
+<ul>
+<li><code>pol_assassination</code>: Quasilogical. We define “political assassinations” as targeted killings of persons in organizational leadership or political office. Includes cases where the killing is carried out amid a larger scenario but in a highly targeted fashion.</li>
+</ul>
+<ol type="1">
+<li><strong>Yes</strong></li>
+<li><strong>No</strong></li>
+<li><strong>Likely Yes</strong> <em>– as described for quasilogicals</em></li>
+<li><strong>Possibly Yes</strong> <em>— Indicates that evidence (typically evidence that the murder was politically motivated) is limited, but the act could be assassination.</em></li>
+</ol>
+</section>
+<section id="state-responsibility-three-variables" class="level3">
+<h3 class="anchored" data-anchor-id="state-responsibility-three-variables">State responsibility: three variables</h3>
+<ul>
+<li><code>state_perpetrator</code>: Were state security forces the perpetrator Quasilogical. Addresses the narrow question of whether state security forces carried out the killing.</li>
+</ul>
+<ol type="1">
+<li><strong>Yes</strong></li>
+<li><strong>No</strong></li>
+<li><strong>Likely Yes, Likely No</strong> <em>– as described for quasilogicals</em></li>
+<li><strong>Disputed</strong> – <em>as described for quasilogicals, opposing narratives and we can’t decide</em></li>
+</ol>
+<p><strong>Reminder:</strong> Presumed categories refer to conclusions we draw for reasons listed here in the codebook</p>
+<ol start="5" type="1">
+<li><strong>Presumed Yes</strong> — When a short textual source uses the passive voice (“resultó muerto”) regarding the death of a non-state actor in a security forces vs.&nbsp;movement confrontation..</li>
+<li><strong>Presumed No</strong> — Deaths of non-state actors described as due to nearly exclusively non-state weapons such as rocks or dynamite</li>
+<li><strong>Indirect</strong> — When a State security force did not directly inflict harm through physical violence but actively contributed to the death through their actions (involvement in repression). For example, if a victim was fleeing state repression and fell or were trampled etc.</li>
+</ol>
+<ul>
+<li><code>state_responsibility</code>: Categorical characterization of state responsibility</li>
+</ul>
+<p>This categorical characterization does <strong>not</strong> take qualifiers like “likely”, “presumed”, etc. They can be found in <code>state_perpetrator</code> and in <code>intentionality</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/codebook/state-responsibility-tally.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Tally of state responsibility values on December 6, 2022</figcaption>
+</figure>
+</div>
+<p><mark>In analyzing the data, we’ve found it necessary to add more categories related to security forces in mutiny, so as to sort out state responsibility from non-state-coordinated action by security forces.</mark></p>
+<ol type="1">
+<li><strong>State perpetrator</strong>: A state actor is responsible for the action that caused the victim’s death. <mark>Assertive programming should verify that this coincides with one of the “Yes” categories for <code>state_perpetrator</code>.</mark></li>
+<li><strong>State victim</strong></li>
+<li><strong>Separate from state:</strong> Mobilization and conflict does not involve State actors or mobilizations against governmental policies</li>
+<li><strong>State involved</strong>: Though a State actor did not commit the act responsible for the victim’s death, the State was involved in crafting the conditions in which the conflict emerged.</li>
+<li><strong>Political Victim:</strong> The victim held an elected position in government</li>
+</ol>
+<ul>
+<li><code>state_failure</code>: Brief explanation of state failures that contributed to deaths. Variable consists of a textual explanation.</li>
+</ul>
+<p><em>Unnecessary when state responsibility takes the form of State perpetrator</em>, but occasionally a valuable addition. For example, if some state oversight create a situation where state violence was more likely.</p>
+<ul>
+<li><p><strong>Unpoliced situation</strong> — Indicates that deadly violence among non-state actors was predictable, but the State took no meaningful action.</p></li>
+<li><p>Try to summarize multiple failures as in ““Dept govt employees among perpetrators, armed state allies present, policing failures”</p></li>
+</ul>
+</section>
+</section>
+<section id="affiliation-during-periods-of-polarization" class="level2">
+<h2 class="anchored" data-anchor-id="affiliation-during-periods-of-polarization">Affiliation during periods of polarization</h2>
+<ul>
+<li><code>Perp_pol_stalemate</code>, <code>Dec_pol_stalemate</code></li>
+</ul>
+<p><strong>During the Catastrophic Stalemate 2006-2009</strong></p>
+<ul>
+<li><p>Perpetrator Political Affiliation: Left Grassroots <em>or</em> Civic Movement <em>or</em> National Government</p></li>
+<li><p>Victim Political Affiliation: Left Grassroots <em>or</em> Civic Movement <em>or</em> National Government</p></li>
+</ul>
+<p><em>Let me explain these categories:</em> during the three years of intense polarization between the election of the country’s first indigenous president in December 2005 and the declaration of a plurinational Bolivia under a new constitution in February 2009. This “catastrophic stalemate” was a deadlock between a broad coalition of the rural and urban indigenous peoples, movements of the poor and working class (collectively, the “left grassroots”) and the Morales’ Movement Toward Socialism (MAS-IPSP) party on one side, and a political opposition backed by right-wing “civic movements” calling for regional autonomy from that government. While the heart of the right’s resistance to the Morales government was the eastern departments (Santa Cruz, Beni, Pando, and Tarija), major episodes occurred in the central cities of Cochabamba and Sucre. In Santa Cruz, Cochabamba, and Beni, (and possibly Pando and Tarija) there’s a departmental Civic Committee at the heart of the civic movement. However, in Potosí there is an a political active civic committee whose positioning is solidly with the left grassroots.</p>
+<p><strong>During the 2019 Political Crisis</strong></p>
+<ul>
+<li><p>Perpetrator Political Affiliation: Pro-MAS <em>or</em> Anti-MAS <em>or</em> Security Forces</p></li>
+<li><p>Victim Political Affiliation: Pro-MAS or Anti-MAS or Security Forces <em>or</em> Bystander <em>or</em> Other Protest (i.e., participating in a protest not part of the crisis)</p></li>
+</ul>
+</section>
+<section id="narrative-details" class="level2">
+<h2 class="anchored" data-anchor-id="narrative-details">Narrative details</h2>
+<p><mark>Meta-comment about cleaing up the following… While this is all important material for producing the borader archive, the R package simply skips over the narrative variables, so we don’t have to complete this to complete and release the R package.</mark></p>
+<section id="complications" class="level3">
+<h3 class="anchored" data-anchor-id="complications">Complications</h3>
+<ul>
+<li><code>complications</code> Text. Indicate anything that makes one of the variables difficult to code here. Say if we need to rethink our coding options to cover this case. Also report unresolved uncertainties.</li>
+</ul>
+<p>Note that we also have a text file called “Complex cases” that absorbs additional coding complications</p>
+</section>
+<section id="notesnarratives" class="level3">
+<h3 class="anchored" data-anchor-id="notesnarratives">Notes/Narratives</h3>
+<ul>
+<li><code>notes</code> Brief narratives. Sequences of quoted text.</li>
+</ul>
+<p>Since a database text field is an awkward place for extended text, these should eventually be saved into separate Markdown files which can have proper citations.</p>
+<p>Quotes ultimately belong there, in those files, not here.</p>
+<p><mark>Currently, there are cited narratives written on a one-per-event basis. These exist alongside these notes sections. Eventually, it probably makes the most sense to build a library and a file structure of such documents. This will involve untangling the writing and referencing here. Perhaps there will be both overall narratives and specific material attached to individuals.</mark></p>
+<p><mark> Going further, we may create a lookup table by individual to such event files, as well as to photos, testimonial accounts (or more likely, the metadata for these will have nters to individuals in the dataset), and other person-specific data. However, this will go along with the creation of unique identifiers for persons in the project, which is one more thing that may require a re-factoring of the dataset import process.</mark></p>
+</section>
+<section id="bibliographic-references" class="level3">
+<h3 class="anchored" data-anchor-id="bibliographic-references">Bibliographic references</h3>
+<ul>
+<li><code>refs</code>: References.</li>
+</ul>
+<p>A list of referenced materials. Separate with |</p>
+<p>Acceptable formats:</p>
+<ul>
+<li><p>Commonly reused sources in <strong>Author Date:Page</strong> format. For example, Miranda 2013:37.</p></li>
+<li><p>Full bibliographic entry, generated by Zotero, with the source stored in our shared library. Ideally in Chicago (full note) format. Use this format for newspaper articles photographed in archives.</p></li>
+<li><p>Bare URLs for references. There are lots of these, but we want to store them all in Zotero and replace them with full references, as well as get “snapshots” of the material into the Zotero library. <mark>It would be incredibly nice to innovate a script or workflow that harvests these URLs, keeps track of where they appeared, checks for valid online data, adds bibliographic entries to Zotero, and ultimately replaces the bare URLs with proper citations.</mark></p></li>
+</ul>
+</section>
+<section id="follow-ups-and-cross-references" class="level3">
+<h3 class="anchored" data-anchor-id="follow-ups-and-cross-references">Follow-ups and cross-references</h3>
+<ul>
+<li><code>see_also</code>: Follow-ups and cross-references</li>
+</ul>
+<p>Use this column to refer to: - Bibliographic references (formatted as in refs) to sources that do not describe the death, but do describe memorial events, commemorations, statues, and other sequelae to the death.</p>
+<ul>
+<li><p>Cross-references to other deaths: Indicate briefly and clearly the relationship to another death</p></li>
+<li><p>Joining several deaths to the same sub-event, for example among the many deaths of the Sep-Oct 2003 Gas War.</p></li>
+</ul>
+</section>
+<section id="external-cross-reference-navarro-2006" class="level3">
+<h3 class="anchored" data-anchor-id="external-cross-reference-navarro-2006">External cross-reference: Navarro 2006</h3>
+<ul>
+<li><code>navarro_2006_number</code>: Place in Navarro 2006’s numbered list</li>
+</ul>
+<p>There is a mulitpage numbered list of deaths in Navarro Miranda, César. <em>Crímenes de la democracia neoliberal y movimientos sociales: desde la masacre de Villa Tunari a El Alto</em>. La Paz: Fondo Editorial de los Diputados, 2006.</p>
+<p>This column tracks which deaths listed there appear in which lines in our dataset. Several discrepancies have been identified as we have researched this list.</p>
+</section>
+</section>
+<section id="deprecated-variables" class="level2">
+<h2 class="anchored" data-anchor-id="deprecated-variables">Deprecated variables</h2>
+<p>These variables are no longer in use in the database.</p>
+<section id="killings-in-cold-blood" class="level3">
+<h3 class="anchored" data-anchor-id="killings-in-cold-blood">Killings in “cold blood”</h3>
+<ul>
+<li><code>coldblood</code>: Quasilogical Was this a “cold blood” killing?</li>
+</ul>
+<p>This is one possible emergent categories that do correspond to individual deaths. <mark>Clarify definitions and consider whether to focus first on the narrower “repressive overkill” term. This will not be in the first public release of the dataset.</mark></p>
+</section>
+<section id="outcome-variables" class="level3">
+<h3 class="anchored" data-anchor-id="outcome-variables">Outcome variables</h3>
+<p><mark>We should deprecate these variables and rewrite the code so they aren’t considered. A different implementation has already been accomplished by creating relevant columns on the “Event Status” page.</mark> * <code>repression_success</code>: Did the repressions succeed? Categorical, with three options. - <strong>Repression success</strong></p>
+<ul>
+<li><p><strong>Movement success</strong></p></li>
+<li><p><strong>Partial movement success</strong></p></li>
+<li><p><code>outcomes</code>: Capsule summary of protest event outcome</p></li>
+</ul>
+</section>
+</section>
+<section id="variables-under-development" class="level2">
+<h2 class="anchored" data-anchor-id="variables-under-development">Variables under development</h2>
+<p>None right now.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../ultimate-consequences/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Ultimate Consequences</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../ultimate-consequences/Project-Overview.html" class="pagination-link">
+        <span class="nav-page-text">Ultimate Consequences Project Overview</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© CC-By Openscapes, 2022</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>
