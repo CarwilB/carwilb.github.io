@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Carwil Bjork-James">
 
 <title>Quarto Website Testbed - Codebook for Ultimate Consequences</title>
 <style>
@@ -191,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-variables-and-coding-advice" id="toc-data-variables-and-coding-advice" class="nav-link active" data-scroll-target="#data-variables-and-coding-advice">Data Variables and Coding Advice</a>
+  <li><a href="#variables-used-in-the-project" id="toc-variables-used-in-the-project" class="nav-link active" data-scroll-target="#variables-used-in-the-project">Variables Used in the Project</a>
   <ul class="collapse">
   <li><a href="#events" id="toc-events" class="nav-link" data-scroll-target="#events">Events:</a>
   <ul class="collapse">
@@ -209,7 +210,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#demographic-characteristics" id="toc-demographic-characteristics" class="nav-link" data-scroll-target="#demographic-characteristics">Demographic characteristics</a></li>
   </ul></li>
   <li><a href="#affiliation" id="toc-affiliation" class="nav-link" data-scroll-target="#affiliation">Affiliation</a></li>
-  <li><a href="#quasilogical-variables" id="toc-quasilogical-variables" class="nav-link" data-scroll-target="#quasilogical-variables">Quasilogical variables</a></li>
   <li><a href="#how" id="toc-how" class="nav-link" data-scroll-target="#how">How:</a>
   <ul class="collapse">
   <li><a href="#cause-of-death-practical" id="toc-cause-of-death-practical" class="nav-link" data-scroll-target="#cause-of-death-practical">Cause of death (practical)</a></li>
@@ -246,6 +246,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#follow-ups-and-cross-references" id="toc-follow-ups-and-cross-references" class="nav-link" data-scroll-target="#follow-ups-and-cross-references">Follow-ups and cross-references</a></li>
   <li><a href="#external-cross-reference-navarro-2006" id="toc-external-cross-reference-navarro-2006" class="nav-link" data-scroll-target="#external-cross-reference-navarro-2006">External cross-reference: Navarro 2006</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#additional-coding-advice" id="toc-additional-coding-advice" class="nav-link" data-scroll-target="#additional-coding-advice">Additional Coding Advice</a>
+  <ul class="collapse">
+  <li><a href="#quasilogical-variables" id="toc-quasilogical-variables" class="nav-link" data-scroll-target="#quasilogical-variables">Quasilogical variables</a></li>
   <li><a href="#deprecated-variables" id="toc-deprecated-variables" class="nav-link" data-scroll-target="#deprecated-variables">Deprecated variables</a>
   <ul class="collapse">
   <li><a href="#killings-in-cold-blood" id="toc-killings-in-cold-blood" class="nav-link" data-scroll-target="#killings-in-cold-blood">Killings in “cold blood”</a></li>
@@ -268,7 +272,19 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Carwil Bjork-James </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">7/12/23</p>
+    </div>
+  </div>
   
     
   </div>
@@ -276,9 +292,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="data-variables-and-coding-advice" class="level1">
-<h1>Data Variables and Coding Advice</h1>
-<p>An initial spreadsheet of when, who, where, how, responsible party, in order of left to right in spreadsheet</p>
+<section id="variables-used-in-the-project" class="level1">
+<h1>Variables Used in the Project</h1>
 <section id="events" class="level2">
 <h2 class="anchored" data-anchor-id="events">Events:</h2>
 <p>The database treats events as a fundamental unit. <em>Event</em> is a term with many definitions in the study of social movements and contentious politics from the pivotal historical moment to the action at a single time and place as recorded by news media, but the meaning used in the database is perhaps best captured by Charles Tilly’s term <em>episodes</em>: “bounded sequences of continuous interaction.” Bolivian mass mobilisation is organized in a routine sequence — collective organisation, mass mobilisation, escalation of tactics, negotiation, and concessions — and organizers work to propel the process forward repeatedly until the target, usually the government, gives in. Repressive force seeks to interrupt this process, usually by punishing movements in the mobilisation or escalation stages. For purposes of the database, we treat a relatively continuous series of actions as a single episode or event, unless and until it is interrupted by demobilisation.</p>
@@ -448,22 +463,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>If they are an officer within a union and the union is acting in the conflict, this is their title within the union: “Director of Conflicts,” “Vice President”. Otherwise, indicate their title at work: factory foreman. If they die as workers not engaged in collective action (e.g., victims of the fire in the El Alto municipal building), do not seek out a movement affiliation, use their job title as best you can describe it, or simply state “municipal employee.”</p>
 <p>If they are a civilian or protester, use this field to state their occupation if known.</p>
-</section>
-<section id="quasilogical-variables" class="level2">
-<h2 class="anchored" data-anchor-id="quasilogical-variables">Quasilogical variables</h2>
-<p><em>Note:</em> The following descriptions apply to the multiple variables that assess whether a condition is true. Currently that includes: <code>victim_armed</code>, <code>weapon</code>, <code>denial</code>, <code>pol_assassination</code>, <code>state_perpetrator</code>.</p>
-<p>The options are as follows:</p>
-<ul>
-<li><p><strong>Yes</strong> <em>- sources confirm to be true.</em></p></li>
-<li><p><strong>No</strong> <em>- sources confirm to be false</em></p></li>
-<li><p><strong>Presumed Yes</strong> / <strong>Presumed No</strong> – A conclusion that we draw about the variable based on other facts of the case, in a systematic way. For example, for victim_armed, presumed yes/no *indicates that the victim falls into a category which would predispose them to having or not having a weapon even if such was not indicated.</p></li>
-<li><p><strong>Likely Yes</strong> / <strong>Likely No</strong> – Indicates that the researcher is making a judgment based on the source information provided. <em>Explanations of these judgment calls should be written in parentheses (if brief), or into the narrative for the event.</em></p></li>
-<li><p><strong>Disputed</strong> – Indicates that various sources state or imply opposite conclusions and we as researchers don’t have strong enough information to judge.</p></li>
-</ul>
-<p>If there is simply insufficient information to know the answer, leave the box blank.</p>
-<ul>
-<li><strong>Uncertain</strong> has been <mark>deprecated and should be removed from the database.</mark></li>
-</ul>
 </section>
 <section id="how" class="level2">
 <h2 class="anchored" data-anchor-id="how">How:</h2>
@@ -893,6 +892,25 @@ We presume that when sources describe a group the victim was part of as armed, b
 <p>There is a mulitpage numbered list of deaths in Navarro Miranda, César. <em>Crímenes de la democracia neoliberal y movimientos sociales: desde la masacre de Villa Tunari a El Alto</em>. La Paz: Fondo Editorial de los Diputados, 2006.</p>
 <p>This column tracks which deaths listed there appear in which lines in our dataset. Several discrepancies have been identified as we have researched this list.</p>
 </section>
+</section>
+</section>
+<section id="additional-coding-advice" class="level1">
+<h1>Additional Coding Advice</h1>
+<section id="quasilogical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="quasilogical-variables">Quasilogical variables</h2>
+<p><em>Note:</em> The following descriptions apply to the multiple variables that assess whether a condition is true. Currently that includes: <code>victim_armed</code>, <code>weapon</code>, <code>denial</code>, <code>pol_assassination</code>, <code>state_perpetrator</code>.</p>
+<p>The options are as follows:</p>
+<ul>
+<li><p><strong>Yes</strong> <em>- sources confirm to be true.</em></p></li>
+<li><p><strong>No</strong> <em>- sources confirm to be false</em></p></li>
+<li><p><strong>Presumed Yes</strong> / <strong>Presumed No</strong> – A conclusion that we draw about the variable based on other facts of the case, in a systematic way. For example, for victim_armed, presumed yes/no *indicates that the victim falls into a category which would predispose them to having or not having a weapon even if such was not indicated.</p></li>
+<li><p><strong>Likely Yes</strong> / <strong>Likely No</strong> – Indicates that the researcher is making a judgment based on the source information provided. <em>Explanations of these judgment calls should be written in parentheses (if brief), or into the narrative for the event.</em></p></li>
+<li><p><strong>Disputed</strong> – Indicates that various sources state or imply opposite conclusions and we as researchers don’t have strong enough information to judge.</p></li>
+</ul>
+<p>If there is simply insufficient information to know the answer, leave the box blank.</p>
+<ul>
+<li><strong>Uncertain</strong> has been <mark>deprecated and should be removed from the database.</mark></li>
+</ul>
 </section>
 <section id="deprecated-variables" class="level2">
 <h2 class="anchored" data-anchor-id="deprecated-variables">Deprecated variables</h2>

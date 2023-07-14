@@ -1,11 +1,12 @@
 ---
 title: Codebook for Ultimate Consequences
-nav_exclude: true
+author: Carwil Bjork-James
+affiliation: Vanderbilt University
+date: 2023-07-12
+date-format: short
 ---
 
-# Data Variables and Coding Advice
-
-An initial spreadsheet of when, who, where, how, responsible party, in order of left to right in spreadsheet
+# Variables Used in the Project
 
 ## Events:
 
@@ -205,26 +206,6 @@ We want to be able to ascertain whether any person is *security forces* (Securit
 If they are an officer within a union and the union is acting in the conflict, this is their title within the union: "Director of Conflicts," "Vice President". Otherwise, indicate their title at work: factory foreman. If they die as workers not engaged in collective action (e.g., victims of the fire in the El Alto municipal building), do not seek out a movement affiliation, use their job title as best you can describe it, or simply state "municipal employee."
 
 If they are a civilian or protester, use this field to state their occupation if known.
-
-## Quasilogical variables
-
-*Note:* The following descriptions apply to the multiple variables that assess whether a condition is true. Currently that includes: `victim_armed`, `weapon`, `denial`, `pol_assassination`, `state_perpetrator`.
-
-The options are as follows:
-
--   **Yes** *- sources confirm to be true.*
-
--   **No** *- sources confirm to be false*
-
--   **Presumed Yes** / **Presumed No** -- A conclusion that we draw about the variable based on other facts of the case, in a systematic way. For example, for victim_armed, presumed yes/no \*indicates that the victim falls into a category which would predispose them to having or not having a weapon even if such was not indicated.
-
--   **Likely Yes** / **Likely No** -- Indicates that the researcher is making a judgment based on the source information provided. *Explanations of these judgment calls should be written in parentheses (if brief), or into the narrative for the event.*
-
--   **Disputed** -- Indicates that various sources state or imply opposite conclusions and we as researchers don't have strong enough information to judge.
-
-If there is simply insufficient information to know the answer, leave the box blank.
-
--   **Uncertain** has been <mark>deprecated and should be removed from the database.</mark>
 
 ## How:
 
@@ -654,6 +635,28 @@ Use this column to refer to: - Bibliographic references (formatted as in refs) t
 There is a mulitpage numbered list of deaths in Navarro Miranda, César. *Crímenes de la democracia neoliberal y movimientos sociales: desde la masacre de Villa Tunari a El Alto*. La Paz: Fondo Editorial de los Diputados, 2006.
 
 This column tracks which deaths listed there appear in which lines in our dataset. Several discrepancies have been identified as we have researched this list.
+
+# Additional Coding Advice
+
+## Quasilogical variables
+
+*Note:* The following descriptions apply to the multiple variables that assess whether a condition is true. Currently that includes: `victim_armed`, `weapon`, `denial`, `pol_assassination`, `state_perpetrator`.
+
+The options are as follows:
+
+-   **Yes** *- sources confirm to be true.*
+
+-   **No** *- sources confirm to be false*
+
+-   **Presumed Yes** / **Presumed No** -- A conclusion that we draw about the variable based on other facts of the case, in a systematic way. For example, for victim_armed, presumed yes/no \*indicates that the victim falls into a category which would predispose them to having or not having a weapon even if such was not indicated.
+
+-   **Likely Yes** / **Likely No** -- Indicates that the researcher is making a judgment based on the source information provided. *Explanations of these judgment calls should be written in parentheses (if brief), or into the narrative for the event.*
+
+-   **Disputed** -- Indicates that various sources state or imply opposite conclusions and we as researchers don't have strong enough information to judge.
+
+If there is simply insufficient information to know the answer, leave the box blank.
+
+-   **Uncertain** has been <mark>deprecated and should be removed from the database.</mark>
 
 ## Deprecated variables
 
