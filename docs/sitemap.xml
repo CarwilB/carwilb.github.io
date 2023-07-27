@@ -2,50 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://carwilb.github.io/quarto-website/quarto-workflows/rstudio.html</loc>
-    <lastmod>2023-07-12T04:05:47.516Z</lastmod>
+    <lastmod>2023-07-27T06:02:34.806Z</lastmod>
   </url>
   <url>
     <loc>https://carwilb.github.io/quarto-website/quarto-workflows/jupyter.html</loc>
-    <lastmod>2023-07-12T04:05:46.521Z</lastmod>
+    <lastmod>2023-07-27T06:02:33.791Z</lastmod>
   </url>
   <url>
     <loc>https://carwilb.github.io/quarto-website/explore.html</loc>
-    <lastmod>2023-07-12T04:05:45.494Z</lastmod>
+    <lastmod>2023-07-27T06:02:32.725Z</lastmod>
   </url>
   <url>
     <loc>https://carwilb.github.io/quarto-website/index.html</loc>
-    <lastmod>2023-07-13T00:57:20.891Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Codebook-current.html</loc>
-    <lastmod>2023-07-13T23:43:03.199Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Nested-Table.html</loc>
-    <lastmod>2023-07-12T04:05:40.907Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carwilb.github.io/quarto-website/transition-from-rmarkdown.html</loc>
-    <lastmod>2023-07-12T04:05:36.880Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/index.html</loc>
-    <lastmod>2023-07-13T00:57:25.450Z</lastmod>
+    <lastmod>2023-07-27T06:02:31.681Z</lastmod>
   </url>
   <url>
     <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Project-Overview.html</loc>
-    <lastmod>2023-07-12T04:05:44.038Z</lastmod>
+    <lastmod>2023-07-27T06:02:30.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/index.html</loc>
+    <lastmod>2023-07-27T06:02:27.765Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Methodology.html</loc>
+    <lastmod>2023-07-27T06:02:24.176Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/WLRF-Tables.html</loc>
+    <lastmod>2023-07-27T06:02:23.133Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carwilb.github.io/quarto-website/transition-from-rmarkdown.html</loc>
+    <lastmod>2023-07-27T06:02:09.883Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Visualizations.html</loc>
+    <lastmod>2023-07-27T06:02:23.590Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Nested-Table.html</loc>
+    <lastmod>2023-07-27T06:02:27.259Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Codebook-current.html</loc>
+    <lastmod>2023-07-27T06:02:30.068Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/About.html</loc>
+    <lastmod>2023-07-27T06:02:31.195Z</lastmod>
   </url>
   <url>
     <loc>https://carwilb.github.io/quarto-website/learning-more.html</loc>
-    <lastmod>2023-07-12T04:05:44.845Z</lastmod>
+    <lastmod>2023-07-27T06:02:32.057Z</lastmod>
   </url>
   <url>
     <loc>https://carwilb.github.io/quarto-website/quarto-workflows/browser.html</loc>
-    <lastmod>2023-07-12T04:05:45.889Z</lastmod>
+    <lastmod>2023-07-27T06:02:33.172Z</lastmod>
   </url>
   <url>
     <loc>https://carwilb.github.io/quarto-website/quarto-workflows/index.html</loc>
-    <lastmod>2023-07-12T04:05:46.989Z</lastmod>
+    <lastmod>2023-07-27T06:02:34.276Z</lastmod>
   </url>
 </urlset>

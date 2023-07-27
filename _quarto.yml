@@ -41,9 +41,13 @@ website:
       - explore.qmd
       - section: ultimate-consequences/index.md
         contents: 
+          - ultimate-consequences/About.Rmd
+          - ultimate-consequences/Methodology.Rmd
           - ultimate-consequences/Codebook-current.md
           - ultimate-consequences/Project-Overview.md
           - ultimate-consequences/Nested-Table.Rmd
+          - ultimate-consequences/Visualizations.Rmd
+          - ultimate-consequences/WLRF-Tables.Rmd
       - section: quarto-workflows/index.md
         contents: 
           - quarto-workflows/browser.md

@@ -1,0 +1,1327 @@
+---
+title: "Data Analysis for When Does Lethal Repression Fail?"
+output:
+  html_document:
+    df_print: tibble
+---
+
+```{css, echo=FALSE}
+.smaller-code {
+  background-color: seashell;
+  border: 1px solid grey;
+  font-size: 12px;
+}
+
+.watch-out {
+  background-color: lightpink;
+  border: 3px solid red;
+  font-weight: bold;
+}
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(class.source = "smaller-code")
+options(width = 800)
+```
+
+```{r libraries, include=FALSE}
+library(googlesheets4)
+library(googledrive)
+library(tidyr)
+library(readr)
+library(dplyr)
+library(stringr)
+library(RColorBrewer)
+library(reactable)      # interactive table
+library(reactablefmtr)  # custom formatting of reactable
+library(grDevices)      # color names
+library(skimr)
+library(scales)
+library(flextable)
+
+```
+
+This page is supplementary material to Carwil Bjork-James's article, **"When does lethal repression fail? Unarmed militancy and backfire in Bolivia, 1982–2019,"** to be published in the Bolivian Studies Journal.
+
+All queries and data tables referenced in the article are compiled in WLRF-Tables.Rmd in the Ultimate Consequences package on GitHub, using the database as constituted on May 12, 2022. A copy of the database on that date is archived for reproducibility of the analysis as `data/deaths-entries-2022-05-12.rds`. Access is currently available to researchers on request and will be incorporated into the forthcoming public release of the dataset. The queries, data tables, and code used to create them are published online at <https://ultimateconsequences.github.io/WLRF-Tables.html>.
+
+This document is designed to enable transparency and reproducibility of our research results. By specifying our search criteria for relevant cases, explaining exceptions, and embedding our analysis techniques in R scripts that use the database, we document our choices and create tools that can automatically update results when additional cases are uncovered, errors are corrected, or new information is brought to light. Archiving and versioning of the database and these tools allows other researchers to both reproduce our results, and test their robustness against different choices in coding or analysis.
+
+This document is divided into two parts. Unless you are attempting to reproduce our results from the dataset, feel free to skip over **Preparatory Code Blocks**, and begin reading at **Calculations and Queries Used in the Article**. Here is [a cleaner version of this page]() without the embedded code blocks.
+
+For more information about the Ultimate Consequences research project, database, and future testimonial archive, head to [our Project Overview page](%5B%3Chttps://my.vanderbilt.edu/cbjorkjames/2021/09/ultimate-consequences-project-overview/%3E).
+
+# Preparatory Code Blocks
+
+The following sections show all code in R needed to read and process the database. It is included here to allow researchers using R to reproduce the analysis from an archived copy of the dataset. Similarly, text below documents the standard importing, filtering, and processing of the data.
+
+## Importing data
+
+Deaths are imported from the Google Sheet using your standard import process.
+
+This code segment applies a set of standard filters:
+
+-   Culling out currently inactive variables using `select`
+
+-   Segmenting out parenthetical annotations using `separate`: `Answer (explanation)` is split into two separate variables, the first holding a categorical variable, and the second holding the corresponding notes.
+
+-   Filtering, using `filter`, to remove the following cases:
+
+    :   -   `unconfirmed` is a flag for deaths in range of death totals. So if there were "five to eight people killed," the last three deaths have TRUE in `unconfirmed`.
+
+    :   -   We also filter out "Collateral" and "Nonconflict Accident" cases in `Intentionality`. These cases are both peripheral to some of the purposes of the database. Significantly for comparisons over the long-term, we think that these kinds of deaths are unevenly distributed over time.
+
+Throughout this process, we are creating two parallel variables, one that includes all the deaths recorded in the database and a second that is filtered down to what we will call "confirmed" and intentional deaths. In this block of code those are called `de` and `def`. Later they will be caled `deaths_unfiltered` and `deaths`. Using two variables allows us to output ranges of uncertainty inside our tables.
+
+```{r import-settings, echo=FALSE}
+live.import <- FALSE
+live.import.es <- FALSE # The event status table is relatively volatile, 
+                        # so only switch this on when we need new outcome data
+
+de.filename <- "data/deaths-entries-2022-05-12.rds"
+pt.filename <- "data/presidents-table-2022-05-03.rds"
+es.filename <- "data/event-status-2022-05-14.rds"
+
+use.current.archive <- FALSE # This flag should be set to true when
+                             # the above filenames do not have a date
+use.current.es.archive <- FALSE # This flag should be set to true when
+                                # es.filename does not have a date
+```
+
+```{r import, echo=FALSE}
+library(here)
+
+source(here::here("src","01-import.R"), local = knitr::knit_global())
+```
+
+## Re-coding 2019 data
+
+Here we manually recode the 2019 deaths into events several ways. As the article explains:
+
+> The complex series of events poses delicate questions about lumping or splitting deaths. I opted to characterize the anti-Morales protest wave (which coincided with counterprotests in support of the president) as one event up to his November 10 resignation (in Quadrant 4). ... The violence that followed Morales’ pressured resignation (on November 10–13) in various locations forms a second event (in Quadrant 2)... I also chose to treat the Sacaba and Senkata massacres of November 15 and 19 as two further events of one-sided state repression (Quadrant 1). An alternate approach would have clustered all of the violence after Morales’ resignation into a single event (in Quadrant 2) in which security forces caused at least 26, and as many as 29 deaths, while suffering the loss of two of their number. In the supplementary materials, I include a robustness analysis that how these categorisation choices have only small effects on the overall outcomes of the study.
+
+This block of code groups events during the crisis. In all versions of the analysis, events before Evo Morales' resignation are merged. If `merge_regional_post_resignation` is set TRUE, post-resignation events grouped by place. If `merge_all_post_resignation` is set TRUE, all post-resignation events are grouped into a single event.
+
+```{r regroup-2019}
+## First gather all pre-resignation deaths into one event
+cluster.2019.explanation <- paste("**2019 Event Handling:**")
+
+
+de <- de %>% mutate(event_title = case_when(
+                       event_title=="La Paz pro-Evo election march" ~ "Pre-resignation protests",
+                       event_title=="Montero election clashes" ~ "Pre-resignation protests",
+                       event_title=="Metro Cochabamba election clashes" ~ "Pre-resignation protests",
+                       event_title=="La Paz journalist beaten to death" ~ "Pre-resignation protests",
+                                       TRUE ~ event_title
+        ))   
+cluster.2019.explanation <- paste(cluster.2019.explanation, 
+                  "Pre-resignation events merged.", sep=" ")
+
+## Next gather all early post-resignation deaths (November 10-13) into one a second event event
+merge_regional_post_resignation <- FALSE # flag; change to TRUE for robustness check
+merge_all_post_resignation <- FALSE # flag; change to TRUE for robustness check
+
+if(merge_regional_post_resignation){
+   de <- de %>% mutate(event_title = case_when(
+                      event_title=="La Paz post-resignation violence" 
+                                          ~ "Metro La Paz post-resignation (combined)",
+                      event_title=="Senkata Massacre" ~ "Metro La Paz post-resignation (combined)",
+                      event_title=="Metro Cochabamba post-resignation violence" ~ "Metro Cochabamba post-resignation (combined)",
+                      event_title=="Sacaba massacre" ~ "Metro Cochabamba post-resignation (combined)",
+                      TRUE ~ event_title
+      ))
+   cluster.2019.explanation <- paste(cluster.2019.explanation, "Post-resignation events grouped by place.", sep=" ")
+}else{
+   de <- de %>% mutate(event_title = case_when(
+                       event_title=="La Paz post-resignation violence" ~ "Post-resignation protests",
+                       event_title=="Metro Cochabamba post-resignation violence" ~ "Post-resignation protests",
+                       event_title=="Betanzos post-resignation violence" ~ "Post-resignation protests",
+                       event_title=="Montero post-resignation clash" ~ "Post-resignation protests",
+                       event_title=="Yapacaní post-resignation clash" ~ "Post-resignation protests",
+                       TRUE ~ event_title
+   ))
+   if(!merge_all_post_resignation){
+     cluster.2019.explanation <- paste(cluster.2019.explanation, 
+                  "Early post-resignation events (November 10-13) merged.", sep=" ")  
+   }
+}
+
+if(merge_all_post_resignation)
+{
+  de <- de %>% mutate(event_title = case_when(
+                      event_title=="Post-resignation protests" ~ "Post-resignation protests (inclusive)",
+                      event_title=="Sacaba massacre" ~ "Post-resignation protests (inclusive)",
+                      event_title=="Senkata Massacre" ~ "Post-resignation protests (inclusive)",
+                      event_title=="Metro Cochabamba post-resignation (combined)" ~ "Post-resignation protests (inclusive)",
+                      event_title=="Metro La Paz post-resignation (combined)" ~ "Post-resignation protests (inclusive)",
+                      TRUE ~ event_title
+        ))
+  cluster.2019.explanation <- paste(cluster.2019.explanation, "All post-resignation events merged.", sep=" ")
+}
+
+```
+
+## Factoring variables
+
+The presidential administration variable is made into an ordered factor.
+
+```{r factor_presadmin, include=FALSE}
+library(janitor) # for tabyl
+
+def <- de %>%
+  filter(is.na(unconfirmed) | unconfirmed != TRUE) %>%
+  filter(is.na(intentionality) | intentionality != "Collateral") %>%
+  filter(is.na(intentionality) | !str_detect(intentionality, "Nonconflict"))
+
+president_levels <- c(
+  "Hernán Siles Zuazo", "Víctor Paz Estenssoro", "Jaime Paz Zamora", 
+  "Gonzalo Sanchez de Lozada (1st)", "Hugo Banzer (2nd)", "Jorge Quiroga",
+  "Gonzalo Sanchez de Lozada (2nd)", "Carlos Diego Mesa Gisbert", 
+  "Eduardo Rodríguez", "Evo Morales", "Interim military government", 
+  "Jeanine Áñez", "Luis Arce")
+de <- de %>% mutate(pres_admin=factor(pres_admin, levels=president_levels))
+def <- def %>% mutate(pres_admin=factor(pres_admin, levels=president_levels))
+
+```
+
+We shrink the imported data by only including relevant columns.
+
+```{r simplify, include=FALSE}
+# Create a simplified dataset with fewer variables
+deaths <- select(def, event_title, year, month, day, dec_firstname, dec_surnames, dec_age, dec_gender, dec_affiliation, cause_death, weapon, intentionality, community, municipality, province, department, pres_admin, protest_campaign, protest_domain, state_perpetrator, state_responsibility)
+
+deaths_unfiltered <- select(de, event_title, unconfirmed, year, month, day, dec_firstname, dec_surnames, dec_age, dec_gender, dec_affiliation, cause_death, weapon, intentionality, community, municipality, province, department, pres_admin, protest_campaign, protest_domain, state_perpetrator, state_responsibility)
+```
+
+Our code makes some assumptions about the data, particularly that no case labeled as by a state perpetrator or with a state victim is also coded as collateral (caused by the indirect effects of a nonviolent action) or as a nonconflict death. If any of these numbers are nonzero, those assumptions are violated.
+
+-   State perpetrator AND collateral; `r nrow(deaths_unfiltered %>% filter(state_perpetrator=="Yes" & intentionality == "Collateral"))`
+-   State victim AND collateral: `r nrow(deaths_unfiltered %>% filter(state_responsibility=="State victim" & intentionality == "Collateral"))`
+-   State perpetrator AND nonconflict: `r nrow(deaths_unfiltered %>% filter(state_perpetrator=="Yes" & str_detect(intentionality, "Nonconflict")))`
+-   State victim AND nonconflict: `r nrow(deaths_unfiltered %>% filter(state_responsibility=="State victim" & str_detect(intentionality, "Nonconflict")))`
+
+```{r assumptioncheck, include=FALSE}
+## check assumptions. These filters should all result in zero results.
+c1 <- nrow(deaths_unfiltered %>% filter(state_perpetrator=="Yes" & intentionality == "Collateral"))
+c2 <- nrow(deaths_unfiltered %>% filter(state_responsibility=="State victim" & intentionality == "Collateral"))
+c3 <- nrow(deaths_unfiltered %>% filter(state_perpetrator=="Yes" & str_detect(intentionality, "Nonconflict")))
+c4 <- nrow(deaths_unfiltered %>% filter(state_responsibility=="State victim" & str_detect(intentionality, "Nonconflict")))
+
+if (sum(c1, c2, c3, c4)>0) {
+  message("Warning: assumptions about overlapping categories violated")
+} else
+  message("Assumptions about overlapping categories not violated")
+```
+
+## Calculate summary table by events
+
+This section and the next produce a event table that merges information from the filtered and unfiltered death data, as well as event outcome data included in the "Event Status" page of the database.
+
+We can create summary tables by any variable or combination of variables. Here we use:
+
+-   `event_title` --- The name of the event, which should be a unique identifier
+-   `protest_campaign` --- the larger protest campaign it was a part of
+-   `year` --- the year the death occurred in.
+
+As `event_title` uniquely identifies an event, summarizing by it alone should be enough, but including all three lets us check for accidentally naming two different events by the same name.
+
+We can combine `group_by` and `summarize` to generate a variety of counts for each event. Here are the counts we create.
+
+*Some are generated from the filtered list of deaths,* `deaths` *and put in the table* `campaign.events`
+
+-   `n` --- Number of (filtered) deaths
+-   `n_state_perp` --- Number of deaths perpetrated by state security forces.
+-   `n_state_victim` --- Number of deaths with a state victim, not counting accidental or incidental deaths.
+-   `n_state_separate` --- Number of deaths happening separate from state involvement
+
+*Others are generated from the unfiltered  list of deaths,* `deaths_unfiltered` *and put in the table* `campaign.events_unfiltered`
+
+-   `n_unconfirmed`--- Number of unconfirmed deaths (whethe total number reported is a range)
+-   `n_collateral` --- Number of collateral deaths (caused indirectly by nonviolent actions)
+-   `n_nonconflict` --- Number of nonconflict deaths
+-   `n_state_perp_hi` --- A higher estimate of the number of deaths perpetrated by state security forces, including otherwise filtered out plus cases where the state's responsibility is disputed.
+-   `n_state_victim_hi` --- A higher estimate of the number of deaths with a state victim, including deaths otherwise filtered out.
+-   `n_state_separate_hi` --- A higher estimate of the number of deaths separate from the state, including deaths otherwise filtered out.
+-   `n_unfiltered`--- the grand total of all deaths associated with the event in the database
+
+Next we merge these two events tables using join functions. We will use "key" columns in `campaign.events` to make this join, but this means we leave out events that only appear in `campaign.events_unfiltered`. As a check, we perform an "anti_join" and save the ignored events into `campaign.events_disqualified`. Inspecting that list, we see no events with three or more deaths, so we can move on.
+
+The joined table is called `campaign.events_joined`.
+
+We're only interested in the `_hi` variables where they differ from the established value, so we use a `mutate` command to blank the values when they are the same.
+
+Next we import information from the database about the outcomes of each events (stored in a second sheet of the Google Sheet). We use this information, stored in `event.status.relevant` to specify the outcomes of each event. We also add information on the domain of protest and current presidential administration from the deaths table itself. (Anomalous events which occur across multiple presidencies have to be dealt with in the code here.)
+
+Finally, we create `campaign.events_joined3` which only includes events with three or more deaths. We also spin off `def.count`, a simplified table of deaths that includes the number of deaths per event in the final column.
+
+```{r campaignview, message=FALSE}
+
+# create an event count by title that also counts the number of state perpetrator 
+#   and state victim deaths
+#
+
+# This code separates out incidental/accidental state victim deaths
+#
+campaign.events <- deaths %>% group_by(protest_campaign, event_title, year) %>%
+  summarize(
+    n = n(),
+    n_state_perp = sum(state_perpetrator=="Yes", na.rm = TRUE),
+    n_state_victim = sum(str_detect(state_responsibility, "^State victim") &      # detect State victim only at beginning of string
+                           !str_detect(intentionality, "cident"), na.rm = TRUE),
+    n_state_separate = sum(str_detect(state_responsibility, "Separate from state"), na.rm = TRUE)
+  ) 
+
+campaign.events_unfiltered <- deaths_unfiltered %>% group_by(protest_campaign, event_title, year) %>%
+    summarize(
+    n_unconfirmed = sum(unconfirmed =="TRUE",  na.rm = TRUE),
+    n_collateral = sum(intentionality == "Collateral", na.rm = TRUE),
+    n_nonconflict = sum(str_detect(intentionality, "Nonconflict"), na.rm = TRUE),
+    n_state_perp_hi = sum((state_perpetrator=="Yes" | state_perpetrator == "Disputed" | 
+                           state_perpetrator=="Likely Yes" | state_perpetrator=="Presumed Yes" | 
+                           state_perpetrator == "Indirect"),
+                           na.rm = TRUE),
+    n_state_victim_hi = sum(str_detect(state_responsibility, "^State victim"), na.rm = TRUE),
+    n_state_separate_hi = sum(str_detect(state_responsibility, "Separate from state"), na.rm = TRUE),
+    n_unfiltered = n()
+  ) 
+
+campaign.events_unfiltered3 <- filter(campaign.events_unfiltered, n_unfiltered>=3)
+campaign.events3 <- filter(campaign.events, n>=3)
+
+campaign.events_disqualified <- anti_join(campaign.events_unfiltered, campaign.events, by=c("protest_campaign", "event_title", "year"))
+
+# This table lists events that meet the minimum of three in the unfiltered list, 
+# but not when filters are applied
+campaign.events_disqualified3 <- anti_join(campaign.events_unfiltered3, campaign.events3, by=c("protest_campaign", "event_title", "year"))
+
+# merge the event/campaign table with the corresponding data from the unfiltered counts
+campaign.events_joined <- campaign.events %>% 
+  left_join(campaign.events_unfiltered, by = c("protest_campaign", "event_title", "year")) %>% 
+  select(protest_campaign, event_title, year, n, n_state_perp, n_state_perp_hi,
+          n_state_victim,  n_state_victim_hi, 
+          n_state_separate,  n_state_separate_hi,
+          everything()) 
+
+# blank the high values if they are the same as the low values…
+campaign.events_joined <- campaign.events_joined %>%
+  mutate(n_state_perp_hi = ifelse(n_state_perp_hi==n_state_perp, NA, n_state_perp_hi)) %>%
+  mutate(n_state_victim_hi = ifelse(n_state_victim_hi==n_state_victim, NA, n_state_victim_hi)) %>%
+  mutate(n_state_separate_hi = ifelse(n_state_separate_hi==n_state_separate, NA, n_state_separate_hi))
+
+# select information from the event status table, then join it into the campaign/events table
+event.status.relevant <- event.status %>% select(event_title, year, outcome, outcome_summary)
+
+campaign.events_joined2 <- campaign.events_joined %>% 
+  left_join(event.status.relevant, by = c("event_title", "year")) %>%  
+  select(event_title, year, protest_campaign, n, n_state_perp, n_state_perp_hi,
+          n_state_victim,  n_state_victim_hi, 
+          outcome, outcome_summary)
+
+event.domain <- select(def, event_title, year, protest_domain, pres_admin) %>%
+  mutate(pres_admin = replace(pres_admin, 
+                              event_title == "Metro Cochabamba post-resignation violence", 
+                              "Jeanine Áñez")) %>%        # deal with anomalous two-presidency case
+  unique()
+
+
+campaign.events_joined2 <- event.domain %>% 
+  right_join(campaign.events_joined2, by = c("event_title", "year")) %>%
+  select(event_title, year, protest_campaign, n, n_state_perp, n_state_perp_hi,
+          n_state_victim,  n_state_victim_hi, 
+          outcome, outcome_summary, everything())
+
+# I used this diagnostic code to find anomalies, and fix most of them.
+#
+# unique(select(def, event_title, year, protest_domain, pres_admin)) %>%
+#   group_by(event_title) %>%
+#   summarize(count = n()) %>%
+#   filter(count > 1)
+# 
+# unique(select(def, event_title, year, protest_domain, pres_admin)) %>%
+#   filter(event_title == "MPS politician assassinated")
+#
+## Anomalous case: "Metro Cochabamba post-resignation violence"
+#                   (two presidencies)
+
+# deal with anomalous double row for "Post-resignation protests"
+#
+if (sum(campaign.events_joined2$event_title=="Post-resignation protests")>1){
+  campaign.events_joined2 <- campaign.events_joined2 %>%
+    filter(!((event_title=="Post-resignation protests")&(pres_admin=="Jeanine Áñez")))
+}
+
+if (sum(campaign.events_joined2$event_title=="Metro La Paz post-resignation (combined)")>1){
+  campaign.events_joined2 <- campaign.events_joined2 %>%
+    filter(!((event_title=="Metro La Paz post-resignation (combined)")&(pres_admin=="Interim military government")))
+}
+
+if (sum(campaign.events_joined2$event_title=="Metro Cochabamba post-resignation (combined)")>1){
+  campaign.events_joined2 <- campaign.events_joined2 %>%
+    filter(!((event_title=="Metro Cochabamba post-resignation (combined)")&(pres_admin=="Interim military government")))
+}
+
+if (sum(campaign.events_joined2$event_title=="Post-resignation protests (inclusive)")>1){
+  campaign.events_joined2 <- campaign.events_joined2 %>%
+    filter(!((event_title=="Post-resignation protests (inclusive)")&(pres_admin=="Jeanine Áñez")))
+}
+
+campaign.events_joined3 <- filter(campaign.events_joined2, n>=3)
+
+campaign.events_joined3  <- campaign.events_joined3  %>%
+                            mutate(pres_admin=factor(pres_admin, levels=president_levels))
+
+def.count <- left_join(select(def, event_title, year, dec_firstname, dec_surnames, pres_admin),
+                      select(ungroup(campaign.events_joined2), event_title, n), 
+                      by = c("event_title"))
+
+```
+
+## Render the interactive summary table
+
+This code makes a standard, interactive table of events and their total deaths using the `reactable` package.
+
+```{r wide_event_table, message=FALSE, results = 'asis'}
+
+deathcount.columns<- c("n","n_state_perp", "n_state_perp_hi",
+                          "n_state_victim", "n_state_victim_hi" 
+#                          "n_state_separate", "n_state_separate_hi",
+#                          "n_collateral", "n_nonconflict", "n_unconfirmed"
+                       )
+
+red_pal <- function(x) rgb(colorRamp(c("#ffe0e0", "#ff3030", "#bb2020"))(x), maxColorValue = 255)
+brown_pal <- function(x) rgb(colorRamp(c("#EFEBE9", "#795548", "#3E2723"))(x), maxColorValue = 255)
+bluegray_pal <- function(x) rgb(colorRamp(c("#ECEFF1", "#607D8B", "#37474F"))(x), maxColorValue = 255)
+alt_pal <- bluegray_pal
+
+# deaths columns formatting
+deaths_column <- function(maxWidth = 60, class = NULL, maxValue = 100, ...) {
+  colDef(
+    maxWidth = maxWidth,
+    defaultSortOrder = "desc",
+    style = function(value) {
+      # Lighter color for <1%
+      if (value / maxValue < 0.01) {
+        list(color = "#888", background="#fff")
+      } else {
+        list(color = case_when(sqrt(value/ maxValue) < .4 ~ "#111",
+                               TRUE ~ "#eee"), 
+             background = alt_pal(sqrt(value/ maxValue)),
+             fontWeight = "bold")
+      }
+    },
+    ...
+  )
+}
+
+wide_event_table <- function(dataset, numerical.columns = deathcount.columns, 
+                             incl.campaign=FALSE, static=TRUE, max_larger=0) {
+  # blank the high values if they are the same as the low values…
+  dataset<- dataset %>%
+    mutate(n_state_perp_hi = ifelse(n_state_perp_hi==n_state_perp, NA, n_state_perp_hi)) %>%
+    mutate(n_state_victim_hi = ifelse(n_state_victim_hi==n_state_victim, NA, n_state_victim_hi))
+  
+  # alternate calculation of span
+  max_deaths <- max(select(dataset, n:n_state_victim),  na.rm=TRUE)
+  max_deaths <- max(max_deaths, max_larger) # allows the call to include a top value
+
+  if(incl.campaign){
+  table <-reactable(dataset,
+          filterable=!static,
+          theme = nytimes(),
+          defaultPageSize=25,
+          pageSizeOptions = c(25, 35, 50),
+          showPageSizeOptions=!static,
+          defaultColDef = colDef(
+            filterable=FALSE,
+            defaultSortOrder = "desc",
+            minWidth = 20, maxWidth=60),
+          columnGroups = list(colGroup(name = "deaths", columns = numerical.columns)),
+          columns = list (
+            event_title = colDef (name="Event", minWidth=35, maxWidth=250, 
+                                  defaultSortOrder = "asc",
+                                  filterable=!static,
+                                  style = list(fontWeight = "bold")),
+            year = colDef (name="Year", maxWidth=60, 
+                           defaultSortOrder = "asc",
+                           filterable=!static, sortNALast = TRUE,
+                           style = list(background = "#ffffff")), 
+            protest_campaign = colDef (name="Campaign", minWidth=40, maxWidth=250, 
+                                  defaultSortOrder = "asc",
+                                  filterable=!static,
+                                  style = list(fontWeight = "bold")),
+            n = deaths_column(maxValue = max_deaths, name="Confirmed"),
+            n_state_perp = deaths_column(maxValue = max_deaths, name="State Perp"),
+            n_state_perp_hi = colDef (name="—", align = "left", format = colFormat(prefix = "– "),
+                                      minWidth = 15),
+            n_state_victim = deaths_column(maxValue = max_deaths, name="State Victim"),
+            n_state_victim_hi = colDef (name="—", align = "left", format = colFormat(prefix = "– "), 
+                                        mWidth = 15),
+            n_state_separate = deaths_column(maxValue = max_deaths, name="Sep from State"),
+            n_state_separate_hi = colDef (name="—", align = "left", format = colFormat(prefix = "– "),
+                                          minWidth = 15),
+            n_collateral = colDef (name="Collateral",  defaultSortOrder = "desc"),
+            n_nonconflict = colDef (name="Nonconflict", defaultSortOrder = "desc"),
+            n_unconfirmed = colDef (name="Unconfirmed", defaultSortOrder = "desc"),
+            outcome = colDef (name="Outcome", defaultSortOrder = "asc",  minWidth=40, maxWidth = 80,
+                                style = function(value, index) {
+                                  if(is.na(dataset$outcome[index])){
+                                    list(color = "black")
+                                  }else if(dataset$outcome[index] == "Movement"){
+                                    list(color = "green")
+                                  }else if(dataset$outcome[index] == "State"){
+                                    list(color = "red")
+                                  }else if(dataset$outcome[index] == "None"){
+                                    list(color = "grey")
+                                  }
+                                }
+                              ),  
+            outcome_summary = colDef (name="Outcome Summary", defaultSortOrder = "asc", minWidth=50, maxWidth = 140,
+                                style = function(value, index) {
+                                  if(is.na(dataset$outcome[index])){
+                                    
+                                  }else if(dataset$outcome[index] == "Movement"){
+                                    list(background = "#54AE32") #green
+                                  }else if(dataset$outcome[index] == "State"){
+                                    list(background = "#F2806F") # soft red 
+                                  }else if(dataset$outcome[index] == "None"){
+                                    list(background = "#D5D5D5") # light gray
+                                  }
+                                }),
+            protest_domain = colDef (name="Protest Domain", minWidth=30,
+                                    defaultSortOrder = "asc",
+                                    filterable=!static,
+                                    maxWidth=150),
+            pres_admin = colDef (name="President", minWidth=30,
+                                 defaultSortOrder = "asc",
+                                 filterable=!static, maxWidth=300)
+            )
+          )
+  }else{
+      dataset <- select(dataset, -protest_campaign)
+      table <-reactable(dataset,
+          filterable=!static,
+          theme = nytimes( header_font_color = "#666666"),
+          defaultPageSize=25,
+          showPageSizeOptions=!static,
+          defaultColDef = colDef(
+            filterable=FALSE,
+            defaultSortOrder = "desc",
+            minWidth = 20, maxWidth=60),
+            columnGroups = list(colGroup(name = "deaths", columns =
+                             numerical.columns)
+                             ),
+            columns = list (
+            event_title = colDef (name="Event", minWidth=35, maxWidth=250, 
+                                  defaultSortOrder = "asc",
+                                  filterable=!static,
+                                  style = list(fontWeight = "bold")),
+            year = colDef (name="Year", maxWidth=60, 
+                           defaultSortOrder = "asc",
+                           filterable=!static, sortNALast = TRUE,
+                           style = list(background = "#ffffff")), 
+            n = deaths_column(maxValue = max_deaths, name="Confirmed"),
+            n_state_perp = deaths_column(maxValue = max_deaths, name="State Perp"),
+            n_state_perp_hi = colDef (name="—", align = "left", format = colFormat(prefix = "– "),
+                                      minWidth = 15),
+            n_state_victim = deaths_column(maxValue = max_deaths, name="State Victim"),
+            n_state_victim_hi = colDef (name="—", align = "left", format = colFormat(prefix = "– "), 
+                                        minWidth = 15),
+            n_state_separate = deaths_column(maxValue = max_deaths, name="Sep from State"),
+            n_state_separate_hi = colDef (name="—", align = "left", format = colFormat(prefix = "– "),
+                                          minWidth = 15),
+            n_collateral = colDef (name="Collateral",  defaultSortOrder = "desc"),
+            n_nonconflict = colDef (name="Nonconflict", defaultSortOrder = "desc"),
+            n_unconfirmed = colDef (name="Unconfirmed", defaultSortOrder = "desc"),
+            outcome = colDef (name="Outcome", defaultSortOrder = "asc",  minWidth=40, maxWidth = 80,
+                                style = function(value, index) {
+                                  if(is.na(dataset$outcome[index])){
+                                    list(color = "black")
+                                  }else if(dataset$outcome[index] == "Movement"){
+                                    list(color = "green")
+                                  }else if(dataset$outcome[index] == "State"){
+                                    list(color = "red")
+                                  }else if(dataset$outcome[index] == "None"){
+                                    list(color = "grey")
+                                  }
+                                }
+                              ),  
+            outcome_summary = colDef (name="Outcome Summary", defaultSortOrder = "asc", minWidth=50, maxWidth = 140,
+                                style = function(value, index) {
+                                  if(is.na(dataset$outcome[index])){
+                                    
+                                  }else if(dataset$outcome[index] == "Movement"){
+                                    list(background = "#54AE32") #green
+                                  }else if(dataset$outcome[index] == "State"){
+                                    list(background = "#F2806F") # soft red 
+                                  }else if(dataset$outcome[index] == "None"){
+                                    list(background = "#D5D5D5") # light gray
+                                  }
+                                }),
+            protest_domain = colDef (name="Protest Domain", minWidth=30,
+                                    defaultSortOrder = "asc",
+                                    filterable=!static,
+                                    maxWidth=150),
+            pres_admin = colDef (name="President", minWidth=30,
+                                 defaultSortOrder = "asc",
+                                 filterable=!static, maxWidth=300)
+            ))
+    }
+  
+   table
+   }
+
+```
+# Calculations and Queries Used in the Article
+
+## Set-up for analysis
+
+### Selection of events
+
+At the beginning of this analysis, I excluded deaths classified as "collateral", defined as indirect consequences of intentional but nonviolent acts upon non-participants. (Our codebook refers to "weapons, arson, or assault" rather than "violence.") I also excluded non-conflict-related accidents (e.g., car crashes outside confrontational scenarios) and health incidents (e.g., heart attacks of marchers) that occurred during conflicts. The database also handles the situation where an uncertain number of deaths (e.g., three to five) was recorded by tagging the excess deaths as "unconfirmed." For the remainder of this article, I refer to deaths not filtered in any of these ways as "confirmed deaths."
+
+There were `r n_distinct(de$event_title)` events in the dataset before these filters, and `r n_distinct(def$event_title)` after excluding them. The `r nrow(campaign.events_disqualified)` excluded events include `r sum(campaign.events_disqualified$n_unfiltered)` deaths; `r sum(campaign.events_disqualified$n_unfiltered >= 3)` have 3 or more deaths.
+
+```{r visualize-three-death-filter, message=FALSE}
+#| label: visualize-three-death-filter
+#| tbl-cap: "Share of deaths by size of event"
+#| warning: false
+
+library(reactable)
+library(ggplot2)
+
+campaign.events_joined3 <- filter(campaign.events_joined2, n>=3) # This code is redundant, but it accomplishes the vital filter based on number of deaths
+
+n_deaths_selected <- sum(campaign.events_joined3$n)
+
+def.count3 <- filter(def.count, n>=3)
+
+eventsize.table <- def.count %>% ungroup() %>% group_by(n) %>%
+      summarize(death_count=n()) 
+
+def.count<- def.count %>% mutate(small_flag = n<3)
+
+eventshare.table <- def.count %>% ungroup() %>% group_by(pres_admin, small_flag) %>%
+      summarize(death_count=n()) %>% 
+      ungroup() %>% complete(pres_admin, small_flag,fill = list(death_count = 0)) %>%
+      pivot_wider(names_from = small_flag, values_from = death_count) %>%
+      rename(smaller_event=3, larger_event=2) %>%
+      mutate(share_analyzed = percent(larger_event/(smaller_event + larger_event)))
+
+flextable(eventshare.table)
+
+eventsize.table <- eventsize.table %>%
+      mutate(event_count = death_count / n ) %>%
+      mutate(pct_deaths = percent(death_count / sum(death_count)) ) %>%
+      select(n, event_count, everything())
+
+eventsize.table.length <- nrow(eventsize.table)
+
+n_deaths <- sum(eventsize.table$death_count)
+event_count_3plus <- sum(eventsize.table$event_count[3:eventsize.table.length])
+death_count_3plus <- sum(eventsize.table$death_count[3:eventsize.table.length])
+
+eventsize.table <- eventsize.table %>% 
+  mutate(n=as.character(n)) %>%
+  add_row(n = "3 or more",                                     # add totals row for included events
+          event_count = event_count_3plus,
+          death_count = death_count_3plus,
+          pct_deaths = percent(death_count_3plus / n_deaths))
+
+ft <- flextable(eventsize.table[c(1,2,eventsize.table.length+1),]) %>% 
+  set_caption(caption="Share of deaths by size of event")
+ft
+```
+
+The analysis in this article considers only events with three or more confirmed deaths for both purposeful and practical reasons. First, larger events may be more likely to precipitate backfire. During the study period in Bolivia, the term "massacre" is only commonly applied to events with at least three deaths. Second, by narrowing our research focus to these larger events, I reduce the sample size to a manageable `r nrow(filter(campaign.events_joined2, n>=3))` events, enabling research on the campaigns involved and their outcomes. These larger events account for `r nrow(filter(def.count, n>=3))` deaths, `r percent(nrow(filter(def.count, n>=3))/nrow(def.count))` of the total. Large events predominate across time, and comprise at least `r paste(sort(parse_number(eventshare.table$share_analyzed))[2], "%", sep="")` of the deaths under all presidents (except Luis Arce, who had just `r nrow(filter(def, pres_admin=="Luis Arce"))` deaths altogether, and Eduardo Rodríguez who had none at all).
+
+The tables and graphs that follow break down deaths included and excluded from this study across time and presidency. These plots show that deaths in events with three or more deaths predominate in nearly all years and nearly all presidential administrations.
+
+```{r eventsize-plots, results='asis'}
+# Plot illustrating that large events predominate in nearly all years
+ggplot(def.count, aes(year, fill = (n<3) ) ) +
+  geom_bar()
+
+# Plots illustrating that large events predominate in nearly all presidencies
+ggplot(def.count, aes(pres_admin, fill = (n<3) ) ) +
+  geom_bar() +
+  coord_flip()
+
+ggplot(def.count, aes(pres_admin, fill = (n<3) ) ) +
+  geom_bar(position = "fill") +
+  geom_hline(yintercept=0.5, linetype="dashed", color = "black") +
+  coord_flip()
+```
+
+### Assign events to quadrants
+
+We divide the events into four quadrants based on the presence or absence of state-perpetrator deaths and state victim deaths.
+
+```{r quadrants, results='asis'}
+library(janitor)
+
+max_deaths_all_events <- max(select(campaign.events_joined3, n:n_state_victim),  na.rm=TRUE)
+
+campaign.events_joined3q <- campaign.events_joined3 %>%
+        mutate(n_state_perp_hi = case_when(is.na(n_state_perp_hi) ~ n_state_perp,
+                                           !is.na(n_state_perp_hi) ~ n_state_perp_hi
+          
+        )) %>%
+        mutate(quadrant = case_when((event_title=="Huanuni clashes") ~ 4,     # reassign Huanuni clashes to different quandrant
+                                   (event_title=="Bus crash during miners pension protest") ~ 4,
+                                   (n_state_perp_hi>0) & (n_state_victim==0) ~ 1,
+                                   (n_state_perp_hi>0) & (n_state_victim>0) ~ 2,
+                                   (n_state_perp_hi==0) & (n_state_victim>0) ~ 3,
+                                   (n_state_perp_hi==0) & (n_state_victim==0) ~ 4
+                                   ))
+
+# Create an overview table with all events studied
+# Just for printing this table, add numerical identification column
+campaign.events_joined3nq <- campaign.events_joined3q %>% 
+  mutate(id = row_number()) %>%
+  select(id, everything())
+
+# Quadrant 1
+quadrant1 <- campaign.events_joined3q %>%
+             filter(quadrant == 1) %>%
+             select(-quadrant)
+
+# Quadrant 2
+quadrant2 <- campaign.events_joined3q %>%
+             filter(quadrant == 2) %>%
+             select(-quadrant)
+
+# Quadrant 2
+quadrant3 <- campaign.events_joined3q %>%
+             filter(quadrant == 3) %>%
+             select(-quadrant)
+             
+# Quadrant 4
+quadrant4 <- campaign.events_joined3q %>%
+             filter(quadrant == 4) %>%
+             select(-quadrant)
+
+# 2019 grouping table
+crisis2019 <- campaign.events_joined3q %>%
+             filter(year == 2019) 
+
+# verify no duplicate events
+#     TRUE is a success here
+no_duplicate_events <- function(datatable) {
+  nrow(datatable) == n_distinct(datatable$event_title)
+}
+  
+if (!(no_duplicate_events(quadrant1) &
+    no_duplicate_events(quadrant2) &
+    no_duplicate_events(quadrant3) &
+    no_duplicate_events(quadrant4) &
+    no_duplicate_events(crisis2019))) {
+  warning("Warning: Duplicate events appear in at least one event summary table.")
+}
+
+# This code displays the next table…
+#
+# tbl <- wide_event_table (campaign.events_joined3nq, numerical.columns = deathcount.columns, 
+#                          incl.campaign = FALSE, 
+#                          max_larger = max_deaths_all_events)
+# tbl
+# cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+# cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+```
+
+```{r events-with-quadrants, echo=FALSE, results='asis'}
+tbl <- wide_event_table (campaign.events_joined3nq, numerical.columns = deathcount.columns, 
+                         incl.campaign = FALSE, 
+                         max_larger = max_deaths_all_events)
+tbl
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+```
+
+### Creating outcome tables
+
+We define a function `outcome_table` that sorts the outcomes in a given quandrant or subset of the event table, telling us how many events had each outcome, and how many deaths were associated with each type of outcome.
+
+```{r outcome_table}
+
+outcome_table <- function (quadrant, outcome1="Movement", outcome1_text="Movement success",
+                        outcome2="State", outcome2_text="State success",
+                        outcome3="Mixed", outcome3_text="Mixed success",
+                        num_outcomes=2) {
+    stopifnot(num_outcomes==2 | num_outcomes==3)
+    quadrant <- quadrant %>% mutate(
+                           n_events = 1,
+                           n_state_perp_hi=case_when( 
+                                            is.na(n_state_perp_hi) ~ n_state_perp,
+                                            n_state_perp_hi>=n_state_perp ~ n_state_perp_hi),
+                           n_state_victim_hi=case_when( 
+                                            is.na(n_state_victim_hi) ~ n_state_victim,
+                                            n_state_victim_hi>=n_state_victim ~ n_state_victim_hi)
+                           )
+  
+    quadrant_t <- quadrant %>%
+                  adorn_totals("row", fill = "-", na.rm = TRUE, name = "Total", -year)
+
+    quadrant_o1 <- quadrant %>% filter(outcome == outcome1) %>%
+                    adorn_totals("row", fill = "-", na.rm = TRUE, name = outcome1_text, -year)
+    quadrant_o2 <- quadrant %>% filter(outcome == outcome2) %>%
+                    adorn_totals("row", fill = "-", na.rm = TRUE, name = outcome2_text, -year)
+    if (num_outcomes == 2) {
+          quadrant_combined <- quadrant_o1 %>% 
+                      union(quadrant_o2) %>% 
+                      union(quadrant_t)  
+    } else if (num_outcomes == 3) {
+          quadrant_o3 <- quadrant %>% filter(outcome == outcome3) %>%
+                    adorn_totals("row", fill = "-", na.rm = TRUE, name = outcome3_text, -year)
+          quadrant_combined <-quadrant_o1 %>% 
+                      union(quadrant_o2) %>% 
+                      union(quadrant_o3) %>%
+                      union(quadrant_t)
+    } 
+} 
+
+outcome_reactable <- function(outcomes){
+  # blank the high values if they are the same as the low values…
+  outcomes<- outcomes %>%
+    mutate(n_state_perp_hi = ifelse(n_state_perp_hi==n_state_perp, NA, n_state_perp_hi)) %>%
+    mutate(n_state_victim_hi = ifelse(n_state_victim_hi==n_state_victim, NA, n_state_victim_hi))
+  
+  table <-reactable(outcomes,
+          filterable=FALSE,
+          sortable = FALSE,
+          wrap = FALSE,
+          fullWidth = FALSE,
+          theme = nytimes(header_font_color = "#666666"),
+          defaultPageSize=10,
+          columns = list (
+            event_title = colDef (name="Situation", minWidth= 240,
+                                  style = list(fontWeight = "bold")),
+            n = colDef (name="Num Deaths"),
+            n_state_perp = colDef (name="State Perp"),
+            n_state_perp_hi = colDef (name="—", align = "left", format = colFormat(prefix = "– ")),
+            n_state_victim = colDef (name="State Victim"),
+            n_state_victim_hi = colDef (name="—", align = "left", format = colFormat(prefix = "– ")),
+            n_events = colDef (name="Num Events")
+            ))
+   table
+}
+
+quadrant1_outcomes <- outcome_table(quadrant1, num_outcomes=3) %>% 
+                      filter(year =="-") %>% 
+                      select(-year, -protest_campaign, -outcome, -outcome_summary, -protest_domain, -pres_admin)
+                      
+quadrant2_outcomes <- outcome_table(quadrant2, num_outcomes=3) %>% 
+                      filter(year =="-") %>% 
+                      select(-year, -protest_campaign, -outcome, -outcome_summary, -protest_domain, -pres_admin)
+
+quadrant3_outcomes <- outcome_table(quadrant3, num_outcomes=3) %>% 
+                      filter(year =="-") %>% 
+                      select(-year, -protest_campaign, -outcome, -outcome_summary, -protest_domain, -pres_admin)
+
+quadrant4_outcomes <- outcome_table(quadrant4, num_outcomes=3,
+                                    outcome1 = "Less violent party", outcome1_text = "Less violent party succeeds",
+                                    outcome2 = "More violent party", outcome2_text = "More violent party succeeds",
+                                    outcome3 = "Mediation", outcome3_text = "Conflict attracts state mediation") %>% 
+                      filter(year =="-") %>% 
+                      select(-year, -protest_campaign, -outcome, -outcome_summary, -protest_domain, -pres_admin)
+
+```
+
+### How the 2019 crisis was handled in this run
+
+```{r echo=FALSE, warning=FALSE, fig.cap = "", results = 'asis'}
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+
+wide_event_table(crisis2019, max_larger = 38) 
+
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+```
+
+## Outcome Tables by Quadrant
+
+### Table I. Cases with deadly state repression and zero state victims
+
+```{r echo=FALSE, warning=FALSE, fig.cap = "", results = 'asis'}
+wide_event_table(quadrant1, max_larger = max_deaths_all_events) 
+
+outcome_reactable(quadrant1_outcomes)
+
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+```
+
+### Table II. Cases with deadly state repression and state victims
+
+```{r echo=FALSE, warning=FALSE, fig.cap = "", results = 'asis'}
+wide_event_table(quadrant2, max_larger = max_deaths_all_events)
+
+outcome_reactable(quadrant2_outcomes)
+
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+```
+
+### Table III. Cases without deadly state repression and with state victims
+
+```{r echo=FALSE, warning=FALSE, fig.cap = "", results = 'asis'}
+wide_event_table(quadrant3, max_larger = max_deaths_all_events)
+
+outcome_reactable(quadrant3_outcomes)
+
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+```
+
+### Table IV. Cases with no deadly state repression or state victims
+
+```{r echo=FALSE, warning=FALSE, fig.cap = "", results = 'asis'}
+wide_event_table(quadrant4, max_larger = max_deaths_all_events)
+
+# outcome_reactable(quadrant4_outcomes)
+
+quadrant4_outcomes <- select(quadrant4_outcomes, -n_state_perp, -n_state_perp_hi, -n_state_victim, -n_state_victim_hi)
+reactable(quadrant4_outcomes,
+          filterable=FALSE,
+          sortable = FALSE,
+          wrap = FALSE,
+          fullWidth = FALSE,
+          theme = nytimes(header_font_color = "#666666"),
+          defaultPageSize=10,
+          columns = list (
+            event_title = colDef (name="Situation", minWidth= 240,
+                                  style = list(fontWeight = "bold")),
+            n = colDef (name="Num Deaths"),
+            n_events = colDef (name="Num Events")
+            ))
+
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+```
+
+## Hypothesis analysis and political leaning analysis
+
+Just as we created subsets of the table for the four quadrants, we do so for each of the hypthesis that emerge in th article, hypotheses A, B, and C. The subsets where there is deadly state repression, but hyptheses A & C or A, B, & C are not true are named Rac, and Rabc respectively.
+
+We also create subsets of the table of repression events by left and right political leaning.
+
+```{r hypothesis-analysis}
+# 
+repression.events <- campaign.events_joined3q %>%
+             filter((quadrant == 1) | (quadrant == 2) )
+
+# enable analysis by hypothesis
+
+repression.events <- repression.events %>%
+        mutate(hypotheses = case_when(    
+                                   (protest_domain=="Guerrilla") | (protest_domain=="Paramilitary") ~ "A",
+                                   (protest_domain=="Coca") | (protest_domain=="Drug trade") ~ "B",
+                                   (protest_domain=="Partisan Politics") ~ "C",
+                                   TRUE ~ ""))
+
+repression.events.A <- filter(repression.events, hypotheses == "A")
+repression.events.B <- filter(repression.events, hypotheses == "B")
+repression.events.C <- filter(repression.events, hypotheses == "C")
+repression.events.Rac <- filter(repression.events, (hypotheses != "A") & (hypotheses != "C"))
+repression.events.Rabc <- filter(repression.events, ((hypotheses != "A") & (hypotheses != "B")) & (hypotheses != "C"))
+
+# wide_event_table(select(repression.events, -quadrant, -hypotheses)
+
+outcome_table_clean <- function(event_table, num_outcomes) { 
+  outcome_table(event_table, num_outcomes=num_outcomes) %>% 
+                      filter(year =="-") %>% 
+                      select(-year, -protest_campaign, -outcome, -outcome_summary, -protest_domain, -pres_admin)
+  }
+
+repression.events_outcomes <- outcome_table_clean(repression.events, num_outcomes=3) 
+repression.events.A_outcomes <- outcome_table_clean(repression.events.A, num_outcomes=3) 
+repression.events.B_outcomes <- outcome_table_clean(repression.events.B, num_outcomes=3) 
+repression.events.C_outcomes <- outcome_table_clean(repression.events.C, num_outcomes=3) 
+repression.events.Rac_outcomes <- outcome_table_clean(repression.events.Rac, num_outcomes=3) 
+repression.events.Rabc_outcomes <- outcome_table_clean(repression.events.Rabc, num_outcomes=3) 
+
+# enable analysis by political leaning
+
+presidents.left=str_c("Hernán Siles Zuazo", "Evo Morales", "Luis Arce", sep = "|")
+presidents.right=str_c("Víctor Paz Estenssoro", "Jaime Paz Zamora", 
+  "Gonzalo Sanchez de Lozada \\(1st\\)", "Hugo Banzer \\(2nd\\)", "Jorge Quiroga",
+  "Gonzalo Sanchez de Lozada \\(2nd\\)", "Carlos Diego Mesa Gisbert", 
+  "Interim military government", "Jeanine Áñez", "Luis Arce", sep = "|")
+
+repression.events.pl <- repression.events %>%
+        mutate(pol_lean = case_when(    
+                                   str_detect(string = pres_admin, pattern=presidents.right) ~ "Right",
+                                   str_detect(string = pres_admin, pattern=presidents.left) ~ "Left",
+                                   TRUE ~ ""))
+
+
+repression.events.rightlean <- filter(repression.events.pl, pol_lean == "Right") %>% select(-quadrant, -hypotheses, -pol_lean)
+repression.events.leftlean <- filter(repression.events.pl, pol_lean == "Left") %>% select(-quadrant, -hypotheses, -pol_lean)
+
+repression.events.rightlean_outcomes <- outcome_table_clean(repression.events.rightlean, num_outcomes=3) 
+repression.events.leftlean_outcomes <- outcome_table_clean(repression.events.leftlean, num_outcomes=3)
+
+
+```
+
+### Cases matching... Hypothesis A
+
+```{r hypothesis-a, echo=FALSE, warning=FALSE, fig.cap = ""}
+wide_event_table(repression.events.A, max_larger = max_deaths_all_events)
+
+reactable(repression.events.A_outcomes,
+                    theme = nytimes())
+```
+
+### Cases matching... Hypothesis B
+
+```{r hypothesis-b, echo=FALSE, warning=FALSE, fig.cap = ""}
+wide_event_table(repression.events.B, max_larger = max_deaths_all_events)
+
+reactable(repression.events.B_outcomes,
+                    theme = nytimes())
+```
+
+### Cases matching... Hypothesis C
+
+```{r hypothesis-c, echo=FALSE, warning=FALSE, fig.cap = ""}
+wide_event_table(repression.events.C, max_larger = max_deaths_all_events)
+
+reactable(repression.events.C_outcomes,
+                    theme = nytimes())
+```
+
+### Political lean: Right
+
+```{r leanright, echo=FALSE, warning=FALSE, results = 'asis'}
+wide_event_table(repression.events.rightlean, max_larger = max_deaths_all_events)
+
+reactable(repression.events.rightlean_outcomes,
+                    theme = nytimes())
+
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+```
+
+### Political lean: Left
+
+```{r leanleft, echo=FALSE, warning=FALSE, results = 'asis'}
+wide_event_table(repression.events.leftlean, max_larger = max_deaths_all_events)
+
+reactable(repression.events.leftlean_outcomes,
+                    theme = nytimes())
+
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+```
+
+## Unified analysis table
+
+In the second part of the hypothesis analysis, we draw all the various cases together into a master table.
+
+```{r hypothesis-analysis2, echo=FALSE, results = 'asis'}
+#| label: hypothesis-analysis2
+#| tbl-cap: "Results of Qualitative Comparative Analysis"
+#| warning: false
+
+# create a row of a master outcomes table here!!
+
+# This is the overall format, but we will create it piecemeal by 
+# 1. Entering the fixed data in the left table
+# 2. Capturing the dynamic data in the "right" table
+# 3. Mutating the right table to calculate the summary columns
+# 4. Joining left and right together
+#
+# analysis_table <- tibble(
+#   situation = character(),
+#   bool_state_perp = character(),
+#   bool_state_victim = character(),
+#   bool_armed_actor = character(),
+#   bool_coca_conflict = character(),
+#   bool_partisan = character(),
+#   n_cases = numeric(),
+#   n_deaths = numeric(),
+#   prediction = character(),
+#   n_cases_movement = numeric(),
+#   n_cases_repressed = numeric(),
+#   n_cases_mixed = numeric(),
+#   n_deaths_movement = numeric(),
+#   n_deaths_repressed = numeric(),
+#   n_deaths_mixed = numeric(),
+#   case_success_summary = character(),
+#   pct_success_lo = numeric(),
+#   pct_sucesss_hi = numeric(),
+#   pct_success_string = character(),
+#   pct_d_success_lo = numeric(),
+#   pct_d_sucesss_hi = numeric(),
+#   pct_d_success_string = character()
+#   )
+
+analysis_table_left <- tibble(
+  situation = character(),
+  bool_state_perp = character(),
+  bool_state_victim = character(),
+  bool_armed_actor = character(),
+  bool_coca_conflict = character(),
+  bool_partisan = character(),
+  prediction = character(),
+  )
+
+analysis_table_right <- tibble(
+  situation = character(),
+  n_cases = numeric(),
+  n_deaths = numeric(),
+  n_cases_movement = numeric(),
+  n_cases_repressed = numeric(),
+  n_cases_mixed = numeric(),
+  n_deaths_movement = numeric(),
+  n_deaths_repressed = numeric(),
+  n_deaths_mixed = numeric(),
+  )
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Deadly state repression (Quadrants 1 and 2)",
+  bool_state_perp = "+",
+  bool_state_victim = "",
+  bool_armed_actor = "",
+  bool_coca_conflict = "",
+  bool_partisan = "",
+  prediction = "—")
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Quadrant 1: Deadly state repression and zero state victims",
+  bool_state_perp = "+",
+  bool_state_victim = "-",
+  bool_armed_actor = "",
+  bool_coca_conflict = "",
+  bool_partisan = "",
+  prediction = "Movement success (backfire)")
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Quadrant 2: Deadly state repression and violence against state",
+  bool_state_perp = "+",
+  bool_state_victim = "+",
+  bool_armed_actor = "",
+  bool_coca_conflict = "",
+  bool_partisan = "",
+  prediction = "Repression success (backfire unavailable to violent protesters)")
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Quadrant 3: Deadly violence against state but no deadly state victims",
+  bool_state_perp = "-",
+  bool_state_victim = "+",
+  bool_armed_actor = "",
+  bool_coca_conflict = "",
+  bool_partisan = "",
+  prediction = "Repression success")
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Hypothesis A: Deadly state repression against guerillas and paramilitaries will succeed.",
+  bool_state_perp = "+",
+  bool_state_victim = "",
+  bool_armed_actor = "+",
+  bool_coca_conflict = "",
+  bool_partisan = "",
+  prediction = "Repression success")
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Hypothesis B: Repression may succeed more often coca conflict",
+  bool_state_perp = "+",
+  bool_state_victim = "",
+  bool_armed_actor = "",
+  bool_coca_conflict = "+",
+  bool_partisan = "",
+  prediction = "More repression success than other cases")
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Hypothesis C: Backfire does not apply in partisan conflicts",
+  bool_state_perp = "+",
+  bool_state_victim = "",
+  bool_armed_actor = "",
+  bool_coca_conflict = "",
+  bool_partisan = "+",
+  prediction = "More repression success than other cases")
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Synthesis: Remaining cases of repression minus A & C (neither guerrilla, paramilitary, nor partisan)",
+  bool_state_perp = "+",
+  bool_state_victim = "",
+  bool_armed_actor = "-",
+  bool_coca_conflict = "",
+  bool_partisan = "-",
+  prediction = "Movement success (backfire)")
+
+analysis_table_left <- analysis_table_left %>% add_row(
+  situation = "Alternate Synthesis: Remaining cases of repression minus A, B, C (neither guerrilla paramilitary, nor coca, nor partisan)",
+  bool_state_perp = "+",
+  bool_state_victim = "",
+  bool_armed_actor = "-",
+  bool_coca_conflict = "-",
+  bool_partisan = "-",
+  prediction = "Movement success (backfire)")
+
+add_outcome_row <- function(existing_table, situation_title, outcomes) {
+      outcomes_deathcount <- outcomes$n
+      names(outcomes_deathcount) <- outcomes$event_title
+      outcomes_eventcount <- outcomes$n_events
+      names(outcomes_eventcount) <- outcomes$event_title
+
+      add_row(existing_table,
+          situation = situation_title,
+          n_cases = outcomes_eventcount['Total'],
+          n_deaths = outcomes_deathcount['Total'],
+          n_cases_movement = outcomes_eventcount['Movement success'],
+          n_cases_repressed = outcomes_eventcount['State success'],
+          n_cases_mixed = outcomes_eventcount['Mixed success'],
+          n_deaths_movement = outcomes_deathcount['Movement success'],
+          n_deaths_repressed = outcomes_deathcount['State success'],
+          n_deaths_mixed = outcomes_deathcount['Mixed success']
+          )
+}
+
+analysis_table_right <- analysis_table_right %>%
+  add_outcome_row("Deadly state repression (Quadrants 1 and 2)", repression.events_outcomes) %>%
+  add_outcome_row("Quadrant 1: Deadly state repression and zero state victims", quadrant1_outcomes) %>%
+  add_outcome_row("Quadrant 2: Deadly state repression and violence against state", quadrant2_outcomes) %>%
+  add_outcome_row("Quadrant 3: Deadly violence against state but no deadly state victims", quadrant3_outcomes) %>%
+  add_outcome_row("Hypothesis A: Deadly state repression against guerillas and paramilitaries will succeed.",
+                  repression.events.A_outcomes ) %>%
+  add_outcome_row("Hypothesis B: Repression may succeed more often coca conflict", 
+                  repression.events.B_outcomes) %>%
+  add_outcome_row("Hypothesis C: Backfire does not apply in partisan conflicts", 
+                  repression.events.C_outcomes) %>%
+  add_outcome_row("Synthesis: Remaining cases of repression minus A & C (neither guerrilla, paramilitary, nor partisan)",
+                  repression.events.Rac_outcomes) %>%
+  add_outcome_row("Alternate Synthesis: Remaining cases of repression minus A, B, C (neither guerrilla paramilitary, nor coca, nor partisan)", 
+                  repression.events.Rabc_outcomes)
+# Mutate steps to calculate summary data
+
+analysis_table_right <- 
+  analysis_table_right %>% mutate(
+    n_cases_mixed = case_when (
+      is.na(n_cases_mixed) ~ 0,
+      TRUE ~ n_cases_mixed
+    ),
+    n_deaths_mixed = case_when (
+      is.na(n_deaths_mixed) ~ 0,
+      TRUE ~ n_deaths_mixed
+    ),
+    pct_success_lo = n_cases_movement/(n_cases_movement+n_cases_repressed),
+    pct_success_hi = case_when (
+      n_cases_mixed > 0 ~ (n_cases_movement+n_cases_mixed)/(n_cases_movement+n_cases_repressed+n_cases_mixed),
+      TRUE ~ pct_success_lo
+    ),
+    pct_success_string = case_when (
+      pct_success_lo == pct_success_hi ~percent(pct_success_hi, 1),
+      TRUE ~  str_c(str_remove(percent(pct_success_lo, 1),"%"), percent(pct_success_hi, 1), sep="\u2013")
+    ),
+    pct_d_success_lo = n_deaths_movement/(n_deaths_movement+n_deaths_repressed),
+    pct_d_success_hi = case_when (
+      n_deaths_mixed > 0 ~  (n_deaths_movement+n_deaths_mixed)/(n_deaths_movement+n_deaths_repressed+n_deaths_mixed),
+      TRUE ~  pct_d_success_lo
+    ),
+    pct_d_success_string = case_when (
+      pct_d_success_lo == pct_d_success_hi ~  percent(pct_d_success_hi, 1),
+      TRUE ~  str_c(str_remove(percent(pct_d_success_lo, 1),"%"), percent(pct_d_success_hi, 1), sep="\u2013")
+    ),
+    case_success_summary = case_when (
+      n_deaths_mixed > 0 ~ str_c(n_cases_movement, str_c("(+", n_cases_mixed, " partial)"), "/", 
+                                 (n_cases_repressed), sep=" "),
+      TRUE ~ str_c(n_cases_movement, "/", 
+                                 (n_cases_repressed), sep=" ")
+                                    ),
+    deaths_success_summary = case_when (
+      n_deaths_mixed > 0 ~ str_c(n_deaths_movement, str_c("(+", n_deaths_mixed, " partial)"), "/", 
+                                 (n_deaths_repressed), sep=" "),
+      TRUE ~ str_c(n_deaths_movement, "/", 
+                                 (n_deaths_repressed), sep=" ")   )
+    )
+
+# Merge via left_join
+
+analysis_table <- analysis_table_left %>% 
+  left_join(analysis_table_right, by = c("situation")) %>%  
+  select(situation, bool_state_perp, bool_state_victim, bool_armed_actor, bool_coca_conflict, bool_partisan, 
+         n_cases, n_deaths, prediction, deaths_success_summary, case_success_summary,  pct_success_string)
+         
+analysis_table_joined <- analysis_table_left %>% 
+  left_join(analysis_table_right, by = c("situation"))
+
+# reactable(analysis_table)
+
+ft <- flextable(analysis_table)
+
+ft <- ft %>% set_header_labels(         # Rename the columns in original header row
+      situation = "", 
+      bool_state_perp = "Deadly Violence by State", 
+      bool_state_victim = "Deadly Violence against State", 
+      bool_armed_actor = "Guerrilla or Paramilitaries",
+      bool_coca_conflict = "Coca Conflict", 
+      bool_partisan = "Dueling Partisan Mobilizations", 
+      n_cases = "Cases", 
+      n_deaths = "Deaths", 
+      prediction = "Prediction of Hypothesis", 
+      case_success_summary = "Movement / Repression Success", 
+      deaths_success_summary = "Deaths in Movement / Repression Success",
+      pct_success_string ="Movement Success %"
+      )
+w_body <- dim_pretty(ft, part = "body")$widths
+h_header <- max( dim_pretty(ft, part = "header")$widths )
+
+ft <- rotate(ft, j = 2:6, rotation="btlr",part="header")
+
+ft <- valign(ft, valign = "center", part = "header")
+ft <- flextable::align(ft, align = "center", part = "all")
+
+# Manage header height
+ft <- height(ft, height = h_header * 1.1, part = "header")
+# ... mainly because Word don't handle auto height with rotated headers
+ft <- hrule(ft, i = 1, rule = "exact", part = "header")
+ft <- autofit(ft)
+ft
+
+cat(paste(datafiles_footer(es=TRUE),"\n\n",sep=""))
+cat(paste(cluster.2019.explanation,"\n\n",sep=""))
+    
+# my_table %>%  autofit()
+
+# Cull out extra columns
+
+# save_as_docx("Quasi-Boolean Analysis (post-resignation combined)" = ft, path = "QBA-combined.docx")
+
+
+```
+
+### Text summarizing results
+
+The following paragraph has the numerical values from the results table automatically updated and inserted:
+
+> Governments engage in repressive violence in order to deter protests, that is to demobilize protesters without conceding their demands. This article’s comprehensive examination of significant protest confrontations (as marked by three or more deaths) in Bolivia since 1982 shows that this effort is usually unsuccessful. I surveyed `r nrow(filter(campaign.events_joined2, n>=3))` events in recent Bolivian history to find instances when deadly repression backfired against its perpetrators, ending in success for social movements rather than quelling their mobilizations. Out of `r nrow(quadrant1)+nrow(quadrant2)` cases of deadly state repression (Quadrants 1 and 2), movements succeeded in `r first(analysis_table_joined$n_cases_movement)` cases (and partially succeded in another), and failed in `r first(analysis_table_joined$n_cases_repressed)`. The cases of movement success (equivalently of repression’s backfire) involved `r first(analysis_table_joined$n_deaths_movement)`  deaths, compared with `r first(analysis_table_joined$n_deaths_repressed)` deaths in cases where repression prevailed. Altogether, security forces killed `r first(quadrant1_outcomes$n_state_perp)+first(quadrant2_outcomes$n_state_perp)` people in failed bids to quash protests. 
+
+## Following up on hypotheses with smaller events
+
+The article text explores the results of smaller events corresponding to each hypothesis.
+
+```{r hypothesis-event-tables, echo=FALSE, results='asis'}
+# following up on hypotheses
+cat("\n### Hypothesis A: Armed Actors")
+
+campaign.events_joined_armedactor <- filter(campaign.events_joined2, (protest_domain == "Guerrilla")|(protest_domain == "Paramilitary")) %>% filter(n_state_perp>0)
+wide_event_table(campaign.events_joined_armedactor, max_larger = max_deaths_all_events)
+
+cat("\n### Hypothesis B: Coca Conflict")
+
+campaign.events_joined_coca <- filter(campaign.events_joined2, protest_domain == "Coca") %>% filter(n_state_perp>0)%>% filter(n_state_perp>0)
+wide_event_table(campaign.events_joined_coca, max_larger = max_deaths_all_events)
+
+cat("\n### Hypothesis C: Two-sided Partisan Conflicts")
+
+campaign.events_joined_partisan <- filter(campaign.events_joined2, (protest_domain == "Partisan Politics") )%>% filter(n_state_perp>0)
+wide_event_table(campaign.events_joined_partisan, max_larger = max_deaths_all_events)
+```
+
+### Reproducibility Data
+``` {r reproducibility-data}
+# Why include this?
+# See http://adv-r.had.co.nz/Reproducibility.html
+
+sessionInfo()
+```
