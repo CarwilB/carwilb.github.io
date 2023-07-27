@@ -3,6 +3,10 @@ title: "Data Analysis for When Does Lethal Repression Fail?"
 output:
   html_document:
     df_print: tibble
+format:
+  html:
+    code-fold: true
+    code-summary: "Code in R"
 ---
 
 ```{css, echo=FALSE}
