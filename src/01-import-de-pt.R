@@ -8,8 +8,8 @@
 #
 #  It does not handle the Event Status sheet from Google Sheets
 
-source("src/import-deaths-database-spec1.R")
-source("src/update-versioned-archive.R")
+source(here::here("src", "import-deaths-database-spec1.R"))
+source(here::here("src", "update-versioned-archive.R"))
 
 if (live.import){
   # Import the Entries
