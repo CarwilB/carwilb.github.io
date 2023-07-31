@@ -39,6 +39,7 @@ website:
       - section: ultimate-consequences/Visualizations.md
         contents:
           - ultimate-consequences/Nested-Table.Rmd
+          - dashboards.qmd
       - section: "Data Pages for Publications"
         contents:
           - ultimate-consequences/BSJ-Political-Violence.Rmd

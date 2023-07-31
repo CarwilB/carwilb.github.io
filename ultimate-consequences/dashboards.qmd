@@ -1,0 +1,21 @@
+---
+title: Dashboards
+listing: 
+  - id: domain-dashboards
+    contents: "ultimate-consequences/domains/Report_*.html"
+    type: table
+  - id: municipality-dashboards
+    contents: "ultimate-consequences/municipalities/Dashboard_*.html"
+    type: table
+---
+  
+## Domains
+  
+:::{#domain-dashboards}
+:::
+      
+## Municipalities
+      
+:::{#municipality-dashboards}
+:::
+---
