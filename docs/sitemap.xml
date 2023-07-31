@@ -2,82 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ultimateconsequences.github.io/quarto-workflows/rstudio.html</loc>
-    <lastmod>2023-07-31T14:50:12.341Z</lastmod>
+    <lastmod>2023-07-31T15:45:32.539Z</lastmod>
   </url>
   <url>
     <loc>https://ultimateconsequences.github.io/quarto-workflows/jupyter.html</loc>
-    <lastmod>2023-07-31T14:50:11.339Z</lastmod>
+    <lastmod>2023-07-31T15:45:31.503Z</lastmod>
   </url>
   <url>
     <loc>https://ultimateconsequences.github.io/about-bio.html</loc>
-    <lastmod>2023-07-31T14:50:10.237Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/learning-more.html</loc>
-    <lastmod>2023-07-31T14:50:09.124Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/index.html</loc>
-    <lastmod>2023-07-31T14:50:08.319Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Project-Overview.html</loc>
-    <lastmod>2023-07-31T14:50:07.347Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/index.html</loc>
-    <lastmod>2023-07-31T14:50:04.425Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/data-pages/WLRF-Tables.html</loc>
-    <lastmod>2023-07-31T14:49:56.603Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Methodology.html</loc>
-    <lastmod>2023-07-31T14:49:47.812Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/WLRF-Tables.html</loc>
-    <lastmod>2023-07-31T14:49:46.775Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/transition-from-rmarkdown.html</loc>
-    <lastmod>2023-07-31T14:49:33.646Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Visualizations.html</loc>
-    <lastmod>2023-07-31T14:49:47.161Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Nested-Table.html</loc>
-    <lastmod>2023-07-31T14:49:51.039Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/data-pages/BSJ-Political-Violence.html</loc>
-    <lastmod>2023-07-31T14:50:03.996Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Codebook-current.html</loc>
-    <lastmod>2023-07-31T14:50:06.817Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/ultimate-consequences/About.html</loc>
-    <lastmod>2023-07-31T14:50:07.863Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ultimateconsequences.github.io/about.html</loc>
-    <lastmod>2023-07-31T14:50:08.756Z</lastmod>
+    <lastmod>2023-07-31T15:45:30.407Z</lastmod>
   </url>
   <url>
     <loc>https://ultimateconsequences.github.io/explore.html</loc>
-    <lastmod>2023-07-31T14:50:09.786Z</lastmod>
+    <lastmod>2023-07-31T15:45:29.285Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/about.html</loc>
+    <lastmod>2023-07-31T15:45:28.258Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/About.html</loc>
+    <lastmod>2023-07-31T15:45:27.274Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/BSJ-Political-Violence.html</loc>
+    <lastmod>2023-07-31T15:45:26.137Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/index.html</loc>
+    <lastmod>2023-07-31T15:45:16.993Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/data-pages/WLRF-Tables.html</loc>
+    <lastmod>2023-07-31T15:45:09.291Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Methodology.html</loc>
+    <lastmod>2023-07-31T15:45:00.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/WLRF-Tables.html</loc>
+    <lastmod>2023-07-31T15:44:59.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/transition-from-rmarkdown.html</loc>
+    <lastmod>2023-07-31T15:44:46.026Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Visualizations.html</loc>
+    <lastmod>2023-07-31T15:45:00.128Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Nested-Table.html</loc>
+    <lastmod>2023-07-31T15:45:03.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/data-pages/BSJ-Political-Violence.html</loc>
+    <lastmod>2023-07-31T15:45:16.512Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Codebook-current.html</loc>
+    <lastmod>2023-07-31T15:45:19.428Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Project-Overview.html</loc>
+    <lastmod>2023-07-31T15:45:26.738Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/index.html</loc>
+    <lastmod>2023-07-31T15:45:27.834Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/learning-more.html</loc>
+    <lastmod>2023-07-31T15:45:28.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/dashboards.html</loc>
+    <lastmod>2023-07-31T15:45:29.946Z</lastmod>
   </url>
   <url>
     <loc>https://ultimateconsequences.github.io/quarto-workflows/browser.html</loc>
-    <lastmod>2023-07-31T14:50:10.714Z</lastmod>
+    <lastmod>2023-07-31T15:45:30.844Z</lastmod>
   </url>
   <url>
     <loc>https://ultimateconsequences.github.io/quarto-workflows/index.html</loc>
-    <lastmod>2023-07-31T14:50:11.818Z</lastmod>
+    <lastmod>2023-07-31T15:45:32.004Z</lastmod>
   </url>
 </urlset>
