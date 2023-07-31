@@ -1,1 +1,1 @@
-Sitemap: https://carwilb.github.io/quarto-website/sitemap.xml
+Sitemap: https://ultimateconsequences.github.io/sitemap.xml

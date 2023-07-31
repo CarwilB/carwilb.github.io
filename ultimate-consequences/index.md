@@ -3,9 +3,6 @@ title: Ultimate Consequences
 layout: default
 nav_order: 1
 ---
-
-# Ultimate Consequences:
-
 ## A comprehensive database of deaths in Bolivian political conflict during the democratic era, 1982--present
 
 Ultimate Consequences, a quantitative and qualitative database, unique in its depth and completeness of coverage, of all conflict deaths in Bolivia since October 1982, a period of largely elected governments and political dynamism. The database enables comparative analysis across twelve presidential administrations, four episodes where protesters successfully sought the end of a presidential term, and 192 protest events in 17 domains of conflict. As of November 2022, the project had identified **621** to **639** of these deaths, including those of **600** named individuals. The database is maintained as a Google Docs spreadsheet, which can be queried by R scripts, and whose reports can be generated internally or exported for further manual coding.
@@ -28,4 +25,3 @@ This website is here to provide access to:
 
 {{< video https://youtu.be/W_cCUbSOSqs >}}
 
-{% include youtube.html id="W_cCUbSOSqs" %}

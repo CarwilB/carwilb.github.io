@@ -1,67 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carwilb.github.io/quarto-website/quarto-workflows/rstudio.html</loc>
-    <lastmod>2023-07-27T17:40:08.878Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/quarto-workflows/rstudio.html</loc>
+    <lastmod>2023-07-31T14:50:12.341Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/quarto-workflows/jupyter.html</loc>
-    <lastmod>2023-07-27T17:40:07.794Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/quarto-workflows/jupyter.html</loc>
+    <lastmod>2023-07-31T14:50:11.339Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/explore.html</loc>
-    <lastmod>2023-07-27T17:40:06.719Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/about-bio.html</loc>
+    <lastmod>2023-07-31T14:50:10.237Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/index.html</loc>
-    <lastmod>2023-07-27T17:40:05.663Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/learning-more.html</loc>
+    <lastmod>2023-07-31T14:50:09.124Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Project-Overview.html</loc>
-    <lastmod>2023-07-27T17:40:04.649Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/index.html</loc>
+    <lastmod>2023-07-31T14:50:08.319Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/index.html</loc>
-    <lastmod>2023-07-27T17:40:01.558Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Project-Overview.html</loc>
+    <lastmod>2023-07-31T14:50:07.347Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Methodology.html</loc>
-    <lastmod>2023-07-27T17:39:58.069Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/index.html</loc>
+    <lastmod>2023-07-31T14:50:04.425Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/WLRF-Tables.html</loc>
-    <lastmod>2023-07-27T17:39:57.046Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/data-pages/WLRF-Tables.html</loc>
+    <lastmod>2023-07-31T14:49:56.603Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/transition-from-rmarkdown.html</loc>
-    <lastmod>2023-07-27T17:39:48.183Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Methodology.html</loc>
+    <lastmod>2023-07-31T14:49:47.812Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Visualizations.html</loc>
-    <lastmod>2023-07-27T17:39:57.460Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/WLRF-Tables.html</loc>
+    <lastmod>2023-07-31T14:49:46.775Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Nested-Table.html</loc>
-    <lastmod>2023-07-27T17:40:01.100Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/transition-from-rmarkdown.html</loc>
+    <lastmod>2023-07-31T14:49:33.646Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/Codebook-current.html</loc>
-    <lastmod>2023-07-27T17:40:04.031Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Visualizations.html</loc>
+    <lastmod>2023-07-31T14:49:47.161Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/ultimate-consequences/About.html</loc>
-    <lastmod>2023-07-27T17:40:05.175Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Nested-Table.html</loc>
+    <lastmod>2023-07-31T14:49:51.039Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/learning-more.html</loc>
-    <lastmod>2023-07-27T17:40:06.043Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/data-pages/BSJ-Political-Violence.html</loc>
+    <lastmod>2023-07-31T14:50:03.996Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/quarto-workflows/browser.html</loc>
-    <lastmod>2023-07-27T17:40:07.151Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/Codebook-current.html</loc>
+    <lastmod>2023-07-31T14:50:06.817Z</lastmod>
   </url>
   <url>
-    <loc>https://carwilb.github.io/quarto-website/quarto-workflows/index.html</loc>
-    <lastmod>2023-07-27T17:40:08.329Z</lastmod>
+    <loc>https://ultimateconsequences.github.io/ultimate-consequences/About.html</loc>
+    <lastmod>2023-07-31T14:50:07.863Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/about.html</loc>
+    <lastmod>2023-07-31T14:50:08.756Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/explore.html</loc>
+    <lastmod>2023-07-31T14:50:09.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/quarto-workflows/browser.html</loc>
+    <lastmod>2023-07-31T14:50:10.714Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ultimateconsequences.github.io/quarto-workflows/index.html</loc>
+    <lastmod>2023-07-31T14:50:11.818Z</lastmod>
   </url>
 </urlset>
