@@ -1,0 +1,75 @@
+project: 
+  type: website
+  output-dir: docs
+
+website: 
+  page-navigation: true
+  title: "Quarto Website Testbed" 
+  site-url: "https://carwilb.github.io/quarto-website" 
+  favicon: favicon.ico
+  
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "Ultimate Consequences research website"
+    
+  sidebar:
+    title: "Quarto Web Test"
+    logo: "images/carwil-bjork-james-hex.png"
+    pinned: true
+    align: center
+    tools: 
+      - icon: globe
+        href: https://ultimateconsequences.github.io
+        text: "Ultimate Consequences Project Website"
+      - icon: wordpress
+        href: https://woborders.blog
+        text: "Carwil without Borders"
+      - icon: mastodon
+        href: https://mastodon.online/@Carwil
+        text: "Carwil on Mastodon"
+      - icon: twitter
+        href: https://twitter.com/CarwilBJ
+        text: "Carwil Bjork-James on Twitter"         
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Welcome
+      - text: "---"
+      - about.qmd
+      - text: "---"
+      - explore.qmd
+      - section: ultimate-consequences/index.md
+        contents: 
+          - ultimate-consequences/About.md
+          - ultimate-consequences/Methodology.md
+          - ultimate-consequences/Codebook-current.md
+          - ultimate-consequences/Project-Overview.md
+          - ultimate-consequences/Nested-Table.Rmd
+          - ultimate-consequences/Visualizations.md
+      - text: "Data Pages for Publications"
+        contents: 
+          - ultimate-consequences/BSJ-Political-Violence.Rmd
+          - ultimate-consequences/WLRF-Tables.Rmd
+      - learning-more.qmd
+      - href: transition-from-rmarkdown.qmd
+        text: Transition from Rmd
+
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss] # from https://github.com/sta210-s22/website/blob/main/_quarto.yml
+      dark: [cosmo, theme-dark.scss]
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+
+filters:
+  - include-files.lua
+  - quarto
+
+  

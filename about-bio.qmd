@@ -1,0 +1,52 @@
+---
+title: "Carwil Bjork-James"
+about:
+  template: trestles
+  image: images/carwil-author-crop.jpg
+  links:
+    - icon: globe
+      text: Ultimate Consequences database
+      href: https://ultimateconsequences.github.io
+    - icon: wordpress
+      text: Carwil w/o Borders blog
+      href: https://woborders.blog
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/CarwilBJ/
+    - icon: twitter
+      text: Twitter archive
+      href: https://carwilb.github.io/twitter/
+    - icon: mastodon
+      text: Mastodon
+      href: https://mastodon.online/Carwil/
+toc: false
+page-navigation: false
+---
+
+**Carwil Bjork-James** is a cultural anthropologist who conducts immersive and historical research on disruptive protest, environmental struggles, state violence, and indigenous collective rights. He is the principal investigator of Ultimate Consequences, a digital archive on death in Bolivian political conflict, and author of *The Sovereign Street: Making Revolution in Urban Bolivia*. He is an Associate Professor of Anthropology and of Law at Vanderbilt University.
+
+From 2008 to 2013, he conducted ethnographic fieldwork and oral history interviews on social movements, race and space, protest tactics, and political change in Cochabamba, Sucre, and La Paz, resulting in a monograph, [*The Sovereign Street*](sovereignstreet.org), and articles including \"Binding Leaders to the Community\" (*Journal of Latin American and Caribbean Anthropology*, 2018), \"Race and the Right to Speak for the City: Political Violence in Bolivia\'s 2006--2009 Stalemate\" (*UAS*, 2019), \"Unarmed Militancy\" (*American Anthropologist*, 2020). Using both anthropological and historical methods, The Sovereign Street explores how pivotal public events generate political legitimacy, contribute to major (sometimes revolutionary) transformations in the balance of power, and provide models for future political action. The ethnographic evidence collected about these events---of social life as experienced through the human body, the meanings attached to places, and social movement practices---explains how grassroots movements exert leverage upon the state through protest.
+
+[**Ultimate Consequences**](ultimateconsequences.github.io) is a quantitative and qualitative database, unique in its depth and completeness of coverage, of all conflict deaths in Bolivia since October 1982. It is supported by a research grant from the National Science Foundation and a Digital Humanities Incubation Grant from Vanderbilt University. Drawing on the database, Prof. Bjork-James wrote an expert witness report for the plaintiffs in *Mamani et al. v. Sánchez de Lozada et al.*, the first US Federal case to hold a head of state liable for human rights violations, and the white paper \"Mass Protest and State Repression in Bolivian Political Culture\" (Human Rights Program at Harvard Law School, 2020). His published scholarship has addressed the evolving international human rights regime, social movement interventions into global governance, anti-indigenous racism and state violence in eastern Colombia, and socio-environmental conflicts and state environmental policy in the Andes.
+
+## Experience
+
+Associate Professor of Anthropology \| **Vanderbilt University** \| August 2023 -- present
+
+Assistant Professor of Anthropology \| **Vanderbilt University** \| June 2013 -- July 2023
+
+Instructor, Anthropology \| **Hunter College, CUNY** \| January -- December 2012
+
+Instructor, Anthropology \| Baruch College, CUNY \| August -- December 2011
+
+Instructor, Activism and Social Change \| New College of California \| 2005 -- 2006
+
+## Education
+
+Ph.D. in Anthropology, 2013 \| **CUNY Graduate Center** \| New York, NY
+
+M.P.P. in Environmental and Human Rights Policy, 1998 \| **University of Chicago** \| Chicago, IL
+
+B.A. in Mathematics and Physics, 1996 \| **Northwestern University** \| Evanston, IL
+
+## 
