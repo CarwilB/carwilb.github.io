@@ -21,6 +21,9 @@ website:
       - icon: globe
         href: https://ultimateconsequences.github.io
         text: "Ultimate Consequences Project Website"
+      - icon: wordpress
+        href: https://woborders.blog/posts/bolivia/
+        text: "Bolivia on Carwil without Borders blog"
 
     style: "docked"
     search: true
