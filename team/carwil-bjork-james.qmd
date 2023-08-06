@@ -2,7 +2,7 @@
 title: "Carwil Bjork-James"
 about:
   template: trestles
-  image: /images/carwil-author-crop.jpg
+  image: ../images/carwil-author-crop.jpg
   links:
     - icon: globe
       text: Research website
