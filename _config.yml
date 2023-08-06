@@ -1,0 +1,31 @@
+title: Ultimate Consequences
+description: A comprehensive database of deaths in Bolivian political conflict
+theme: just-the-docs
+
+callouts:
+  note:
+   title: Note
+   color: purple
+
+url: https://ultimateconsequences.github.io
+
+aux_links:
+  Carwil Bjork-James at Vanderbilt: https://my.vanderbilt.edu/cbjorkjames/
+  Blog: https://woborders.blog
+
+nav_external_links:
+  - title: Event Summary Table
+    url: https://ultimateconsequences.github.io/vis/Event-List-Plus.html
+    hide_icon: true # set to true to hide the external link icon - defaults to false
+
+  - title: Directory of Events and Deaths
+    url: https://ultimateconsequences.github.io/vis/Nested-Table.html
+    hide_icon: true # set to true to hide the external link icon - defaults to false
+
+  - title: Directorio cronológico de eventos y muertes
+    url: https://ultimateconsequences.github.io/vis/Directorio-Eventos-Muertes.html
+    hide_icon: true # set to true to hide the external link icon - defaults to false
+
+  - title: Bolivia Studies Journal 2022 data page
+    url: https://ultimateconsequences.github.io/BSJ-Political-Violence.html
+    hide_icon: true # set to true to hide the external link icon - defaults to false
