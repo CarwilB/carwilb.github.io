@@ -1,6 +1,10 @@
 project: 
   type: website
   output-dir: docs
+  resources: 
+    - images/*
+    - Geocoding.html
+    - project-documentation/*
 
 website: 
   page-navigation: true
@@ -30,13 +34,12 @@ website:
     search: true
     collapse-level: 1
     contents:
-      - href: ultimate-consequences/index.md
+      - href: index.qmd
         text: Welcome
       - section: ultimate-consequences/About.md
         contents:
           - ultimate-consequences/Methodology.md
           - ultimate-consequences/Codebook-current.md
-          - ultimate-consequences/Project-Overview.Rmd
       - section: ultimate-consequences/Visualizations.md
         contents:
           - href: vis/Nested-Table.Rmd
@@ -45,6 +48,8 @@ website:
             text: "Directorio cronológico de muertes"
           - href: vis/Choropleth-Map-Municipality.html
             text: "Map by Municipality"
+          - href: vis/Choropleth-Map-Municipality-es.html
+            text: "Mapa por Municipio"
           - dashboards.qmd
       - section: "Data Pages for Publications"
         contents:
@@ -55,7 +60,7 @@ website:
       - text: "---"
       - section: "Research Team"
         contents:
-          - team/Carwil-Bjork-James.qmd
+          - team/carwil-bjork-james.qmd
       - text: "---"
 
 format:
