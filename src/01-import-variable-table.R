@@ -9,10 +9,12 @@
 #
 #  This script omits functionality for always providing dates for variable names.
 
-source("src/import-deaths-database.R")
-source("src/update-versioned-archive.R")
+library(here)
 
-vt.filename <- "data/variable-names.rds"
+source(here::here("src","import-deaths-database.R"))
+source(here::here("src","update-versioned-archive.R"))
+
+vt.filename <- "variable-names.rds"
 
 if (live.import){
   # Import the Entries
@@ -22,7 +24,7 @@ if (live.import){
   vt.filename.dated <- update_versioned_archive(var_name_table, vt.filename)
 }else
 {
-  var_name_table <- read_rds(vt.filename) 
+  var_name_table <- read_rds(here::here("data",vt.filename)) 
 }
 
 variable_name <- function(variable, lang="en", name_table = var_name_table){
