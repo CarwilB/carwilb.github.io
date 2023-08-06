@@ -13,8 +13,9 @@ website:
     left: "Ultimate Consequences research website"
     
   sidebar:
-    title: "Lethal Political Conflict in Bolivia"
     logo: "images/Bolivia-UC-icon-312px.png"
+    logo-alt: "Ultimate Consequences"
+    title: "Lethal Political Conflict in Bolivia"
     pinned: true
     align: center
     tools: 
@@ -38,25 +39,34 @@ website:
           - ultimate-consequences/Project-Overview.Rmd
       - section: ultimate-consequences/Visualizations.md
         contents:
-          - ultimate-consequences/Nested-Table.Rmd
+          - href: vis/Nested-Table.Rmd
+            text: "Directory of event & individuals"
+          - href: vis/Directorio-Eventos-Muertes.Rmd
+            text: "Directorio cronológico de muertes"
+          - href: vis/Choropleth-Map-Municipality.html
+            text: "Map by Municipality"
           - dashboards.qmd
       - section: "Data Pages for Publications"
         contents:
-          - ultimate-consequences/BSJ-Political-Violence.Rmd
-          - ultimate-consequences/WLRF-Tables.Rmd
+          - href: ultimate-consequences/BSJ-Political-Violence.Rmd
+            text: "Tactics of Political Violence in 2019"
+          - href: ultimate-consequences/WLRF-Tables.Rmd
+            text: "When Does Lethal Repression Fail?"
       - text: "---"
-      - about.qmd
+      - section: "Research Team"
+        contents:
+          - team/Carwil-Bjork-James.qmd
       - text: "---"
 
 format:
   html:
-    theme:
-      light: [cosmo, theme.scss] # from https://github.com/sta210-s22/website/blob/main/_quarto.yml
-      dark: [cosmo, theme-dark.scss]
+    theme: 
+      light: yeti
+      dark: slate
+    mainfont: "Open Sans"
     code-copy: true
     code-overflow: wrap
     toc: true
-
 
 filters:
   - include-files.lua

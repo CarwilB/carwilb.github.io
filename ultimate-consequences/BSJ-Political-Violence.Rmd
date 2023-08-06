@@ -298,8 +298,8 @@ de.confirmed %>% tabyl(event_title) %>% filter(n>20) %>% select(-percent) %>% ar
 ## An overall breakdown
 
 ```{r overall-totals}
-n_entries <- count(de)
-n_confirmed <- count(def)
+n_entries <- nrow(de)
+n_confirmed <- nrow(def)
 
 n_unconfirmed <- sum(de$unconfirmed == TRUE, na.rm =TRUE)
 
@@ -307,14 +307,14 @@ de_excluded <- de %>%
   filter(intentionality == "Collateral" 
          | intentionality == "Nonconflict Accident"
          | intentionality == "Nonconflict")
-n_excluded <- count(de_excluded)
+n_excluded <- nrow(de_excluded)
 n_collateral <- sum(de$intentionality == "Collateral", na.rm = TRUE)
 n_nonconfaccident <- sum(de$intentionality == "Nonconflict Accident", na.rm = TRUE)
 n_nonconfdeath <- sum(de$intentionality == "Nonconflict", na.rm = TRUE)
 
 de_named <- de %>%
   filter(!is.na(dec_firstname) & !is.na(dec_surnames) )
-n_named <- count(de_named)
+n_named <- nrow(de_named)
 
 ```
 
@@ -363,15 +363,16 @@ de.spgunshot.table <- de.spgunshot %>% tabyl(event_title) %>% filter(n>=3) %>%
                                        select(-percent) %>% arrange(desc(n))
 
 de.spgunshot.table
+
 n_spgunshot.events <- nrow(de.spgunshot.table)
 
 n_spgushot.bystanders <- de.confirmed %>% filter((cause_death=="Gunshot" & state_perpetrator == "Yes")&
                                                   (intentionality=="Bystander")) %>%
-                                          count()
+                                          nrow()
 n_spgushot.bystanders_hi <- de.confirmed %>% filter((cause_death=="Gunshot" & state_perpetrator == "Yes")&
                                                   (intentionality=="Bystander" |
                                                    intentionality == "Direct / Bystander")) %>%
-                                          count()
+                                          nrow()
 ```
 
 > There have been at least `r n_spgunshot.events` events in which security forces shot three or more people during protests, and `r n_spgushot.bystanders` to `r n_spgushot.bystanders_hi` times that security forces killed bystanders, often by firing indiscriminately beyond those protesting.
@@ -586,7 +587,7 @@ de.sp.evo <- de.confirmed %>% filter(pres_admin=="Evo Morales" & state_perpetrat
 
 n_sp_tenyears <- de.confirmed %>% filter((pres_admin=="Evo Morales" & state_perpetrator == "Yes") &
                                                   (year>2009) & (year<=2019)) %>%
-                                          count()
+                                          nrow()
 as.numeric(n_sp_tenyears)
 ```
 

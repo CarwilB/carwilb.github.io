@@ -29,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ultimate-consequences/Nested-Table.html" rel="next">
+<link href="../vis/Nested-Table.html" rel="next">
 <link href="../ultimate-consequences/Codebook-current.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -153,8 +153,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ultimate-consequences/Nested-Table.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Directory of individual deaths, summarized by event</span></a>
+  <a href="../vis/Nested-Table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Directory of event &amp; individuals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vis/Directorio-Eventos-Muertes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Directorio cronológico de muertes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vis/Choropleth-Map-Municipality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Map by Municipality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dashboards</span></a>
   </div>
 </li>
       </ul>
@@ -171,24 +189,29 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ultimate-consequences/BSJ-Political-Violence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bolivia Studies Journal Data Page</span></a>
+ <span class="menu-text">Tactics of Political Violence in 2019</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ultimate-consequences/WLRF-Tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Analysis for When Does Lethal Repression Fail?</span></a>
+ <span class="menu-text">When Does Lethal Repression Fail?</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Carwil Bjork-James</span></a>
-  </div>
-</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Research Team</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      </ul>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
     </ul>
     </div>
@@ -227,7 +250,19 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="visualizing-the-database" class="level1">
 <h1>Visualizing the database</h1>
-<p>{: .note-title } &gt; Welcome! &gt; &gt; The visualization tools listed below offer the best way to quickly &gt; examine and explore the Ultimate Consequences dataset. To access those &gt; tools that are live, choose them from the tables below.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Welcome
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The visualization tools listed below offer the best way to quickly examine and explore the Ultimate Consequences dataset. To access those tools that are live, choose them from the tables below.</p>
+</div>
+</div>
 <p>The Ultimate Consequences web portal will offer visitors graphical and interpretative introductions to the patterns of political violence and loss over Bolivia’s democratic period. This includes interactive maps and data visualizations; summary pages for each presidency, protest domain, region, and event; and individual pages.</p>
 </section>
 <section id="overviews-of-the-dataset" class="level1">
@@ -634,8 +669,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ultimate-consequences/Nested-Table.html" class="pagination-link">
-        <span class="nav-page-text">Directory of individual deaths, summarized by event</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../vis/Nested-Table.html" class="pagination-link">
+        <span class="nav-page-text">Directory of event &amp; individuals</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

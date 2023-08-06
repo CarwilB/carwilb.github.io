@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -153,8 +153,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ultimate-consequences/Nested-Table.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Directory of individual deaths, summarized by event</span></a>
+  <a href="../vis/Nested-Table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Directory of event &amp; individuals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vis/Directorio-Eventos-Muertes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Directorio cronológico de muertes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vis/Choropleth-Map-Municipality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Map by Municipality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dashboards</span></a>
   </div>
 </li>
       </ul>
@@ -171,24 +189,29 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ultimate-consequences/BSJ-Political-Violence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bolivia Studies Journal Data Page</span></a>
+ <span class="menu-text">Tactics of Political Violence in 2019</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ultimate-consequences/WLRF-Tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Analysis for When Does Lethal Repression Fail?</span></a>
+ <span class="menu-text">When Does Lethal Repression Fail?</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Carwil Bjork-James</span></a>
-  </div>
-</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Research Team</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      </ul>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
     </ul>
     </div>
@@ -207,6 +230,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#deaths-excluded-from-this-analysis" id="toc-deaths-excluded-from-this-analysis" class="nav-link" data-scroll-target="#deaths-excluded-from-this-analysis">Deaths excluded from this analysis</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   <li><a href="#event-analysis" id="toc-event-analysis" class="nav-link" data-scroll-target="#event-analysis">Event analysis</a></li>
+  <li><a href="#transparency-and-reproducibility-of-our-analysis" id="toc-transparency-and-reproducibility-of-our-analysis" class="nav-link" data-scroll-target="#transparency-and-reproducibility-of-our-analysis">Transparency and Reproducibility of Our Analysis</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -233,10 +257,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
-<p>The Ultimate Consequences database enumerates individual deaths in Bolivian political conflict since October 1982, the end of military rule in the country. It is compiled by the research team based on multiple sources, including media reports, governmental, intergovernmental, and private human rights reports, and use of the research literature on political conflict. The dataset now includes nearly all of the deaths identified by a Permanent Assembly of Human Rights-Bolivia (APDHB) study of deaths from 1988 to 2003, and a study of the coca conflict from 1982 to 2005 (Navarro Miranda 2006; Llorenti 2009; Salazar Ortuño 2008). Unlike prior compilations by human rights organizations, however, this database includes a variety of qualitative variables designed to understand how and why the deaths occurred and what policies and patterns underpin them. The scale of the dataset for this period is both large enough to identify significant patterns and small enough (unlike the situation in some other Latin American countries) to permit the construction of a database that includes detailed information about every death. Precisely because its coverage is nearly comprehensive, the database offers a systematic sample of cases for quantitative and/or qualitative analysis, untainted by selection bias.</p>
+<p>The Ultimate Consequences database enumerates individual deaths in Bolivian political conflict since October 1982, the end of military rule in the country. It is compiled by the research team based on multiple sources, including media reports, governmental, intergovernmental, and private human rights reports, and use of the research literature on political conflict. The dataset now includes nearly all of the deaths identified by a Permanent Assembly of Human Rights-Bolivia (APDHB) study of deaths from 1988 to 2003, and a study of the coca conflict from 1982 to 2005 (Navarro Miranda 2006; Llorenti 2009; Salazar Ortuño 2008). Unlike prior compilations by human rights organizations, however, this database includes a variety of qualitative variables designed to understand how and why the deaths occurred and what policies and patterns underpin them.</p>
+<p>The scale of the dataset for this period is both large enough to identify significant patterns and small enough (unlike the situation in some other Latin American countries) to permit the construction of a database that includes detailed information about every death. Precisely because its coverage is nearly comprehensive, the database offers a systematic sample of cases for quantitative and/or qualitative analysis, untainted by selection bias.</p>
 <section id="data-collection-and-search-strategies" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection-and-search-strategies">Data Collection and Search Strategies</h2>
-<p>This project follows in traditions of datasets designed to analyze the frequency of political conflict, and to bring accountability for acts of violence. Many conflict-related datasets were constructed using passive forms of monitoring, such as the World Labor Group database (Silver 2003, 181–97), which enumerated all labor strikes recorded by two major newspapers, and Airwars’ (n.d.) monitoring of news coverage of deaths in air strikes. These projects sought to rapidly capture many known cases with roughly constant likelihood over time. When reports conflict, Airwars grades the quality of reporting and documents the minimum number of deaths reported. Compilations by human rights monitors, by contrast, gather more detailed information on causality and responsibility and are motivated by holding states and armed nonstate actors to account. Our project draws on journalistic, advocacy, and scholarly sources to comprehensively document all deaths in political conflict, including those not readily categorizable as human rights violations. Not only does this approach allow more complete coverage of the topic, but it also allows us to shed light on which kinds of deaths are documented or ignored by different sources. We began the project with journalistic compilations of conflict deaths, and human rights reports by domestic and international human rights bodies. Our iterative research strategy then sought out additional information from two Bolivian NGO publications that archive and summarize news about social movement activity, archives of the Bolivian news media, and a range of other sources. The multivariable design of our database, as well as internal rating system for the quality of our descriptions, drives our search for additional sources on each lethal event.</p>
+<p>This project follows in traditions of datasets designed to analyze the frequency of political conflict, and to bring accountability for acts of violence. Many conflict-related datasets were constructed using passive forms of monitoring, such as the World Labor Group database (Silver 2003, 181–97), which enumerated all labor strikes recorded by two major newspapers, and Airwars’ (n.d.) monitoring of news coverage of deaths in air strikes. These projects sought to rapidly capture many known cases with roughly constant likelihood over time. When reports conflict, Airwars grades the quality of reporting and documents the minimum number of deaths reported. Compilations by human rights monitors, by contrast, gather more detailed information on causality and responsibility and are motivated by holding states and armed nonstate actors to account.</p>
+<p>Our project draws on journalistic, advocacy, and scholarly sources to comprehensively document all deaths in political conflict, including those not readily categorizable as human rights violations. Not only does this approach allow more complete coverage of the topic, but it also allows us to shed light on which kinds of deaths are documented or ignored by different sources. We began the project with journalistic compilations of conflict deaths, and human rights reports by domestic and international human rights bodies. Our iterative research strategy then sought out additional information from two Bolivian NGO publications that archive and summarize news about social movement activity, archives of the Bolivian news media, and a range of other sources. The multivariable design of our database, as well as internal rating system for the quality of our descriptions, drives our search for additional sources on each lethal event.</p>
 </section>
 <section id="inclusion-criteria" class="level2">
 <h2 class="anchored" data-anchor-id="inclusion-criteria">Inclusion criteria</h2>
@@ -252,7 +278,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="event-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="event-analysis">Event analysis</h2>
-<p>The analysis in this article uses events rather than individual deaths as its cases. Every death is associated with precisely one event, and each event is coded as part of a “protest domain,” one of 18 general areas of political contention, and a more specific “protest campaign.” ‘Event’ is a term with many definitions in the study of social movements and contentious politics from the pivotal historical moment to the action at a single time and place as recorded by news media, but the meaning used in the database is perhaps best captured by Charles Tilly’s term episodes: ‘bounded sequences of continuous interaction’. Bolivian mass mobilisation is organized in a routine sequence— collective organisation, mass mobilisation, escalation of tactics, negotiation, and concessions—and organizers work to propel the process forward repeatedly until the target, usually the government, gives in. Repressive force seeks to interrupt this process, usually by punishing movements in the mobilisation or escalation stages. For purposes of the database, we treat a relatively continuous series of actions as a single episode or event, unless and until it is interrupted by demobilisation. (In a handful of instances where the nature of political violence dramatically shifts, a single mobilisation is divided into separate events Data for events is entered in a separate page of the Google Sheets database called “Event Status” and archived in the R whenever it’s used. For each of the events with three or more deaths, the PI surveyed news reports and academic writings on the conflicts involved and described the results of the protest event from the point of view of the protesting group. In our event table, these outcomes are coloured as a binary movement success (green) or repression success (red), while the text describes the outcome. Several were coded as successes but we note a ‘(Partial) agreement’ by the government. One case, the 1988 Villa Tunari massacre, was coded as having a mixed outcome. Future coding efforts will address those events with one or two deaths. ## Transparency and Reproducibility of Our Analysis The research using the database takes place in two steps: drawing on documentary and other sources to name and code the circumstances of each of the deaths, and analyzing patterns in loss and political violence based on information in the database. The task of providing transparency and reproducibility differs between these two steps. Regarding the first step, we have compiled bibliographic information about sources, quotes from those sources, and comments about any complications in coding into the database and a narrative summary of “complex cases” in the dataset. Coding decisions are made according to a codebook, which we also share. Criteria for including or excluding deaths from database are also listed in the codebook, and deaths that we have chosen to exclude (for example, due to inaccurate reports and non-conflict accidents) are archived within the database. Each entry in our database currently lists sources consulted, and we are compiling fully-cited narrative descriptions for each lethal event. We will make this sourcing transparent through by posting these cited narratives, maintaining a public Zotero library of referenced sources, and making scanned documents available to other researchers. Coupling our dataset with its sources allows historical and social scientific researchers to validate our conclusions and build their own scholarship on the source materials we provide. When we analyze the dataset, we will ground our choices in clearly defined criteria, using categorical information in the database wherever possible. By specifying our search criteria for relevant cases, explaining exceptions, and embedding our analysis techniques in R scripts that use the database, we document our choices and create tools that can automatically update results when additional cases are uncovered, errors are corrected, or new information is brought to light. Archiving and versioning (Klump et al.&nbsp;2020) of the database and these tools allows other researchers to both reproduce our results, and test their robustness against different choices in coding or analysis.</p>
+<p>The analysis in this article uses events rather than individual deaths as its cases. Every death is associated with precisely one event, and each event is coded as part of a “protest domain,” one of 18 general areas of political contention, and a more specific “protest campaign.” ‘Event’ is a term with many definitions in the study of social movements and contentious politics from the pivotal historical moment to the action at a single time and place as recorded by news media, but the meaning used in the database is perhaps best captured by Charles Tilly’s term episodes: ‘bounded sequences of continuous interaction’.</p>
+<p>Bolivian mass mobilisation is organized in a routine sequence— collective organisation, mass mobilisation, escalation of tactics, negotiation, and concessions—and organizers work to propel the process forward repeatedly until the target, usually the government, gives in. Repressive force seeks to interrupt this process, usually by punishing movements in the mobilisation or escalation stages. For purposes of the database, we treat a relatively continuous series of actions as a single episode or event, unless and until it is interrupted by demobilisation. (In a handful of instances where the nature of political violence dramatically shifts, a single mobilisation is divided into separate events</p>
+<p>Data for events is entered in a separate page of the Google Sheets database called “Event Status” and archived in the R whenever it’s used. For each of the events with three or more deaths, the PI surveyed news reports and academic writings on the conflicts involved and described the results of the protest event from the point of view of the protesting group. In our event table, these outcomes are coloured as a binary movement success (green) or repression success (red), while the text describes the outcome. Several were coded as successes but we note a ‘(Partial) agreement’ by the government. One case, the 1988 Villa Tunari massacre, was coded as having a mixed outcome. Future coding efforts will address those events with one or two deaths.</p>
+</section>
+<section id="transparency-and-reproducibility-of-our-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="transparency-and-reproducibility-of-our-analysis">Transparency and Reproducibility of Our Analysis</h2>
+<p>The research using the database takes place in two steps: drawing on documentary and other sources to name and code the circumstances of each of the deaths, and analyzing patterns in loss and political violence based on information in the database. The task of providing transparency and reproducibility differs between these two steps. Regarding the first step, we have compiled bibliographic information about sources, quotes from those sources, and comments about any complications in coding into the database and a narrative summary of “complex cases” in the dataset. Coding decisions are made according to a codebook, which we also share. Criteria for including or excluding deaths from database are also listed in the codebook, and deaths that we have chosen to exclude (for example, due to inaccurate reports and non-conflict accidents) are archived within the database. Each entry in our database currently lists sources consulted, and we are compiling fully-cited narrative descriptions for each lethal event. We will make this sourcing transparent through by posting these cited narratives, maintaining a public Zotero library of referenced sources, and making scanned documents available to other researchers. Coupling our dataset with its sources allows historical and social scientific researchers to validate our conclusions and build their own scholarship on the source materials we provide.</p>
+<p>When we analyze the dataset, we will ground our choices in clearly defined criteria, using categorical information in the database wherever possible. By specifying our search criteria for relevant cases, explaining exceptions, and embedding our analysis techniques in R scripts that use the database, we document our choices and create tools that can automatically update results when additional cases are uncovered, errors are corrected, or new information is brought to light. Archiving and versioning (Klump et al.&nbsp;2020) of the database and these tools allows other researchers to both reproduce our results, and test their robustness against different choices in coding or analysis.</p>
 
 
 </section>
