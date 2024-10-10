@@ -1,27 +1,51 @@
 ---
-title: "Ultimate Consequences"
-subtitle: "A comprehensive database of deaths in Bolivian political conflict during the democratic era, 1982--present"
+title: "Research notes on violence, human rights, <br>social movements, and open data"
+author: "Carwil Bjork-James" 
+listing:
+  id: post-listing
+  contents: posts
+  sort: "date desc"
+  type: grid
 ---
 
 ### Welcome
 
-Ultimate Consequences is a quantitative and qualitative database, unique in its depth and completeness of coverage, of all conflict deaths in Bolivia since October 1982, a period of largely elected governments and political dynamism. The database enables comparative analysis across twelve presidential administrations, four episodes where protesters successfully sought the end of a presidential term, and 192 protest events in 17 domains of conflict. As of November 2022, the project had identified **621** to **639** of these deaths, including those of **600** named individuals. The database is maintained as a Google Docs spreadsheet, which can be queried by R scripts, and whose reports can be generated internally or exported for further manual coding.
+This research notes website is an experiment born of crisis and grief.
+Expect it to change forms before it settles.
 
-Due to the number of lethal events in the study period, the dataset is both large enough for quantitative research that analyzes patterns and small enough for qualitative, journalistic, and historical examination of the individual deaths involved. To serve these multiple purposes, we code information such as individuals' relation to a specific social movement, protest campaign, cause of death, responsible parties, and location, and writing detailed narrative descriptions about major events.
+It's a space where I will witness planned cruelty and human tragedies with numbers and data.
+Because my primary research project archives the death of nearly seven hundred Bolivians who
+lost their lives in political struggle and I need somewhere to reflect on what that means.
 
-The project draws on journalistic, advocacy, and scholarly sources to comprehensively document all deaths in political conflict, including those not readily categorizable as human rights violations. The project also seeks to ask more intimate, and cultural, questions about the role of risk, violence, sacrifice, and loss in transformative social change. As the database reveals, Bolivian protest can involve intense risk, privation, self-sacrifice, and either enduring or inflicting violence. Bolivian social movement traditions include proclamations of fearlessness and vows to carry on their struggles "until the ultimate consequences," that is, to persist in collective measures and to refuse to be deterred by deadly state violence.
+Because weapons sent by my country's government are inflicting quantitatively far greater 
+losses weekly and we need data to make sense of how. 
 
-We are hard at work on creating simple tools to allow social scientists, oral historians, and human rights advocates to generate and access summary data and individual entries in the database to answer their own questions. In 2023, we will publicly release a R package that will allow researchers to search, query, and visualize the dataset, and multiple web-accessible views of the database.
+Because using numbers and maps and wrapping my head around the scale of things can dramatically
+change how I view the world. And I can share those perspectives through data.
 
-This website is here to provide access to:
+Because carefully presented evidence offers a path through the public denial that keeeps power intact.
 
--   **Background and documentation on the project** such as descriptions of the project
--   **Tools** for visualizing the dataset on the web
--   *(In 2023)* **Documentation on our R package** for the project
--   *(In 2023)* **Cited narrative descriptions** of lethal conflict events
--   **Archived copies of data pages** produced using RMarkdown that with automatically generated statements and visualizations that document claims made our research articles.
+And because these are the tools I've been training myself to use, and they won't fit on my other 
+main spaces for public reflection, including my blog: [Carwil without Borders](https://woborders.blog/).
 
-### Video introduction to the project
+Lastly behind this data, there is a lot of death. I've chosen not to look away.
 
-{{< video https://youtu.be/W_cCUbSOSqs >}}
+### 
+::: {#post-listing}
+:::
+
+
+### Invocation
+:::{.column-screen-inset-right}
+![](images/Morrison-ThePrize-NMPJ.jpeg){fig-alt="A quote engraved in white text on nearly black marble: 
+'… AND O MY PEOPLE, OUT YONDER,
+HEAR ME, THEY DO NOT LOVE YOUR NECK UNNOOSED AND STRAIGHT.
+SO LOVE YOUR NECK; PUT A HAND ON IT, GRACE IT, STROKE IT AND HOLD IT UP.
+AND ALL YOUR INSIDE PART'S THAT THEY'D JUST AS SOON SLOP FOR HOGS YOU GOT TO LOVE THEM.
+THE DARK, DARK LIVER - LOVE IT, LOVE IT, AND THE BEAT AND BEATING HEART, LOVE THAT TOO.
+MORE THAN EYES OR FEET. MORE THAN LUNGS THAT HAVE YET TO DRAW FREE AIR.
+MORE THAN YOUR LIFE-HOLDING WOMB AND YOUR LIFE-GIVING PRIVATE PARTS, HEAR ME NOW, LOVE YOUR HEART. FOR THIS IS THE PRIZE.'
+- Toni Morrison"}
+
+:::
 

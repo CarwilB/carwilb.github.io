@@ -4,7 +4,7 @@ project:
 
 website: 
   page-navigation: true
-  title: "Quarto Website Testbed" 
+  title: "Carwil Bjork-James"
   site-url: "https://carwilb.github.io/quarto-website" 
   favicon: favicon.ico
   
@@ -38,7 +38,7 @@ website:
       - href: index.qmd
         text: Welcome
       - text: "---"
-      - about.qmd
+      - about-bio.qmd
       - text: "---"
       - explore.qmd
       - section: ultimate-consequences/index.md

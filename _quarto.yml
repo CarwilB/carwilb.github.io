@@ -3,23 +3,22 @@ project:
   output-dir: docs
   resources: 
     - images/*
-    - Geocoding.html
-    - project-documentation/*
-
+    
 website: 
   page-navigation: true
-  title: "Ultimate Consequences" 
-  site-url: "https://ultimateconsequences.github.io/" 
+  title: "Carwil Bjork-James"
+  site-url: "https://carwilb.github.io/quarto-website" 
   favicon: favicon.ico
   
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/)."
-    left: "Ultimate Consequences research website"
+    left: "Carwil Bjork-James's research and data science website"
     
   sidebar:
-    logo: "images/Bolivia-UC-icon-312px.png"
-    logo-alt: "Ultimate Consequences"
-    title: "Lethal Political Conflict in Bolivia"
+    logo: "images/carwil-bjork-james-hex.png"
+    logo-alt: "Carwil Bjork-James in a data science hexagon"
+    title: "Carwil Bjork-James"
+    subtitle: "Research notes on violence, human rights, social movements, and open data"
     pinned: true
     align: center
     tools: 
@@ -27,8 +26,17 @@ website:
         href: https://ultimateconsequences.github.io
         text: "Ultimate Consequences Project Website"
       - icon: wordpress
-        href: https://woborders.blog/posts/bolivia/
-        text: "Bolivia on Carwil without Borders blog"
+        href: https://woborders.blog
+        text: "Carwil without Borders"
+      - icon: mastodon
+        href: https://mastodon.online/@Carwil
+        text: "Carwil on Mastodon"
+      - icon: twitter
+        href: https://twitter.com/CarwilBJ
+        text: "Carwil Bjork-James on Twitter" 
+      - icon: twitter
+        href: https://carwilb.github.io/twitter
+        text: "Twitter archive" 
 
     style: "docked"
     search: true
@@ -36,42 +44,23 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
-      - section: ultimate-consequences/About.md
-        contents:
-          - ultimate-consequences/Methodology.md
-          - ultimate-consequences/Codebook-current.md
-      - section: ultimate-consequences/Visualizations.md
-        contents:
-          - href: vis/Nested-Table.Rmd
-            text: "Directory of event & individuals"
-          - href: vis/Directorio-Eventos-Muertes.Rmd
-            text: "Directorio cronológico de muertes"
-          - href: vis/Choropleth-Map-Municipality.html
-            text: "Map by Municipality"
-          - href: vis/Choropleth-Map-Municipality-es.html
-            text: "Mapa por Municipio"
-          - dashboards.qmd
-      - section: "Data Pages for Publications"
-        contents:
-          - href: ultimate-consequences/BSJ-Political-Violence.Rmd
-            text: "Tactics of Political Violence in 2019"
-          - href: ultimate-consequences/WLRF-Tables.Rmd
-            text: "When Does Lethal Repression Fail?"
       - text: "---"
-      - section: "Research Team"
-        contents:
-          - team/carwil-bjork-james.qmd
+      - href: about-bio.qmd
+        text: "Biography"
       - text: "---"
+      - href: index.qmd
+        text: Posts
+        contents: posts/*
 
 format:
   html:
     theme: 
-      light: yeti
+      light: cosmo
       dark: slate
-    mainfont: "Open Sans"
+    mainfont: "Source Sans Pro"
     code-copy: true
     code-overflow: wrap
-    toc: true
+    toc: false
 
 filters:
   - include-files.lua
