@@ -7,7 +7,9 @@ date: 5 September 2024
 
 ## This is not just another turn in the Israeli–Palestinian conflict.
 
-{{< pdf /images/IP-fatalities-5Sep2024.pdf width=100% height=600px border=1 image=/images/IP-fatalities-5Sep2024.png image_width=80% image_border=1 >}} 
+:::{.column-screen-inset-right}
+{{< pdf /images/IP-fatalities-5Sep2024.pdf width=100% height=700px border=1 image=/images/IP-fatalities-5Sep2024.png image_width=80% image_border=1 >}} 
+:::
 
 What has been ongoing since October 8 can no longer be described as a large retaliation or large war, but only as an in-progress effort at extermination.
 
