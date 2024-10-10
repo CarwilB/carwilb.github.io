@@ -1,0 +1,35 @@
+---
+title: What do you do to avoid sexual assault?
+description: A text-only data visualization
+author: Carwil Bjork-James
+date: 10 October 2018
+editor: 
+  markdown: 
+    wrap: 100
+---
+
+I asked fourteen men and eighteen women in an Intro to Anthropology class, "What do you do regularly
+to avoid sexual assault?"
+
+These were their answers:
+
+![Anthropology students on avoiding sexual
+assault](/images/Students-Sexual-Assault-Avoidance.png)**Alt Text:** Text on a black background \
+Title: What do you do regularly to avoid sexual assault?
+
+Fourteen men's answers in blue: Be mature, handle stuff the right way, and most important show your
+masculine side. Stay aware of my surroundings and be wary of suspicious looking people Removing
+myself from uncomfortable situations, staying relatively sober I do not go back to unknown locations
+with males i do not know Be aware and don’t lie about it if nothing happened Act masculine, because
+i see myself as masculine. Walk away or ask a friend for help. Asking people for help Get consent
+Nothing Nothing Nothing Nothing Nothing
+
+Eighteen women's answers in pink: Boxing Stay alert Avoid eye contact. Don't drink at parties Don’t
+walk alone at night I never go to parties alone Carry pepper spray in my purse Go to the bathroom
+with other girls Don't go to a public bathroom alone Call someone when i feel threatened Make sure i
+am always with people i trust Be in a group of friends that i would trust Call someone when i walk
+home alone at night Go with a group (usually with girls especially when going out) I walk more
+quickly in the streets at night or i try not to be alone. Advocate about the issue and make sure to
+watch out for my friends I don’t drink alcohol or engage in anything that might decrease my control
+over myself If there is group of guys on the street while i'm walking, i'll cross the street or take
+a different route."}
