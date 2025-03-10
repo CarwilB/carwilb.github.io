@@ -1,48 +1,38 @@
 ---
-title: Links on Artificial Intelligence
-description: An evolving list of mostly skeptical takes on Generative AI
+title: Palestinian fatalities surpass 40,000 in under 11 months
+description: The scale and disparity of death continue to grow at a staggering pace.
 author: Carwil Bjork-James
-date: 10 March 2025
+date: 5 September 2024
 ---
 
-## AI news sources
-- **Changelog** and its [sub-podcast](https://practicalai.fm/) **Practical AI** — Developers talking about technology. Example episodes: especially clear [take on Deep Seek](https://practicalai.fm/302); interview with [National Institute of Standards and Technology staffer regulating AI](https://practicalai.fm/293).
-- **TED AI Show** podcast — Definitely credulous about AI's potential, but lots of in-person interviews with AI players, giving insight on how companies are envisioning their plans. Examples: This [episode](https://open.spotify.com/episode/4GBoicwLLewdblKMxjR5yK?si=WAwGDEhKS7iUMjO4Pd9A9w) taught me more about Google than I knew before.
-- **Tech Won't Save Us** [podcast](https://techwontsave.us/) — Combines pessimism on the tech hype cycle with political critique of the direction of Big Tech.
-- Also for the very technical discussion, there is **Machine Learning Street Talk** [podcast](https://open.spotify.com/show/02e6PZeIOdpmBGT9THuzwR?si=f3c82c3cc39b42e4)
+## This is not just another turn in the Israeli–Palestinian conflict.
 
-## Persistent critical voices:
+:::{.column-screen-inset-right}
+{{< pdf /images/IP-fatalities-5Sep2024.pdf width=100% height=700px border=1 image=/images/IP-fatalities-5Sep2024.png image_width=80% image_border=1 >}} 
+:::
 
-- **Emily Bender** ([Wikipedia](https://en.wikipedia.org/wiki/Emily_M._Bender) | [Google Scholar](https://scholar.google.com/citations?user=9r_f1w4AAAAJ&hl=en&oi=ao)), a linguist who entered the Generative AI discussion as an expert on large-language models. Co-author of "[On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜](https://dl.acm.org/doi/10.1145/3442188.3445922)" research paper with Timnit Gebru. Bender's take is that hype is driving the AI discussion, and that there are substantive ethical problems with current models. More than other researchers, Bender inclines towards detailed collaborative critiques on questions like: [Can AI's that pass human benchmark tests be said to have capacities they test for?](https://bdtechtalks.com/2021/12/06/ai-benchmarks-limitations/) [What are the dangers of using AI for search?](https://dl.acm.org/doi/full/10.1145/3649468)  
-- **Gary Marcus** ([Wikipedia](https://en.wikipedia.org/wiki/Gary_Marcus) [Substack blog](https://garymarcus.substack.com/)) — researcher and proponent of a structured approach to building artificial intelligence, but who thinks that hallucinations and failure to understand edge cases are invariable traits of neural network architectures. Marcus has emerged as a sharp critic of the current generative AI wave as unlikely to every generate sophisticated intelligence and a potential diversion of hundreds of billions of dollars and societal distrust in an unproductive direction. 
-- **Ed Zitron** — Technology critic and writer. Focused on declining tech user experience and [risks of a financial bubble](https://www.wheresyoured.at/subprimeai/) around generative AI. His general take is that generative AI has yet to show a vital use case and could dramatically underperform market expectations.
-- **Melanie Mitchell** ([Wikipedia](https://en.wikipedia.org/wiki/Melanie_Mitchell) | [Substack blog](https://aiguide.substack.com/)) — A very hands-on research expert on AI development and benchmarking who asks hard questions.
-- **Jaron Lanier**, whose _You Are Not a Gadget_ and _Who Owns the Future?_ raise important questions about power and economy of technology, while accepting that technology will solve whatever problems it creates. _Who Owns the Future_ also provides a smart typology of perspectives on technology.
-- **Cory Doctorow**, futurist sci-fi writer with a hard economic critique of Big Tech in _Chokepoint Capitalism_.
-- **Shoshana Zuboff**. It's worth taking a moment and imagine AI chatbots and on-the-horizon agents, not as potentially intelligent machines, but rather as data collectors to the corporations that she thoroughly laid out in _The Age of Surveillance Capitalism_.
+What has been ongoing since October 8 can no longer be described as a large retaliation or large war, but only as an in-progress effort at extermination.
 
-## AI establishment voices:
+With 40,878 Palestinians killed in the Gaza Strip and 659 in West Bank and East Jerusalem since October 7, Palestine's loss exceeds…
 
-- **Fei-Fei Li**, Director of Stanford’s [Human-Centered AI Institute](https://hai.stanford.edu/), a crossover from AI science to humanities who invented the term "foundation models." 
-- **Geoffrey Hinton**, researcher into neural-network-based machine learning. His experience with creating vision models whose internal workings are inscrutable have convinced him that knowing how AI works isn't essential to believing that it works. For good insight on this view, and contrasts with Li, listen to [Geoffrey Hinton in conversation with Fei-Fei Li](https://podcasts.apple.com/us/podcast/geoffrey-hinton-in-conversation-with-fei-fei-li/id1524902736?i=1000672242078)
+- Israeli losses on October 7 (1139 including, 373 security forces, 36 children) by a factor of 36 to one.
+- 2,162 total Palestinian and Israeli deaths in First Intifada Dec 1987–Sep 1993 (2,106 days)
+- 2,996 deaths in 11 September 2001 attacks on USA (1 day)
+- 4,364 total Palestinian and Israeli deaths in Second Intifada Sep 2000–Jan 2005 (1,555 days)
+- 6,412 total Palestinian deaths 2008–Sep 2023 (5,751 days)
+- 8,372 deaths in the genocidal Srebrenica massacre, Jul 1995 (22 days)
+- 10,317 civilian deaths (including those missing) in Kosovo War, Feb 1998–Jun 1999 (468 days)
 
-A notable moment in the the Hinton–Li conversation comes at 1h18, where they are asked whether "we are at the point where we can say [LLMs/foundational models] have understanding and intelligence?" Hinton's answer is at 1h30. Li responds at 1h35.
+… combined.
 
-Also, the core of Hinton's perspective may be this definition of education: "So the way we exchange knowledge, roughly speaking, this is something of a simplification, but I produce a sentence and you figure out what you have to change in your brain, so you might have said that, that is if you trust me." "What I want to claim is that these millions of features and billions of interactions between features _are_ understanding. … If you ask, how do we understand, this is the best model of how we understand." (["Will digital intelligence replace biological intelligence?" Romanes Lecture](https://www.youtube.com/watch?v=N1TEjTeQeg0&t=39s) at 14m28s / 
+By all measures but territorial loss and villages destroyed, but including deaths, deaths of children, number of people displaced, and number of homes and building destroyed, this assault is larger than the first Nakba. During those 598 days, Palestine suffered 15,000 to 20,000 estimated deaths. We now stand at twice that toll. Upwards of 1.9 million Palestinians have been expelled from their homes, over twice as many as during the event Palestinians have remembered as their greatest tragedy.
 
-## Visions of AI entrepreneurs and business leaders
+We're amid the catastrophe and we must stop it.
 
-- **Mustafa Suleyman**, CEO of Microsoft AI, [His talk, "What Is an AI Anyway?," characterizes AI as "a new digital species"](https://www.youtube.com/watch?v=KKNCiRWd_j0)
-- **Dario Amodei**, CEO of Anthropic. Recent [interview on Hard Fork](https://www.nytimes.com/2025/02/28/podcasts/hardfork-anthropic-dario-amodei.html). 
+### Why I made this
 
-## On limitations of implementing AI in workplace settings
+Researching and accounting for lethal political violence is a major part of my work, and I find myself staggered by this extraordinary and extraordinarily public burst of violence. Like climate scientists during 2023’s record-breaking summer, I find myself frantically sharing statistics and re-posting and pointing out this is not normal. Not even against recent trends. That this is the threshold of something worse than what we’ve known.
 
-Upwork [research](https://www.upwork.com/research/ai-enhanced-work-models) "surveying 2,500 global C-suite executives, full-time employees, and freelancers in the U.S., UK, Australia, and Canada":
+Making this graph is my attempt to show how this isn’t normal. To grapple with the historic significance of this moment. To not feel alone in seeing it.
 
-> The majority of AI use appears to be emerging bottoms up, with workers leading the charge. Now, leaders are eager to channel this enthusiasm. Among the increased demands executives have placed on workers in the past year, requesting they use AI tools to increase their output tops the list (37%). Already 39% of companies require employees to use AI tools, with an additional 46% encouraging employees to use the tools without mandating that they do so.
-
-> However, this new technology has not yet fully delivered on this productivity promise: Nearly half (47%) of employees using AI say they have no idea how to achieve the productivity gains their employers expect, and **77% say these tools have actually decreased their productivity** and added to their workload. 
-
-> For example, survey respondents reported that they’re spending more time reviewing or moderating AI-generated content (39%), invest more time learning to use these tools (23%), and are now being asked to do more work (21%). 
-
-[**Technology author Mayo Olshin**](https://x.com/mayowaoshin/status/1833557628401627245?s=61): "If however, you simply "trust" the Al outputs due to lack of knowledge, skill, or willingness to review results, the long term damage will outweigh the initial productivity gains you got so "hyped" about." A [similar experience from **David Chisnall** on CoPilot](https://mastodon.online/@david_chisnall@infosec.exchange/113690087176624006): "It has cost me more time than it has saved."
+[![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fcarwilb.github.io%2Fposts%2Fisrael-palestine-fatalities-40k.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false)](https://hits.seeyoufarm.com)
