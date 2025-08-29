@@ -61,6 +61,8 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: false
+    citation-style: csl/chicago-notes.csl
+    link-citations: false
 
 filters:
   - include-files.lua
