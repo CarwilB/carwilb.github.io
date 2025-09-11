@@ -4,6 +4,8 @@ project:
   resources: 
     - images/*
     
+pagetitle: "{{< meta title >}} | Carwil Bjork-James"
+    
 website: 
   page-navigation: true
   title: "Carwil Bjork-James"
