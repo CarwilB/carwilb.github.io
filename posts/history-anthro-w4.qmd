@@ -30,15 +30,14 @@ We find in Brantlinger a surprising combination of salvage ethnography and celeb
 
 For broader views of American anthropology during this period, consider the earliest chapter in Lee Baker's *From Savage to Negr*o;[@baker1998] Glynn Custred in *A History of Anthropology As a Holistic Science*;[@custred2017] and many segments of David Hurst Thomas' *Skull Wars*.[@thomas2002]
 
+::: column-margin
+![*Mutual Aid: A Factor of Evolution* in its 2021 "Illuminated" edition](/images/kropotkin-mutual-aid-illuminated.jpg)
+:::
 Darwin, whose 1859 *On the Origin of Species* laid out the overall case for biological evolution, delayed direct consideration of the relationship of human to other animals for *The Descent of Man*, published in 1871.[@darwin1901] While Darwin presumes significant differences among "the races of man" and devotes a chapter to the topic, the text presumes a common human ancestor to all these racial groups and argues forcefully for the species' overall closeness with primates in particular and animals in general. Nonetheless, racial groups and racial stereotypes are part of the evidentiary landscape used throughout.
 
 Darwin gives priority to organisms' struggle for survival under conditions of scarcity (the primary form of natural selection in *Origin*), and secondary consideration to differential rates of reproduction as determined by competition for mates (theorized in *Descent*). Less considered by Darwin are competitions among groups and species themselves, which would more readily include tendencies towards communication, cooperation, and (a certain form of) altruism.
 
 The first, more competitive form of natural selection became the basis for so-called social Darwinism, framed as "survival of the fittest" and associated with sociologist Herbert Spencer as well as founding eugenicist Francis Galton.
-
-::: column-margin
-![Mutual Aid: A Factor of Evolution in its 2021 "Illuminated" edition](/images/kropotkin-mutual-aid-illuminated.jpg)
-:::
 
 A radically distinct view of natural behavior is presented by Pyotr ("Peter") Kropotkin in *Mutual Aid: A Factor of Evolution*. Kropotkin highlights a wide variety of examples of cooperative behavior among animals (and plants), as well as human at each level of the social evolutionary ladder. While the subject of much skepticism initially, Kropotkin's overall ideas overlap with Darwin's, and mutualism within species is taken seriously as a factor in interspecies competition and macroevolution by current biologists.
 
