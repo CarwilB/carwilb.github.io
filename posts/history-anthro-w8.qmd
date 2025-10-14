@@ -1,0 +1,43 @@
+---
+title: Boas, Rivet, and the End of the Craniometry of Race
+description: New empirical approaches gradually undermined "race science," but the process took decades
+author: Carwil Bjork-James
+date: 14 October 2025
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+---
+
+Franz Boas and Paul Rivet, two long-distance friends and foundational colleagues in their discipline,[@laurière2010] each published major works around the same time that analyzed thousands of skulls using conventional anthropometric techniques. But these works, published on opposite sides of the Atlantic each upended long-held assumptions about racial types and the heritability of physical traits.
+
+Boas's 1912 article ["Changes in Bodily Form of Descendants of Immigrants"](https://anthrosource.onlinelibrary.wiley.com/doi/abs/10.1525/aa.1912.14.3.02a00080) analyzed the cranial measurements of around 18,000 children and young adults and found that the then-accepted measure of cranial form — the cephalic index — varied significantly between American immigrants and first-generation children of American immigrants, and also between families with different numbers of children:
+
+> American-born descendants of immigrants differ in type from their foreign-born parents. The changes which occur among various European types are not all in the same direction. They develop in early childhood and persist throughout life. ... Foreign-born parents when compared with their own foreign- born and American-born children exhibit the same types of differences for the children as the whole series.
+
+![Boas' description of his sample population, stratified by ethnicity and age](/images/anthro/Boas-1911-SamplePopulation.png){fig-alt="A table of numbers with the ethnic names, Bobemians, Poles, Hungarians, Slovacs, Hebrews, Sicilians, Neapolitans"}
+
+Rivet's 1909-10 study, released in a serial fashion in the journal L'Anthropologie, analyzed the cranial measurements of over 6,000 individuals from around the world, including a substantial number of non-human primates. In this case the variable in question was prognathism, defined as "the protrusion of the upper or lower jaw … \[measured as\] the facial angle (the slope of a line from forehead to jaw)."[@conklin2013, p. 63]
+
+> II suffit de parcourir ce tableau, pour constater qu’il n’y a qu'un rapport trés lointain entre l’ordre dans lequel s’y inscrivent les diverses populations et celui qu’on aurait obtenuen les classant d’aprés leur degré d’évolution intellectuelle ou matérielle. Certes, dune fagon trés générale, les races blanches se rangent parmi les plus orthognathes et les races noires et rouges parmi les plus prognathes, mais les exceptions abondent.
+>
+> One need only glance at this table to see that there is only a very distant relationship between the order in which the various populations are listed and the order that would have been obtained by classifying them according to their degree of intellectual or material evolution. Admittedly, in very general terms, white races are among the most orthognathic and black and red races among the most prognathic, but there are many exceptions.
+
+::: {layout-ncol="2"}
+![](/images/anthro/Rivet-1910-641.png)
+
+![](/images/anthro/Rivet-1910-641.png)
+:::
+
+Later in the same article, Rivet explicitly rejects the idea that prognathism is a marker of racial inferiority:
+
+> Par contre, j’espére avoir prouvé qu'il ne faut pas lui attribuer Vimportance qu’on a été tenté parfois de lui donner en tant que caractere sériaire et qu’on ne doit surtout pas le considérer comme un caractére d’infériorité.
+>
+> On the other hand, I hope I have demonstrated that we should not attribute to it the importance that we have sometimes been tempted to give it as a serious character trait, and that we should certainly not consider it a sign of inferiority.
+
+Boas and Rivet were two of the early twentieth century scientists who were "werstling with many of the … methodological and conceptual problems in race science."[@conklin2013, p. 64] As we've seen in class, some scientists would react to the lack of supportive evidence for profound racial difference, much less racial inferiority, with disbelief, and others with steady confidence that the necessary data were forthcoming.
+
+Boas and Rivet were two scholars who eventually concluded that the evidence was lacking for racial difference and turned their eye towards racism as both an object of study and political target. Ultimately, Boas would organize 1,284 scientists from 167 universities to sign a joint manifesto in December 1938 to, in his words, "declare that we scientists have the moral obligation to educate the American people against all false and unscientific doctrines, such as the racial nonsense of the Nazis."[@Manifesto1284Noted]
+
+Craniometry's collapse as a racial measure is documented in Paul Turbull's recent chapter "Surveying Craniometry."[@turnbullSurveyingCraniometry2023] Boas' engagement with race is the subject of a chapter of Lee Baker's From Savage to Negro.[@baker1998] Rivet's studies of craniometry are described in Christine Laurière's biography of Rivet.[@lauriereSeFaireNom2008]
+
+For more on early twenty-first century racists' attempts to revive craniometric "evidence" of racial inequality, see Leonard Lieberman's takedown of J. Philippe Rushton.[@lieberman2001]

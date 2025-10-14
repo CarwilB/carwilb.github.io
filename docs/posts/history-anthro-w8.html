@@ -7,8 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Carwil Bjork-James">
+<meta name="dcterms.date" content="2025-10-14">
+<meta name="description" content="New empirical approaches gradually undermined “race science,” but the process took decades">
 
-<title>Research notes on violence, human rights, social movements, and open data | Carwil Bjork-James</title>
+<title>Boas, Rivet, and the End of the Craniometry of Race | Carwil Bjork-James</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,26 +26,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../posts/israel-palestine-fatalities-40k.html" rel="next">
+<link href="../posts/history-anthro-w5.html" rel="prev">
+<link href="../favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,69 +73,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-post-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-post-listing'] = new List('listing-post-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -142,7 +86,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/history-anthro-w8.html">Boas, Rivet, and the End of the Craniometry of Race</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -156,11 +100,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/carwil-bjork-james-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/carwil-bjork-james-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Carwil Bjork-James</a> 
+      <a href="../">Carwil Bjork-James</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://ultimateconsequences.github.io" title="Ultimate Consequences Project Website" class="quarto-navigation-tool px-1" aria-label="Ultimate Consequences Project Website"><i class="bi bi-globe"></i></a>
     <a href="https://woborders.blog" title="Carwil without Borders" class="quarto-navigation-tool px-1" aria-label="Carwil without Borders"><i class="bi bi-wordpress"></i></a>
@@ -180,90 +124,90 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about-bio.html" class="sidebar-item-text sidebar-link">
+  <a href="../about-bio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Biography</span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link">
+            <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Posts</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/ai-links.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/ai-links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Links on Artificial Intelligence</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/cfp-aaa-violence.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/cfp-aaa-violence.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Panel on Researching Violence for AAA 2025</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/history-anthro-w2.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/history-anthro-w2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">When did anthropology begin in the Western Hemisphere?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/history-anthro-w3.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/history-anthro-w3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anthropology and the Enlightenment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/history-anthro-w4.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/history-anthro-w4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ninetenth-Century Evolutionary Anthropology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/history-anthro-w5.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/history-anthro-w5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Nineteenth-century North American ethnography by Mooney and Morgan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/history-anthro-w8.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/history-anthro-w8.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Boas, Rivet, and the End of the Craniometry of Race</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/israel-palestine-fatalities-40k.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/israel-palestine-fatalities-40k.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Palestinian fatalities surpass 40,000 in under 11 months</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/political-violence-2022.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/political-violence-2022.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conflict deaths in Bolivia, 2022</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/political-violence-2023-24.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/political-violence-2023-24.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conflict deaths in Bolivia, 2023–24</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/sexual-assault-avoidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/sexual-assault-avoidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">What do you do to avoid sexual assault?</span></a>
   </div>
 </li>
@@ -274,15 +218,21 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/history-anthro-w8.html">Boas, Rivet, and the End of the Craniometry of Race</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Research notes on violence, human rights, <br>social movements, and open data</h1>
+<h1 class="title">Boas, Rivet, and the End of the Craniometry of Race</h1>
 </div>
 
+<div>
+  <div class="description">
+    New empirical approaches gradually undermined “race science,” but the process took decades
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -294,6 +244,12 @@ window.Quarto = {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 14, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -303,289 +259,47 @@ window.Quarto = {
 </header>
 
 
-<section id="welcome" class="level3">
-<h3 class="anchored" data-anchor-id="welcome">Welcome</h3>
-<p>This research notes website is an experiment born of crisis and grief. Expect it to change forms before it settles.</p>
-<p>It’s a space where I will witness planned cruelty and human tragedies with numbers and data. Because my primary research project archives the death of nearly seven hundred Bolivians who lost their lives in political struggle and I need somewhere to reflect on what that means.</p>
-<p>Because weapons sent by my country’s government are inflicting quantitatively far greater losses weekly and we need data to make sense of how.</p>
-<p>Because using numbers and maps and wrapping my head around the scale of things can dramatically change how I view the world. And I can share those perspectives through data.</p>
-<p>Because carefully presented evidence offers a path through the public denial that keeeps power intact.</p>
-<p>And because these are the tools I’ve been training myself to use, and they won’t fit on my other main spaces for public reflection, including my blog: <a href="https://woborders.blog/">Carwil without Borders</a>.</p>
-<p>Lastly behind this data, there is a lot of death. I’ve chosen not to look away.</p>
-</section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
-<div id="listing-post-listing" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1760418000000" data-listing-file-modified-sort="1760475659199" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="705">
-<a href="./posts/history-anthro-w8.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/anthro/Boas-1911-SamplePopulation.png" alt="A table of numbers with the ethnic names, Bobemians, Poles, Hungarians, Slovacs, Hebrews, Sicilians, Neapolitans" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Boas, Rivet, and the End of the Craniometry of Race
-</h5>
-<div class="card-text listing-description">
-New empirical approaches gradually undermined “race science,” but the process took decades
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Oct 14, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1758258000000" data-listing-file-modified-sort="1758303185207" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="85">
-<a href="./posts/history-anthro-w5.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/deloria-ghost-dance-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Nineteenth-century North American ethnography by Mooney and Morgan
-</h5>
-<div class="card-text listing-description">
-Briefly situating readings for Week 5 of the History of Anthropological Theory
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Sep 19, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1757653200000" data-listing-file-modified-sort="1757715093094" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="993">
-<a href="./posts/history-anthro-w4.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/pitt-rivers-which-we-destroy.jpeg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Ninetenth-Century Evolutionary Anthropology
-</h5>
-<div class="card-text listing-description">
-Situating readings for Week 4 of the History of Anthropological Theory
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Sep 12, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1757566800000" data-listing-file-modified-sort="1757624520731" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="574">
-<a href="./posts/history-anthro-w3.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/Cuvier-Butterflies-Skulls.jpeg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Anthropology and the Enlightenment
-</h5>
-<div class="card-text listing-description">
-Situating readings for Week 3 of the History of Anthropological Theory
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Sep 11, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1756357200000" data-listing-file-modified-sort="1757245548017" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="553">
-<a href="./posts/history-anthro-w2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/Bartolomé_de_las_Casas_(1552)_Brevisima_relación_de_la_destrucción_de_las_Indias.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-When did anthropology begin in the Western Hemisphere?
-</h5>
-<div class="card-text listing-description">
-Situating readings for Week 2 of the History of Anthropological Theory
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Aug 28, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-date-sort="1744347600000" data-listing-file-modified-sort="1744435673836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="457">
-<a href="./posts/cfp-aaa-violence.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Panel on Researching Violence for AAA 2025
-</h5>
-<div class="card-text listing-description">
-A call for panel participants for the American Anthropological Association meeting in November 2025
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James and Jennifer Burrell
-</div>
-<div class="listing-date">
-Apr 11, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-date-sort="1742446800000" data-listing-file-modified-sort="1743375621778" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1154">
-<a href="./posts/ai-links.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/artificial-intelligence-machine-2.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Links on Artificial Intelligence
-</h5>
-<div class="card-text listing-description">
-An evolving list of mostly skeptical takes on Generative AI
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Mar 20, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-listing-date-sort="1725512400000" data-listing-file-modified-sort="1741636844509" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
-<a href="./posts/israel-palestine-fatalities-40k.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/IP-fatalities-5Sep2024.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Palestinian fatalities surpass 40,000 in under 11 months
-</h5>
-<div class="card-text listing-description">
-The scale and disparity of death continue to grow at a staggering pace.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Sep 5, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="8" data-listing-date-sort="1724994000000" data-listing-file-modified-sort="1728515457322" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1911">
-<a href="./posts/political-violence-2023-24.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/posts/waffle-deaths-by-president-2001-aug2024.png" alt="A bar chart showing individual deaths per presidency in Bolivia since 2001" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Conflict deaths in Bolivia, 2023–24
-</h5>
-<div class="card-text listing-description">
-Recent political violence in Bolivia is happening between social movements, not against them
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Aug 30, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="9" data-listing-date-sort="1673157600000" data-listing-file-modified-sort="1728515457323" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1592">
-<a href="./posts/political-violence-2022.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/posts/conflict-death-2023-table.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Conflict deaths in Bolivia, 2022
-</h5>
-<div class="card-text listing-description">
-Fifteen Bolivians were killed in social movement conflicts in 2022
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Jan 8, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="10" data-listing-date-sort="1539147600000" data-listing-file-modified-sort="1728583837206" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="275">
-<a href="./posts/sexual-assault-avoidance.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="images/Students-Sexual-Assault-Avoidance.png" alt="Anthropology students on avoiding sexual assault" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-What do you do to avoid sexual assault?
-</h5>
-<div class="card-text listing-description">
-A text-only data visualization
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Carwil Bjork-James
-</div>
-<div class="listing-date">
-Oct 10, 2018
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="invocation" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="invocation">Invocation</h3>
-<div class="column-screen-inset-right">
-<p><img src="images/Morrison-ThePrize-NMPJ.jpeg" class="img-fluid" alt="A quote engraved in white text on nearly black marble:  '… AND O MY PEOPLE, OUT YONDER, HEAR ME, THEY DO NOT LOVE YOUR NECK UNNOOSED AND STRAIGHT. SO LOVE YOUR NECK; PUT A HAND ON IT, GRACE IT, STROKE IT AND HOLD IT UP. AND ALL YOUR INSIDE PART'S THAT THEY'D JUST AS SOON SLOP FOR HOGS YOU GOT TO LOVE THEM. THE DARK, DARK LIVER - LOVE IT, LOVE IT, AND THE BEAT AND BEATING HEART, LOVE THAT TOO. MORE THAN EYES OR FEET. MORE THAN LUNGS THAT HAVE YET TO DRAW FREE AIR. MORE THAN YOUR LIFE-HOLDING WOMB AND YOUR LIFE-GIVING PRIVATE PARTS, HEAR ME NOW, LOVE YOUR HEART. FOR THIS IS THE PRIZE.' - Toni Morrison"></p>
-</div>
-<p><a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fcarwilb.github.io&amp;count_bg=%2379C83D&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=visits&amp;edge_flat=false" class="img-fluid"></a></p>
+<p>Franz Boas and Paul Rivet, two long-distance friends and foundational colleagues in their discipline,<span class="citation" data-cites="laurière2010"><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></span> each published major works around the same time that analyzed thousands of skulls using conventional anthropometric techniques. But these works, published on opposite sides of the Atlantic each upended long-held assumptions about racial types and the heritability of physical traits.</p>
+<div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;Christine Laurière, <span>“Anthropology and Politics, the Beginnings: The Relations between Franz Boas and Paul Rivet (1919-42),”</span> <em>Histories of anthropology annual</em> 6, no. 1 (2010): 225252, <a href="https://doi.org/10.1353/haa.2010.0004" role="doc-biblioref">https://doi.org/10.1353/haa.2010.0004</a>.</p></div><p>Boas’s 1912 article <a href="https://anthrosource.onlinelibrary.wiley.com/doi/abs/10.1525/aa.1912.14.3.02a00080">“Changes in Bodily Form of Descendants of Immigrants”</a> analyzed the cranial measurements of around 18,000 children and young adults and found that the then-accepted measure of cranial form — the cephalic index — varied significantly between American immigrants and first-generation children of American immigrants, and also between families with different numbers of children:</p>
+<blockquote class="blockquote">
+<p>American-born descendants of immigrants differ in type from their foreign-born parents. The changes which occur among various European types are not all in the same direction. They develop in early childhood and persist throughout life. … Foreign-born parents when compared with their own foreign- born and American-born children exhibit the same types of differences for the children as the whole series.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/anthro/Boas-1911-SamplePopulation.png" class="img-fluid figure-img" alt="A table of numbers with the ethnic names, Bobemians, Poles, Hungarians, Slovacs, Hebrews, Sicilians, Neapolitans"></p>
+<figcaption>Boas’ description of his sample population, stratified by ethnicity and age</figcaption>
+</figure>
+</div>
+<p>Rivet’s 1909-10 study, released in a serial fashion in the journal L’Anthropologie, analyzed the cranial measurements of over 6,000 individuals from around the world, including a substantial number of non-human primates. In this case the variable in question was prognathism, defined as “the protrusion of the upper or lower jaw … [measured as] the facial angle (the slope of a line from forehead to jaw).”<span class="citation" data-cites="conklin2013"><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></span></p>
+<div class="no-row-height column-margin column-container"><p><sup>2</sup>&nbsp;Alice L. Conklin, <em>In the Museum of Man: Race, Anthropology, and Empire in France, 1850<span></span>1950</em> (Cornell University Press, 2013), 63, <a href="https://doi.org/10.7591/9780801469046" role="doc-biblioref">https://doi.org/10.7591/9780801469046</a>.</p></div><blockquote class="blockquote">
+<p>II suffit de parcourir ce tableau, pour constater qu’il n’y a qu’un rapport trés lointain entre l’ordre dans lequel s’y inscrivent les diverses populations et celui qu’on aurait obtenuen les classant d’aprés leur degré d’évolution intellectuelle ou matérielle. Certes, dune fagon trés générale, les races blanches se rangent parmi les plus orthognathes et les races noires et rouges parmi les plus prognathes, mais les exceptions abondent.</p>
+<p>One need only glance at this table to see that there is only a very distant relationship between the order in which the various populations are listed and the order that would have been obtained by classifying them according to their degree of intellectual or material evolution. Admittedly, in very general terms, white races are among the most orthognathic and black and red races among the most prognathic, but there are many exceptions.</p>
+</blockquote>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../images/anthro/Rivet-1910-641.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="../images/anthro/Rivet-1910-641.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p>Later in the same article, Rivet explicitly rejects the idea that prognathism is a marker of racial inferiority:</p>
+<blockquote class="blockquote">
+<p>Par contre, j’espére avoir prouvé qu’il ne faut pas lui attribuer Vimportance qu’on a été tenté parfois de lui donner en tant que caractere sériaire et qu’on ne doit surtout pas le considérer comme un caractére d’infériorité.</p>
+<p>On the other hand, I hope I have demonstrated that we should not attribute to it the importance that we have sometimes been tempted to give it as a serious character trait, and that we should certainly not consider it a sign of inferiority.</p>
+</blockquote>
+<p>Boas and Rivet were two of the early twentieth century scientists who were “werstling with many of the … methodological and conceptual problems in race science.”<span class="citation" data-cites="conklin2013"><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></span> As we’ve seen in class, some scientists would react to the lack of supportive evidence for profound racial difference, much less racial inferiority, with disbelief, and others with steady confidence that the necessary data were forthcoming.</p>
+<div class="no-row-height column-margin column-container"><p><sup>3</sup>&nbsp;Conklin, <em>In the Museum of Man</em>, 64.</p><p><sup>4</sup>&nbsp;<em>Manifesto by 1,284 Noted u.s. Scientists Denounces Racialism, Fascist Position on Science</em>, n.d., <a href="https://www.jta.org/archive/manifesto-by-1284-noted-u-s-scientists-denounces-racialism-fascist-position-on-science" role="doc-biblioref">https://www.jta.org/archive/manifesto-by-1284-noted-u-s-scientists-denounces-racialism-fascist-position-on-science</a>.</p></div><p>Boas and Rivet were two scholars who eventually concluded that the evidence was lacking for racial difference and turned their eye towards racism as both an object of study and political target. Ultimately, Boas would organize 1,284 scientists from 167 universities to sign a joint manifesto in December 1938 to, in his words, “declare that we scientists have the moral obligation to educate the American people against all false and unscientific doctrines, such as the racial nonsense of the Nazis.”<span class="citation" data-cites="Manifesto1284Noted"><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></span></p>
+<p>Craniometry’s collapse as a racial measure is documented in Paul Turbull’s recent chapter “Surveying Craniometry.”<span class="citation" data-cites="turnbullSurveyingCraniometry2023"><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></span> Boas’ engagement with race is the subject of a chapter of Lee Baker’s From Savage to Negro.<span class="citation" data-cites="baker1998"><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></span> Rivet’s studies of craniometry are described in Christine Laurière’s biography of Rivet.<span class="citation" data-cites="lauriereSeFaireNom2008"><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></span></p>
+<div class="no-row-height column-margin column-container"><p><sup>5</sup>&nbsp;Paul Turnbull, <em>Surveying Craniometry</em> (Routledge, 2023).</p><p><sup>6</sup>&nbsp;Lee D Baker, <em>From Savage to Negro: Anthropology and the Construction of Race, 1896-1954</em> (University of California Press, 1998).</p><p><sup>7</sup>&nbsp;Christine Laurière, <em>Se faire un nom</em>, Archives (Publications scientifiques du Muséum, 2008), 167–209, <a href="https://books.openedition.org/mnhn/2401" role="doc-biblioref">https://books.openedition.org/mnhn/2401</a>.</p><p><sup>8</sup>&nbsp;Leonard Lieberman, <span>“How <span>“</span>Caucasoids<span>”</span> Got Such Big Crania and Why They Shrank: From Morton to Rushton,”</span> <em>Current Anthropology</em> 42, no. 1 (2001): 69–95, <a href="https://doi.org/10.1086/318434" role="doc-biblioref">https://doi.org/10.1086/318434</a>.</p></div><p>For more on early twenty-first century racists’ attempts to revive craniometric “evidence” of racial inequality, see Leonard Lieberman’s takedown of J. Philippe Rushton.<span class="citation" data-cites="lieberman2001"><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></span></p>
 
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1119,6 +833,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../posts/history-anthro-w5.html" class="pagination-link" aria-label="Nineteenth-century North American ethnography by Mooney and Morgan">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Nineteenth-century North American ethnography by Mooney and Morgan</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../posts/israel-palestine-fatalities-40k.html" class="pagination-link" aria-label="Palestinian fatalities surpass 40,000 in under 11 months">
+        <span class="nav-page-text">Palestinian fatalities surpass 40,000 in under 11 months</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
