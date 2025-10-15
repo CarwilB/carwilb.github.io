@@ -48,4 +48,4 @@ Contemporary scientific measurements shows that inter-continental (often used as
 
 For more on early twenty-first century racists' attempts to revive craniometric "evidence" of racial inequality, see Leonard Lieberman's takedown of J. Philippe Rushton.[@lieberman2001]
 
-![Anthropometric data sheet of Alphonse Bertillon (1853-1914), pioneer of anthropometry](/images/anthro/Bertillon,_Alphonse,_fiche_anthropométrique_recto-verso_-_crop.jpg){fig-alt="A mugshot of Alphonse Bertillon, showing a front and side view of his face, along with anthropometric measurements"}
+![Anthropometric data sheet of Alphonse Bertillon (1853-1914), pioneer of anthropometry](/images/anthro/Bertillon,_Alphonse,_fiche_anthropometrique.jpg){fig-alt="A mugshot of Alphonse Bertillon, showing a front and side view of his face, along with anthropometric measurements"}
