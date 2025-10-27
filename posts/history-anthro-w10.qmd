@@ -8,7 +8,7 @@ reference-location: margin
 citation-location: margin
 ---
 
-The two ethnographic works we're reading this week are Bronislaw Malinowski's \*Argonauts of the Western Pacific (1922) and Max Gluckman's article "Analysis of a Social Situation in Modern Zululand" (widely known as "The Bridge," 1940). The two works make foundational methodological claims for how to do ethnography, but their foci are sharply different. Malinowski's Argonauts would become a canonical text for fieldwork through participant observation, while Gluckman's article is a landmark in the development of power-aware situational analysis.
+The two ethnographic works we're reading this week are Bronislaw Malinowski's *Argonauts of the Western Pacific* (1922) and Max Gluckman's article "Analysis of a Social Situation in Modern Zululand" (widely known as "The Bridge," 1940). The two works make foundational methodological claims for how to do ethnography, but their foci are sharply different. Malinowski's Argonauts would become a canonical text for fieldwork through participant observation, while Gluckman's article is a landmark in the development of power-aware situational analysis.
 
 ### Malinowski's *Argonauts of the Western Pacific*
 
