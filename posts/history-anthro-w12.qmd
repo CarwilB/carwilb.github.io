@@ -1,0 +1,59 @@
+---
+title: Gifts, Boundaries, and Taboos
+description: Situating readings for Week 12 of the History of Anthropological Theory
+author: Carwil Bjork-James
+date: 4 November 2025
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+---
+
+### The Gift
+
+Marcel Mauss wrote *Essai sur le don* (*Essay on the Gift*) as the main work of *L'Année Sociologique* of 1923/24. This brief, comparative work is his best known contribution to anthropology and one of the most widely cited anthropological works. As editor of the journal, co-author of multiple works, and as chair of Sociology at the College de France, was key to the growth of social anthropology in France. (And is even credited by Claude Lévi-Strauss with importing the term social anthropology into France.[@levi-strauss1966])
+
+Mauss's essay reoriented the anthropological study of the circulation of goods, intangible offerings, services, and honors in multiple ways. It widened the scope of "stuff" considered possible to exchange, sets up social collectivities (and also deities) rather than individuals as the participants in these exchanges, recognizes that that which is exchanged is charged with spiritual power, explains that this system morally demands reciprocity, and argues that such reciprocity is the foundation of social relations.
+
+> All these institutions reveal the same kind of social and! psychological pattern. Food, women, children, possessions, charms, land, labour, services, religious offices, rank—every- thing is stuff to be given away and repaid. In perpetual interchange of what we may call spiritual matter, comprising men and things, these elements pass and repass between clans \^and individuals, ranks, sexes and generations.[@maussGiftFormsFunctions1954, p. 11-12]
+
+The essay appears within a journal (*L'Année Sociologique*) that Mauss was resurrecting following World War I and the death of both his uncle and mentor Émile Durkheim and many of his scholarly peers. The entire issue is included in the 2016 translation by Jane Guyer, published by the anthropological collective Hau, which in turn owes its name to the Polynesian concept as explored in the essay.
+
+There have been three English translations of The Gift:
+
+-   A 1954 translation by Ian Cunnison, introduced by E. E. Evans-Pritchard.[@maussGiftFormsFunctions1954]
+
+-   A 1990 translation by W. D. Halls, introduced by Mary Douglas.[@mauss2002]
+
+-   A 2016 translation by Jane I. Guyer, introduced by Guyer and Bill Maurer.[@mauss2016]
+
+The Gift is written in the tradition of an open-ended essay, and draws many threads across a remarkable sweep of time and geography. This comment from Claude Lévi-Strauss emphasizes the creative and connective, rather than scientific and deductive aspect of such writing:
+
+> Without a doubt, the proof will remain largely illusory: we will never know if the other, with whom we cannot, after all, identify, makes from the elements of his social existence a synthesis exactly superposable on that which we have worked out. But it is not necessary to go so far; all that is needed-and for this, inner feeling is sufficient-is that the synthesis, how- ever approximate, arises from human experience. We must be sure of this, since we study men; and as we are ourselves men, we have that possibility. The way in which Mauss (1950:285) poses and resolves the problem in the *Essay on the Gift* brings to view, in the intersection of two subjectivities, the nearest order of truth to which the sciences of man can aspire when they confront the wholeness of their object.[@levi-strauss1966, p. 114]
+
+With that said, The Gift attacks and perhaps overthrows many prior certainties in anthropological studies of the economy, not least of which is the refutation of the existence of a "free gift," as highlighted in Mary Douglas's introduction. Think about which ones you find.
+
+### On Boundaries: *Purity and Danger*
+
+Mary Douglas's *Purity and Danger: An Analysis of Concepts of Pollution and Taboo*[@douglas1966] stands as a historical landmark in the anthropology of religion.
+
+A signature phrase in it is "matter out of place," Douglas' definition of the otherwise form-shifting concept of dirt. She sets up categorization and boundary drawing as a core element of religion. Given this, one need not think of the Kosher laws in Leviticus as primitive hygenic codes, nor of magical incantations as ways of causing miracles. [Douglas revises her specific interpretations of Kosher practices in her 2002 introduction. [@douglas2003]]{.aside} Rather, she argues, both express ritual concern with maintaining social order.
+
+> It is only by exaggerating the difference between within and without,<br> above and below,<br> male and female,<br> with and against,<br> that a semblance of order is created.
+
+Her chapter on magic and religion confronts and challenges the line of anthropological scholarship on "primitive religion" going back to James Frazer's *The Golden Bough*.
+
+### Structures of Kinship
+
+::: aside
+!["Although less important than those associated with funerals, the astonishing complexity of the matrimonial exchanges illustrated in Fig. 3 deserves to engage our attention."](/images/anthro/levi-strauss-elementary-structures-fig3.png)
+:::
+
+In *Elementary Structures of Kinship*,[@lévi-strauss1969] Claude Lévi-Strauss proposes a structuralist explanation for the circulation of spouses mentioned in Mauss's *The Gift*. The core insight of the book is to unite the near-universal taboo on incest (in some form) with the complex kinship structures that anthropologists had been mapping since at least Lewis Henry Morgan. (Like Douglas, he rejects the functionalist explanation that incest taboos prevent interbreeding.)
+
+Lévi-Strauss argues that by separating marriageable from un-marriageable individuals, kinship systems generate the necessary boundaries for lineages that are the collective social actors which exchange spouses—glossed in his account, as in Mauss's brief phrase, exclusively as women.
+
+Gayle Rubin will build upon *Elementary Structures of Kinship* in her pivotal essay "The Traffic in Women,"[@rubin1975] which theorizes kinship and gender systems as integrated whole, subject to historical change, and as systems of power.
+
+> And if men have been sexual subjects—exchangers—and women sexual semi-objects—gifts—for much of human history, then a great many customs, clichés, and personality traits seem to make a great deal of sense (among others, the curious custom by which a father gives away a bride).
+
+This essay proves foundational to Gender Studies. Both Rubin and Judith Butler will bring vast inquiries into gender, the body, and sexuality into dialogue with Lévi-Strauss' account.
