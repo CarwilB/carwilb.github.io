@@ -1,39 +1,24 @@
 ---
-title: "Research notes on violence, human rights, <br>social movements, and open data"
+title: "Notes on violence, human rights, social movements, open data, and anthropology"
 author: "Carwil Bjork-James" 
 listing:
-  id: post-listing
-  contents: posts
-  sort: "date desc"
-  type: grid
+  - id: post-listing
+    contents: posts
+    sort: "date desc"
+    type: grid
+  - id: teaching-listing
+    contents: teaching
+    sort: "date desc"
+    type: grid
 ---
 
-### Welcome
-
-This research notes website is an experiment born of crisis and grief.
-Expect it to change forms before it settles.
-
-It's a space where I will witness planned cruelty and human tragedies with numbers and data.
-Because my primary research project archives the death of nearly seven hundred Bolivians who
-lost their lives in political struggle and I need somewhere to reflect on what that means.
-
-Because weapons sent by my country's government are inflicting quantitatively far greater 
-losses weekly and we need data to make sense of how. 
-
-Because using numbers and maps and wrapping my head around the scale of things can dramatically
-change how I view the world. And I can share those perspectives through data.
-
-Because carefully presented evidence offers a path through the public denial that keeeps power intact.
-
-And because these are the tools I've been training myself to use, and they won't fit on my other 
-main spaces for public reflection, including my blog: [Carwil without Borders](https://woborders.blog/).
-
-Lastly behind this data, there is a lot of death. I've chosen not to look away.
-
-### 
+### Posts
 ::: {#post-listing}
 :::
 
+### Teaching Notes
+::: {#teaching-listing}
+:::
 
 ### Invocation
 :::{.column-screen-inset-right}

@@ -1,0 +1,15 @@
+---
+title: "Some updates on the Three Gorges Dam"
+author: Carwil Bjork-James
+date: 2014-11-10
+---
+
+Since *Manufactured Landscapes* was released in 2006, the **Three Gorges Dam** ([Wikipedia entry](https://en.wikipedia.org/wiki/Three_Gorges_Dam)) in China has been completed and made operational. Several of you mentioned its effects in your commentaries. Here are some further resources on the issue:
+
+* In 2011, a Chinese government statement ([original in Chinese](https://web.archive.org/web/20250916140223/https://www.gov.cn/ldhd/2011-05/18/content_1866289.htm)) acknowledged the mixed results of the project. As translated by [International Rivers](https://web.archive.org/web/20121107170240/http://www.internationalrivers.org/blogs/227/chinese-government-acknowledges-problems-of-three-gorges-dam) and [*The Guardian* of London](http://www.theguardian.com/environment/2011/may/19/china-three-gorges-dam): “The project is now greatly benefiting the society in the aspects of flood prevention, power generation, river transportation and water resource utilization,” the government maintained, but “there are problems that must be urgently resolved in the resettlement and wealth-making of immigrants, environmental protection and geological disaster prevention.”
+* International Rivers—an international network of environmentalists and community campaigners working on large-scale dams and their consequences—has their own, rather more critical take on the project: “[Three Gorges Dam: A Model of the Past](https://www.riverresourcehub.org/wp-content/uploads/files/attached-files/3gorgesfactsheet_feb2012_web.pdf).”
+* Major flooding in 2012 highlighted the still controversial role of the dam in flood prevention and management. A summary of the various perspectives on how the dam fared is provided by China Dialogue [here](https://www.chinadialogue.net/article/5108-Floods-test-Three-Gorges-Dam).
+* An [2013 assessment](http://www.sciencedirect.com/science/article/pii/S0012825213001050) of the dam’s environmental impact finds that official government studies under-estimated most but not all areas of concern (see Table 3).
+* China’s large dams are displacing some of the country’s large coal imports, according to [reporting by Bloomberg News](https://web.archive.org/web/20140829223745/http://www.bloomberg.com/news/2014-07-31/shipping-rates-suffer-as-china-hydro-curbs-coal-imports-freight.html).
+
+![Three Gorges Dam in September 2009](/images/teaching/3-Gorges-Construction.jpg)

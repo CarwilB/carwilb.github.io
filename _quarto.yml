@@ -14,7 +14,7 @@ website:
   
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/)."
-    left: "Carwil Bjork-James's research and data science website"
+    left: "Carwil Bjork-James's research, teaching, and data science website"
     
   sidebar:
     logo: "images/carwil-bjork-james-hex.png"
@@ -50,9 +50,12 @@ website:
       - href: about-bio.qmd
         text: "Biography"
       - text: "---"
-      - href: index.qmd
+      - href: index.qmd#posts
         text: Posts
         contents: posts/*
+      - href: index.qmd#teaching-notes
+        text: Teaching Notes
+        contents: teaching/*       
 
 format:
   html:

@@ -1,0 +1,42 @@
+---
+title: "“Life and Debt” Follow-up: Jamaica and Structural Adjustment"
+date: 2014-11-19
+bibliography: references.bib
+reference-location: margin
+---
+
+Nick Dearden writing in *The Guardian* (London) offers an overall update on Jamaica, debt and development,[@dearden2013] which continues to be heavily shaped by the neoliberal policies described in *Life and Debt*. Some highlights of his description:
+
+> Over 40 years, Jamaica has been “rescued” on countless occasions. In the 1980s, the island became almost a byword for “structural adjustment”. Jamaica is one of the most indebted countries, spends twice as much on debt repayments as it does on education and health combined, and looks set to miss several millennium development goals.
+>
+> There has been no progress in cutting hunger, or increasing basic water and sanitation provision. In 1990, 97% of children completed primary school. Now only 73% do. In 1990, 59 mothers died in childbirth for every 100,000 children born. Now it is 110.
+>
+> Jamaica has repaid more money (\$19.8bn) than it has been lent (\$18.5bn), yet the government still “owes” \$7.8bn, as a result of huge interest payments. Government foreign debt payments (\$1.2bn) are double the amount spent on education and health combined (\$600m).
+>
+> Jamaica is not alone. Several Caribbean countries are also dangerously indebted. The IMF itself says (pdf): “Since growth in the current environment is virtually non-existent, significant fiscal consolidation is inevitable, but may not be enough to bring down such high debt levels.” Translation: countries like Jamaica need to make deep cuts, but because there is and will be no growth, the debt will remain.
+
+A summary of lessons from the four-decade relationship between Jamaica and the IMF is available from Michael Witter, an economic policy expert who appears in the film. Witter advises, “The negotiators for the IMF and the Government of Jamaica must realise that the strategies pursued for the past 39 years are unlikely to stimulate economic growth in 2012, all the more because of the mountain of debt, the harshly competitive international economy of today, and the probability of severe weather events.” Dr. Witter is also interviewed [here](https://www.youtube.com/watch?v=Jm9nF9sXjXg).
+
+::: column-margin
+![Jamaican Banknote depicting Michael Manley. Michael Manley appears on the 1000-Jamaican-dollar note, currently valued at slightly less that US\$9.](/images/teaching/jmd-1000-jamaican-dollars-Manley.jpg) 
+:::
+
+Devaluation continues to be a major part of economic policy. Where US dollars were worth \$1.41 Jamaican dollars in 1978, they now buy 112 Jamaican dollars.
+
+### Apparel Sector
+
+The assembly of clothing as depicted in the film's segments on the Kingston Free Zone has collapsed in Jamaica. Even before the Great Recession the decline was steep: “Between 2003 and the start of the financial downturn in 2007, exports of apparel from Jamaica fell 87 per cent, declining from US\$11.4 million (\$1billion) to US\$1.5 million (\$133.5 million).” (Jamaican Observer)
+
+### Dairy Sector
+
+As illustrated in the film, milk powder imports continued to displace Jamaica's local dairy industry, which seems to have bottomed out in the last few years. The Jamaican government reports:
+
+> Local milk production peaked at 38.8 million litres in 1992 and has been consistently declining since, except for the period 1996 – 1999, to 12.2 million litres in 2010. Production has varied between 12 and 13 million litres since 2010, with production in 2013 at 12.34 million litres. As an indicator of nutritional status, Jamaicans are not drinking enough milk for a normal healthy life. Per capita consumption of milk remains at 105 ml/day . This is one – third of the average for Latin America and the Caribbean; one – fifth of the average for developed countries ; slightly less than the average of other developing countries; and half of The World Health Organisation minimum requirement.
+
+### “You still have tourism” and remittances
+
+Jamaica's tourist sector is the vital heart of its economy. The Tourism Board claims that it accounts “directly … for over 10 percent of all jobs on the island in 2007 and indirectly for some 26 percent of all jobs. Tourism generates more than 50 percent of all foreign exchange earnings of the country.”
+
+Jamaica's trade deficit is partially balanced by earnings from 2 million stay-over tourists and 1.27 million cruise ship passengers who come to the island. However, it also depends on \$2.26 billion (US) in remittances sent home by Jamaicans living abroad, according World Bank estimates. These money flows compensate for the imbalance between Jamica's \$1.8 billion in exports and \$6.44 billion in imports. (These are the components of Jamaica's trade.)
+
+Incidentally, global remittances sent home to developing countries are over three times as large as all foreign development aid put together. (Remittance estimate from World Bank vs Aid estimate from the OECD)

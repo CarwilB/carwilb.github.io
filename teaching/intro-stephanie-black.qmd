@@ -1,0 +1,24 @@
+---
+title: "Filmmaker Stephanie Black on “Life and Debt”"
+author: Carwil Bjork-James
+date: 2014-11-06
+bibliography: references.bib
+---
+
+### Stephanie Black
+
+::: column-margin
+![Stephanie Black](/images/teaching/stephanie-black-ig.jpg)
+:::
+
+These pieces about Stephanie Black's 2001 film provide more context about the director, the film, and her artistic and political intentions.
+
+-   “[Life and Debt: Interview with Stephanie Black](http://nitrateonline.com/2001/ld-stephanieblack.html)” by Cynthia Fuchs, Nitrate Online, 14 December 2001.
+-   George Sanchez, “[Revealing the Transparent: Stephanie Black Unveils the Jamaican World Beyond Tourism](https://web.archive.org/web/20131015171327/http://frictionmagazine.com/artful/film/black.asp),” *Friction Magazine*, 2002.
+-   Official film website: <http://www.lifeanddebt.org/about.html>
+
+Speaking to Cynthia Fuchs about her motivations for portraying tourism in the film, Black explained:
+
+> The genesis of the film came in the 1990s, when I spent time in Jamaica. Every day in the *Jamaican Gleaner*, the national newspaper, there were front page stories about some payment that wasn't being released because Jamaica didn't devalue rapidly enough or privatize quickly enough, or do drug-trafficking to the satisfaction of the United States. And these stories were repeated again and again. I was in shock because I had thought the IMF was something like the Red Cross. I didn't think they were that controlling, that they would have that kind of impact on the day-to-day running of the country. So I wondered how much autonomy the country had, if the outside forces had such influence on the really important policy-making. As I began to speak to people, and as is articulated in the film, everyone knows what's going on, in all classes, and yet, I, as a decently educated American, had no idea that this was going on. And that's how the tourist came to be — I wanted to ask why I had no idea what was happening. The tourist is a metaphor for privilege and lack of understanding. Jamaica needs to reinvent itself to meet the needs of the visitors. Consider the case of dance lessons: it could be that once, you visited a country and would go to a little bar and see people dance, and try out the new moves yourself; now, it's all contained in a little area, and spoon-fed in a soulless way.
+
+> But at the same time, \[the use of the tourists\] is not just a criticism; I'm not just making fun of the Americans. I identify with them. I felt that there's a certain victimization in lack of knowledge, that I myself am part of. So the tourists are a metaphor for the lack of understanding, of our own policies, imposed in our name. I spoke to Jamaicans who work in hotels about the most absurd questions they get. And there were people would come to the island and not even know they were in a foreign country. Very often, the first question they would get is, “Where's the McDonald's?” And along with that, there's the adaptation of the Jamaica Kincaid text (*A Small Place*,[@kincaidSmallPlace1988] written in 1987 about Kincaid's own home, Antigua), and she uses a very militant, passionate voice to describe a postcolonial consciousness. I was interested, now that we've all accepted that colonization is wrong, to apply her postcolonial text to a neocolonial situation, and see how accurate it remains.
