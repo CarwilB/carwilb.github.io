@@ -1,0 +1,51 @@
+---
+title: The Palestine Archipelago
+description: Julien Bousac's visualization of territorial fragmentation under Oslo
+author: Carwil Bjork-James
+date: 9 December 2025
+---
+
+## The fragmentary reality of Palestinian territory
+
+This year marks the 30th anniversary of the designation of Area C ([Wikipedia](https://en.wikipedia.org/wiki/Area_C)), the 62% of the 
+occupied West Bank that Israel kept exclusive control over under the Oslo Accords.
+That thirty year span is longer than the 28 years of Israeli military occupation
+of the West Bank that preceded it, longer than the 22 years of Jordanian rule 
+before that, and longer than the 28 years of British Mandate administration 
+before that. Promised as a transitional stage, in which the land would be
+"gradually transferred to Palestinian jurisdiction," Israeli rule over Area C
+is as close to permanent as any form of rule in modern Palestine.
+
+In 2009, French cartographer Julien Bousac created a striking visualization of 
+the fragmentation imposed by Area C and the continuing occupation of Palestinian
+territory. That map imagined Israeli controlled areas parts of a sea,
+inaccessible to Palestinians and posing fundamental challenges both to movement
+within their country and to any independent future. 
+
+I share it here as a starting point for envisioning Palestinian reality before
+the 2023 Gaza war.
+
+[![The Archipelago-State of Palestine, map art by Julien Bousac](/images/palestine/Archipel_Etat_de_Palestine_Julien_Bousac.jpg)](/images/palestine/Archipel_Etat_de_Palestine_Julien_Bousac.jpg)
+
+::: column-margin
+| Symbol | Description |
+| :---: | :--- |
+| ![](/images/swatch-green.svg) | Partially autonomous Palestinian zone |
+| ![](/images/swatch-yellow.svg) | Autonomous Palestinian zone |
+| ![](/images/swatch-orange.svg) | Urban area |
+| ![](/images/swatch-settlement.svg) | Israeli settlement |
+| **Ramallah** | Capital |
+| **Jéricho** | District capital |
+| Jayyus | Secondary town |
+| ![](/images/line-road.svg) | Main road |
+| ![](/images/line-maritime.svg) | Maritime link / Ferry route |
+| ![](/images/icon-palmtree-ciker-08.jpg){height=18} | Protected coast |
+| ⛺ | Camping |
+| 🏛️ | Historical site |
+| 🏊 | Beach |
+| 🏄 | Nautical base / Water sports |
+| ⚓ | Marina |
+| ![](/images/icon-battleship.jpg){height=18} | Zone under surveillance |
+:::
+
+

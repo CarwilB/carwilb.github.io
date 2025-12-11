@@ -1,0 +1,74 @@
+---
+title: Anthropological grounds for a "revolution in kinship"
+description: Situating Gayle Rubin's "The Traffic in Women" for Week 14 of the History of Anthropological Theory
+author: Carwil Bjork-James
+date: 24 November 2025
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+---
+
+For our final week together, we will be reading **Gayle Rubin's article "The Traffic in Women,"** which offers a sophisticated analysis of the interconnection between social taboos, gender identity development, and compulsory heterosexuality, knitting these forces together into a composite "sex/gender system." Drawing on but greatly extending prior Marxist work on kinship, Rubin proposes that this system functions prior to and alongside the economic sphere investigated by Marx and Engels. Like the economy, the sex/gender system can take multiple shapes over time, with collective action capable of overthrowing one system and instituting another. Rubin suggests (with some ambivalence) the term "patriarchy" to refer to the current dominant mode of the sex/gender system and urges that "Feminism must call for a revolution in kinship" (199).
+
+In Rubin's telling, gendered behavior, personalities, and marriage behaviors are all integrally related. The social drama of lineages exchanging women, suggested in Mauss's *The Gift* and elaborated in Lévi-Strauss' *Elementary Structures of Kinship*,[@lévi-strauss1969], is at the heart of this story and the (de)formation of personalities into gendered expression is in in service of the exchange. Through gendered socialization, as explored by Mead (though "Traffic" doesn't mention her directly), de Beauvoir, and (sometimes in faltering way) Freudian psychoanalytic perspectives on gender, women are transformed into give-able social objects.
+
+> The division of labor by sex can therefore be seen as a "taboo": a taboo against the sameness of men and women, a taboo dividing the sexes into two mutually exclusive categories, a taboo which exacerbates the biological differences between the sexes and thereby *creates* gender. The division of labor can also be seen as a taboo against sexual arrangements other than those containing at least one man and one woman, thereby enjoining heterosexual marriage.
+
+Following Freud's theory of infantile sexuality as polymorphous, perverse, and un-differentiated by sex, Rubin narrates the imposition of sex-based personalities as a traumatic imposition (a "straightjacket," she writes) on both genders. The transformation of this system she envisages would
+
+> provide\[\] us with the opportunity to seize control of the means of sexuality, reproduction, and socialization, and to make conscious decisions to liberate human sexual life from the archic relationsh1pws which deform it. Ultimately, a thorough- going feminist revolution would liberate more than women. It would liberate forms of sexual expression, and it would liberate human personality from the straightjacket of gender.
+
+There are solid Wikipedia articles on [Gayle Rubin](https://en.wikipedia.org/wiki/Gayle_Rubin) herself and on ["The Traffic in Women."](https://en.wikipedia.org/wiki/The_Traffic_in_Women:_Notes_on_the_Political_Economy_of_Sex) Finally, Rubin offers an especially rich reflection on her writing in a 1994 interview with Judith Butler.[@rubin1994]
+
+## Theoretical Influences
+
+::: column-margin
+![A kinship diagram of theoretical influences on Gayle Rubin's "The Traffic in Women"](/images/anthro/rubin-traffic-kinship-diagram.jpg)
+:::
+
+Rubin draws on a truly remarkable number of theoretical referents, making "The Traffic in Women" into something of a theoretical crossroads. On the one hand, we have been tracing our way along many of these pathways, making us especially well-informed readers of this piece. On the other hand, there will be other threads that are unfamiliar. Don't worry about just trusting Rubin's account of these sources.
+
+Nevertheless, if you want to follow some of these pathways yourself, here are some resources.
+
+### The Oedipus Complex
+
+::: column-margin
+!["The Oedipus Complex" by Freud Museum London: The key thing to remember is it's complex; it's not an Oedipus simplex](/images/anthro/Oedipus-Title-Card.png)
+:::
+
+
+
+A just-enough [video introduction to the Oedipus Complex](https://youtu.be/G7zZPrY8tGs?si=eDgTITJKAaVIpL-V) from the Freud Museum London. The core takeaways are these: 1. While the existence of an Oedipal drama within every household may seem far-fetched, it is primarily a language for talking about permitted and forbidden attachment to parental figures; 2. Freudian theory posits that learning the social limits on one's sexuality happens simultaneously with learning one's gender identity; and 3. learning proper identity is a complex process that runs differently in each individual.
+
+A more complete walk-through of Freud's theory of psychosexual development is in [Lecture XXI](freud-introductory-lectures-on-psychoanalysis-21.pdf) of *Introductory Lectures on Psychoanalysis*.[@freudIntroductoryLecturesPsychoanalysis1977] Here is how #3 above is framed there:
+
+> From this time onwards, the human individual has to devote himself to the great task of detaching himself from his parents, and not until that task is achieved can he cease to be a child and become a member of the social community. … These tasks are set to everyone; and it is remarkable how seldom they are dealt with in an ideal manner - that is, in one which is correct both psychologically and socially.[@freudIntroductoryLecturesPsychoanalysis1977, p. 380--81]
+
+### Freud, Lévi-Strauss, and Lacan on the Incest Prohibition and the Law
+
+In *Totem and Taboo*,[@sigmundfreudTotemTaboo] Freud describes the incest taboo as a historical event that helped to define civilization itself. In this book we find Freud engaging in armchair anthroplogy, and a version in which "savagery", childhood, and neuroses all serve as analogues for one another. The individual Oedipal drama has a collective counterpart: the desire of the primal male horde to murder the tribal leader who monopolized women in the hypothetical community. The prohibition this murder is accomplished through instituting both law and religion. Here is [a brief narration of that drama](https://parallaxisview.wordpress.com/2018/03/14/freud-on-religion-in-the-beginning-was-the-murder/).
+
+Lévi-Strauss takes up this Freudian story in *Elementary Structures*, but is emphatic that it is ahistorical. Instead the incest taboo itself becomes the necessary equivalent of any (and not just "civilized") society. Lévi-Strauss' enngament with Freud comes in Chapter XXIX.
+
+Meanwhile Lacan expands on the theme of the Law having its origin in the moment of Oedipal prohibition, or equivalently in the moment of encountering sex-linked expectations on one's behavior: "The primordial Law is therefore that which in regulating marriage ties superimposes the kingdom of culture on that of a nature abandoned to the law of mating."[@lacanFunctionFieldSpeech2001, p. 73] Much of what is often attributed to Lacan is present in the original writings by Freud and Daniel Hourigan does the deep dive on these themes.[@hourigan2024]
+
+### Structures of Kinship
+
+*This section is repeated from Week 12.*
+
+::: aside
+!["Although less important than those associated with funerals, the astonishing complexity of the matrimonial exchanges illustrated in Fig. 3 deserves to engage our attention."](/images/anthro/levi-strauss-elementary-structures-fig3.png)
+:::
+
+In *Elementary Structures of Kinship*,[@lévi-strauss1969] Claude Lévi-Strauss proposes a structuralist explanation for the circulation of spouses mentioned in Mauss's *The Gift*. The core insight of the book is to unite the near-universal taboo on incest (in some form) with the complex kinship structures that anthropologists had been mapping since at least Lewis Henry Morgan. (Like Douglas, he rejects the functionalist explanation that incest taboos prevent interbreeding.)
+
+Lévi-Strauss argues that by separating marriageable from un-marriageable individuals, kinship systems generate the necessary boundaries for lineages that are the collective social actors which exchange spouses—glossed in his account, as in Mauss's brief phrase, exclusively as women.
+
+Gayle Rubin will build upon *Elementary Structures of Kinship* in her pivotal essay "The Traffic in Women,"[@rubin1975] which theorizes kinship and gender systems as integrated whole, subject to historical change, and as systems of power.
+
+> And if men have been sexual subjects—exchangers—and women sexual semi-objects—gifts—for much of human history, then a great many customs, clichés, and personality traits seem to make a great deal of sense (among others, the curious custom by which a father gives away a bride).
+
+This essay proves foundational to Gender Studies. Both Rubin and Judith Butler will bring vast inquiries into gender, the body, and sexuality into dialogue with Lévi-Strauss' account.
+
+**Permalink:** [https://carwilb.github.io/teaching/history-anthro-w14.html](https://carwilb.github.io/teaching/history-anthro-w14.html)
+

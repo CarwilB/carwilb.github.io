@@ -1,0 +1,31 @@
+---
+title: When did anthropology begin in the Western Hemisphere?
+description: Situating readings for Week 2 of the History of Anthropological Theory
+author: Carwil Bjork-James
+date: 28 August 2025
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+---
+
+The second week's readings tries to capture the "dawn" of anthropology in the Western Hemisphere (or perhaps the world engaged by European colonialism). It works not so much by seeking out the first sources chronologically as by capturing the range of different possible voices describing human and cultural others.[@bjork-james2011]
+
+::: column-margin
+![Cover of Las Casas' *A Short Account of the Destruction of the Indies* (Seville, 1552)](/images/Bartolomé_de_las_Casas_(1552)_Brevisima_relación_de_la_destrucción_de_las_Indias.png)
+:::
+
+Chronologically, the readings begin with the 16th century Spanish friar and missionary Bartolomé de las Casas (1484-1566), who wrote about the indigenous peoples of the Caribbean and Central America.[@casas2020] Las Casas is often credited as one of the first advocates for indigenous rights in the Americas, and his writings provide a critical perspective on the brutal treatment of native populations by European colonizers. Lewis Hanke[@henke2003] profiles Las Casas as an anthropologist, specifically focusing on "his approach to the study of cultures so alien to his own" who used "the vast amount of material he had patiently gathered on various aspects of Indian life" to "understand the importance of their customs and beliefs within the framework of their own culture."
+
+Christian Feest profiles[@feest1992] early European reactions to Aztec and Mesoamerican art brought to Europe in 1521, the moment when the Spanish invasion of the Aztec empire was still ongoing. Albrecht Dürer (1471-1528) is one of the first Europeans to react to Mesoamerican art, and he did so highly positively noting, "And yet I have all days of my life seen nothing that has thus delighted my heart as these things. For I have seen among them wonderful artificial things and have wondered at the subtle *ingenia* of the people in foreign lands."
+
+Captain Bernardo de Vargas Machuca[@machuca2008] (1557-1622) took a different view, situating his descriptive work on "the Western Indies" (the Americas, but largely South America) alongside a manual of advice for Spanish soldiers and colonizers and a polemical defense of the conquest against critics like Las Casas.
+
+In *American Pentimiento*,[@seed2001] Patricia Seed reflects on Iberian and English descriptions of indigenous peoples in the Americas. She argues that these texts should be read not as straightforward ethnographic accounts but also texts shaped around the need to provide religious and moral justifications for the appropriation of indigenous lands and labor. The optional chapter, "Sustaining Political Identities" summarizes the overall argument of her book, while "Cannibals" details this storytelling in Spanish America.
+
+In the English colonization of North America (note that colonization precedes the 1706-07 union forming Great Britain), Roger Williams, the Puritan founder of Rhode Island, is among the first to publish an ethnographic text, *A Key into the Language of America* (1643).[@williams1997] The excerpt from Sarah Vowell's *The Wordy Shipmates*[@vowell2009] narrates this multivocal text as well as the Pequot War that preceded its publication. This podcast[@gonzález] focuses on Roger Williams' direct participation in the Pequot War.
+
+![Contemporary woodcut illustration of the Mystic massacre](/images/Mosaic-Podcast-Roger-Williams-Pequot-War-1.jpg)
+
+Finally, the first three chapters of Amitav Ghosh's *The Nutmeg's Curse*[@ghosh2021] situate the contemporaneous events of the Pequot war and the Dutch conquest of the Banda Islands in 1621-22. Ghosh's up-close look at early colonial violence speaks to the decisions behind colonial violence as well as the interrelations among different colonial projects and the internal religious wars of Europe. The chapter that follows argues that the colonization of indigenous lands is also interrelated with the de-sacralization of nature in Europe through the scientific revolution.
+
+**Permalink:** [https://carwilb.github.io/teaching/history-anthro-w2.html](https://carwilb.github.io/teaching/history-anthro-w2.html)
