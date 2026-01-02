@@ -1,0 +1,55 @@
+---
+title: The Wikimedia Foundation, Wikipedia, and Artificial Intelligence
+description: Keeping track of how the Wikimedia community is planning around generative AI
+author: Carwil Bjork-James
+date: 2 January 2026
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+---
+
+## What is Wikimedia Foundation doing about AI?
+
+At the Wikimedia Foundation there's a lot of interest in deploying AI systems. However, there's also been a strategic decision to put AI powers in the service of supporting editors and readers, rather than as a new generator of content. This decision has an idealistic and a practical side to it. On principle, the Foundation is positioning Wikipedia as an [island of human-generated stability](https://wikimediafoundation.org/news/2023/07/12/wikipedias-value-in-the-age-of-generative-ai/) in an information landscape that seems to be increasingly threatened with misinformation, and loss of social agreement and confidence. Wikipedia's [distinctive brand, in this view, is its human side](https://lbbonline.com/news/wikipedia-says-knowledge-is-human-in-latest-campaign).
+
+::: column-margin
+[![](/images/wikimedia-human-first.png)](/images/wikimedia-human-first.png)
+:::
+
+In terms of practicality, the low ratio of Wikipedians to Wikipedia articles puts limits on the capacity of editors to manage (which is to say, patrol, fact check, and exercise quality control over) a new influx of automatically generated articles. Accordingyly, in their publicly announced AI strategy, the WMF has decided to put its development energy behind tools that either steer (presumably new) editors towards producing competent articles or enable existing editors to scale up their work managing, rather than creating new content. The priorities are:
+
+-   Prioritize AI assisted workflows in support of moderators and patrollers.
+-   Create more time for editing, human judgment, discussion, and consensus building.
+-   Create more time for editors to share local perspectives or context on a topic.
+-   Engage new generations of editors with guided mentorship, workflows and assistance.
+
+The strategy is expressed in this [mid-2024 Impact Assessement](https://meta.wikimedia.org/wiki/Wikimedia_Foundation_Artificial_Intelligence_and_Machine_Learning_Human_Rights_Impact_Assessment), in their 2025 [AI strategy](https://meta.wikimedia.org/wiki/Strategy/Multigenerational/Artificial_intelligence_for_editors) and [announcement](https://wikimediafoundation.org/news/2025/04/30/our-new-ai-strategy-puts-wikipedias-humans-first/), and the [Human-Centered AI research team description](https://research.wikimedia.org/human-centered-ai.html). Examples of tools for enhancing the reader experience includes [AI-assisted alt text for image accessibility](https://www.youtube.com/watch?v=03AmHqulRGc&t=10s).
+
+## Where is the Wikipedia community on AI?
+
+Heather Ford formally researched Wikipedia community concerns about generative AI and [gave this talk](https://www.youtube.com/watch?v=lCCKf0yVK5E&t=195s) presenting [this paper](https://wikiworkshop.org/2025/paper/wikiworkshop_2025_paper_54.pdf) in late 2025. Here's her summary of community concerns:
+
+> Does the potential use of generative Al threaten knowledge integrity on Wikipedia? If so, how?
+
+> -   Reliability, trustworthiness, accuracy: proliferation of Al-generated misinformation, hallucinations and biased content because of the difficulty in fact-checking and verifying Al outputs.
+> -   Equality: uneven distribution of risk because genAl tools are not available for all languages and because low editor numbers in smaller versions could tip the balance away from human control over curation, especially among non-English speakers.
+> -   Exploitation: the commercial exploitation of open content and editor labour by genAl companies. - Sustainability: the long-term sustainability of Wikipedia with the potential for people to turn increase in Al for their information needs.
+> -   Verifiability: when the link between a claim and its source is broken, readers are no longer able the veracity of a claim or participate in the process of knowledge curation leading information pollution on Wikipedia and the degradation of the broader information environment, or even model collapse.
+
+In the in-person Wikimedia community, I think that opinions continue to vary widely, with both a heavy interest in experimentation and a desire to protect the encyclopedia. (I'm basing this on WikiConference North America.) WMF continues to demo or profile its AI-powered improvement experiments, such as "semantic search" that would allow visitors to ask questions in the Wikipedia search bar. And a lightning talk promoted a "release the bots" perspective that describes generative tools as powerful tools.
+
+On English Wikipedia, discussion of LLM edits had deadlocked a couple of years ago: This [proposed policy](https://en.wikipedia.org/wiki/Wikipedia:Large_language_models) was never approved, but kept as an essay. Still, the community seems to be gradually moving towards a consensus of specific limitations on adding unfiltered LLM content to the encyclopedia. These online discussions end up being lengthy and multi-sided, with one axis of contention pitting "defend the rules, whether AI or not" versus "limit (or even ban) mass LLM content." This is complicated by the cross-cutting issue of smaller use cases for AI, where AI-inclusionists tend to use the prospect of forbidding AI grammar checks as a straw man, while AI exclusionists struggle to find a minimum set of off-limits use cases that can reach consensus. A series of hard limits in particular areas has, however, reached consensus: WP:LLM forbids the creation of new article with generative AI; new articles with clear AI artifacts may be speedily deleted; WP:AITALK limits the use of LLMs in formal talk page debates and allows for new topics to be closed if they weren't opened by a human willing to articulate their ideas for themselves (but reopened once an initial user does so). A very long RFC is underway on a somewhat stronger LLM edit guideline, which seems likely to be modified once more before it's approved.
+
+::: column-margin
+**WP:NEWLLM** Large language models (LLMs) can be useful tools, but they are not good at creating entirely new Wikipedia articles. Large language models should not be used to generate new Wikipedia articles from scratch.
+
+**WP:AITALK** LLM-generated comments: Comments, nominations, and opening statements that are obviously generated (not merely refined) by a large language model or similar AI technology may be struck or collapsed with `{{Collapse AI top}}`. In formal discussions, this may result in the speedy closure of irrelevant or disruptive discussions
+
+**Speedy Deletion Criterion** **G15. LLM-generated pages without human review** \[Delete without discussion\] any \[new\] page that exhibits one or more of the following signs that … would have been removed by any *reasonable human review*: Communication intended for the user … Implausible non-existent references … Nonsensical citations.
+:::
+
+[**WikiProject AI Clean-Up**](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup) and the essay at **WP:LLM** have become a central repositories for [demonstrations](https://en.wikipedia.org/wiki/Wikipedia:Large_language_models#Demonstrations) of valuable LLM-assisted editing, the [policy discussions on Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Large_language_models#Policy_discussions). One impressive recent demonstration [appeared on Wikipedia Signpost](https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Signpost/2025-12-01/Opinion): user [Tilman Bayer](https://en.wikipedia.org/wiki/User:HaeB) prompted GPT-5 Thinking to find errors in every daily featured article and it suggested 56 errors over a month, 38 of which Bayer confirmed.
+
+## One more interesting perspective
+
+Northwestern researcher and now Microsoft AI researcher Brent Hecht has a talk on how the AI ecosystem is dependent on Wikipedia and other content producers, and now risks cannibalizing its knowledge source. [Wiki Workshop 2024 talk](https://youtu.be/y_EUwdb9qyk?si=x9nBHRtlzEHdOVpW) \| [slides](https://brenthecht.com/wikiworkshop2024/WikiWorkshopKeynote2024.pdf) He ends up arguing that it is crucial for Wikipedia/Wikimedia to exercise its power to withhold content and use it to negotiate the future of AI provider–content creator relations.
