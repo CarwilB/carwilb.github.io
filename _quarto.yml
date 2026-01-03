@@ -6,6 +6,9 @@ project:
     
 pagetitle: "{{< meta title >}} | Carwil Bjork-James"
     
+execute:
+  freeze: auto    
+
 website: 
   page-navigation: true
   title: "Carwil Bjork-James"
