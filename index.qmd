@@ -1,5 +1,5 @@
 ---
-title: "Notes on violence, human rights, social movements, open data, and anthropology"
+title: Notes on violence, human rights, social movements, open data, and anthropology
 author: "Carwil Bjork-James" 
 listing:
   - id: post-listing

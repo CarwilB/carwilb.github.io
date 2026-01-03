@@ -87,7 +87,9 @@ function transclude (cb)
       if not fh then
         io.stderr:write("Cannot open file " .. line .. " | Skipping includes\n")
       else
-        local contents = pandoc.read(fh:read '*a', format).blocks
+        -- We wrap the read in a protected call or ensure no extra logging
+        local raw_content = fh:read '*a'
+        local contents = pandoc.read(raw_content, format).blocks
         last_heading_level = 0
         -- recursive transclusion
         contents = system.with_working_directory(

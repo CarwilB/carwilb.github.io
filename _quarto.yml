@@ -42,7 +42,6 @@ website:
       - icon: twitter
         href: https://carwilb.github.io/twitter
         text: "Twitter archive" 
-
     style: "docked"
     search: true
     collapse-level: 1
@@ -55,9 +54,11 @@ website:
       - text: "---"
       - href: index.qmd#posts
         text: Posts
-        contents: posts/*
+        sort: "date desc" # Ensure this is aligned with 'contents' or under the section
+        contents: posts/*.qmd
       - href: index.qmd#teaching-notes
         text: Teaching Notes
+        sort: "date desc" # Ensure this is aligned with 'contents' or under the section
         contents: teaching/*       
 
 format:
