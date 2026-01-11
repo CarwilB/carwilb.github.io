@@ -1,0 +1,19 @@
+redirects:
+  - old: posts/history-anthro-w2.html
+    new: teaching/history-anthro-w2.html
+  - old: posts/history-anthro-w3.html
+    new: teaching/history-anthro-w3.thml
+  - old: posts/history-anthro-w4.html
+    new: teaching/history-anthro-w4.html
+  - old: /posts/history-anthro-w5.html
+    new: /teaching/history-anthro-w5.html
+  - old: /posts/history-anthro-w8.html
+    new: /teaching/history-anthro-w8.html
+  - old: /posts/history-anthro-w10.html
+    new: /teaching/history-anthro-w10.html
+  - old: /posts/history-anthro-w11.html
+    new: /teaching/history-anthro-w11.html   
+  - old: /posts/history-anthro-w12.html
+    new: /teaching/history-anthro-w12.html
+  - old: /posts/history-anthro-w14.html
+    new: /teaching/history-anthro-w14.html

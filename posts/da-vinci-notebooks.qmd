@@ -1,0 +1,126 @@
+---
+title: "Images from Leonardo's Notebooks"
+author: "Gemini Pro 3"
+format: html
+editor: visual
+---
+
+Based on the images provided in the PDF, here are the identification and high-resolution links for Leonardo da Vinci's notebook drawings. Many of these reside in the **Royal Collection at Windsor Castle**, the **Biblioteca Reale in Turin**, or the **Institut de France** in Paris.
+
+### **Portraits & Human Figures**
+
+-   **Self-Portrait (Head of a Bearded Man) \[Page 2\]:**
+
+    -   **Description:** The iconic red chalk drawing often identified as Leonardo's self-portrait.
+
+    -   **Link:** [Wikimedia Commons (High Res)](https://commons.wikimedia.org/wiki/File:Leonardo_self.jpg)
+
+-   **Profile of an Old Man \[Page 3\]:**
+
+    -   **Description:** A contemplative sketch of an elderly man with a prominent chin and nose.
+
+    -   **Link:** [Wikimedia Commons (High Res)](https://commons.wikimedia.org/wiki/File:Portrait_of_an_old_man_by_da_Vinci.jpg)
+
+-   **Head of a Youth \[Page 5\]:**
+
+    -   **Description:** A red chalk study of a young man with curly hair.
+
+    -   **Link:** [Royal Collection Trust (RCIN 912554)](https://www.rct.uk/collection/912554/the-head-of-a-youth)
+
+-   **Head of a Young Woman \[Page 6 & 29\]:**
+
+    -   **Description:** Silverpoint study of a girl's head, possibly for *The Virgin of the Rocks*.
+
+    -   **Link:** [WikiArt (Turin Collection)](https://www.wikiart.org/en/leonardo-da-vinci/head-of-a-girl)
+
+-   **Child in Profile (Studies of an Infant) \[Page 11\]:**
+
+    -   **Description:** Red chalk studies for the Infant Jesus in *The Virgin and Child with Saint Anne*.
+
+    -   **Link:** [Wikipedia / Gallerie dell'Accademia](https://en.wikipedia.org/wiki/Studies_of_an_Infant)
+
+### **Anatomy & Proportions**
+
+-   **The Vitruvian Man \[Page 9\]:**
+
+    -   **Description:** The world-famous study of human proportions.
+
+    -   **Link:** [Wikimedia Commons (High Res)](https://commons.wikimedia.org/wiki/File:Vitruvian_Man_by_Leonardo_da_Vinci.jpg)
+
+-   **Leg Anatomy & Proportions \[Page 10\]:**
+
+    -   **Description:** Detailed measurements of the human leg and its range of motion.
+
+    -   **Link:** [Royal Collection Trust (RCIN 919136)](https://www.rct.uk/collection/919136)
+
+-   **Fetus in the Womb \[Page 17\]:**
+
+    -   **Description:** Revolutionary anatomical study of a human fetus.
+
+    -   **Link:** [Wikimedia Commons (High Res)](https://commons.wikimedia.org/wiki/File:Views_of_a_Foetus_in_the_Womb.jpg)
+
+-   **Shoulder & Neck Anatomy \[Page 4\]:**
+
+    -   **Description:** Dissections showing the musculature and mechanics of the shoulder.
+
+    -   **Link:** [Royal Collection Trust (RCIN 919003)](https://www.rct.uk/collection/919003)
+
+### **Inventions & Practical Matters**
+
+-   **Flying Machine / Wing Mechanism \[Page 26\]:**
+
+    -   **Description:** Leonardo's design for a human-powered flying machine based on bird and bat wings.
+
+    -   **Link:** [Wikimedia Commons (Institut de France)](https://commons.wikimedia.org/wiki/File:Leonardo_da_vinci,_Drawing_of_a_flying_machine.jpg)
+
+-   **Aerial Screw \[Page 27\]:**
+
+    -   **Description:** A precursor to the modern helicopter.
+
+    -   **Link:** [Wikimedia Commons (High Res)](https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_19-540156.jpg)
+
+-   **Equestrian Monument \[Page 22\]:**
+
+    -   **Description:** Studies for the massive Sforza horse monument.
+
+    -   **Link:** [Wikimedia Commons (High Res)](https://commons.wikimedia.org/wiki/File:Leonardo_equestrian_monument.JPG)
+
+-   **Water Lifting Machine \[Page 21\]:**
+
+    -   **Description:** A complex mechanical drawing for an irrigation or drainage system.
+
+    -   **Link:** [Codex Atlanticus (Interactive Archive)](https://www.google.com/search?q=https://www.codex-atlanticus.it/%23/Record/1069)
+
+### **Nature & Science**
+
+-   **The Deluge \[Page 8\]:**
+
+    -   **Description:** A powerful late-period drawing of a catastrophic storm.
+
+    -   **Link:** [Royal Collection Trust (RCIN 912380)](https://www.rct.uk/collection/912380/a-deluge)
+
+-   **Star of Bethlehem & Other Flowers \[Page 18\]:**
+
+    -   **Description:** Botany studies with swirling floral patterns.
+
+    -   **Link:** [Royal Collection Trust (RCIN 912424)](https://www.rct.uk/collection/912424/a-star-of-bethlehem-woode-anemone-and-spurge)
+
+-   **Studies of the Moon \[Page 20\]:**
+
+    -   **Description:** Sketches of the moon's surface and light reflections.
+
+    -   **Link:** [Wikimedia Commons (Astronomy Studies)](https://www.google.com/search?q=https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_Codex_Leicester_-_The_Moon.jpg)
+
+### **Fantasy & Grotesques**
+
+-   **Design for a Dragon Costume \[Page 14\]:**
+
+    -   **Description:** A playful design for a courtly pageant.
+
+    -   **Link:** [Royal Collection Trust (RCIN 912369)](https://www.rct.uk/collection/912369/a-design-for-a-dragon-costume)
+
+-   **Five Grotesque Heads \[Page 16 & 30\]:**
+
+    -   **Description:** Caricature-style studies of distorted facial features.
+
+    -   **Link:** [Royal Collection Trust (RCIN 912495)](https://www.google.com/search?q=https://www.rct.uk/collection/912495/five-grotesque-heads)
