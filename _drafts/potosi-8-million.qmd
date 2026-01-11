@@ -1,0 +1,35 @@
+---
+title: \"Eight million lives\": How Potosí swallowed the regionwide population crash
+description: Tracing the often-repeated figure back to its origins
+author: Carwil Bjork-James
+date: 11 September 2025
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+---
+
+In my
+
+This week's readings attempt to capture anthropological thinking at the moment when Enlightenment thought is seeding the formation of the modern research university. While it will take some further decades for "the science of man" to escape from Natural History and take its place alongside other social scientific disciplines in the Western Academy, essential foundation for all three of these elements in that story (anthropology, the research university, and the social sciences) were all being laid around 1800.
+
+This larger story is the reason why we return to Eric Wolf's "Introduction" to *Europe and the People Without History*[@wolf1982] this week. Wolf's book attempts a six-century account of global processes in which both colonizing and colonized societies were radically transformed and his introduction make the theoretical case that the often-presumed object of anthropological study, distinct "traditional societies," each with their own "culture," is an illusion.
+
+> By turning names into things we create false models of reality. By endowing nations, societies, or cultures with the qualities of internally homogeneous and externally distinctive and bounded objects, we create a model of the world as a global pool hall in which the entities spin off each other like so many hard and round billiard balls. Thus it becomes easy to sort the world into differently colored balls… (6)
+
+Relevantly for this week, Wolf describes "The Rise of the Social Sciences" in an argument which is more of an intellectual lament than a chronological account. For Wolf, sociology, political science, and economics are incomplete disciplines, which artificially sever certain relationships from the broader whole, most crucially by failing to take an integrated look at political economy. He notes that sociology was initially a political project aimed at fostering social cohesion (on this point, see more directly Mostajir[@mostajir]), and that political science and economics have been oriented around formal models of their spheres of interest that leave out that which is crucial.
+
+All of this separation and stratification has taken place in the context of the modern research university, that entity that emerged in the 19th century as states worked to formalize the space of intellectual inquiry demanded by Enlightenment thinkers. In the readings these are represented by Immanuel Kant's essay, "What is Enlightenment?"[@kant1784] [@kant1799] and the commentary on it by Michel Foucault.[@foucault] Without denying that the state is due the obedience of the public, Kant urges the right to freedom of argument.
+
+The devastating invasions by Republican and Napoleonic France taught a stinging lesson to the still-divided German-speaking realms, and "counter-Enlightenment" reforms of society included the creation of new academic, military, and state institutions. Germany's Humboldtian universities set out the basic contours of modern academic life: tenure, freedom of thought for professors, unity of research and teaching, and isolation from non-scholarly life.[@anderson2004]
+
+![Georges Cuvier (1769-1832) and works from *La Regne Animal*](/images/Cuvier-Butterflies-Skulls.jpeg)
+
+In France, Enlightenment influence would be sanctified. Voltaire and Rousseau were literally exhumed and reburied at the Panthéon[@tatum2016] and a variety of symbolic and institutional rebirths remade the French state. In that context, both revolutionary and post-Revolutionary Napoleonic governments sought to remake the academy, along with the rest of society.
+
+::: column-margin
+![The Panthéon of Paris in 1795; image by Jean Baptiste Hilaire](/images/2983px-pantheon-1795.jpg)
+:::
+
+French natural history, with Georges Cuvier as a leading scholar, focused on systematizing knowledge of past and present lifeforms and he turned its categorizing gaze upon humans as well, proposing a three-part, hierarchical racial schema (Caucasian, Mongolian, Ethiopian) with multipe sub-branches. George Stocking lays out the broader directions of early anthropological research in France.
+
+**Permalink:** <https://carwilb.github.io/teaching/history-anthro-w3.html>
