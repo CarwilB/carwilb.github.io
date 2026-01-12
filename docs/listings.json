@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/wiki-rewriting.html",
       "/posts/redirect-generator.html",
       "/posts/ai-wikimedia.html",
       "/posts/ai-links.html",

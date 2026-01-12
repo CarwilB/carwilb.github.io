@@ -1,0 +1,161 @@
+---
+title: Breaking "Margaret Mead" out of a Wikipedia Rut
+description: A reflection on revising a legacy Wikipedia biography.
+author: Carwil Bjork-James
+date: 12 January 2026
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+---
+
+_I rode alongside my students' assignment to rewrite a Wikipedia article this semester and learned a ton about Margaret Mead. And also about what kind of material can stay on Wikipedia for many years without being updated or corrected. Here's what I think Wikipedia editors and those who teach with Wikipedia can learn from my experience._
+
+:::{.column-margin}
+[![Margaret Mead and Gregory Bateson typing up fieldnotes in 1938](/images/anthro/mead-bateson-1938.jpg)](/images/anthro/mead-bateson-1938.jpg)
+:::
+
+Wikipedia can be one of the most dynamic places on the Internet, and its basic principles of verifiability, neutrality, and the use of high-quality reliable sources have made it competitive with professionally published references on many topics. The Wikipedia editing community subjects thousands of new contributions each day to scrutiny for their quality. But the overall corpus of the encyclopedia, whose article counts recently crossed the 7 million mark, is much larger than its active editor base. No top-to-bottom review of its content has ever been attempted. And some kinds of flawed articles can easily remain in that state for not just days or weeks but for years.
+
+This was definitely the case for the [Wikipedia article on Margaret Mead](https://en.wikipedia.org/wiki/Margaret_Mead), arguably the most famous non-fictional anthropologist. The article receives [over 500 visits per day](https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2025-09-22&end=2025-12-21&pages=Margaret_Mead)--200,000 per year--and has been edited over 2,400 times by 1,193 editors. In short, the magic of the crowd[^1] should have had this article covered.
+
+[^1]: Or [Linus' Law](https://en.wikipedia.org/wiki/Linus's_law): "given enough eyeballs, all bugs are shallow."
+
+But hundreds of editors have passed by some deep flaws for over a decade: Mead's bisexuality is well documented in published sources, but the article tip-toed around her romantic relationships with women. Mead had a half-century-long career but nearly a thousand words of the less-than-4,000-word article was devoted to controversy over her first book, Coming of Age in Samoa. And the section on Sex and Temperament featured a long quote purportedly from her book, but actually from a future professor's lecture notes (he contributed them as text during the early days of Wikipedia and they were eventually mis-cited).
+
+I must have visited the article a dozen times before this year, each time feeling it was deeply unsatisfying: hung up on criticism and offering a narrow view. But the criticism was well-cited and was the fruit of some other editors' hard work. And balancing out a biography takes a lot of work. It wasn't a very short article in obvious need of expansion. But if I had taken a long hard look at it, I would have seen plenty of ways to improve it.
+
+::: {.column-margin}
+(Side point: This is one reason why the Evaluate an Article assignment that Wiki Education offers can be so helpful. It offers many starting points for improving and article. Though, if I recall correctly, these evaluations are not usually shared on the Talk pages of evaluated articles.)
+:::
+
+I suspect that many editors, like me, have noticed medium-sized flaws to an article like this one. But we can't easily tag the problem and don't have the time to do the kind of deep dive to fix them. Wikipedia could benefit a lot from some way to regularly review high-traffic, medium-quality articles. And from better tools to pull up original source quotations for verification.
+
+## Verifying Wikipedia in 2025
+
+When I took my first critical look at the text, I saw a lot of very detailed, but weakly sourced text, sometimes with out any sources and sometimes with a single parenthetical citation. These references to articles and books published decades ago were once difficult for Wikipedians to verify,but not anymore.
+
+:::{.column-margin}
+[![](/images/wikipedia/freeman-1983-internet-archive.png){fig-alt="A diagram showing the five main contributors to the Sex and Temperament section of Margaret Mead."}](/images/wikipedia/freeman-1983-internet-archive.png)
+:::
+
+Much more of the academic workflow has become digital since Wikipedia started. With the Internet Archive and my university library access, I could read almost all of the sources online and match up citations with sources side-by-side. Sometimes I did this to fill in where exactly the author said what is claimed on Wikipedia.
+
+The good news is that these tools make verifying poorly Wikipedia text much easier. One can find each of the criticisms from Derek Freeman described in this paragraph in his book criticizing Mead's work. And then cite them individually, producing a verifiable paragraph (for reasons of length and balance, I put this level of detail in the [*Coming of Age in Samoa*](https://en.wikipedia.org/w/index.php?title=Coming_of_Age_in_Samoa&oldid=1307773691#Freeman's_1983_book) article.)
+
+::: {.panel-tabset}
+
+## Before
+![\"Margaret Mead\" Before](/images/wikipedia/wikipedia-freeman-1983-oldcitations.png){fig-alt="Criticism by Derek Freeman section with two footnotes. Text reads, After her death, Mead&apos;s Samoan research was criticized by the anthropologist Derek Freeman, who published a book arguing against many of Mead&apos;s conclusions in Coming of Age in Samoa. Freeman argued that Mead had misunderstood Samoan culture when she argued that Samoan culture did not place many restrictions on youths&apos; sexual explorations. Freeman argued instead that Samoan culture prized female chastity and virginity and that Mead had been misled by her female Samoan informants. Freeman found that the Samoan islanders whom Mead had depicted in such utopian terms were intensely competitive and had murder and rape rates higher than those in the United States. Furthermore, the men were intensely sexually jealous, which contrasted sharply with Mead&apos;s depiction of quote-free love-unquote among the Samoans."}
+
+## After
+![\"Coming of Age in Samoa\" After](/images/wikipedia/wikipedia-freeman-1983-newcitations.png){fig-alt="Freeman's 1983 book section with five footnotes, all to specific pages and a new quote. Text reads, Freeman argued that Mead had misunderstood Samoan culture when she argued that Samoan culture did not place many restrictions on youths' sexual explorations. Freeman argued instead that Samoan culture prized female chastity and virginity and that Mead had been misled by her female Samoan informants. Freeman found that the Samoan islanders whom Mead had depicted in such utopian terms were intensely competitive and had murder and rape rates higher than those in the United States. Furthermore, the men were intensely sexually jealous, which contrasted sharply with Mead's depiction of -quote-free love-unquote among the Samoans. Freeman stated that the idea that premarital sex was an expected practice in Samoa was quote-so preposterously at variance with the realities of Samoan life that a special explanation is called for … all the indications are that the young Margaret Mead was, as a kind of joke, deliberately misled by her adolescent informants.-unquote-"}
+:::
+
+While most of this work was just attaching clear sourcing to good text, it's also a chance to improve the article, and sometimes (as I did here) to find the dramatic quote that brings the whole argument into focus. I plan to incorporate this kind of hard verification into a new assignment for my courses that edit Wikipedia, getting students familiar with checking up on and improving sources.
+
+And sometimes, more often than I expected, the works cited on Wikipedia failed to verify the facts claimed. For example, there's this text on Wikipedia:
+
+> Deborah Gewertz (1981) studied the Chambri (called Tchambuli by Mead) in 1974-1975, and found no evidence of such gender roles. Gewertz states that as far back in history as there is evidence (1850's) Chambri men dominated over the women, controlled their produce and made all important political decisions.
+
+Gewertz said Chambri women weren't dominant in the 1970s, but she certainly didn't reject Mead's ethnography on this issue, writing instead (in Gewertz 1981): "I believe that the relative 'dominance' of Chambri women during 1933-or perhaps more accurately, the reduction of symmetrical competition between Chambri men-reflects a temporary shift in the balance." Elsewhere she wrote, "We argue in Errington and Gewertz, 1987a, that … the Chambri never developed a male-oriented military organization comparable to that of the Iatmul; relations between Chambri men and women were, therefore, much more egalitarian than between Iatmul men and women."
+
+Similarly, Wikipedia claimed:
+
+> Mead's Sex and Temperament in Three Primitive Societies became influential within the [feminist movement](https://en.wikipedia.org/wiki/Feminist_movement) since it claimed that females are dominant in the Tchambuli (now spelled [Chambri](https://en.wikipedia.org/wiki/Chambri_people)) Lake region of the Sepik basin of [Papua New Guinea](https://en.wikipedia.org/wiki/Papua_New_Guinea) (in the western Pacific) without causing any special problems.
+
+This was the first sentence introducing Mead's book. While not the worst summary of one of Mead's particular claims, it totally misunderstands the relevance of the book to feminism. It wasn't the reported female dominance among the Tchambuli that led to Sex and Temperament's role in the women's movement, but rather the book's explanation of the [sex-gender distinction](https://en.wikipedia.org/wiki/Sex%E2%80%93gender_distinction). But it's hard to counter a statement like that one without some detailed knowledge of both Mead and her social impact. This is something we fortunately have for Mead in high-quality sources like Nancy Lutkehaus's _Margaret Mead: The Making of an American Icon_.
+
+Deep verification of the article uncovered multiple problems. Text attributed to Mead wasn't hers, facts cited to Gewertz and to Mead weren't in those texts. And the summaries of Friedan and Bamberger confused facts or didn't convey their full meaning. Perhaps just as important, finding a narrow fact in context sometimes revealed that isolating the fact was a bad idea.
+
+## How did we get here?
+
+Here's a list of some plain-text segments from the Margaret Mead article ([in October 2025,](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=1316523564) before I started tinkering with it). Some are problematic in themselves, others index sections that I was interested in changing or balancing out. By [implementing Wikiblame in R](https://github.com/Ironholds/WikipediR/issues/33), I could draw up this table of who exactly added this text in the first place.
+
+::: {style="font-size: 0.85em;"}
+| original_sentence | date_added | added_by | revision |
+|:----------------------------------|:-----------|:-----------|:-----------|
+| it claimed that females are dominant in the Tchambuli | 2004-09-14 | 24.225.235.247 | [6085559](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=6085559) |
+| both men and women were peaceful in temperament | 2005-04-27 | Arnold Perey | [12900063](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=12900063) |
+| spent their time decorating themselves while the women | 2005-04-27 | Arnold Perey | [12900063](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=12900063) |
+| a close personal and professional collaboration | 2008-02-08 | Haddison | [189971634](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=189971634) |
+| the relationship between Benedict and Mead was partly sexual | 2010-01-20 | Hurmata | [338907179](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=338907179) |
+| on the basis that it contributes to infantilizing women | 2012-10-25 | 88.114.154.216 | [519709225](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=519709225) |
+| as far back in history as there is evidence (1850s) | 2014-04-01 | Ewulp | [602226519](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=602226519) |
+| reports detailing the attitudes towards sex | 2015-01-05 | Rationalobserver | [641101012](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=641101012) |
+| after Mead's divorce from Cressman | 2018-07-03 | Anneek | [848682893](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=848682893) |
+| Mundugumor women hazed each other less than men hazed | 2019-11-12 | Sdio7 | [925883715](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=925883715) |
+| a close friend of her instructor | 2020-04-26 | LearnMore | [953303248](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=953303248) |
+| became influential within the | 2022-07-29 | WikiPedant | [1101070289](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=1101070289) |
+| Mead identified two types of sex relations: love affairs and adultery | 2023-03-31 | AnthroCurious | [1147544351](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=1147544351) |
+| the book tackled the question of nature versus nurture | 2023-03-31 | AnthroCurious | [1147546180](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=1147546180) |
+
+: Sources of text in Margaret Mead {.striped .table-sm}
+:::
+
+By discovering when the first three sentences were put onto Wikipedia, I unearthed an early moment in the encyclopedia page when it functioned as basically an online debate over Margaret Mead's legacy.
+
+First an anonymous user (known only by their IP address) made [this addition](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&diff=6085559&oldid=5865682) in September 2004:
+
+> Another extremely influential book by Mead was "Sex and Temperament in Three Primitive Societies." This became a major cornerstone of the women's liberation movement, since it claimed that females are dominant in the Tchambuli tribes of the South Sea islands, without causing any special problems. However, looking up Tchambuli (sometimes spelled Chambri or Chimbu) in the Encyclopedia Britannica and other such modern references, the reader finds that later anthropological studies do not confirm this, and that males are dominant in Melanesia, except for the belief that some female witches have special taboo powers. (See also Gender Relations in Melanesian Culture, in the Encyc. Britannica.) Also, Mead claimed that the Arapesh people were pacifists, but later studies did not confirm this.
+
+Then Arnold Perey clapped back in a [two-part](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&diff=6085559&oldid=5865682) [contribution](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&diff=13007684&oldid=12898632) in April 2005:
+
+::: {.callout-note collapse="true"}
+## Click to read the full contribution
+
+However, it should also be pointed out that Mead was looking at cultures in transition in the 1930s. The Tchambuli men seem bewildered in Sex and Temperament for they no longer have traditionsl warfare--stopped by the Australiam administration. The Tchambuli later may well have been different--and later studies should be related to Mead's earlier studies rather than "replacing" them.
+
+All generalizations about Melanesia need not apply to every culture in New Guinea, for New Guinea is a large island with isolated populations. For example networks of political influence among females may be more powerful than at first appears, particularly to a male anthropologist. The formal male-dominated institutions typical of some high-population density areas were not, for example, present in the same way in Oksapmin, West Sepik Province, a more sparsely populated area. Cultural patterns there, were different from say, Mr. Hagen. They were closer to those described by Mead.
+
+Informants describe Arapesh as definitely fighting with others. However, a close study of her volumes on the Arapesh show that Mead did describe how the Arapesh had both peace and war, as other cultures do, but she did not sufficiently not relate the two dispositions: (1) the disposition to see others as enemies and (2) to see them as friends. Meanwhile, her observations about the sharing of garden plots amongst the Arapesh, the egaliterian emphasis in child-rearing, and her documentation of predominantly peaceful relations among relatives hold up. These descriptions are very different from the "big-man" displays of dominance that were documented in more stratified New Guinea cultures--e.g. by Andrew Strathern. They are indeed, as she wrote, a cultural pattern
+
+When Margaret Mead described her own researches to her students at Columbia University, she put succinctly what her objectives and her conclusions were. A first hand account by an anthropologist who studied with Mead in the 60s and 70s provides this information:--
+
+1.  Mead tells of Sex and Temperament in Three Primitive Societies. "She explained that nobody knew the degree to which temperament is biologically determined by sex. So she hoped to see whether there were cultural or social factors that affected temperament. Were men inevitably aggressive? Were women inevitably "homebodies"? It turned out that the three cultures she lived with in New Guinea were almost a perfect laboratory--for each had the variables that we associate with masculine and feminine in an arrangement different from ours. She said this surprised her, and wasn't what she was trying to find. It was just there.
+
+-   "Among the Arapesh, both men and women were peaceful in temperament and neither men nor women made war.
+-   "Among the Mundugumor, the opposite was true: both men and women were warlike in temperament.
+-   "And the Tchambuli were different from both. The men 'primped' and spent their time decorating themselves while the women worked and were the practical ones--the opposite of how it seemed in early 20th century America." \[[Perey.](http://www.livejournal.com/users/aperey/) Reproduced by permission of the author.\]
+
+2.  Mead tells of Growing Up in New Guinea. "Margaret Mead told us how she came to the research problem on which she based her Growing Up in New Guinea. She reasoned as follows: If primitive adults think in an [animistic](https://en.wikipedia.org/wiki/Animistic) way, as Piaget says our children do, how do primitive children think?
+
+"In her research on Manus island of New Guinea, she discovered that 'primitive' children think in a very practical way and begin to think in terms of spirits etc. as they get older.
+
+"Note: Animistic thinking gives feelings or personality to inanimate objects. For example, a child can say "Bad sidewalk!" if she falls and hurts herself on it--seeing the sidewalk as mean for causing her pain. The term animism comes from the Latin for soul, "anima." And tribal cultures often do have animistic concepts: Pueblos see the clouds as cloud people, who can be pleased or displeased by what man does--and give rain or drought." \[[Perey](http://www.livejournal.com/users/aperey/970.html). Reproduced by permission of the author.\]
+:::
+
+Neither contribution would meet Wikipedia's ultimate standards, some of which were still under development when these sections were added to the encyclopedia. The anonymous IP contribution is argumentative (contra Wikipedia's [Neutral Point of View policy](https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view)) and it begins with a flat-out falsehood: the women's movement had not in fact taken a New Guinea matriarchy as its cornerstone. Arnold Perey's response is also argumentative, but it embeds a long attempt at neutral description, initially properly cited to his Livejournal blog, Anthropological Anecdotes, which is impressively [still online](https://aperey.livejournal.com/). He wrote the posts in question on the same day he contributed to Wikipedia.
+
+Perey's lecture notes from Mead-*turned*-blog post-*turned*-Wikipedia contributions weren't a bad summary. In fact, their opening paragraph reads pretty close to what Mead herself says in her [1950 preface](https://archive.org/details/in.ernet.dli.2015.191072/page/n5/mode/2up). But they end up standing in the way of readers finding out what Mead actually said herself. A current Wikipedia contributor would be strongly cautioned not to use such a blog post (though blogs by [published subject matter experts are not strictly against policy](https://en.wikipedia.org/wiki/Wikipedia:Verifiability#Self-published_sources)). Current Wikipedia practice would [strongly caution Peney against self-citation](https://en.wikipedia.org/wiki/Wikipedia:Conflict_of_interest#Citing_yourself) and encourage him to use [higher-quality reliable sources](https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources) instead.
+
+But by and large, these two positions stayed up through twenty years of edits and were still the core of Wikipedia's coverage of Mead's *Sex and Temperament* in 2025. (_See the colored sequence of these edits here._) Instead of a description of Mead's book, the section became a gradually widening argument between critics and defenders of Mead, exploring issues like the prevalence of male dominance in Melanesia. When editors wanted to shift this debate, they typically added more text rather than going back to verify what was already there for problems.
+
+:::{.column-margin}
+[![](/images/wikipedia/wikipedia-sex-temperament-editors.png){fig-alt="A diagram showing the five main contributors to the Sex and Temperament section of Margaret Mead."}](/images/wikipedia/wikipedia-sex-temperament-editors.png)
+:::
+
+Why? Perhaps because this kind of back and forth is the familiar practice of online debates. Perhaps because deleting material feels more likely to spawn conflicts and eit wars. Perhaps because Wikipedians assumed good faith by prior writers and so didn't fact check what was already there.
+
+## An Error on Wikipedia Becomes Global
+
+One consequence, unique to Wikipedia, is that Perey's blog quote gradually got transformed into an uncited quote, and then finally into a misquote from *Sex and Temperament* itself. This is a mis-quote that has now gone round the world through translations of the English Wikipedia article, as in this segment from Japanese Wikipedia.
+
+:::{.column-page-right}
+![](/images/wikipedia/Japanese-Wikipedia-Quotes-Mead.png){fig-alt="A screenshot of DeepL translating a section of the Japanese Wikipedia article on Margaret Mead, showing a misattributed quote written by Peney." }
+:::
+
+Perey's text also appears, properly cited, in Spanish and Portuguese Wikipedia. Pieces of his description of Mead's argument have been scattered across the Internet.
+
+## Now What?
+
+_What can we learn from this?_ I think we, **as editors expanding articles**, need to try to go beyond participating in online debates about the topics of the article. It's all to easy to get sucked in to attacking or defending a scholar or text, and leave the basic work of describing or summarizing it undone. It's also a conflict-averse move to leave existing POV text as it is, rather than double-checking its sources or attempting to integrate it with new material. This is how Wikipedia articles can get longer without getting smarter.
+
+Good encyclopedic articles address the question of _what the study said_ first, before getting to the matter of *how good* the study was. This means drawing more on introductions, prefaces, biographies, and secondary materials to describe fieldwork, methods, questions, and time period. You can see my effort to rewrite the *Sex and Temperament* section from the start, and new sections on Manus, Bali, the Omaha, and overall ethnographic methods in the [current version of the article](https://en.wikipedia.org/w/index.php?title=Margaret_Mead&oldid=1331237513).
+
+I think it's fair to say that most Wikipedians use the mere presence of citations as a marker of accurate reliance on sources. This experience suggests this confidence is unwarranted and **we need to think more carefully about verification**. Even with easy access to original sources, verification is time consuming and may be invisible to the reader or other editors. Other than good/featured article review and formal requests for peer review, there's not a clear mechanism on Wikipedia for soliciting this kind of hard verification. And once someone has vetted a section for accurate sourcing, there's no way to signal this to other editors.
+
+Finally, I think this experience suggests that **instructors assigning Wikipedia editing** need to teach more about verification more. Assignments that focus on verifying and improving existing text, rather than just adding new text, could help a lot. That inculdes assignments were students check each citation in a section, or a deeper verification where they look into how later scholarship views a scientist, study, or topic. And teaching students to use tools like the Internet Archive and library databases to find original sources is essential. 
+
+
+
+
