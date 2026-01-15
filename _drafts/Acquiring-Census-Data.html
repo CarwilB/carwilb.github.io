@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data Wrangling while using an LLM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Acquiring-Census-Data_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Acquiring-Census-Data_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Acquiring-Census-Data_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Acquiring-Census-Data_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="Acquiring-Census-Data_files/libs/quarto-html/popper.min.js"></script>
+<script src="Acquiring-Census-Data_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Acquiring-Census-Data_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Acquiring-Census-Data_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Acquiring-Census-Data_files/libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Acquiring-Census-Data_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Acquiring-Census-Data_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Acquiring-Census-Data_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Wrangling while using an LLM</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt:</strong> Here is the final code I used to extract and process the Tennessee data by county, which came from this page: https://tnsdc.utk.edu/data-and-tools/2020-census/2020-pl-94-171-redistricting-data-summary-file/ Without altering the code statements, use this code and any prompts and responses in our conversation above that helped to generate it to create a qmd book chapter on how to acquire, process, format, and save a publicly available dataset for use in R. Briefly describe how tabulapdf and libr are useful for this process. As this is a book chapter, your response can be longer than usual.</span></div></div>
+<p><em>This text was largely composed by Google Gemini, using the prompt shown to the right. However, Gemini did not follow my prompt to include the entire code, nor did it illustrate how my conversation with the LLM led to generating the code, and it could not have known where it got things wrong and I stepped in to correct its output. I’ve gone through and extended the text to illustrate that, adding new text in italics. Prompts to Gemini appear in the margin.</em></p>
+<section id="acquiring-and-structuring-public-datasets-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="acquiring-and-structuring-public-datasets-in-r">Acquiring and Structuring Public Datasets in R</h2>
+<p>Publicly available datasets, particularly those from the <strong>U.S. Census Bureau</strong>, provide a wealth of information but often arrive in complex, code-heavy formats that are difficult to interpret without technical documentation. In this chapter, we explore a workflow for acquiring, processing, and documenting a public dataset using the <strong>2020 Census Redistricting Data (PL 94-171)</strong> for Tennessee.</p>
+<p>We will focus on transforming raw technical metadata into a human-readable data dictionary, ensuring that our analysis remains transparent and reproducible. This chapter demonstrates how to acquire, process, and document publicly available datasets using R, focusing on census data for Tennessee.</p>
+<hr>
+</section>
+<section id="the-challenges-of-public-data" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-challenges-of-public-data">The Challenges of Public Data</h2>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt 1:</strong> Where can I find a table of census totals by race in Tennessee from 2020? <br><strong>Prompt 2:</strong> I need this data broken out by county.</span></div></div>
+<p>Most decennial census data is distributed via <strong>Summary Files</strong>. (<em>Actually, that’s false; Tennesee’s State Data Center went out of its way to generate these summary files. Data can be downloaded as summary files using US Census’s <a href="https://www.census.gov/programs-surveys/decennial-census/about/rdo/summary-files.html#List_909402788">Data Explorer tool</a>, which then will produce downloadable tables.</em>) <em>The one we’re using here is from the Tennesee State Data Center’s <a href="https://tnsdc.utk.edu/data-and-tools/2020-census/2020-pl-94-171-redistricting-data-summary-file/">Decennial Census P.L. 94-171 page</a>; we’ll choose files under Counties and download the Excel file</em>. While powerful, these files often use shorthand codes (e.g., <code>P0010001</code>, <code>P0020005</code>) instead of descriptive names. To make this data useful, we must bridge the gap between the data file and the official <strong>Technical Documentation</strong>.</p>
+<section id="essential-tooling" class="level3">
+<h3 class="anchored" data-anchor-id="essential-tooling">Essential Tooling</h3>
+<p>To facilitate this process, we utilize two specialized R packages:</p>
+<ul>
+<li><strong><code>tabulapdf</code></strong>: A wrapper for the Tabula Java library that allows for precise extraction of tables from PDF documents. It is invaluable for turning “trapped” data in technical PDFs into actionable tibbles.</li>
+<li><strong><code>libr</code></strong>: A package designed for data management that includes a <code>dictionary()</code> function. It can scan data frames for metadata attributes and generate a comprehensive codebook.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="extracting-metadata-from-technical-documentation" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="extracting-metadata-from-technical-documentation">1. Extracting Metadata from Technical Documentation</h2>
+<div class="page-columns page-full"><p> The 2020 Census Technical Documentation contains the “keys” to our dataset on pages 25 through 31 <em>(these page numbers had to be manually shifted to <code>99:105</code> because of how tabulapdf doesn’t process assigned page numbers)</em>. We use a “unite-and-extract” strategy to handle cases where the PDF reader fragments data across columns due to inconsistent whitespace.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt 3:</strong> Examine pages 25 to 31 of this PDF. Extract Tables P1 and P2 as tibbles in R.</span></div></div>
+<p><em>Gemini ignored my instructions and included its original suggested code, not the version I had modified to make it work correctly. It also ignored my instruction to include all of the code in this chapter.</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tabulapdf)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># URL to the official 2020 Census Technical Documentation</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pdf_url <span class="ot">&lt;-</span> <span class="st">"https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/summary-file/2020Census_PL94_171Redistricting_StatesTechDoc_English.pdf"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting relevant pages</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>raw_extraction <span class="ot">&lt;-</span> <span class="fu">extract_tables</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> pdf_url, </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">pages =</span> <span class="dv">99</span><span class="sc">:</span><span class="dv">105</span>, </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"stream"</span>, </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">"tibble"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>full_df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(raw_extraction) <span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">label =</span> <span class="dv">1</span>, <span class="at">ref_name =</span> <span class="dv">2</span>, <span class="at">segment =</span> <span class="dv">3</span>, <span class="at">max_size =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="creating-a-cleaning-function" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="creating-a-cleaning-function">Creating a Cleaning Function</h3>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt 4:</strong> The table doesn’t begin at the top of page 25. It starts with the line that says “P1. RACE” though its headings are above that line. <br><em>The output had data all scrunched in the left two variables</em> <br><strong>Prompt 5:</strong> Change this part up a bit so that data populates across four columns… Here’s how it looks now. Discard the right two columns. <br><strong>Gemini</strong> (at the end of a response)<strong>:</strong> Would you like me to wrap this into a single function that can clean both tables at once? <br><strong>Prompt 6:</strong> Yes, a function would be great. <br><em>The function had a minor error that I detected and fixed after seeing the output.</em></span></div></div>
+<p>Because the tables for Race (P1) and Hispanic/Latino Ethnicity (P2) follow similar structures, we define a function to clean the labels and handle data fragmentation.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clean_census_metadata <span class="ot">&lt;-</span> <span class="cf">function</span>(df, table_code) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Identify the table range</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  start_pattern <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(table_code <span class="sc">==</span> <span class="st">"P001"</span>, <span class="st">"P1</span><span class="sc">\\</span><span class="st">. RACE"</span>, <span class="st">"P2</span><span class="sc">\\</span><span class="st">. HISPANIC"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  end_pattern   <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(table_code <span class="sc">==</span> <span class="st">"P001"</span>, <span class="st">"P2</span><span class="sc">\\</span><span class="st">. HISPANIC"</span>, <span class="st">"P3</span><span class="sc">\\</span><span class="st">. RACE"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  start_idx <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">str_detect</span>(df[[<span class="dv">1</span>]], start_pattern))[<span class="dv">1</span>]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Determine the end index: either the start of the next table or the end of the data</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  next_table_idx <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">str_detect</span>(df[[<span class="dv">1</span>]], end_pattern))[<span class="dv">1</span>]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  end_idx <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.na</span>(next_table_idx)) next_table_idx <span class="sc">-</span> <span class="dv">1</span> <span class="cf">else</span> <span class="fu">nrow</span>(df)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice</span>(start_idx<span class="sc">:</span>end_idx) <span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Combine all columns except the label into one string to handle fragmentation</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unite</span>(<span class="st">"temp_data"</span>, <span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(.), <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Keep only rows that contain the Data Dictionary ID (e.g., P0010001)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">str_detect</span>(temp_data, table_code)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Extract exactly what we need using regex</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">ref_name =</span> <span class="fu">str_extract</span>(temp_data, <span class="fu">paste0</span>(table_code, <span class="st">"</span><span class="sc">\\</span><span class="st">d+"</span>)),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">segment  =</span> <span class="fu">str_extract</span>(temp_data, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">d{7}</span><span class="sc">\\</span><span class="st">s)</span><span class="sc">\\</span><span class="st">d{2}"</span>),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_size =</span> <span class="fu">str_extract</span>(temp_data, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>),</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Clean label: remove leading dots and trim whitespace</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="fu">str_trim</span>(<span class="fu">str_remove_all</span>(.[[<span class="dv">1</span>]], <span class="st">"</span><span class="sc">\\</span><span class="st">."</span>))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return only the four requested columns</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(label, ref_name, segment, max_size)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>table_p1 <span class="ot">&lt;-</span> <span class="fu">clean_census_metadata</span>(full_df, <span class="st">"P001"</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>table_p2 <span class="ot">&lt;-</span> <span class="fu">clean_census_metadata</span>(full_df, <span class="st">"P002"</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(table_p1, <span class="st">"data/us_census_2020_P1_race_metadata.rds"</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(table_p2, <span class="st">"data/us_census_2020_P2_hispanic_metadata.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="processing-and-labeling-the-dataset" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="processing-and-labeling-the-dataset">2. Processing and Labeling the Dataset</h2>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt 7:</strong> We’ve imported a data table: <code>tn_counties_race_ethnicity</code> <em>top of data table included in prompt</em> <br>Many column names in tn_counties_race_ethnicity correspond to rows in P1 and P2. Use table_p1 and table_p2 to create a libr::dictionary for the table.</span></div></div>
+<p>Once the metadata is extracted, we import the Tennessee county-level data. We then programmatically assign the extracted labels to the column attributes of the dataframe.</p>
+<section id="assigning-geographic-and-demographic-labels" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="assigning-geographic-and-demographic-labels">Assigning Geographic and Demographic Labels</h3>
+<p>We supplement our extracted P1 and P2 metadata with manual labels for geographic identifiers (like <code>GEOID</code> and <code>SUMLEV</code>) and specific housing variables.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Tennessee County Data from the State Data Center</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tn_counties_race_ethnicity <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"data/SDC_TN_PL20_QuickStat_Counties_050.xlsx"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine all metadata sources</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>all_metadata <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(table_p1, table_p2)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign labels based on column matches</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (col_name <span class="cf">in</span> <span class="fu">names</span>(tn_counties_race_ethnicity)) {</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (col_name <span class="sc">%in%</span> all_metadata<span class="sc">$</span>ref_name) {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    current_label <span class="ot">&lt;-</span> all_metadata<span class="sc">$</span>label[all_metadata<span class="sc">$</span>ref_name <span class="sc">==</span> col_name]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">attr</span>(tn_counties_race_ethnicity[[col_name]], <span class="st">"label"</span>) <span class="ot">&lt;-</span> current_label</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Here Gemini skips over some code in the final file. I’ll explain it briefly.</em></p>
+<div class="page-columns page-full"><p> <em>Since there were many variables whose descriptions were listed outside of the P1 and P2 tables, I prompted Gemini for the labels (which were in its training data).</em></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt 8:</strong> Suggest labels for these variables in tn_counties_race_ethnicity <br> <em>output cut and pasted from <code>str(tn_counties_race_ethnicity)</code></em></span></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define labels for geographic variables</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>geo_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">SUMLEV   =</span> <span class="st">"Summary Level"</span>, <span class="co"># 050 = County</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">LOGRECNO =</span> <span class="st">"Logical Record Number"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">GEOID    =</span> <span class="st">"Full Geographic Identifier"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">GEOCODE  =</span> <span class="st">"Geographic Code"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">STATE    =</span> <span class="st">"State FIPS Code"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">COUNTY   =</span> <span class="st">"County FIPS Code"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">CBSA     =</span> <span class="st">"Core Based Statistical Area"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">MEMI     =</span> <span class="st">"Metropolitan/Micropolitan Indicator"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">CSA      =</span> <span class="st">"Combined Statistical Area"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">AREALAND =</span> <span class="st">"Area (Land)"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">AREAWATR =</span> <span class="st">"Area (Water)"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">NAME     =</span> <span class="st">"Geographic Area Name"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">BASENAME =</span> <span class="st">"Area Base Name"</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply labels to the dataframe</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (var <span class="cf">in</span> <span class="fu">names</span>(geo_labels)) {</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (var <span class="sc">%in%</span> <span class="fu">names</span>(tn_counties_race_ethnicity)) {</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">attr</span>(tn_counties_race_ethnicity[[var]], <span class="st">"label"</span>) <span class="ot">&lt;-</span> geo_labels[[var]]</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="page-columns page-full"><p> <em>I also manually extracted some labels from the PDF and prompted for the revision of other labels.</em></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt 9:</strong> These are the other labels. Make a label list for them and assign them similarly. P0030001: Total population 18 years and over …</span></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Define labels for demographic, housing, and group quarters variables</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>extra_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0030001 =</span> <span class="st">"Total population 18 years and over"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">H0010001 =</span> <span class="st">"Total housing units"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">H0010002 =</span> <span class="st">"Occupied housing units"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">H0010003 =</span> <span class="st">"Vacant housing units"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050001 =</span> <span class="st">"Total population in group quarters"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050002 =</span> <span class="st">"Institutionalized population"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050003 =</span> <span class="st">"Correctional facilities for adults"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050004 =</span> <span class="st">"Juvenile facilities"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050005 =</span> <span class="st">"Nursing facilities/Skilled-nursing facilities"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050006 =</span> <span class="st">"Other institutional facilities"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050007 =</span> <span class="st">"Noninstitutionalized population"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050008 =</span> <span class="st">"College/University student housing"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050009 =</span> <span class="st">"Military quarters"</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">P0050010 =</span> <span class="st">"Other noninstitutional facilities"</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Assign these labels to the dataframe attributes</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (var <span class="cf">in</span> <span class="fu">names</span>(extra_labels)) {</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (var <span class="sc">%in%</span> <span class="fu">names</span>(tn_counties_race_ethnicity)) {</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">attr</span>(tn_counties_race_ethnicity[[var]], <span class="st">"label"</span>) <span class="ot">&lt;-</span> extra_labels[[var]]</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Refresh the dictionary to include all new labels</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>tn_data_dictionary <span class="ot">&lt;-</span> libr<span class="sc">::</span><span class="fu">dictionary</span>(tn_counties_race_ethnicity)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="formatting-and-clarifying-metadata" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="formatting-and-clarifying-metadata">3. Formatting and Clarifying Metadata</h2>
+<div class="page-columns page-full"><p> To make the data dictionary truly useful for third-party readers, we must clarify ambiguous labels. For instance, in Table P2, the racial categories specifically refer to the <strong>Not Hispanic or Latino</strong> population. We automate this clarification and remove trailing colons.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt 10:</strong> Alter the following labels in both variables: … Further clarify P0020003 through P0020011 by adding “(Not Hispanic or Latino)”. Remove trailing colons as you do so.</span></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clarifying P2 variables: P0020003 through P0020011</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>p2_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="st">"P002000"</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">9</span>), <span class="st">"P0020010"</span>, <span class="st">"P0020011"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (var <span class="cf">in</span> p2_vars) {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (var <span class="sc">%in%</span> <span class="fu">names</span>(tn_counties_race_ethnicity)) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    current_label <span class="ot">&lt;-</span> <span class="fu">attr</span>(tn_counties_race_ethnicity[[var]], <span class="st">"label"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(current_label)) {</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      new_label <span class="ot">&lt;-</span> current_label <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">str_remove</span>(<span class="st">":$"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">paste</span>(<span class="st">"(Not Hispanic or Latino)"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">attr</span>(tn_counties_race_ethnicity[[var]], <span class="st">"label"</span>) <span class="ot">&lt;-</span> new_label</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="saving-and-exporting-for-reuse" class="level2">
+<h2 class="anchored" data-anchor-id="saving-and-exporting-for-reuse">4. Saving and Exporting for Reuse</h2>
+<p>The final step in our workflow is generating the dictionary object and saving our work in a serialized format (<code>.rds</code>). This allows us to load the labeled data in future sessions without repeating the extraction process.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(libr)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the final data dictionary</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>tn_data_dictionary <span class="ot">&lt;-</span> <span class="fu">dictionary</span>(tn_counties_race_ethnicity)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the work</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(tn_counties_race_ethnicity, <span class="st">"data/tn_counties_census_2020_labeled.rds"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(tn_data_dictionary, <span class="st">"data/tn_counties_census_2020_dictionary.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>By combining the extraction power of <code>tabulapdf</code> with the documentation capabilities of <code>libr</code>, we transform a cryptic collection of census codes into a well-documented research asset. This workflow ensures that every variable—from <code>AREALAND</code> to <code>P0020005</code>—carries its full technical definition directly within the R environment.</p>
+</section>
+</section>
+<section id="chapter-5-automated-narrative-reporting-with-wikitext" class="level1 page-columns page-full">
+<h1>Chapter 5: Automated Narrative Reporting with Wikitext</h1>
+<p>Once a dataset is cleaned and labeled, the next step in the research workflow is often communication. While tables and charts are essential, generating a narrative summary that contextualizes findings can be a repetitive task—especially when dealing with large geographic datasets like the <strong>U.S. Census</strong>. This chapter demonstrates how to use R to transform structured census data into a ready-to-publish Wikitext narrative using the <code>dplyr</code>, <code>scales</code>, and <code>glue</code> packages.</p>
+<hr>
+<section id="moving-from-data-to-narrative" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="moving-from-data-to-narrative">Moving from Data to Narrative</h2>
+<div class="page-columns page-full"><p> The goal of this workflow is to replicate a historical population summary—originally written for the 2010 Census—using the latest 2020 data. By automating this, we ensure that the narrative remains accurate, reproducible, and formatted correctly for specific platforms like Wikipedia.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Prompt 11:</strong> Write code in R to analyze tn_counties_race_ethnicity, and specifically its total population (P0010001) and Black or African American alone (P0010004) columns to replicate the following data summary, but using 2020 Census data. The output should be, like this example, in Wikitext…</span></div></div>
+<p><em>Here’s the sample text, which I wrote myself on Wikipedia in 2015, consulting a Census publication by hand:</em></p>
+<blockquote class="blockquote">
+<p>In the <a href="https://en.wikipedia.org/wiki/2010_United_States_Census" title="2010 United States Census">2010 Census</a>, 1,057,315 Tennessee residents were identified as African American (of the total 6,346,105). In 19 of the state’s 95 counties, African Americans make up more than 10% of the population: <a href="https://en.wikipedia.org/wiki/Shelby_County,_Tennessee" title="Shelby County, Tennessee">Shelby</a> (52.1%), <a href="https://en.wikipedia.org/wiki/Haywood_County,_Tennessee" title="Haywood County, Tennessee">Haywood</a> (50.4%), <a href="https://en.wikipedia.org/wiki/Hardeman_County,_Tennessee" title="Hardeman County, Tennessee">Hardeman</a> (41.4%), <a href="https://en.wikipedia.org/wiki/Madison_County,_Tennessee" title="Madison County, Tennessee">Madison</a> (36.3%), <a href="https://en.wikipedia.org/wiki/Lauderdale_County,_Tennessee" title="Lauderdale County, Tennessee">Lauderdale</a> (34.9%), <a href="https://en.wikipedia.org/wiki/Fayette_County,_Tennessee" title="Fayette County, Tennessee">Fayette</a> (28.1%), <a href="https://en.wikipedia.org/wiki/Davidson_County,_Tennessee" title="Davidson County, Tennessee">Davidson</a> (27.7%), <a href="https://en.wikipedia.org/wiki/Lake_County,_Tennessee" title="Lake County, Tennessee">Lake</a> (27.7%), <a href="https://en.wikipedia.org/wiki/Hamilton_County,_Tennessee" title="Hamilton County, Tennessee">Hamilton</a> (20.2%), <a href="https://en.wikipedia.org/wiki/Montgomery_County,_Tennessee" title="Montgomery County, Tennessee">Montgomery</a> (19.1%), <a href="https://en.wikipedia.org/wiki/Gibson_County,_Tennessee" title="Gibson County, Tennessee">Gibson</a> (18.8%), <a href="https://en.wikipedia.org/wiki/Tipton_County,_Tennessee" title="Tipton County, Tennessee">Tipton</a> (18.7%), <a href="https://en.wikipedia.org/wiki/Dyer_County,_Tennessee" title="Dyer County, Tennessee">Dyer</a> (14.3%), <a href="https://en.wikipedia.org/wiki/Crockett_County,_Tennessee" title="Crockett County, Tennessee">Crockett</a> (12.6%), <a href="https://en.wikipedia.org/wiki/Rutherford_County,_Tennessee" title="Rutherford County, Tennessee">Rutherford</a> (12.5%), <a href="https://en.wikipedia.org/wiki/Obion_County,_Tennessee" title="Obion County, Tennessee">Obion</a> (10.6%), <a href="https://en.wikipedia.org/wiki/Giles_County,_Tennessee" title="Giles County, Tennessee">Giles</a> (10.2%), and <a href="https://en.wikipedia.org/wiki/Carroll_County,_Tennessee" title="Carroll County, Tennessee">Carroll</a> (10.1%). Most of these counties are in West Tennessee, where plantation agriculture was concentrated. African Americans in the seven counties of Shelby (483,381), Davidson (173,730), Hamilton (67,900), <a href="https://en.wikipedia.org/wiki/Knox_County,_Tennessee" title="Knox County, Tennessee">Knox</a> (38,045), Madison (35,636), Montgomery (32,982), and Rutherford (32,886) make up more than 81% of the all African Americans in the state.</p>
+</blockquote>
+<section id="defining-the-analytical-scope" class="level3">
+<h3 class="anchored" data-anchor-id="defining-the-analytical-scope">1. Defining the Analytical Scope</h3>
+<p>The analysis focuses on two primary metrics: total population (<code>P0010001</code>) and the population of individuals identified as “Black or African American alone” (<code>P0010004</code>). These codes correspond directly to the structure found in the official <strong>Table P1: Race</strong> technical documentation.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate State-wide Totals</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>state_total_pop <span class="ot">&lt;-</span> <span class="fu">sum</span>(tn_counties_race_ethnicity<span class="sc">$</span>P0010001)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>state_black_pop <span class="ot">&lt;-</span> <span class="fu">sum</span>(tn_counties_race_ethnicity<span class="sc">$</span>P0010004)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>By aggregating these totals at the state level first, we establish the baseline necessary to calculate both county-level concentrations and the overall statewide percentage.</p>
+<hr>
+</section>
+</section>
+<section id="threshold-filtering-and-regional-concentration" class="level2">
+<h2 class="anchored" data-anchor-id="threshold-filtering-and-regional-concentration">2. Threshold Filtering and Regional Concentration</h2>
+<p>The narrative requires identifying counties where a specific demographic makes up more than 10% of the population. This is achieved by creating a calculated field (<code>black_pct</code>) and filtering the dataset.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Analyze County Percentages</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>county_stats <span class="ot">&lt;-</span> tn_counties_race_ethnicity <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">black_pct =</span> (P0010004 <span class="sc">/</span> P0010001) <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for counties &gt; 10% and sort descending</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>over_10_pct <span class="ot">&lt;-</span> county_stats <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(black_pct <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(black_pct))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To make this data “Wiki-ready,” we use the <code>glue</code> package to generate <strong>piped wikilinks</strong>. For example, the code transforms a row for “Shelby” into <code>[[Shelby County, Tennessee|Shelby]] (52.1%)</code>, which allows a Wikipedia page to link to the full county article while displaying only the short name in the text.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Format the list for Wikitext: [[Basename County, Tennessee|Basename]] (XX.X%)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>over_10_list <span class="ot">&lt;-</span> over_10_pct <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wikilink =</span> <span class="fu">glue</span>(<span class="st">"[[{BASENAME} County, Tennessee|{BASENAME}]] ({number(black_pct, accuracy = 0.1)}%)"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(wikilink) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Analyze Top 7 Counties by Volume</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>top_7_counties <span class="ot">&lt;-</span> county_stats <span class="sc">%&gt;%</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(P0010004)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>top_7_sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(top_7_counties<span class="sc">$</span>P0010004)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>top_7_share_of_state <span class="ot">&lt;-</span> (top_7_sum <span class="sc">/</span> state_black_pop) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Format the list for Wikitext: Basename (Count)</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>top_7_list <span class="ot">&lt;-</span> top_7_counties <span class="sc">%&gt;%</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count_label =</span> <span class="fu">glue</span>(<span class="st">"{BASENAME} ({comma(P0010004)})"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(count_label) <span class="sc">%&gt;%</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">", "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="formatting-for-readability-with-scales" class="level2">
+<h2 class="anchored" data-anchor-id="formatting-for-readability-with-scales">3. Formatting for Readability with <code>scales</code></h2>
+<p>Raw numbers (e.g., <code>1057315</code>) are difficult for human readers to process. The <code>scales</code> package is used within the script to apply comma separators and precision-controlled percentages.</p>
+<ul>
+<li><strong><code>comma()</code></strong>: Used for large population counts like <code>{comma(state_black_pop)}</code>.</li>
+<li><strong><code>number()</code></strong>: Used to ensure percentages have a consistent accuracy (e.g., <code>accuracy = 0.1</code> for one decimal place).</li>
+</ul>
+<hr>
+</section>
+<section id="constructing-the-narrative-template" class="level2">
+<h2 class="anchored" data-anchor-id="constructing-the-narrative-template">4. Constructing the Narrative Template</h2>
+<p>The final narrative is assembled using a <strong>template string</strong>. The <code>glue</code> package allows for seamless interpolation of R variables into a large block of text, including the necessary <code>&lt;ref&gt;</code> tags for citations.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Constructing the Final Wikitext</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Construct the Final Wikitext</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>wikitext_summary <span class="ot">&lt;-</span> <span class="fu">glue</span>(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"In the [[2020 United States Census|2020 Census]], {comma(state_black_pop)} "</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Tennessee residents were identified as African American (of the total "</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"{comma(state_total_pop)}).&lt;ref&gt;This figure refers to those who report "</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"African-American and no other race.&lt;/ref&gt; In {nrow(over_10_pct)} of the "</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"state's 95 counties, African Americans make up more than 10% of the "</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"population: {over_10_list}. Most of these counties are in West Tennessee, "</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"where plantation agriculture was concentrated. African Americans in the "</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"seven counties of {top_7_list} make up more than "</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"{floor(top_7_share_of_state)}% of the all African Americans in the state."</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>citation_tn_data <span class="ot">&lt;-</span> <span class="st">"&lt;ref&gt;Data listed under Counties, Tables at {{Cite web| title = 2020 PL 94-171 Redistricting Data Summary File| work = Tennessee State Data Center| access-date = 2026-01-04| url = https://tnsdc.utk.edu/data-and-tools/2020-census/2020-pl-94-171-redistricting-data-summary-file/}}&lt;/ref&gt;"</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>wikitext_summary <span class="ot">&lt;-</span> <span class="fu">paste</span>(wikitext_summary, citation_tn_data, <span class="at">sep=</span><span class="st">" "</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(wikitext_summary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="dynamic-citation-management" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-citation-management">Dynamic Citation Management</h3>
+<p>A key feature of this script is the inclusion of a dynamic citation (<em>Actually a Wikipedia Citation Template</em>) that links back to the <strong>Tennessee State Data Center</strong>. This ensures that any reader of the generated Wikitext can immediately verify the source of the 2020 redistricting data. <em>Gemini doesn’t handle these mell, so I generated it in Zotero.</em></p>
+<hr>
+</section>
+</section>
+<section id="summary-of-the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-the-workflow">Summary of the Workflow</h2>
+<p>By automating the reporting process, researchers can:</p>
+<ol type="1">
+<li><strong>Eliminate Manual Errors</strong>: Calculations like the “81% of all African Americans in the state” are performed by the computer rather than estimated by hand.</li>
+<li><strong>Ensure Consistency</strong>: Standardizing the <code>[[County Name, Tennessee|Basename]]</code> format ensures all links work correctly across the encyclopedia.</li>
+<li><strong>Speed Up Updates</strong>: When the 2030 data is eventually released, the same script can be run with the new file to generate an updated narrative in seconds.</li>
+</ol>
+<p>This approach demonstrates that R is not just a tool for statistical calculation, but also a powerful engine for <strong>automated, reproducible technical writing</strong>.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
