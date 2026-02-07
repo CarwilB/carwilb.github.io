@@ -1,13 +1,18 @@
 ---
 title: "Global Language Diversity on Wikipedia"
-author: "Reproduced from Carwil Bjork-James"
-date: "`r Sys.Date()`"
+description: "A table showing the relationship between language speaker populations and Wikipedia article counts."
+author: "Carwil Bjork-James"
+date: "February 1, 2026"
 format: 
   html:
     self-contained: true
     page-layout: full
     toc: true
 ---
+
+# Languages and Wikipedia Articles
+
+![The largest Wikipedia editions by number of articles, 2024 (CC-0 [Arief Azazie Zain](https://commons.wikimedia.org/wiki/User:Arief_Azazie_Zain "User:Arief Azazie Zain")) ](/images/wikipedia/List_of_Wikipedia_articles_by_language_-_March_2024.svg.png){alt="The largest Wikipedia editions by number of articles"}
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -20,7 +25,7 @@ library(kableExtra)
 library(scales)
 ```
 
-# Languages and Wikipedia Articles
+:::{.column-page-inset-right}
 ```{r language-diversity-table, echo=FALSE, message=FALSE, warning=FALSE}
 # 1. Load data
 langs_df <- read_csv('../data/data-Mww3K.csv')
@@ -123,6 +128,7 @@ mapping <- c(
   "Gheg Albanian" = "Albanian"
 )
 
+
 # gemini_map <- c(
 #   "Ganda" = "Luganda",
 #   "North Azerbaijani" = "Azerbaijani",
@@ -170,6 +176,10 @@ final_df <- langs_df %>%
   # Create numerical value for number of speakers
   mutate(
     speaker_pop = text_to_num(`total pop.`)
+  ) %>%
+  # Fix Indian Sign Language endonym
+  mutate(
+    endonym = ifelse(`English exonym` == "Indian Sign Language", "भारतीय सांकेतिक भाषा", endonym)
   ) %>%
   # Logic for English name + Autonym (Italicized if Roman)
   mutate(
@@ -230,11 +240,12 @@ final_df %>%
                 font_size = 14,
                 htmltable_class = "table table-hover table-condensed") %>%
   # Apply colors to the background of all three columns
-  # column_spec(1, background = row_colors) %>%
-  # column_spec(2, background = row_colors) %>%
-  column_spec(3, background = speakers_row_colors) %>%
-  column_spec(4, background = row_colors) %>%
+  column_spec(1, width = "50%") %>%
+  column_spec(2, width = "30%") %>%
+  column_spec(3, background = speakers_row_colors, width = "10%") %>%
+  column_spec(4, background = row_colors, width = "10%") %>%
   # Ensure the header remains readable and white
   row_spec(0, background = "white", color = "black", bold = TRUE)
 
 ```
+:::
