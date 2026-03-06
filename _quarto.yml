@@ -59,7 +59,13 @@ website:
       - href: index.qmd#teaching-notes
         text: Teaching Notes
         sort: "date desc" # Ensure this is aligned with 'contents' or under the section
-        contents: teaching/*       
+        contents: teaching/*
+      - text: "---"
+      - section: "Tools"
+        collapsed: false
+        contents:
+          - href: tools/wiki-to-ris.html
+            text: "Wikipedia → RIS"
 
 format:
   html:

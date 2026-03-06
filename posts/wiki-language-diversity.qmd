@@ -8,11 +8,12 @@ format:
     self-contained: true
     page-layout: full
     toc: true
+image: /images/wikipedia/List_of_Wikipedia_articles_by_language_-_March_2024.svg.png
 ---
 
 # Languages and Wikipedia Articles
 
-![The largest Wikipedia editions by number of articles, 2024 (CC-0 [Arief Azazie Zain](https://commons.wikimedia.org/wiki/User:Arief_Azazie_Zain "User:Arief Azazie Zain")) ](/images/wikipedia/List_of_Wikipedia_articles_by_language_-_March_2024.svg.png){alt="The largest Wikipedia editions by number of articles"}
+![The largest Wikipedia editions by number of articles](/images/wikipedia/List_of_Wikipedia_articles_by_language_-_March_2024.svg.png)
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -25,7 +26,7 @@ library(kableExtra)
 library(scales)
 ```
 
-:::{.column-page-inset-right}
+::: column-page-inset-right
 ```{r language-diversity-table, echo=FALSE, message=FALSE, warning=FALSE}
 # 1. Load data
 langs_df <- read_csv('../data/data-Mww3K.csv')
