@@ -102,6 +102,26 @@ wiki_special <- wiki |>
   filter(!bcp47_lookup %in% linguameta$bcp_47_code) |>
   select(language, wp_code, articles, active_users)
 
+text_to_num <- function(text) {
+  text <- str_replace_all(text, ",", "")
+  multipliers <- c(k = 1e3, K = 1e3, M = 1e6, B = 1e9)
+  pattern <- "([0-9.]+)\\s*([KMBk]?)"
+  
+  as.numeric(sapply(text, function(x) {
+    matches <- str_match(x, pattern)
+    if (is.na(matches[1,1])) {
+      return(NA)
+    }
+    number <- as.numeric(matches[1,2])
+    suffix <- matches[1,3]
+    if (suffix != "") {
+      number * multipliers[[suffix]]
+    } else {
+      number
+    }
+  }))
+}
+
 # ----------------------------------------------------------------------
 # 4. Supplementary speaker estimates for languages where linguameta
 #    has NA (sourced from Wikipedia language articles)
