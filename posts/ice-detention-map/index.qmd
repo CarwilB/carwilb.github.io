@@ -15,7 +15,8 @@ This interactive map shows 401 U.S. Immigration and Customs Enforcement (ICE) de
 Click any facility to see its name, location, type, operational status, and a bar chart of ADP across all available fiscal years.
 
 ::: {.column-screen-inset}
-```{r map, fig.height=8}
+```{r map}
+#| fig-asp: 0.75
 source("facilities-map-post.R")
 facilities_map
 ```
@@ -24,7 +25,7 @@ facilities_map
 ### Data sources
 
 - **FY2019–FY2026**: ICE annual detention statistics spreadsheets, published by the [ICE Detention Management Division](https://www.ice.gov/detain/detention-management).
-- **FY2010–FY2017**: ICE Detention Management Compliance Program (DMCP) authorized facility listings (December 2015 XLSX and July 2017 PDF).
+- **FY2010–FY2017**: ICE Detention Management Compliance Program (DMCP) authorized facility listings ([December 2015 Excel file](https://www.ice.gov/doclib/foia/dfs/2015IceDetentionFacilityListing.xlsx") and [July 2017 PDF](https://www.prisonlegalnews.org/media/publications/ICE_DMCP_Facility_List_ERO_Custody_Management_Division_2017.pdf)). The older file was released under the Freedom of Information Act. The 2017 file was obtained in a lawsuit against the government.
 - **Geocoding**: Google Maps Geocoding API.
 
 ### Facility types
@@ -41,3 +42,5 @@ facilities_map
 | Gold | State Migrant Detention Center |
 | Teal (dark) | Military Detention Center |
 | Teal (light) | Other |
+
+Please note that multipe facilities not listed as "private" are subcontracted by these government entities to private prison corporations.

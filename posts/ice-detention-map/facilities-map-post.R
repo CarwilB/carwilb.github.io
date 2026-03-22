@@ -76,7 +76,9 @@ make_adp_sparkbar <- function(adp_values, fy_labels, chart_width = 260,
   if (max_adp == 0) return("")
 
   label_width <- 30
-  bar_area <- chart_width - label_width - 5
+  # Reserve space for the value label after the longest bar
+  val_label_width <- nchar(format(round(max_adp), big.mark = ",")) * 6 + 8
+  bar_area <- chart_width - label_width - val_label_width
   total_height <- n * (bar_height + gap)
 
   bars <- map_chr(seq_len(n), \(i) {
