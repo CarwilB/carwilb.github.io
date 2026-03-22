@@ -1,0 +1,43 @@
+---
+title: "Interactive Map of ICE Detention Facilities"
+description: "An interactive map of 401 ICE detention facilities (FY2010–FY2026), colored by facility type and sized by average daily population"
+author: "Carwil Bjork-James"
+date: "21 March 2026"
+image: facilities_map_screenshot.png
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+This interactive map shows 401 U.S. Immigration and Customs Enforcement (ICE) detention facilities active between fiscal years 2010 and 2026. Circle size represents the facility's average daily population (ADP). Color indicates facility type. Open facilities are shown in saturated colors sized by their most recent ADP; closed facilities appear in desaturated tones sized by their peak ADP.
+
+Click any facility to see its name, location, type, operational status, and a bar chart of ADP across all available fiscal years.
+
+::: {.column-screen-inset}
+```{r map, fig.height=8}
+source("facilities-map-post.R")
+facilities_map
+```
+:::
+
+### Data sources
+
+- **FY2019–FY2026**: ICE annual detention statistics spreadsheets, published by the [ICE Detention Management Division](https://www.ice.gov/detain/detention-management).
+- **FY2010–FY2017**: ICE Detention Management Compliance Program (DMCP) authorized facility listings (December 2015 XLSX and July 2017 PDF).
+- **Geocoding**: Google Maps Geocoding API.
+
+### Facility types
+
+| Color | Type |
+|-------|------|
+| Blue | Jail (IGSA / USMS IGA) |
+| Red | Private Migrant Detention Center (CDF) |
+| Green | Dedicated Migrant Detention Center (DIGSA) |
+| Purple | ICE Migrant Detention Center (SPC) |
+| Orange | ICE Short-Term Migrant Detention Center (Staging) |
+| Brown | Private Family Detention Center |
+| Pink | Federal Prison (BOP) |
+| Gold | State Migrant Detention Center |
+| Teal (dark) | Military Detention Center |
+| Teal (light) | Other |

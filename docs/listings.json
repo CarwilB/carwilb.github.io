@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/ice-detention-map/index.html",
       "/posts/wiki-language-diversity.html",
       "/posts/wiki-rewriting.html",
       "/posts/redirect-generator.html",

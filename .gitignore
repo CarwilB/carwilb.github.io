@@ -6,6 +6,8 @@
 /.quarto/
 *_cache/
 _site/
+/posts/ice-detention-map/data/
+
 
 .DS_Store
 
