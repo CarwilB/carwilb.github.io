@@ -78,6 +78,7 @@ format:
     toc: false
     citation-style: csl/chicago-notes.csl
     link-citations: false
+    pagetitle: "{{< meta title >}}"
 
 filters:
   - include-files.lua

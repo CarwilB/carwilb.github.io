@@ -32,15 +32,16 @@ facilities_map
 
 | Color | Type |
 |-------|------|
-| Blue | Jail (IGSA / USMS IGA) |
-| Red | Private Migrant Detention Center (CDF) |
+| Brown | Family Detention Center |
 | Green | Dedicated Migrant Detention Center (DIGSA) |
+| Pink | Federal Prison (BOP) |
+| Blue | Jail (IGSA / USMS IGA) |
 | Purple | ICE Migrant Detention Center (SPC) |
 | Orange | ICE Short-Term Migrant Detention Center (Staging) |
-| Brown | Private Family Detention Center |
-| Pink | Federal Prison (BOP) |
+| Dark Brown | Juvenile Detention Center |
+| Teal (light) | Military Detention Center |
+| Red | Private Migrant Detention Center (CDF) |
 | Gold | State Migrant Detention Center |
-| Teal (dark) | Military Detention Center |
-| Teal (light) | Other |
+| Teal (dark) | Other |
 
 Please note that multipe facilities not listed as "private" are subcontracted by these government entities to private prison corporations.

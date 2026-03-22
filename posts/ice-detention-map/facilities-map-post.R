@@ -10,6 +10,7 @@ library(sf)
 library(leaflet)
 library(scales)
 library(htmltools)
+library(leaflet.extras)
 
 # ── Load data from local RDS files ──────────────────────────────────────────
 
@@ -20,17 +21,19 @@ facilities_panel         <- readRDS("data/facilities_panel.rds")
 # ── Color palette: facility type ────────────────────────────────────────────
 
 type_colors <- c(
-  "Jail"                                  = "#377eb8",
+  "Jail"                                    = "#377eb8",
   "Private Migrant Detention Center"      = "#e41a1c",
   "Dedicated Migrant Detention Center"    = "#4daf4a",
   "ICE Migrant Detention Center"          = "#984ea3",
   "ICE Short-Term Migrant Detention Center" = "#ff7f00",
-  "Private Family Detention Center"       = "#a65628",
+  "Family Detention Center"               = "#a65628", # Current Brown
+  "Juvenile Detention Center"             = "#543005", # New: Deep Dark Brown
   "Federal Prison"                        = "#f781bf",
   "State Migrant Detention Center"        = "#e6ab02",
   "Military Detention Center"             = "#66c2a5",
   "Other"                                 = "#1b9e77"
 )
+
 
 desaturate_hex <- function(hex, amount = 0.65) {
   rgb_mat <- col2rgb(hex) / 255
@@ -211,7 +214,8 @@ popup_html <- map_chr(seq_len(nrow(map_data)), \(i) {
 
 is_open <- map_sf$status == "open"
 
-legend_types <- sort(unique(map_df$facility_type_wiki))
+legend_types <- sort(setdiff(unique(map_df$facility_type_wiki), "Other"))
+if ("Other" %in% unique(map_df$facility_type_wiki)) legend_types <- c(legend_types, "Other")
 legend_colors <- unname(type_colors[legend_types])
 
 facilities_map <- leaflet() |>
@@ -249,4 +253,13 @@ facilities_map <- leaflet() |>
   addLayersControl(
     overlayGroups = c("Open", "Closed"),
     options = layersControlOptions(collapsed = FALSE)
+  ) |>
+  addSearchFeatures(
+    targetGroups = c("Open", "Closed"),
+    options = searchFeaturesOptions(
+      zoom = 9,
+      openPopup = TRUE,
+      position = "topleft",
+      hideMarkerOnCollapse = TRUE
+    )
   )
