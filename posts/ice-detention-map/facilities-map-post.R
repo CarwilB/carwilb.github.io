@@ -210,6 +210,52 @@ popup_html <- map_chr(seq_len(nrow(map_data)), \(i) {
   build_popup_html(as.list(map_data[i, ]), adp_wide_joined, fy_cols)
 })
 
+# ── ADP-weighted centroid by fiscal year ───────────────────────────────────
+
+centroid_by_fy <- facilities_panel |>
+  filter(!is.na(adp), adp > 0) |>
+  inner_join(
+    facilities_geocoded_full |> select(canonical_id, lat, lon),
+    by = "canonical_id"
+  ) |>
+  filter(!is.na(lat), !is.na(lon)) |>
+  summarise(
+    lat = weighted.mean(lat, w = adp),
+    lon = weighted.mean(lon, w = adp),
+    total_adp = sum(adp),
+    n_facilities = n(),
+    .by = fiscal_year
+  ) |>
+  mutate(
+    year_rank = match(fiscal_year, c(
+      "FY10","FY11","FY12","FY13","FY14","FY15","FY16","FY17",
+      "FY19","FY20","FY21","FY22","FY23","FY24","FY25","FY26"
+    ))
+  ) |>
+  arrange(year_rank)
+
+centroid_sf <- st_as_sf(centroid_by_fy, coords = c("lon", "lat"), crs = 4326)
+
+centroid_line <- centroid_sf |>
+  summarise(geometry = st_combine(geometry)) |>
+  st_cast("LINESTRING")
+
+centroid_popup <- map_chr(seq_len(nrow(centroid_by_fy)), \(i) {
+  r <- centroid_by_fy[i, ]
+  sprintf(
+    '<div style="font-family:sans-serif; font-size:12px;">
+     <b>%s weighted centroid</b><br>
+     Total ADP: %s<br>
+     Facilities: %s<br>
+     Lat: %.3f, Lon: %.3f</div>',
+    r$fiscal_year,
+    format(round(r$total_adp), big.mark = ","),
+    r$n_facilities,
+    st_coordinates(centroid_sf[i, ])[2],
+    st_coordinates(centroid_sf[i, ])[1]
+  )
+})
+
 # ── Build leaflet map ───────────────────────────────────────────────────────
 
 is_open <- map_sf$status == "open"
@@ -243,6 +289,25 @@ facilities_map <- leaflet() |>
     label = ~label,
     group = "Open"
   ) |>
+  addPolylines(
+    data = centroid_line,
+    color = "#222",
+    weight = 2,
+    opacity = 0.5,
+    dashArray = "4,4",
+    group = "ADP Centroid"
+  ) |>
+  addCircleMarkers(
+    data = centroid_sf,
+    radius = 5,
+    color = "#222",
+    weight = 1.5,
+    fillColor = "#fff",
+    fillOpacity = 0.9,
+    popup = centroid_popup,
+    label = ~fiscal_year,
+    group = "ADP Centroid"
+  ) |>
   addLegend(
     position = "bottomright",
     colors = legend_colors,
@@ -251,7 +316,7 @@ facilities_map <- leaflet() |>
     opacity = 0.8
   ) |>
   addLayersControl(
-    overlayGroups = c("Open", "Closed"),
+    overlayGroups = c("Open", "Closed", "ADP Centroid"),
     options = layersControlOptions(collapsed = FALSE)
   ) |>
   addSearchFeatures(
