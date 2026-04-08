@@ -1,5 +1,5 @@
 ---
-title: "Unreported Detention: An analysis of ICE detention statistics not included in the FY 2025 annual detention report"
+title: "DDP vs ICE FY25 annual statistics"
 description: "Comparing the Deportation Data Project's daily detention counts with ICE's published annual statistics to identify unreported facilities and track population changes"
 author: "Carwil Bjork-James"
 date: last-modified
@@ -15,19 +15,9 @@ execute:
   message: false
 ---
 
-This page offers an analysis of two forms of data on the population of people held by US Immigration and Customs Enforcement (ICE): summary data on detention published by ICE on its website and a detailed and granular dataset of arrests, removals, and overnight populations under ICE custody, released under the Freedom of Information Act and archived by the Deportation Data Project.
-
-The former data, is published online the [ICE Detention Management Division](https://www.ice.gov/detain/detention-management). I have also produced a map of reported facilities based on sixteen years of reporting (eight annual reports and two summary sheets) from ICE.
-
-The newer data covers "every ICE encounter, detainer request, arrest, book-in to detention, and removal" between September 1, 2022 and October 15, 2025.
-
-As becomes clear below, the more extensive data shows that ICE's public reporting is incomplete, and the uncounted population grew massively during 2025, from hundreds of individuals per night in the final months of the Biden administration to as many as forty-five hundred individuals, and frequently in excess of three thousand in summer and early fall 2025. This unreported network includes over ICE-owned holding facilities, nine dedicated ICE detention centers, local jail and state prisons, federal prisons, and over 200 medical facilities.
-
-The FOIA-supplied data also exceeds ICE's annual reporting in those facilities that do match by 1,038 detainees per night over the course of FY 2025, though this only amounts to 2% of the total population.
-
-In much oyf this report, facility-level summaries distinguish between facilities with **Peak Population ≥ 2** and those with **Peak Population \< 2**. Facilities with no more than one detainees at a time account for many DDP facility codes but negligible population. Separating them keeps attention on facilities with substantive detention activity.
-
-*This page is part of a larger data project to gather, summarize, and analyze public data about immigration enforcement in the United States. The focus here is detention facilities used by US Immigration and Customs Enforcement (ICE).*
+::: {.callout-note}
+This report was generated using AI under general human direction. At the time of generation, the contents have not been comprehensively reviewed by a human analyst.
+:::
 
 ```{r}
 #| label: load-packages
@@ -39,8 +29,6 @@ library(knitr)
 library(sf)
 library(leaflet)
 library(leafpop)
-library(kableExtra)
-library(leaflet.extras)
 ```
 
 ```{r}
@@ -60,9 +48,11 @@ trump_unmatched   <- readRDS("data/trump_unmatched.rds")
 daily_unreported  <- readRDS("data/daily_unreported.rds")
 ```
 
+Throughout this report, facility-level summaries distinguish between facilities with **ADP ≥ 2** and those with **ADP < 2**. Facilities averaging fewer than two detainees per day---typically hospitals, occasional-use hold rooms, and other transient placements---account for many DDP facility codes but negligible population. Separating them keeps attention on facilities with substantive detention activity.
+
 ## Aggregate comparison
 
-The DDP data (Deportation Data Project) provides daily facility-level detention counts. To compare with the ICE FY25 annual statistics, we average DDP daily counts from October 1, 2024 through September 24, 2025---the date stamp on the FY25 spreadsheet. On average, the DDP data reflects `r round(sum(ddp_fy25$ddp_adp, na.rm = TRUE) - sum(ice_fy25$ice_adp))` more detainees per day than reported in the ICE FY25 annual statistics. As we'll see below, about 1,000 of these detainees are in facilities that appear in both sources but with higher counts in the DDP data. The rest are in facilities that do not appear at all in the ICE FY25 spreadsheet, accounting for a full-year average of roughly fifteen-hundred detainees per day. However, since the unmatched population grew dramatically during 2025, the daily unmatched population was much higher towards the end of the year.
+The DDP (Deportation Data Project) provides daily facility-level detention counts. To compare with the ICE FY25 annual statistics, we average DDP daily counts from October 1, 2024 through September 24, 2025---the date stamp on the FY25 spreadsheet.
 
 ```{r}
 #| label: aggregate-totals
@@ -75,7 +65,7 @@ tibble(
   kable()
 ```
 
-The DDP covers `r nrow(ddp_fy25)` facility codes while the ICE spreadsheet lists `r nrow(ice_fy25)` facilities. The DDP's higher total reflects the many additional facilities (hold rooms, federal prisons, medical facilities) not included in the ICE annual statistics.
+The DDP covers `r nrow(ddp_fy25)` facility codes while the ICE spreadsheet lists `r nrow(ice_fy25)` facilities. The DDP's higher total reflects the many smaller facilities (hold rooms, federal prisons, medical facilities) not included in the ICE annual statistics.
 
 ### Daily population over time
 
@@ -92,19 +82,6 @@ fy_labels <- data.frame(
 ggplot(daily_totals, aes(x = date, y = total_pop)) +
   geom_line(linewidth = 0.3) +
   geom_vline(xintercept = fy_breaks, linetype = "dashed", alpha = 0.4) +
-  # Annual averages as calculated as follows
-  # facilities_aggregated$FY24$sum_criminality_levels |> sum()
-  # 36276.8
-  # facilities_aggregated$FY25$sum_criminality_levels |> sum()
-  # 47550.2
-  # facilities_aggregated$FY26$sum_criminality_levels |> sum() # taken with February 2026 data
-  # 66811.9
-  # geom_segment(x=as.Date("2023-10-01"), xend=as.Date("2024-10-01"), 
-  #              y=36276.8, linetype = "dashed", alpha = 0.4, linewidth=0.1, color = "blue") +
-  # geom_segment(x=as.Date("2024-10-01"), xend=as.Date("2025-10-01"),
-  #              y=47550.2, linetype = "dashed", alpha = 0.4, linewidth=0.1, color = "blue") +
-  # geom_segment(x=as.Date("2025-10-01"), xend=as.Date("2025-11-01"),
-  #              y=66811.9, linetype = "dashed", alpha = 0.4, linewidth=0.3, color = "blue") +
   geom_text(data = fy_labels, aes(x = x, y = max(daily_totals$total_pop) * 1.04,
                                    label = label), inherit.aes = FALSE, size = 3) +
   scale_y_continuous(labels = comma) +
@@ -112,8 +89,6 @@ ggplot(daily_totals, aes(x = date, y = total_pop)) +
 ```
 
 ## Facility-level matching
-
-ICE uses detainee locator codes, or DETLOCs to keep track of which facilities detainees are housed in. These codes are included in 2015 and 2017 facility lists (describing ICE detention populations from FY 2010 to 2017), in a list maintained by the Deportation Data Project, and in separate lists compiled by the Vera Institute and The Marshall Project. Our data wrangling matched the FY 2019-2026 data to these other lists by exact facility name, address, city and state, and other criteria. All 189 detention facilities listed in the ICE spreadsheet for FY2025 have one or more known DETLOC.
 
 We join the two datasets through canonical facility IDs. Each DDP facility code is mapped to a canonical ID via `detloc_lookup_full`, which preserves all DETLOC variants from every source (DMCP, DDP, hold/ERO, Vera). Some canonical facilities have multiple codes---for example, Central Arizona Florence Correctional Complex uses `CCADCAZ` (DMCP) and `CCAFLAZ` (DDP), and Delaney Hall uses `ESSEXNJ` (DMCP) and `DHDFNJ` (DDP). Using the full lookup ensures all codes contribute ADP to the correct facility.
 
@@ -126,7 +101,6 @@ ddp_by_canonical <- ddp_fy25_keyed |>
   summarise(ddp_adp = sum(ddp_adp), .groups = "drop")
 
 comparison <- ice_fy25 |>
-  # ICE FY25 can have multiple rows per canonical_id (e.g., Adelanto + Desert View Annex)
   group_by(canonical_id) |>
   summarise(
     canonical_name = first(canonical_name),
@@ -180,19 +154,64 @@ ggplot(both_nonzero, aes(x = ice_adp, y = ddp_adp)) +
 ```{r}
 #| label: agreement-bands
 tibble(
-  `Agreement band` = c("Within 10%", "Within 25%", "Within 50%", ">50% difference", "Annual report shows greater value"),
+  `Agreement band` = c("Within 10%", "Within 25%", "Within 50%", ">50% difference"),
   Facilities = c(
     sum(abs(both_nonzero$pct_diff) <= 10),
     sum(abs(both_nonzero$pct_diff) > 10 & abs(both_nonzero$pct_diff) <= 25),
     sum(abs(both_nonzero$pct_diff) > 25 & abs(both_nonzero$pct_diff) <= 50),
-    sum(abs(both_nonzero$pct_diff) > 50),
-    sum(both_nonzero$pct_diff < 0)
+    sum(abs(both_nonzero$pct_diff) > 50)
   )
 ) |>
   kable()
 ```
 
-Among the `r nrow(both_nonzero)` matched facilities with nonzero ADP in both sources, `r sum(abs(both_nonzero$pct_diff) <= 10)` agree within 10%. The log-scale correlation is `r round(cor(log(both_nonzero$ice_adp), log(both_nonzero$ddp_adp)), 3)`. There are `r matched |> filter(ddp_adp < ice_adp) |> nrow()` facilities with a lower count in the DDP data and the largest percentage difference in this direction is `r matched |> filter(ddp_adp < ice_adp) |> pull(pct_diff) |> min() |> round(1)`%.
+Among the `r nrow(both_nonzero)` matched facilities with nonzero ADP in both sources, `r sum(abs(both_nonzero$pct_diff) <= 10)` agree within 10%. The log-scale correlation is `r round(cor(log(both_nonzero$ice_adp), log(both_nonzero$ddp_adp)), 3)`.
+
+### Absolute ADP differences
+
+```{r}
+#| label: tbl-abs-diff
+#| tbl-cap: "Distribution of absolute ADP differences (DDP − ICE) among matched facilities"
+abs_diff <- abs(both_nonzero$diff)
+tibble(
+  `Difference band` = c("< 5", "5–25", "25–100", "100–500", "> 500"),
+  Facilities = c(
+    sum(abs_diff < 5),
+    sum(abs_diff >= 5 & abs_diff < 25),
+    sum(abs_diff >= 25 & abs_diff < 100),
+    sum(abs_diff >= 100 & abs_diff < 500),
+    sum(abs_diff >= 500)
+  ),
+  `Total excess ADP` = c(
+    round(sum(both_nonzero$diff[abs_diff < 5])),
+    round(sum(both_nonzero$diff[abs_diff >= 5 & abs_diff < 25])),
+    round(sum(both_nonzero$diff[abs_diff >= 25 & abs_diff < 100])),
+    round(sum(both_nonzero$diff[abs_diff >= 100 & abs_diff < 500])),
+    round(sum(both_nonzero$diff[abs_diff >= 500]))
+  )
+) |>
+  kable()
+```
+
+The net difference across all `r nrow(both_nonzero)` matched facilities is `r round(sum(both_nonzero$diff))` ADP (DDP minus ICE). Positive values indicate DDP counts higher than ICE.
+
+```{r}
+#| label: fig-diff-hist
+#| fig-cap: "Distribution of facility-level ADP differences (DDP − ICE) among matched facilities (log-modulus scale)"
+#| fig-height: 4
+# Log-modulus transform: sign(x) * log10(|x| + 1)
+log_mod <- function(x) sign(x) * log10(abs(x) + 1)
+log_mod_inv <- function(x) sign(x) * (10^abs(x) - 1)
+
+ggplot(both_nonzero, aes(x = diff)) +
+  geom_histogram(bins = 50) +
+  scale_x_continuous(
+    transform = scales::new_transform("logmod", log_mod, log_mod_inv),
+    breaks = c(-1000, -100, -10, 0, 10, 100, 1000),
+    labels = comma
+  ) +
+  labs(x = "ADP difference (DDP \u2212 ICE)", y = "Facilities")
+```
 
 ```{r}
 #| label: tbl-ice-only
@@ -221,35 +240,34 @@ Facility types are drawn from the Vera Institute's classification system. "Dedic
 #| label: tbl-unmatched-types
 #| tbl-cap: "DDP facilities not in ICE FY25, by Vera facility type and ADP class"
 unmatched |>
-  group_by(type_grouped, peak_class) |>
+  group_by(type_grouped, adp_class) |>
   summarise(
     Facilities = n(),
     `FY25 ADP` = round(sum(ddp_adp)),
     .groups = "drop"
   ) |>
   arrange(desc(`FY25 ADP`)) |>
-  kable(col.names = c("Facility type", "Peak class", "Facilities", "FY25 ADP"))
+  kable(col.names = c("Facility type", "ADP class", "Facilities", "FY25 ADP"))
 ```
 
-The `r nrow(unmatched)` unmatched facilities account for a full-year ADP of roughly **`r format(round(sum(unmatched$ddp_adp)), big.mark = ",")`**. There were `r sum(unmatched$adp_class == "ADP < 2")` facilites that averaged fewer than 2 detainees per day, contributing `r round(sum(unmatched$ddp_adp[unmatched$adp_class == "ADP < 2"]))` ADP in total. Among them, `r sum(unmatched$peak_class == "Peak < 2")` facilities never had more than 1 detainee per day, contributing `r round(sum(unmatched$ddp_adp[unmatched$peak_class == "Peak < 2"]))` ADP in total.
+The `r nrow(unmatched)` unmatched facilities account for a full-year ADP of roughly **`r format(round(sum(unmatched$ddp_adp)), big.mark = ",")`**. Of those, `r sum(unmatched$adp_class == "ADP < 2")` facility codes average fewer than 2 detainees per day, contributing `r round(sum(unmatched$ddp_adp[unmatched$adp_class == "ADP < 2"]))` ADP in total.
 
 ```{r}
 #| label: tbl-dedicated-unmatched
-#| tbl-cap: "Dedicated facilities in DDP but absent from ICE FY25" 
-#| include: false
+#| tbl-cap: "Dedicated facilities in DDP but absent from ICE FY25"
 dedicated_unmatched <- unmatched |>
   filter(type_grouped == "Dedicated")
 
 if (nrow(dedicated_unmatched) > 0) {
   dedicated_unmatched |>
-    select(detention_facility_code, detention_facility, state, ddp_adp, peak_pop, peak_class) |>
+    select(detention_facility_code, detention_facility, state, ddp_adp, adp_class) |>
     mutate(ddp_adp = round(ddp_adp)) |>
     arrange(desc(ddp_adp)) |>
-    kable(col.names = c("DETLOC", "Facility name", "State", "FY25 ADP", "Peak Pop", "Peak class"))
+    kable(col.names = c("DETLOC", "Facility name", "State", "FY25 ADP", "ADP class"))
 }
-
-# `r if (nrow(dedicated_unmatched) > 0) paste0(nrow(dedicated_unmatched), " Dedicated facilities appear in DDP but not in ICE FY25, contributing ", round(sum(dedicated_unmatched$ddp_adp)), " ADP.") else "No Dedicated facilities are unmatched---all appear in the ICE FY25 spreadsheet."`
 ```
+
+`r if (nrow(dedicated_unmatched) > 0) paste0(nrow(dedicated_unmatched), " Dedicated facilities appear in DDP but not in ICE FY25, contributing ", round(sum(dedicated_unmatched$ddp_adp)), " ADP.") else "No Dedicated facilities are unmatched---all appear in the ICE FY25 spreadsheet."`
 
 ### Daily and monthly detention in unmatched facilities
 
@@ -268,7 +286,6 @@ ggplot(daily_unmatched, aes(x = date, y = total_pop)) +
 #| label: fig-monthly-total
 #| fig-cap: "Average daily population in unmatched facilities, by month"
 #| fig-height: 4
-#| include: false
 monthly_totals <- monthly_unmatched |>
   group_by(month) |>
   summarise(daily_avg = sum(n_detained) / n_distinct(date), .groups = "drop")
@@ -308,13 +325,7 @@ last60_end   <- as.Date("2025-09-24")
 last60 <- monthly_unmatched |>
   filter(date >= last60_start, date <= last60_end)
 
-non_empty <- last60 |>
-  group_by(detention_facility_code) |>
-  summarise(total_detained = sum(n_detained), .groups = "drop") |>
-  filter(total_detained > 0)
-
 last60_by_type <- last60 |>
-  filter(detention_facility_code %in% non_empty$detention_facility_code) |>
   group_by(type_grouped) |>
   summarise(
     Facilities = n_distinct(detention_facility_code),
@@ -333,18 +344,6 @@ last60_by_type |>
 In the last 60 days, **`r format(last60_total, big.mark = ",")`** people per day were held in facilities absent from the ICE FY25 annual statistics.
 
 ### Peak FY25 population by facility
-
-This table of the facilities with the largest peak population in FY 2025 help us make sense of th unreported population. A variety of different kinds of facilities play a roll:
-
-* New Federal facilities like the El Paso Soft-Sided Facility (`ELPASOFS`), which is distinct from the El Paso Processing Center (`EPC`) and Camp East Montana (`EROFCB`), held large numbers of detainees. This new facility was not added to the FY2025 statistics and was supplanted by Camp East Montana before the new fiscal year. The Ursula Centralized Processing Center, formally associated with Customs and Border Patrol, is listed as holding an average of 32 and a mamximum of 463 ICE detainees.
-
-* Dedicated ICE detention centers supplied by states, like the Baker Correctional Institution (`FLBAKCI`), a Florida state prison that was turned over to use by ICE in 2025, and held as many as 294 prisoners in FY 2025. The Florida Soft-Sided Facility (`FLDSSFS`, also known as Alligator Alcatraz was the sceond largest unreported facility, with a peak population of 1,482 detainees on July 30, 2025. These facilities were added to the FY 2026 statistics but left off the 2025 document.
-
-* Holding facilities associated with airports like the Krome Hold Room (`KROHOLD`) near Miami International Airport. This was one of the few facilities used at a large scale in the final days of the Biden administration. The Arizona Removal Operations Coordination Center (AROCC) operates at the Phoenix-Mesa Gateway Airport. As with other hold rooms, these facilities were reportedly exceeding the 12-hour limit on detention time. 
-
-* Field Offices and Sub-Offices of the Enforcement and Removal Operations (ERO) division of ICE, which are not designed for long-term detention but which held large numbers of detainees during the surge in 2025. This shift coincided with new ICE guidance authorizing detention up to 72 hours, but preceded the new permission and exceeded its limits.
-
-* A handful of local prisons were used to hold ICE detainees en masse, including the Richwood Correctional Center (`RICHWOOD`) in Louisiana, which held up to 1,200 detainees at a time.
 
 ```{r}
 #| label: tbl-peak-top20
@@ -368,8 +367,8 @@ peak_fy25 |>
   labs(x = "Peak detained population (FY25)", y = "Facilities")
 ```
 
-## Map of unmatched facilities in FY25
-::: column-screen-inset
+## Map of unmatched facilities
+
 ```{r}
 #| label: fig-map
 #| fig-cap: "DDP facilities not in ICE FY25 annual statistics, sized by FY25 peak population"
@@ -397,33 +396,10 @@ pal <- colorFactor(palette = type_colors[present_levels], domain = present_level
 # sqrt scale for area-proportional circle sizing
 radii <- scales::rescale(sqrt(map_sf$peak_pop), to = c(3, 20))
 
-map_sf$peak_class <- factor(map_sf$peak_class, levels = c("Peak < 2", "Peak ≥ 2"))
-
 leaflet(map_sf) |>
-  fitBounds(lng1 = -125, lat1 = 17.5, lng2 = -65, lat2 = 49.5) |>
   addProviderTiles("CartoDB.Positron") |>
-
-  # Layer 1: Peak < 2  (small solid points, no border)
   addCircleMarkers(
-    data        = subset(map_sf, peak_class == "Peak < 2"),
-    radius      = 3,                # small fixed dot
-    stroke      = FALSE,            # <- no outer border
-    fillColor   = ~pal(type_grouped),
-    fillOpacity = 1,                # solid
-    label       = ~paste0(detention_facility, " (", state, ": peak ", peak_pop, ")"),
-    popup       = ~paste0(
-      "<b>", detention_facility, "</b><br>",
-      state, " | ", type_grouped, "<br>",
-      "Peak: ", peak_pop, " (", peak_date, ")<br>",
-      "Mean ADP: ", mean_pop
-    ),
-    group = "Peak < 2"
-  ) |>
-
-  # Layer 2: Peak ≥ 2
-  addCircleMarkers(
-    data        = subset(map_sf, peak_class == "Peak ≥ 2"),
-    radius      = radii[map_sf$peak_class == "Peak ≥ 2"],
+    radius      = radii,
     color       = "black",
     weight      = 1,
     fillColor   = ~pal(type_grouped),
@@ -434,58 +410,15 @@ leaflet(map_sf) |>
       state, " | ", type_grouped, "<br>",
       "Peak: ", peak_pop, " (", peak_date, ")<br>",
       "Mean ADP: ", mean_pop
-    ),
-    group = "Peak ≥ 2"
+    )
   ) |>
-
-  # Keep your facility-type legend
   addLegend(
     pal = pal, values = ~type_grouped,
     title = "Facility type", position = "bottomright"
-  ) |>
-
-  # Add the layer toggle
-  addLayersControl(
-    overlayGroups = c("Peak < 2", "Peak ≥ 2"),
-    options = layersControlOptions(collapsed = FALSE)
-  ) |>
-  addSearchFeatures(
-    targetGroups = c("Peak < 2", "Peak ≥ 2"),
-    options = searchFeaturesOptions(
-      zoom = 9,
-      openPopup = TRUE,
-      position = "topleft",
-      hideMarkerOnCollapse = TRUE
-    )) |>
-  addControl(
-    position = "bottomright",
-    html = htmltools::tags$style(htmltools::HTML("
-      /* Force legend text left in Quarto/Bootstrap contexts */
-      .leaflet-container .leaflet-control {
-        text-align: left !important;
-      }
-      .leaflet-container .leaflet-control .legend {
-        text-align: left !important;
-      }
-
-      /* Make the color swatch and label behave like a left-aligned row */
-      .leaflet-container .leaflet-control .legend i {
-        display: inline-block !important;
-        width: 14px !important;
-        height: 14px !important;
-        margin: 0 8px 0 0 !important;
-        vertical-align: middle !important;
-      }
-      .leaflet-container .leaflet-control .legend span {
-        display: inline !important;
-        vertical-align: middle !important;
-      }
-    ")))
-
+  )
 ```
-:::
 
-## Unreported detention: Final Biden quarter vs recent Trump quarter {#sec-period-comparison}
+## Unreported detention: Biden final quarter vs early Trump {#sec-period-comparison}
 
 The preceding sections establish which DDP facilities are absent from the ICE FY25 annual statistics. Here we compare the **unreported population**---detainees held at those unmatched facilities---during the final three months of the Biden administration versus a comparable window under the Trump administration.
 
@@ -493,12 +426,12 @@ The preceding sections establish which DDP facilities are absent from the ICE FY
 #| label: period-definitions
 biden_from <- as.Date("2024-10-20")
 biden_to   <- as.Date("2025-01-19")
-trump_from <- as.Date("2025-07-01")
-trump_to   <- as.Date("2025-09-30")
+trump_from <- as.Date("2025-07-17")
+trump_to   <- as.Date("2025-10-15")
 ```
 
--   **Biden final quarter**: `r biden_from` to `r biden_to` (92 days)
--   **Trump recent quarter**: `r trump_from` to `r trump_to` (92 days)
+- **Biden final quarter**: `r biden_from` to `r biden_to` (92 days)
+- **Trump recent quarter**: `r trump_from` to `r trump_to` (91 days)
 
 ### Aggregate unreported population
 
@@ -507,21 +440,21 @@ trump_to   <- as.Date("2025-09-30")
 #| tbl-cap: "Unreported DDP population by period (facilities not in ICE FY25)"
 bind_rows(biden_unmatched, trump_unmatched) |>
   filter(peak_pop > 0) |>
-  group_by(period, peak_class) |>
+  group_by(period, adp_class) |>
   summarise(
     Facilities = n(),
     `Total ADP` = round(sum(mean_pop)),
     .groups = "drop"
   ) |>
-  arrange(peak_class, period) |>
+  arrange(adp_class, period) |>
   kable()
 ```
 
 ```{r}
 #| label: tbl-period-headline
-#| tbl-cap: "Unreported population totals (Peak \u2265 2 facilities only)"
+#| tbl-cap: "Unreported population totals (ADP \u2265 2 facilities only)"
 bind_rows(biden_unmatched, trump_unmatched) |>
-  filter(peak_pop > 0, peak_class == "Peak \u2265 2") |>
+  filter(peak_pop > 0, adp_class == "ADP \u2265 2") |>
   group_by(period) |>
   summarise(
     Facilities = n(),
@@ -531,21 +464,6 @@ bind_rows(biden_unmatched, trump_unmatched) |>
   ) |>
   kable()
 ```
-
-This graph shows the distribution of population totals among the unmatched facilities in each period, with a horizontal line marking the average for each period. The six largest facilities are named. As you can see, the largest unreported opulation in the Biden period would not even be an outlier in the Trump period. Conversely, the three largest unreported facilities in the Trump period each held more people in this period that all the Biden facilities combined.
-
-:::{column-screen-inset}
-```{r }
-#| label: violin-plot
-#| tbl-cap: "Distribution plots for FY25 peak population compared between Biden and Trump"
-#| fig-asp: 1
-#| fig-height: 8
-#| fig-width: 10
-
-source("violin-plot.R")
-violin_plot
-```
-:::
 
 ### By facility type
 
@@ -582,9 +500,9 @@ type_comp |>
 
 ```{r}
 #| label: tbl-period-type-transient
-#| tbl-cap: "Transient facilities (Peak < 2) by type and period"
+#| tbl-cap: "Transient facilities (ADP < 2) by type and period"
 bind_rows(biden_unmatched, trump_unmatched) |>
-  filter(peak_pop > 0, peak_class == "Peak < 2") |>
+  filter(peak_pop > 0, adp_class == "ADP < 2") |>
   group_by(period, type_grouped) |>
   summarise(
     Facilities = n(),
@@ -605,8 +523,8 @@ bind_rows(biden_unmatched, trump_unmatched) |>
 
 ```{r}
 #| label: period-exclusive-setup
-biden_active <- biden_unmatched |> filter(peak_pop > 0, peak_class == "Peak \u2265 2")
-trump_active <- trump_unmatched |> filter(peak_pop > 0, peak_class == "Peak \u2265 2")
+biden_active <- biden_unmatched |> filter(peak_pop > 0, adp_class == "ADP \u2265 2")
+trump_active <- trump_unmatched |> filter(peak_pop > 0, adp_class == "ADP \u2265 2")
 
 biden_only_codes <- setdiff(biden_active$detention_facility_code,
                              trump_active$detention_facility_code)
@@ -616,34 +534,33 @@ trump_only_codes <- setdiff(trump_active$detention_facility_code,
 
 ```{r}
 #| label: tbl-biden-only
-#| tbl-cap: "Unreported facilities with Peak \u2265 2 active under Biden but not Trump"
+#| tbl-cap: "Unreported facilities with ADP \u2265 2 active under Biden but not Trump"
 if (length(biden_only_codes) > 0) {
   biden_unmatched |>
     filter(detention_facility_code %in% biden_only_codes) |>
     arrange(desc(mean_pop)) |>
     select(detention_facility, state, type_grouped, mean_pop, peak_pop) |>
     mutate(mean_pop = round(mean_pop, 1)) |>
-    kable(col.names = c("Facility", "State", "Type", "Biden ADP", "Biden peak")) 
+    kable(col.names = c("Facility", "State", "Type", "Biden ADP", "Biden peak"))
 }
 ```
 
-`r length(biden_only_codes)` unreported facilities (Peak ≥ 2) were active in the Biden period but fell below the threshold or had zero population in the Trump period. Of these, `r sum(biden_unmatched$detention_facility_code %in% biden_only_codes & biden_unmatched$adp_class == "ADP \u2265 2")` had ADP ≥ 2 under Biden, contributing `r round(sum(biden_unmatched$mean_pop[biden_unmatched$detention_facility_code %in% biden_only_codes & biden_unmatched$adp_class == "ADP \u2265 2"]))` ADP in total.
+`r length(biden_only_codes)` unreported facilities (ADP ≥ 2) were active in the Biden period but fell below the threshold or had zero population in the Trump period.
 
 ```{r}
 #| label: tbl-trump-only
-#| tbl-cap: "Unreported facilities with Peak \u2265 2 active under Trump but not Biden (scroll for full list)"
+#| tbl-cap: "Unreported facilities with ADP \u2265 2 active under Trump but not Biden"
 if (length(trump_only_codes) > 0) {
   trump_unmatched |>
     filter(detention_facility_code %in% trump_only_codes) |>
     arrange(desc(mean_pop)) |>
     select(detention_facility, state, type_grouped, mean_pop, peak_pop) |>
     mutate(mean_pop = round(mean_pop, 1)) |>
-    kable(col.names = c("Facility", "State", "Type", "Trump ADP", "Trump peak")) |> 
-    scroll_box(height = "630px")
+    kable(col.names = c("Facility", "State", "Type", "Trump ADP", "Trump peak"))
 }
 ```
 
-`r length(trump_only_codes)` unreported facilities (Peak ≥ 2) were active in the Trump period but not the Biden period. Of these, `r sum(trump_unmatched$detention_facility_code %in% trump_only_codes & trump_unmatched$adp_class == "ADP \u2265 2")` had ADP \< 2 under Trump, contributing `r round(sum(trump_unmatched$mean_pop[trump_unmatched$detention_facility_code %in% trump_only_codes & trump_unmatched$adp_class == "ADP \u2265 2"]))` ADP in total.
+`r length(trump_only_codes)` unreported facilities (ADP ≥ 2) were active in the Trump period but not the Biden period.
 
 ```{r}
 #| label: tbl-trump-only-by-type
