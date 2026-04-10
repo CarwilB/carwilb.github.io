@@ -1,19 +1,17 @@
 ---
-title: "Unreported Detention: An analysis of ICE detention statistics not included in the FY 2025 annual detention report"
+title: "Unreported Detention: Un- and under-reported ICE facilities" 
+subtitle: "An analysis of ICE detention statistics not included in the FY 2025 annual detention report"
 description: "Comparing the Deportation Data Project's daily detention counts with ICE's published annual statistics to identify unreported facilities and track population changes"
 author: "Carwil Bjork-James"
 date: last-modified
 image: ddp-comparison-thumbnail.png
-format:
-  html:
-    toc: true
-    toc-depth: 3
-    code-fold: true
 execute:
   echo: true
   warning: false
   message: false
 ---
+
+## Overview
 
 This page offers an analysis of two forms of data on the population of people held by US Immigration and Customs Enforcement (ICE): summary data on detention published by ICE on its website and a detailed and granular dataset of arrests, removals, and overnight populations under ICE custody, released under the Freedom of Information Act and archived by the Deportation Data Project.
 
@@ -369,7 +367,7 @@ peak_fy25 |>
 ```
 
 ## Map of unmatched facilities in FY25
-::: column-screen-inset
+::: column-screen-inset-right
 ```{r}
 #| label: fig-map
 #| fig-cap: "DDP facilities not in ICE FY25 annual statistics, sized by FY25 peak population"
@@ -534,7 +532,7 @@ bind_rows(biden_unmatched, trump_unmatched) |>
 
 This graph shows the distribution of population totals among the unmatched facilities in each period, with a horizontal line marking the average for each period. The six largest facilities are named. As you can see, the largest unreported opulation in the Biden period would not even be an outlier in the Trump period. Conversely, the three largest unreported facilities in the Trump period each held more people in this period that all the Biden facilities combined.
 
-:::{column-screen-inset}
+:::{column-screen-inset-right}
 ```{r }
 #| label: violin-plot
 #| tbl-cap: "Distribution plots for FY25 peak population compared between Biden and Trump"

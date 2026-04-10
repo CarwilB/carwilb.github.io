@@ -1,0 +1,317 @@
+---
+title: "Cleaning up bare URLs"
+format: 
+  html:
+    code-fold: true
+execute:
+  message: false
+  warning: false
+editor: visual
+---
+
+# The Problem
+
+In researching the Ultimate Consequences database, we've introduced numerous URLs as references for particular entriess without including them in our Zotero library.
+
+In `Narrative-Status.qmd`, we search for all URLs in our datasheet and then create a list of those that are not in the Zotera library, `remaining_unreferenced_urls`.
+
+The goal is to find citable webpage forms of these URLs, either still online or on Archive.org's [Wayback Machine](https://web.archive.org)
+
+# Setup
+
+```{r setup}
+library(tidyverse)
+library(kableExtra)
+
+source("../../zotero-translators/src/wayback-tools.R")
+```
+
+# Importing and cleaning URLs
+
+The source list (`urls-unreferenced-2026-03-06.txt`) contains bare URLs extracted from the narrative datasheet that have not yet been added to the Zotero library. We strip trailing punctuation, split any lines where two URLs were accidentally concatenated, and deduplicate.
+
+```{r import-urls}
+raw_lines <- readLines("../../ultimate-consequences/data/urls-unreferenced-2026-03-06.txt")
+
+urls_fixed <- raw_lines |>
+  trimws() |>
+  sub("[.;,\"!]+$", "", x = _) |>
+  trimws() |>
+  keep(\(u) nchar(u) > 0) |>
+  map(\(u) str_extract_all(u, "https?://[^\\s]+")[[1]]) |>
+  unlist() |>
+  unique()
+```
+
+That yields `r length(urls_fixed)` distinct URLs. To put them in context, we look up which rows and events in the narrative datasheet each URL appears in.
+
+```{r url-row-index}
+de_narrative <- read_rds("../../ultimate-consequences/data/narrative-entries.rds")
+de_narrative_key <- de_narrative |> select(refs, year, event_title, id_indiv)
+
+url_row_index <- map(urls_fixed, \(u) which(str_detect(de_narrative_key$refs, fixed(u)))) |>
+  setNames(urls_fixed) |>
+  keep(\(rows) length(rows) > 0) |>
+  imap(\(rows, u) tibble(url = u, row = rows)) |>
+  bind_rows() |>
+  left_join(
+    de_narrative_key |>
+      mutate(row = row_number()) |>
+      select(row, year, event_title),
+    by = "row"
+  ) |>
+  summarise(
+    rows         = paste(row, collapse = ", "),
+    years        = paste(unique(year), collapse = ", "),
+    event_titles = paste(unique(event_title), collapse = ", "),
+    .by = url
+  )
+
+url_row_index |> head(5) |> kable()
+```
+
+Now to find which of these are still live, and which are archived on Wayback. This code won't be executed. Instead we'll load the results in the next chunk.
+
+```{r scan-for-urls, eval=FALSE}
+live_results <- check_live_url(urls_fixed, fetch_title = TRUE, delay = 0.1)
+cat("Done:", nrow(live_results), "rows\n")
+live_results
+
+live_urls <- live_results |> filter(is_live) |> pull(url)
+dead_urls <- live_results |> filter(!is_live) |> pull(url)
+
+# Save live results
+saveRDS(live_results,
+        "../../ultimate-consequences/data/urls-live-2026-03-06.rds")
+write_csv(live_results,
+          "../../ultimate-consequences/data/urls-live-2026-03-06.csv")
+cat("Saved.\n")
+
+wayback_results <- check_wayback(dead_urls, fetch_title = TRUE, delay = 0.1)
+cat("Done:", nrow(wayback_results), "rows\n")
+wayback_results
+
+# Save Wayback results
+saveRDS(wayback_results, 
+        "../../ultimate-consequences/data/urls-wayback-2026-03-06.rds")
+write_csv(wayback_results, 
+        "../../ultimate-consequences/data/urls-wayback-2026-03-06.csv")
+
+```
+
+# Scan results
+
+We checked each URL against the live web and the Wayback Machine CDX API. Results were saved externally and are loaded here. Redirected URLs that share a single destination (e.g. a newspaper that migrated domains) are flagged as "merged" — they are treated separately since their original URLs are no longer canonical.
+
+```{r analysis}
+clean_titles <- function(df) {
+  mutate(df, title = str_replace_all(title, "\\n", " "))
+}
+
+wayback_results <- read_rds(
+  "../../ultimate-consequences/data/urls-wayback-2026-03-06.rds")
+live_results <- read_rds(
+  "../../ultimate-consequences/data/urls-live-2026-03-06.rds")
+
+repeated_destination_urls <- live_results |>
+  filter(!is.na(redirect_url)) |>
+  count(redirect_url) |>
+  filter(n > 1) |>
+  pull(redirect_url)
+
+live_results <- live_results |>
+  mutate(is_merged = (redirect_url %in% repeated_destination_urls))
+
+merged_urls <- live_results |> filter(is_merged) |> pull(url)
+
+live_results |>
+  summarise(
+    total               = n(),
+    live                = sum(is_live, na.rm = TRUE),
+    dead                = sum(!is_live, na.rm = TRUE),
+    redirected_singular = sum(!is.na(redirect_url) & !is_merged, na.rm = TRUE),
+    redirected_merged   = sum(is_merged, na.rm = TRUE),
+    is_404              = sum(is_404, na.rm = TRUE)
+  ) |>
+  kable()
+```
+
+```{r check-wayback-results-of-merged, eval=FALSE}
+wayback_results_2 <- check_wayback(merged_urls, fetch_title = TRUE, delay = 0.1)
+cat("Done:", nrow(wayback_results_2), "rows\n")
+wayback_results_2
+
+saveRDS(wayback_results_2, 
+        "../../ultimate-consequences/data/urls-merged-wayback-2026-03-06.rds")
+```
+
+```{r url-render-functions}
+wayback_results_2 <- read_rds(
+  "../../ultimate-consequences/data/urls-merged-wayback-2026-03-06.rds")
+
+# Live URLs
+link_to_self <- function(url){
+  paste0("[", url, "](", url,")")
+}
+url_link <- function(url){
+  paste0("[url](", url,")")
+}
+
+list(live_results = live_results,
+     wayback_results = wayback_results,
+     wayback_results_2 = wayback_results_2) |>
+  map(clean_titles) |>
+  list2env(envir = .GlobalEnv)
+
+```
+
+# Five tables of sources
+
+So now we have two subsets of URLs that (hopefully) can be found online directly:
+
+1.  URLs that are live and not redirected
+2.  URLs that are redirected to a singular URL
+
+And we also have two subsets of URLs that are online on the Wayback machine:
+
+3.  URLs that are dead but included in the Wayback Machine
+4.  URLs that are merged by redirects, but included in the Wayback Machine
+
+Finally, we have those URLs that are left
+
+5.  URLs that are deadlinks that can only be found in new places
+
+```{r source-summary}
+newspapers <- c(
+  "El Deber"       = "eldeber\\.com\\.bo",
+  "Los Tiempos"    = "lostiempos\\.com",
+  "La Razón"       = "la-razon\\.com|larazon\\.bo|larazon\\.com",
+  "Correo del Sur" = "correodelsur\\.com",
+  "La Patria"      = "lapatria\\.bo|lapatriaenlinea\\.com",
+  "El País"        = "elpais\\.bo",
+  "Erbol"          = "erbol\\.com\\.bo",
+  "El Día"         = "eldia\\.com\\.bo",
+  "Opinión"        = "opinion\\.com\\.bo",
+  "Noticias Fides" = "noticiasfides\\.com"
+)
+
+classify_url <- function(url) {
+  for (nm in names(newspapers)) {
+    if (str_detect(url, newspapers[[nm]])) return(nm)
+  }
+  if (str_detect(url, "indymedia"))    return("Indymedia")
+  if (str_detect(url, "google\\.com")) return("Google")
+  tld <- str_extract(url, "(?<=\\.)edu|(?<=\\.)org|(?<=\\.)gov")
+  if (!is.na(tld)) return(paste0(".", tld))
+  return("Other")
+}
+
+category_order <- c(
+  "El Deber", "Los Tiempos", "La Razón", "Correo del Sur",
+  "La Patria", "El País", "Erbol", "El Día", "Opinión", "Noticias Fides",
+  "Indymedia", "Google", ".edu", ".gov", ".org", "Other"
+)
+
+bind_rows(
+  live_results      |> filter(is_live & !is_404 & is.na(redirect_url) & !is_merged) |> mutate(table = "Table 1"),
+  live_results      |> filter(!is.na(redirect_url) & !is_merged)                    |> mutate(table = "Table 2"),
+  wayback_results   |> filter(is_archived)                                           |> mutate(table = "Table 3"),
+  wayback_results_2 |> filter(is_archived)                                           |> mutate(table = "Table 4"),
+  wayback_results   |> filter(!is_archived)                                          |> mutate(table = "Table 5")
+) |>
+  mutate(category = map_chr(url, classify_url)) |>
+  count(category, table) |>
+  pivot_wider(names_from = table, values_from = n, values_fill = 0) |>
+  select(category, any_of(paste0("Table ", 1:5))) |>
+  mutate(Total = rowSums(across(starts_with("Table")))) |>
+  mutate(category = factor(category, levels = category_order)) |>
+  arrange(category) |>
+  janitor::adorn_totals("row") |>
+  kable()
+```
+
+## 1. URLs that are live and not redirected
+
+```{r table-1}
+live_results |>
+  filter(is_live & !is_404 & is.na(redirect_url) & !is_merged) |>
+  left_join(select(url_row_index, url, years, event_titles), by = "url") |>
+  transmute(years, event_titles, title, url_md = url_link(url)) |>
+  arrange(years) |>
+  mutate(n = paste0("1-", row_number(), "."), .before = 1) |>
+  kable()
+```
+
+## 2. URLs that are redirected to a singular URL
+
+```{r table-2}
+live_results |>
+  filter(!is.na(redirect_url) & !is_merged) |>
+  left_join(select(url_row_index, url, years, event_titles), by = "url") |>
+  transmute(years, event_titles, title, original = url_link(url), redirects_to = url_link(redirect_url)) |>
+  arrange(years) |>
+  mutate(n = paste0("2-", row_number(), "."), .before = 1) |>
+  kable()
+```
+
+## 3. URLs that are dead but included in the Wayback Machine
+
+```{r table-3}
+wayback_results |>
+  filter(is_archived) |>
+  left_join(select(url_row_index, url, years, event_titles), by = "url") |>
+  transmute(years, event_titles, url = url_link(url), snapshot_date, archive = url_link(archive_url), title) |>
+  arrange(years) |>
+  mutate(n = paste0("3-", row_number(), "."), .before = 1) |>
+  kable()
+```
+
+## 4. URLs that are merged by redirects, but included in the Wayback Machine
+
+```{r table-4}
+wayback_results_2 |>
+  filter(is_archived) |>
+  left_join(select(live_results, url, redirect_url), by = "url") |>
+  left_join(select(url_row_index, url, years, event_titles), by = "url") |>
+  transmute(years, event_titles, original = url_link(url), redirects_to = url_link(redirect_url),
+            snapshot_date, archive = url_link(archive_url), title) |>
+  arrange(years) |>
+  mutate(n = paste0("4-", row_number(), "."), .before = 1) |>
+  kable()
+```
+
+## 5. URLs that are dead and not archived
+
+```{r table-5}
+wayback_results |>
+  filter(!is_archived) |>
+  left_join(select(url_row_index, url, years, event_titles), by = "url") |>
+  transmute(
+    years, event_titles, 
+    website = str_extract(url, "(?<=://)([^/]+)"),
+    url
+  ) |>
+  arrange(years) |>
+  mutate(n = paste0("5-", row_number(), "."), .before = 1) |>
+  kable()
+
+
+make_wayback_search <- function(url) {
+  clean <- sub("-([A-Z]{2})?[0-9]+(\\.[a-z]+)?$", "", url)
+  paste0("[search](https://web.archive.org/web/*/", clean, "*)")
+}
+
+wayback_results_2 |>
+  filter(!is_archived) |>
+  left_join(select(live_results, url, redirect_url), by = "url") |>
+  left_join(select(url_row_index, url, years, event_titles), by = "url") |>
+  transmute(
+    years, event_titles,
+    original = url,
+    redirects_to = url_link(redirect_url),
+    wayback_search = make_wayback_search(url)
+  ) |>
+  arrange(years) |>
+  mutate(n = paste0("5b-", row_number(), "."), .before = 1) |>
+  kable()
+```

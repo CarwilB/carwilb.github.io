@@ -1,0 +1,304 @@
+---
+title: "Global Language Diversity on Wikipedia"
+description: "A table showing the relationship between language speaker populations and Wikipedia article counts."
+author: "Carwil Bjork-James"
+date: "February 23, 2026"
+format: 
+  html:
+    self-contained: true
+    page-layout: full
+    toc: true
+---
+
+# Languages and Wikipedia Articles
+
+![The largest Wikipedia editions by number of articles, 2024 (CC-0 [Arief Azazie Zain](https://commons.wikimedia.org/wiki/User:Arief_Azazie_Zain "User:Arief Azazie Zain")) ](/images/wikipedia/List_of_Wikipedia_articles_by_language_-_March_2024.svg.png){alt="The largest Wikipedia editions by number of articles"}
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(rvest)
+library(knitr)
+library(kableExtra)
+library(stringi)
+library(viridis)
+library(scales)
+
+linguameta_root_path <- "~/Dropbox (Personal)/R/url-nlp/linguameta"
+```
+
+```{r load-data, echo=FALSE, message=FALSE, warning=FALSE}
+# ----------------------------------------------------------------------
+# 1. Load linguameta
+# ----------------------------------------------------------------------
+linguameta <- read_tsv(
+  file = file.path(linguameta_root_path, "linguameta.tsv"),
+  show_col_types = FALSE
+)
+
+# ----------------------------------------------------------------------
+# 2. Scrape live Wikipedia table and clean column names
+# ----------------------------------------------------------------------
+wiki_html <- read_html("https://en.wikipedia.org/wiki/List_of_Wikipedias")
+
+wiki <- wiki_html |>
+  html_table() |>
+  keep(~ "Articles" %in% names(.)) |>
+  _[[1]] |>
+  rename(
+    wiki_name_en     = `Wikipedia name in English`,
+    wiki_name_native = `Wikipedia namein native language`,
+    language         = Language,
+    script           = `Script (ISO15924 code)`,
+    wp_code          = WPcode,
+    articles         = Articles,
+    active_users     = Activeusers,
+    launch_date      = `Launch date`
+  ) |>
+  mutate(
+    articles     = as.numeric(gsub(",", "", articles)),
+    active_users = as.numeric(gsub(",", "", active_users))
+  ) |>
+  filter(articles > 0)
+
+# ----------------------------------------------------------------------
+# 3. Join wiki → linguameta via BCP-47 code
+#    Some Wikipedia edition codes are non-standard (zh-yue, zh-min-nan,
+#    or carry "(closed)" suffixes); map them to canonical BCP-47 tags.
+# ----------------------------------------------------------------------
+wp_to_bcp47_extra <- c(
+  "zh-yue"     = "yue",   # Cantonese
+  "zh-min-nan" = "nan",   # Southern Min
+  "cr"         = "cr",    # Cree
+  "kl"         = "kl",    # Kalaallisut / Greenlandic
+  "ak"         = "ak",    # Akan / Twi
+  "kr"         = "kr",    # Kanuri
+  "aa"         = "aa",    # Afar
+  "ii"         = "ii",    # Sichuan Yi
+  "ho"         = "ho",    # Hiri Motu
+  "hz"         = "hz",    # Herero
+  "kj"         = "kj",    # Kuanyama
+  "mh"         = "mh",    # Marshallese
+  "na"         = "na",    # Nauruan
+  "ng"         = "ng",    # Ndonga
+  "lrc"        = "lrc"    # Northern Luri
+)
+
+wiki_joined <- wiki |>
+  mutate(
+    # strip " (closed)", " (deleted)" etc.
+    wp_code_clean = str_trim(str_remove(wp_code, "\\s*\\(.*")),
+    bcp47_lookup  = coalesce(wp_to_bcp47_extra[wp_code_clean], wp_code_clean)
+  ) |>
+  select(bcp47_lookup, wp_code, articles, active_users, language)
+
+# Wiki editions that don't map to any spoken language in linguameta
+# (constructed languages, classical languages, Simple English, dialects
+#  with non-standard codes, etc.)
+wiki_special <- wiki |>
+  mutate(
+    wp_code_clean = str_trim(str_remove(wp_code, "\\s*\\(.*")),
+    bcp47_lookup  = coalesce(wp_to_bcp47_extra[wp_code_clean], wp_code_clean)
+  ) |>
+  filter(!bcp47_lookup %in% linguameta$bcp_47_code) |>
+  select(language, wp_code, articles, active_users)
+
+text_to_num <- function(text) {
+  text <- str_replace_all(text, ",", "")
+  multipliers <- c(k = 1e3, K = 1e3, M = 1e6, B = 1e9)
+  pattern <- "([0-9.]+)\\s*([KMBk]?)"
+  
+  as.numeric(sapply(text, function(x) {
+    matches <- str_match(x, pattern)
+    if (is.na(matches[1,1])) {
+      return(NA)
+    }
+    number <- as.numeric(matches[1,2])
+    suffix <- matches[1,3]
+    if (suffix != "") {
+      number * multipliers[[suffix]]
+    } else {
+      number
+    }
+  }))
+}
+
+# ----------------------------------------------------------------------
+# 4. Supplementary speaker estimates for languages where linguameta
+#    has NA (sourced from Wikipedia language articles)
+# ----------------------------------------------------------------------
+na_speakers_supplement <- tribble(
+  ~bcp_47_code, ~speakers_supplement, ~speakers_source,
+  "tl",   33000000,  "L1 speakers (Ethnologue 2023, via Wikipedia)",
+  "crh",    580000,  "Native speakers (Ethnologue 2001, via Wikipedia)",
+  "nrm",    100000,  "Approximate (Norman language, France/Channel Islands)",
+  "bxr",    218000,  "Russia Buryat (Ethnologue estimate)",
+  "szy",     10000,  "Sakizaya (estimated, Taiwan)",
+  "rsk",    600000,  "Pannonian Rusyn/Ruthenian (approximate)",
+  "bdr",    200000,  "West Coast Bajau (approximate)"
+)
+
+# ----------------------------------------------------------------------
+# 5. Attach Wikipedia data to linguameta; fill NA speakers; assign
+#    global rank; then partition into three groups:
+#      A. Top 250 by speakers
+#      B. Smaller languages with a Wikipedia (outside top 250)
+#      C. Special / constructed / classical Wikipedias (no linguameta row)
+# ----------------------------------------------------------------------
+linguameta_with_wiki <- linguameta |>
+  left_join(wiki_joined, by = c("bcp_47_code" = "bcp47_lookup")) |>
+  left_join(na_speakers_supplement, by = "bcp_47_code") |>
+  mutate(
+    speakers = coalesce(estimated_number_of_speakers, speakers_supplement)
+  ) |>
+  mutate(
+    global_rank = row_number(desc(coalesce(speakers, 0L)))
+  ) |>
+  filter(global_rank <= 250 | !is.na(articles)) |>
+  mutate(articles = replace_na(articles, 0))
+
+# Partition
+top250   <- linguameta_with_wiki |> 
+  filter(global_rank <= 250) |> 
+  arrange(desc(speakers))
+extras   <- linguameta_with_wiki |> 
+  filter(global_rank > 250, articles > 0) |> 
+  arrange(desc(speakers))
+
+# ----------------------------------------------------------------------
+# 6. Helper: format a data frame for display
+# ----------------------------------------------------------------------
+format_for_display <- function(df, show_rank = TRUE) {
+  df |>
+    mutate(
+      rank_label = if (show_rank) as.character(global_rank) else "—",
+      is_roman   = stri_detect_regex(
+        endonym, "^[\\p{Script=Latin}[:punct:][:space:]0-9]+$"
+      ),
+      autonym_fmt = if_else(
+        !is.na(endonym) & is_roman,
+        paste0(" <i>", endonym, "</i>"),
+        paste0(" ", replace_na(endonym, ""))
+      ),
+      language_display = paste0(rank_label, ". ", english_name, "<br>", autonym_fmt),
+      articles_fmt     = format(articles, big.mark = ",")
+    )
+}
+
+# ----------------------------------------------------------------------
+# 7. Colour scale helpers (shared domain across both tables)
+# ----------------------------------------------------------------------
+all_speakers <- linguameta_with_wiki$speakers
+color_pal <- col_numeric(
+  palette = c("#ffffff", "#74a9cf", "#0570b0"),
+  domain  = log1p(c(all_speakers, 1000000, NA))
+)
+
+make_article_colors <- function(articles) {
+  case_when(
+    articles == 0          ~ "#ffffff",
+    articles < 10000       ~ "#e6f7f0",
+    articles < 100000      ~ "#bae4d7",
+    articles < 1000000     ~ "#82c9a5",
+    articles < 4000000     ~ "#c1d383",
+    articles >= 4000000    ~ "#ffd700"
+  )
+}
+
+render_table <- function(df) {
+  fmt <- format_for_display(df, show_rank = TRUE)
+  speaker_colors <- color_pal(log1p(fmt$speakers))
+  article_colors <- make_article_colors(fmt$articles)
+
+  fmt |>
+    select(language_display, wikidata_description, speakers, articles_fmt) |>
+    kable(
+      format    = "html",
+      escape    = FALSE,
+      col.names = c("Language", "Language Description",
+                    "Speakers (L1 est.)", "Wikipedia Articles"),
+      align     = "llrr"
+    ) |>
+    kable_styling(
+      bootstrap_options = c("hover", "condensed"),
+      font_size         = 14,
+      htmltable_class   = "table table-hover table-condensed"
+    ) |>
+    column_spec(1, width = "35%") |>
+    column_spec(2, width = "35%") |>
+    column_spec(3, background = speaker_colors, width = "15%") |>
+    column_spec(4, background = article_colors, width = "15%") |>
+    row_spec(0, background = "white", color = "black", bold = TRUE)
+}
+```
+
+## Top 250 Languages by Number of Speakers
+
+Speaker estimates are L1 (first-language) counts from [LinguaMeta](https://github.com/cisnlp/linguameta), supplemented for a handful of languages where LinguaMeta lacks an estimate (sourced from Wikipedia). Background shading: **blue** = speaker population; **green/gold** = Wikipedia article count.
+
+:::{.column-page-inset-right}
+```{r table-top250, echo=FALSE, message=FALSE, warning=FALSE}
+render_table(top250)
+```
+:::
+
+## Additional Languages with Wikipedia Editions
+
+These languages fall outside the top 250 by speaker population but have active Wikipedia editions. Global rank (by estimated L1 speakers) shown where available.
+
+:::{.column-page-inset-right}
+```{r table-extras, echo=FALSE, message=FALSE, warning=FALSE}
+extras_fmt <- format_for_display(extras, show_rank = TRUE)
+speaker_colors_e <- color_pal(log1p(extras_fmt$speakers))
+article_colors_e <- make_article_colors(extras_fmt$articles)
+
+extras_fmt |>
+  select(language_display, wikidata_description, speakers, articles_fmt) |> 
+  kable(
+    format    = "html",
+    escape    = FALSE,
+    col.names = c("Language", "Language Description",
+                  "Speakers (L1 est.)", "Wikipedia Articles"),
+    align     = "llrr"
+  ) |>
+  kable_styling(
+    bootstrap_options = c("hover", "condensed"),
+    font_size         = 14,
+    htmltable_class   = "table table-hover table-condensed"
+  ) |>
+  column_spec(1, width = "35%") |>
+  column_spec(2, width = "35%") |>
+  column_spec(3, background = speaker_colors_e, width = "15%") |>
+  column_spec(4, background = article_colors_e, width = "15%") |>
+  row_spec(0, background = "white", color = "black", bold = TRUE)
+```
+:::
+
+## Classical, Constructed, and Special-Purpose Wikipedia Editions
+
+These Wikipedia editions are not associated with a living natural language in the LinguaMeta dataset. They include classical and liturgical languages (Latin, Sanskrit, Old English), constructed languages (Esperanto is covered above; Ido, Interlingua, Volapük, etc. appear here), dialect/regional-code editions, and the Simple English Wikipedia.
+
+:::{.column-page-inset-right}
+```{r table-special, echo=FALSE, message=FALSE, warning=FALSE}
+article_colors_s <- make_article_colors(wiki_special$articles)
+
+wiki_special |>
+  mutate(articles_fmt = format(articles, big.mark = ",")) |>
+  arrange(desc(articles)) |>
+  select(language, wp_code, articles_fmt) |>
+  kable(
+    format    = "html",
+    escape    = FALSE,
+    col.names = c("Wikipedia Edition", "WP Code", "Articles"),
+    align     = "llr"
+  ) |>
+  kable_styling(
+    bootstrap_options = c("hover", "condensed"),
+    font_size         = 14,
+    htmltable_class   = "table table-hover table-condensed"
+  ) |>
+  column_spec(1, width = "50%") |>
+  column_spec(2, width = "20%") |>
+  column_spec(3, background = article_colors_s, width = "30%") |>
+  row_spec(0, background = "white", color = "black", bold = TRUE)
+```
+:::
