@@ -13,9 +13,9 @@ bibliography: references.bib
 
 These pieces about Stephanie Black's 2001 film provide more context about the director, the film, and her artistic and political intentions.
 
--   “[Life and Debt: Interview with Stephanie Black](http://nitrateonline.com/2001/ld-stephanieblack.html)” by Cynthia Fuchs, Nitrate Online, 14 December 2001.
--   George Sanchez, “[Revealing the Transparent: Stephanie Black Unveils the Jamaican World Beyond Tourism](https://web.archive.org/web/20131015171327/http://frictionmagazine.com/artful/film/black.asp),” *Friction Magazine*, 2002.
--   Official film website: <http://www.lifeanddebt.org/about.html>
+- “[Life and Debt: Interview with Stephanie Black](http://nitrateonline.com/2001/ld-stephanieblack.html)” by Cynthia Fuchs, Nitrate Online, 14 December 2001.
+- George Sanchez, “[Revealing the Transparent: Stephanie Black Unveils the Jamaican World Beyond Tourism](https://web.archive.org/web/20131015171327/http://frictionmagazine.com/artful/film/black.asp),” *Friction Magazine*, 2002.
+- Official film website: <http://www.lifeanddebt.org/about.html>
 
 Speaking to Cynthia Fuchs about her motivations for portraying tourism in the film, Black explained:
 

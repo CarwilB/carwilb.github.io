@@ -26,9 +26,9 @@ library(WikipediR)
 
 We create two functions to create redirects on Wikipedia:
 
--   `create_redirect(from_title, to_title)`: Generates a link to create a redirect from `from_title` to `to_title` if the `from_title` page does not already exist.
+- `create_redirect(from_title, to_title)`: Generates a link to create a redirect from `from_title` to `to_title` if the `from_title` page does not already exist.
 
--   `create_multiple_redirects_to_one(redirects_from, redirect_to)`: Uses `create_redirect` to generate multiple redirects from a list of titles to a single target title.
+- `create_multiple_redirects_to_one(redirects_from, redirect_to)`: Uses `create_redirect` to generate multiple redirects from a list of titles to a single target title.
 
 ```{r redirect-functions}
 create_redirect <- function(from_title, to_title) {

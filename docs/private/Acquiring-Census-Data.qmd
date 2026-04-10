@@ -27,8 +27,8 @@ Most decennial census data is distributed via **Summary Files**. (*Actually, tha
 
 To facilitate this process, we utilize two specialized R packages:
 
--   **`tabulapdf`**: A wrapper for the Tabula Java library that allows for precise extraction of tables from PDF documents. It is invaluable for turning "trapped" data in technical PDFs into actionable tibbles.
--   **`libr`**: A package designed for data management that includes a `dictionary()` function. It can scan data frames for metadata attributes and generate a comprehensive codebook.
+- **`tabulapdf`**: A wrapper for the Tabula Java library that allows for precise extraction of tables from PDF documents. It is invaluable for turning "trapped" data in technical PDFs into actionable tibbles.
+- **`libr`**: A package designed for data management that includes a `dictionary()` function. It can scan data frames for metadata attributes and generate a comprehensive codebook.
 
 ------------------------------------------------------------------------
 
@@ -314,8 +314,8 @@ top_7_list <- top_7_counties %>%
 
 Raw numbers (e.g., `1057315`) are difficult for human readers to process. The `scales` package is used within the script to apply comma separators and precision-controlled percentages.
 
--   **`comma()`**: Used for large population counts like `{comma(state_black_pop)}`.
--   **`number()`**: Used to ensure percentages have a consistent accuracy (e.g., `accuracy = 0.1` for one decimal place).
+- **`comma()`**: Used for large population counts like `{comma(state_black_pop)}`.
+- **`number()`**: Used to ensure percentages have a consistent accuracy (e.g., `accuracy = 0.1` for one decimal place).
 
 ------------------------------------------------------------------------
 
