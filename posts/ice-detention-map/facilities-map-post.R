@@ -22,6 +22,7 @@ facilities_panel         <- readRDS("data/facilities_panel.rds")
 
 type_colors <- c(
   "Jail"                                    = "#377eb8",
+  "Jail/Prison"                             = "#377eb8",
   "Private Migrant Detention Center"      = "#e41a1c",
   "Dedicated Migrant Detention Center"    = "#4daf4a",
   "ICE Migrant Detention Center"          = "#984ea3",

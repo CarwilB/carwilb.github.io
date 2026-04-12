@@ -8,8 +8,10 @@
 #
 # Source: ice-detention project at ~/Dropbox (Personal)/R/ice-detention/
 
-SRC="$HOME/Dropbox (Personal)/R/ice-detention/data/ddp-comparison-export"
+SRC="$HOME/Dropbox/R/ice-detention/data/ddp-comparison-export"
 DEST="$(dirname "$0")/data"
+echo "SRC=$SRC"
+echo "DEST=$DEST"
 
 mkdir -p "$DEST"
 

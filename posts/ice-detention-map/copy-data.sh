@@ -5,7 +5,7 @@
 #
 # Source: ice-detention project at ~/Dropbox (Personal)/R/ice-detention/
 
-SRC="$HOME/Dropbox (Personal)/R/ice-detention"
+SRC="$HOME/Dropbox/R/ice-detention"
 DEST="$(dirname "$0")/data"
 
 mkdir -p "$DEST"
