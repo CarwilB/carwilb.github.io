@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-01-02">
+<meta name="author" content="Carwil Bjork-James">
+<meta name="dcterms.date" content="2026-05-22">
+<meta name="description" content="A how-to guide to putting a unique identifier onto the global knowledge graph">
 
-<title>Wikipedia Redirect Generator – Carwil Bjork-James</title>
+<title>How I added a new property to Wikidata – Carwil Bjork-James</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../posts/sexual-assault-avoidance.html" rel="next">
-<link href="../posts/political-violence-2023-24.html" rel="prev">
+<link href="../index.qmd#teaching-notes" rel="next">
+<link href="../posts/wiki-rewriting.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -285,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html#posts">Posts</a></li><li class="breadcrumb-item"><a href="../posts/redirect-generator.html">Wikipedia Redirect Generator</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html#posts">Posts</a></li><li class="breadcrumb-item"><a href="../posts/wikidata-new-property.html">How I added a new property to Wikidata</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -413,7 +415,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../posts/redirect-generator.html" class="sidebar-item-text sidebar-link active">
+  <a href="../posts/redirect-generator.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wikipedia Redirect Generator</span></a>
   </div>
 </li>
@@ -437,7 +439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../posts/wikidata-new-property.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/wikidata-new-property.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">How I added a new property to Wikidata</span></a>
   </div>
 </li>
@@ -559,21 +561,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content page-columns page-full" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html#posts">Posts</a></li><li class="breadcrumb-item"><a href="../posts/redirect-generator.html">Wikipedia Redirect Generator</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html#posts">Posts</a></li><li class="breadcrumb-item"><a href="../posts/wikidata-new-property.html">How I added a new property to Wikidata</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Wikipedia Redirect Generator</h1>
-<p class="subtitle lead">Using R code to automatically generate new Wikipedia redirect pages</p>
+<h1 class="title">How I added a new property to Wikidata</h1>
 </div>
 
+<div>
+  <div class="description">
+    A how-to guide to putting a unique identifier onto the global knowledge graph
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Carwil Bjork-James </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 2, 2026</p>
+      <p class="date">May 22, 2026</p>
     </div>
   </div>
   
@@ -585,178 +597,320 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="using-quarto-and-r-to-generate-text-for-wikipedia" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="using-quarto-and-r-to-generate-text-for-wikipedia">Using Quarto and R to generate text for Wikipedia</h2>
-<p>This page is an experiment with using Quarto and R to generate text for Wikipedia. The goal is to create a reproducible workflow that can help in generating content for Wikipedia articles, such as redirects, summaries, or infoboxes. The basic design is human-in-the-loop editing and the first experiment here is the simplest possible configuration, just linking two names together. It’s a proof of concept to enable much more complex content addition, supervised at each step by human verification.</p>
-<section id="example-generating-redirects" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="example-generating-redirects">Example: Generating Redirects</h3>
-<p><a href="https://en.wikipedia.org/wiki/Wikipedia:Redirect">Redirects</a> allow multiple names to link to the same encyclopedic content on Wikipedia.</p>
-<p>We create two functions to create redirects on Wikipedia:</p>
+<p>This post walks through how I added a new property to Wikidata: the codes assigned to Bolivian geographic features by the Instituto Nacional de Estadística (INE, National Statistical Institute). You can read more about just what unique identifiers like INE codes are good for, and how Wikidata has become a repository for them below.</p>
+<section id="property-proposal-and-approval" class="level3">
+<h3 class="anchored" data-anchor-id="property-proposal-and-approval">1. Property proposal and approval</h3>
+<p>For a unique ID to be assigned to Wikidata items, it must be included as a statement on that item’s page and the property officially defined. Any one can add an place to Wikidata, where it get assigned a unique QID, but properties must be approved by the editing community through <a href="https://www.wikidata.org/wiki/Wikidata:Property_proposal">a proposal process</a>. Another user had started the INE code proposal in August 2025, but little had happened. I was able to help move the process along by supplying sample Wikidata statements. One user marked the proposal as ready a day later, and a Wikidata property creator with the <a href="https://www.wikidata.org/wiki/User:Tinker_Bell">username Tinker Bell activated</a> it the next morning.</p>
+</section>
+<section id="finding-entities-that-need-ine-codes" class="level3">
+<h3 class="anchored" data-anchor-id="finding-entities-that-need-ine-codes">2. Finding entities that need INE codes</h3>
+<p>INE codes are assigned to Bolivia’s 9 departments, 112 provinces, and 340 municipalities, sub-municipal cantons, and rural communities. These are listed <a href="https://es.wikipedia.org/wiki/Anexo:Municipios_de_Bolivia">on Spanish Wikipedia</a>. For now this page will walk through how I got the codes for the first three kinds of entities onto Wikidata.</p>
+<p>INE codes are structured strings of digits, laid out like this.</p>
 <ul>
-<li><p><code>create_redirect(from_title, to_title)</code>: Generates a link to create a redirect from <code>from_title</code> to <code>to_title</code> if the <code>from_title</code> page does not already exist.</p></li>
-<li><p><code>create_multiple_redirects_to_one(redirects_from, redirect_to)</code>: Uses <code>create_redirect</code> to generate multiple redirects from a list of titles to a single target title.</p></li>
+<li><p>Departmento: <code>DD</code> (2 digits)</p></li>
+<li><p>Province: <code>DDPP</code> (4 digits</p></li>
+<li><p>Municipality: <code>DDPPMM</code> (6 digits)</p></li>
 </ul>
+<p>I had a complete list of INE municipalities and their codes: the left four columns of a Census table.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ine_geog_2013 <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"data/CLASIF_UB_GEOG_COMUNIDAD.xlsx"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ine_geog_2013 <span class="ot">&lt;-</span> ine_geog_2013 <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">department =</span> DEPARTAMENTO,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">province =</span> PROVINCIA,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">municipality =</span> MUNICIPIO) <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cod.prov =</span> <span class="fu">paste0</span>(DEP, PRO),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">cod.mun =</span> <span class="fu">paste0</span>(DEP, PRO, MUN),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">cod.com =</span> Codigo) <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">cod.dep =</span> DEP)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ine_geog_provinces <span class="ot">&lt;-</span> ine_geog_2013 <span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(cod.prov, province, department) <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>ine_geog_municipalities <span class="ot">&lt;-</span> ine_geog_2013 <span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(cod.mun, municipality, province, department) <span class="sc">%&gt;%</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>All I would need to do was to check if each of the entities involved were already on Wikidata and write QuickStatements to assign the property.</p>
+<p>I did the data wrangling in R. In the process, I had to create new functions for working with Wikidata: retrieving Wikidata items into data tables, crafting QuickStatements to add to Wikidata, etc. Happily, because I did this, you won’t have to.</p>
+<p>To find all Wikidata items, I used the function <code>get_wikidata_instances()</code>, <a href="https://gist.github.com/CarwilB/e92d277c8dbe0b8dda4804ca8514dabb">available here</a>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve instances of "department of Bolivia" (Q250050)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   with their QIDs and labels in English and Spanish</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>departments_wd <span class="ot">&lt;-</span> <span class="fu">get_wikidata_instances</span>(<span class="st">"Q250050"</span>, <span class="at">languages =</span> <span class="fu">c</span>(<span class="st">"en"</span>, <span class="st">"es"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Matching these to their INE codes required one last use of string-based matching, and to do that I also simplified the labels to a common format along the way, making sure they each appeared as “&lt;name&gt; Department” in English and “Departamento de &lt;nombre&gt;” in Spanish.</p>
+<p>For provinces and municipalities, names aren’t always enough (there are six pairs of municipalities that share the same names: El Puente, Entre Ríos, San Javier, San Pedro, San Ramón, and Santa Rosa).</p>
+</section>
+<section id="facilitating-string-matches-while-cleaning-up-wikidata-departments" class="level3">
+<h3 class="anchored" data-anchor-id="facilitating-string-matches-while-cleaning-up-wikidata-departments">3. Facilitating string matches while cleaning up Wikidata: Departments</h3>
+<p>As I worked, I kept making Wikidata a bit more uniform, for example by adding “Province” at the end of each English label for the province items.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visual inspection shows that not all have "Province" in label_en, but</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># it's just 6 that don't.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>provinces_without_suffix <span class="ot">&lt;-</span> provinces <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(label_en, <span class="st">"Province"</span>) <span class="sc">|</span> <span class="fu">str_detect</span>(label_en, <span class="st">"Cercado"</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># next step is to relabel these, but create_quick_statements has</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># broken logic for labels.</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>provinces_without_suffix <span class="ot">&lt;-</span> provinces_without_suffix <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_quick_statement_column</span>(qid, <span class="at">property=</span><span class="st">"L"</span>, <span class="at">value=</span><span class="fu">str_c</span>(.data<span class="sc">$</span>label_en, <span class="st">" Province ("</span>, department, <span class="st">")"</span>), <span class="at">lang=</span><span class="st">"en"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(provinces_without_suffix<span class="sc">$</span>quick_statement)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This involves functions that create QuickStatements that modify Wikidata. An online <a href="https://qs-dev.toolforge.org/">QuickStatements tool</a> lets Wikidata users upload these lists of text commands, preview the changes they will make and carry them out all at once.</p>
+<p>My modification to province names were <a href="https://qs-dev.toolforge.org/batch/22311/">performed as QuickStatements here</a>. After several moves to clean up the provinces we had a new list.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>provinces <span class="ot">&lt;-</span> <span class="fu">get_wikidata_instances</span>(<span class="st">"Q1062593"</span>, <span class="fu">c</span>(<span class="st">"P131"</span>, <span class="st">"P17"</span>), <span class="fu">c</span>(<span class="st">"located_in"</span>, <span class="st">"country"</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># get department names from the table we've already imported</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>provinces <span class="ot">&lt;-</span> provinces <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">select</span>(departments, qid, department), <span class="at">by=</span><span class="fu">join_by</span>(<span class="st">"located_in"</span><span class="sc">==</span><span class="st">"qid"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(department, <span class="at">.after=</span><span class="st">"located_in"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that if we recreate provinces_without_suffix, it now has four items,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># just the Cercado provinces, which now have their department in parentheses in</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># the label.</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>provinces <span class="ot">&lt;-</span> provinces <span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">province =</span> <span class="fu">str_extract</span>(label_en, <span class="st">"^(.+)</span><span class="sc">\\</span><span class="st">s+Province"</span>, <span class="at">group =</span> <span class="dv">1</span>))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>provinces_ine <span class="ot">&lt;-</span> provinces <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(ine_geog_provinces, <span class="at">by=</span><span class="fu">c</span>(<span class="st">"province"</span>, <span class="st">"department"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After cleaning up the province labels, I pulled a fresh copy of all Wikidata province items and joined them back to the INE province table. At that point the easy matches were done, but dozens of provinces still did not line up automatically. Some differences were minor spelling variants, some reflected accent marks, and others came from cases where Wikidata and the INE source preferred different versions of the same name. In a few places the province item on Wikidata was labeled with only part of the official name.</p>
+<p>I started by re-importing the provinces and extracting a cleaner province name from the English label:</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>create_redirect <span class="ot">&lt;-</span> <span class="cf">function</span>(from_title, to_title) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1. Manually define the Wikipedia redirect syntax with Hex Encoding</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # = %23 | [ = %5B | ] = %5D | Space = %20</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  prefix  <span class="ot">&lt;-</span> <span class="st">"%23REDIRECT%20%5B%5B"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  suffix  <span class="ot">&lt;-</span> <span class="st">"%5D%5D"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2. Encode the destination title for use inside the URL</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># We use URLencode with reserved = TRUE to catch spaces and special chars</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  encoded_destination <span class="ot">&lt;-</span> utils<span class="sc">::</span><span class="fu">URLencode</span>(to_title, <span class="at">reserved =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 3. Assemble the preload text and the edit summary</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  preload_content <span class="ot">&lt;-</span> <span class="fu">paste0</span>(prefix, encoded_destination, suffix)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  edit_summary    <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Redirecting%20to%20%5B%5B"</span>, encoded_destination, <span class="st">"%5D%5D"</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 4. Check if the page exists using your existing logic</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  wikipedia_pages <span class="ot">&lt;-</span> <span class="fu">page_info</span>(<span class="st">"en"</span>, <span class="st">"wikipedia"</span>, <span class="at">page =</span> from_title)<span class="sc">$</span>query<span class="sc">$</span>pages</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">names</span>(wikipedia_pages) <span class="sc">==</span> <span class="st">"-1"</span>) {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Construct the raw URL targeting index.php</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We use from_title for the 'title' param so we are creating the new page</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    base_url <span class="ot">&lt;-</span> <span class="st">"https://en.wikipedia.org/w/index.php"</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    auto_fill_url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>      base_url, </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      <span class="st">"?title="</span>, utils<span class="sc">::</span><span class="fu">URLencode</span>(from_title, <span class="at">reserved =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&amp;action=edit"</span>,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&amp;preloadtext="</span>, preload_content,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&amp;summary="</span>, edit_summary</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 5. Return as a raw HTML link to protect the %23 from Quarto's renderer</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    link_html <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;a href="'</span>, auto_fill_url, <span class="st">'" target="_blank" '</span>,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      <span class="st">'style="color: #0056b3; text-decoration: underline; font-weight: bold;"&gt;'</span>,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>      <span class="st">'🚀 Create redirect: '</span>, from_title, <span class="st">' → '</span>, to_title, <span class="st">'&lt;/a&gt; '</span>,</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;br&gt;Add this text:'</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We also keep the copy-paste box as a fallback</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    redirect_text_plain <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"#REDIRECT [["</span>, to_title, <span class="st">"]]"</span>)</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    copy_box <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;div style="display: flex; align-items: center; width: 80%; border: 1px solid #dee2e6; border-radius: 4px; padding: 5px; background-color: #f8f9fa; margin: 10px 0;"&gt;'</span>,</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;code style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;'</span>, redirect_text_plain, <span class="st">'&lt;/code&gt;'</span>,</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;button onclick="navigator.clipboard.writeText(</span><span class="sc">\'</span><span class="st">'</span>, redirect_text_plain, <span class="st">'</span><span class="sc">\'</span><span class="st">); this.innerText=</span><span class="sc">\'</span><span class="st">✅</span><span class="sc">\'</span><span class="st">; setTimeout(()=&gt;this.innerText=</span><span class="sc">\'</span><span class="st">📋</span><span class="sc">\'</span><span class="st">, 1000)" '</span>,</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      <span class="st">'style="border:none; background:none; cursor:pointer; padding-left: 10px;"&gt;📋&lt;/button&gt;'</span>,</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      <span class="st">'&lt;/div&gt;'</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste0</span>(link_html, <span class="st">"&lt;br&gt;"</span>, copy_box))</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    wikipedia_url <span class="ot">&lt;-</span> wikipedia_pages[[<span class="dv">1</span>]]<span class="sc">$</span>fullurl</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">paste0</span>(<span class="st">"Page ["</span>, from_title, <span class="st">"]("</span>, wikipedia_url, <span class="st">") already exists."</span>))</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>create_multiple_redirects_to_one <span class="ot">&lt;-</span> <span class="cf">function</span>(redirects_from, redirect_to) {</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(redirect_to) <span class="sc">!=</span> <span class="dv">1</span>) {</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"This function needs one redirect destination."</span>)</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (assertthat<span class="sc">::</span><span class="fu">is.string</span>(redirects_from)) {</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">create_redirect</span>(redirects_from, redirect_to))</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    redirects_md <span class="ot">&lt;-</span> <span class="fu">sapply</span>(redirects_from, <span class="cf">function</span>(from) {</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      <span class="fu">create_redirect</span>(from, redirect_to)})</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">paste</span>(<span class="fu">glue</span>(<span class="st">"## Redirects to '{redirect_to}'</span><span class="sc">\n\n</span><span class="st">"</span>), </span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>               <span class="fu">paste</span>(redirects_md, <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n\n</span><span class="st">---</span><span class="sc">\n\n</span><span class="st">"</span>)))</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>provinces <span class="ot">&lt;-</span> <span class="fu">get_wikidata_instances</span>(<span class="st">"Q1062593"</span>, <span class="fu">c</span>(<span class="st">"P131"</span>, <span class="st">"P17"</span>),</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">c</span>(<span class="st">"located_in"</span>, <span class="st">"country"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>provinces <span class="ot">&lt;-</span> provinces <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">select</span>(departments, qid, department), </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">join_by</span>(<span class="st">"located_in"</span> <span class="sc">==</span> <span class="st">"qid"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(department, <span class="at">.after =</span> <span class="st">"located_in"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">province =</span> <span class="fu">str_extract</span>(label_en, <span class="st">"\^(.+)</span><span class="sc">\\</span><span class="st">s+Province"</span>, <span class="at">group =</span> <span class="dv">1</span>))</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>provinces_ine <span class="ot">&lt;-</span> provinces <span class="sc">|&gt;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(ine_geog_provinces, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"province"</span>, <span class="st">"department"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Here are three sample uses of the <code>create_multiple_redirects_to_one</code> function. The last two are practical uses, coming from the corresponding pages: Hickory Ground and Occaneechi people. The latter ultimately comes from the name lists (or synonymy) generated by James Mooney as shown in the margin.</p>
+<p>This made it possible to compare the province names coming from Wikidata with the names in the INE table. The remaining non-matches then became a manageable list for inspection. To handle those exceptions, I built a small manual match table. For some provinces this also meant adding English aliases on Wikidata, so that the item would carry a more recognizable or complete province name in addition to its main label.</p>
+<p>Once those exceptions were resolved, I could join the province items to the INE list and generate a full set of QuickStatements assigning the new INE property to each province item, with citations to the data source.</p>
+</section>
+<section id="string-matches-and-wikidata-cleanup-municipalities" class="level3">
+<h3 class="anchored" data-anchor-id="string-matches-and-wikidata-cleanup-municipalities">4. String matches and Wikidata cleanup: Municipalities</h3>
+<p>Municipalities took much more work. In principle, municipalities should have been easier: there are only a few hundred, and the INE source gives a complete list. In practice, municipality items on Wikidata were much less standardized. Some were linked to provinces, others directly to departments, and some overlapped with separate city items of the same name. There were also many label differences between Wikidata and the INE table: missing accents, alternate spellings, abbreviated names, and cases where one source used a longer ceremonial or historical form while the other used the shorter everyday name.</p>
+<p>I began by retrieving all Wikidata municipality items together with their administrative-location properties:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q1062710 = municipality of Bolivia</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>municipalities_wd <span class="ot">&lt;-</span> <span class="fu">get_wikidata_instances</span>( <span class="st">"Q1062710"</span>, <span class="fu">c</span>(<span class="st">"P131"</span>, <span class="st">"P17"</span>), </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                             <span class="fu">c</span>(<span class="st">"located_in"</span>, <span class="st">"country"</span>) )</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This function expands the located_in property so that each item gets </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># detailed location information in a tabular form.</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>municipalities_wd_exp <span class="ot">&lt;-</span> <span class="fu">expand_located_in_pd</span>(municipalities_wd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The custom expansion function let me see which province and department each municipality as “located in” on Wikidata.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">qid</th>
+<th style="text-align: left;">label_en</th>
+<th style="text-align: left;">loc_prov_qid</th>
+<th style="text-align: left;">loc_prov_en</th>
+<th style="text-align: left;">loc_dep_qid</th>
+<th style="text-align: left;">loc_dep_en</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Q783480</td>
+<td style="text-align: left;">San Lucas</td>
+<td style="text-align: left;">Q1420337</td>
+<td style="text-align: left;">Nor Cinti Province</td>
+<td style="text-align: left;">Q235110</td>
+<td style="text-align: left;">Chuquisaca Department</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q916322</td>
+<td style="text-align: left;">San Ignacio de Velasco Municipality</td>
+<td style="text-align: left;">Q1215518</td>
+<td style="text-align: left;">José Miguel de Velasco Province</td>
+<td style="text-align: left;">Q235106</td>
+<td style="text-align: left;">Santa Cruz Department</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q920327</td>
+<td style="text-align: left;">Yamparáez</td>
+<td style="text-align: left;">Q1420314</td>
+<td style="text-align: left;">Yamparáez Province</td>
+<td style="text-align: left;">Q235110</td>
+<td style="text-align: left;">Chuquisaca Department</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q955703</td>
+<td style="text-align: left;">Villa Alcalá</td>
+<td style="text-align: left;">Q1420320</td>
+<td style="text-align: left;">Tomina Province</td>
+<td style="text-align: left;">Q235110</td>
+<td style="text-align: left;">Chuquisaca Department</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q993949</td>
+<td style="text-align: left;">General Saavedra</td>
+<td style="text-align: left;">Q1215579</td>
+<td style="text-align: left;">Obispo Santistevan Province</td>
+<td style="text-align: left;">Q235106</td>
+<td style="text-align: left;">Santa Cruz Department</td>
+</tr>
+</tbody>
+</table>
+<p>To figure out where each municipality belonged, I used the province table I had already cleaned to recover department names whenever possible. A few items still lacked enough geographic context, so I assigned their departments manually.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prov_to_dept <span class="ot">&lt;-</span> provinces <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">prov_qid =</span> qid, <span class="at">dep_from_prov =</span> department) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dep_from_prov =</span> <span class="fu">str_replace</span>(dep_from_prov, <span class="st">"Potosí"</span>, <span class="st">"Potosi"</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>wd_clean <span class="ot">&lt;-</span> municipalities_wd_exp <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(prov_to_dept, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"loc_prov_qid"</span> <span class="ot">=</span> <span class="st">"prov_qid"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dept_final =</span> <span class="fu">coalesce</span>(dep_direct, dep_from_prov))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Matching then happened in several rounds. First I tried a direct join between the Spanish Wikidata label and the municipality name in the INE table, while also matching on department so that duplicate names in different parts of the country would not be confused.</p>
+<p>For the items that remained unmatched, I created cleaned versions of the names by stripping prefixes like “Municipio de” and suffixes like “Municipality,” then tried the join again. That resolved many routine formatting differences.</p>
+<p>The remaining municipalities needed explicit hand matching. Here I wrote out a table pairing specific Wikidata QIDs with INE municipal codes. This covered a wide range of cases: accent and spelling variation, word-order differences, abbreviations, municipalities whose Wikidata item used an older or alternative official name, and a few items whose labels were so incomplete that I had to identify them from related information such as their linked Wikipedia articles.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>match_manual <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>qid,         <span class="sc">~</span>cod.mun,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q685208"</span>,    <span class="st">"080401"</span>,  <span class="co"># Santa Ana del Yacuma -&gt; Santa Ana de Yacuma</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q721682"</span>,    <span class="st">"071501"</span>,  <span class="co"># Ascencion de Guarayos -&gt; Ascension de Guarayos</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q647771"</span>,    <span class="st">"040503"</span>   <span class="co"># Cruz De Machacamarca -&gt; Cruz de Machacamarca</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># and so on, for a total of 24 manual matches</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>One further complication was duplication. Wikidata sometimes had both a municipality item and a city item that described nearly the same place and could easily be confused in matching. In those cases I excluded the city item and kept the municipality item, especially when the latter was clearly marked as a municipality.</p>
+<p>With those matches in place, I joined the INE municipal codes back onto the municipality table and generated the QuickStatements to add the new property to each item. This is <a href="https://qs-dev.toolforge.org/batch/22392/">the resulting batch</a>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>municipalities_matched <span class="ot">&lt;-</span> municipalities_wd_exp <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(all_matches, <span class="at">by =</span> <span class="st">"qid"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_quick_statement_column</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    qid, <span class="st">"P14142"</span>, cod.mun,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">reference_qid =</span> <span class="st">"Q138354774"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>I also used the resulting code assignments to identify municipalities whose administrative parent on Wikidata was still a department rather than a province. Since the first four digits of a municipality’s INE code identify its province, I could derive the correct province and prepare two more batches of QuickStatements: first <a href="https://qs-dev.toolforge.org/batch/22399/">removing the department</a> as the “located in” value, then <a href="https://qs-dev.toolforge.org/batch/22400/">adding the proper province item</a> instead.</p>
+<p>By the end of this process, adding a new property had turned into a broader cleanup of Bolivia’s territorial data on Wikidata. The property itself was only one part of the task. To make the identifiers genuinely useful, I also had to standardize labels, add aliases, resolve ambiguous names, eliminate mistaken overlaps between cities and municipalities, and improve administrative relationships. A well-formed set of Wikidata entries then allows for for mass addition of new data from nationwide sources.</p>
+<p>Altogether this process took 637 automated QuickStatements to reorganize and assign codes to Bolivia’s first, second, and third-level administrative subdivisions. While I had to think through the coding, I didn’t have to type a single one of them in manually (though I think I did just to see how the process worked).</p>
+<p><em>That’s the whole process. Read on for why any of this matters.</em></p>
+</section>
+<section id="unique-identifiers-the-key-to-data-interoperability" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="unique-identifiers-the-key-to-data-interoperability">Unique identifiers: the key to data interoperability</h2>
+<p>Unique identifiers solve problems. In the course of building <a href="https://ultimateconsequences.github.io">Ultimate Consequneces</a>, an interactive database of lives lost in Bolivian political conflict, I’ve had to coordinate the data I’m generating from a number of other sources: Census tables, data on Indigenous identification, shapefiles that show the size, location, and outlines of municipalities, geographic datasets mapping every rural community in the country.</p>
+<p>Essentially each of these forms of data are big data tables whose rows are places. And I need to make them work with my own data table of deaths, each row of which contains a set of place information, laid out across six variables like this:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>place</strong></th>
+<th><strong>address</strong></th>
+<th><strong>community</strong></th>
+<th><strong>municipality</strong></th>
+<th><strong>province</strong></th>
+<th><strong>department</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Place</td>
+<td>Address/ Intersection</td>
+<td>Community/Neighborhood</td>
+<td>Municipality</td>
+<td>Province</td>
+<td>Department</td>
+</tr>
+<tr class="even">
+<td>Lugar</td>
+<td>Dirección/Intersección</td>
+<td>Comunidad/Barrio</td>
+<td>Municipalidad</td>
+<td>Provincia</td>
+<td>Departamento</td>
+</tr>
+</tbody>
+</table>
+<p>Now if I want to create a municipal map like this one, I have to count the number of deaths in each municipality and also figure out which item on the map shares that name. But nowhere in the world is there a consistent unambiguous spelling for all places. And in Bolivia in particular names have shifted dramatically, as the country’s municipal map was radically decentralized, adding three hundred new municipalities between 1994 and 2010. Some municipalities have multiple names, but each data source either only lists one, or occasionally both or all three.</p>
+<div class="page-columns page-full"><p> For a while I was writing custom functions for each pair of data sources, a process that gets tedious (and/or unreliable) fast. Fortunately, two sources introduced me to a simpler solution: unique identifiers in the form of INE codes, produced by the National Statistical Institute that runs the Bolivian Census. A table like this one can handle all the interchanges, with one column for each data source. And building the table gets easier ecah time, since I can cross-reference each new set of names against all that came before.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The <strong>two sources</strong> where I first encountered INE codes were <a href="https://es.wikipedia.org/wiki/Anexo:Municipios_de_Bolivia">this table of Bolivian municipalities</a> on Spanish Wikipedia and <a href="https://web.archive.org/web/20191121055443/https://datos.gob.bo/dataset/indicadores-de-poblacion-segun-departamento-y-municipio-censo-2012/resource/f2b69ec5-0101-4821-84bd-fd85375f8f68">this census population table</a>.</span></div></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">id_muni</th>
+<th style="text-align: left;">muni_gb2014</th>
+<th style="text-align: left;">muni_anexo</th>
+<th style="text-align: left;">muni_ine</th>
+<th style="text-align: left;">muni_census</th>
+<th style="text-align: left;">department</th>
+<th style="text-align: right;">n_unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">010101</td>
+<td style="text-align: left;">Sucre</td>
+<td style="text-align: left;">Sucre</td>
+<td style="text-align: left;">Sucre</td>
+<td style="text-align: left;">Sucre</td>
+<td style="text-align: left;">Chuquisaca</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">010102</td>
+<td style="text-align: left;">Yotala</td>
+<td style="text-align: left;">Yotala</td>
+<td style="text-align: left;">Yotala</td>
+<td style="text-align: left;">Yotala</td>
+<td style="text-align: left;">Chuquisaca</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">010103</td>
+<td style="text-align: left;">Poroma</td>
+<td style="text-align: left;">Poroma</td>
+<td style="text-align: left;">Poroma</td>
+<td style="text-align: left;">Poroma</td>
+<td style="text-align: left;">Chuquisaca</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">010201</td>
+<td style="text-align: left;">Azurduy</td>
+<td style="text-align: left;">Azurduy</td>
+<td style="text-align: left;">Azurduy</td>
+<td style="text-align: left;">Azurduy</td>
+<td style="text-align: left;">Chuquisaca</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Now I can just use the lookup table to add an INE code to any dataset, with a command <code>add_id_for_municipality()</code> that I just throw into my workflow:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>locations<span class="sc">$</span>municipality_centroid <span class="ot">&lt;-</span> lookup<span class="sc">$</span>municipality <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_id_for_municipality</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">select</span>(gadm_muni_centroids, cod.mun, lon, lat),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id_muni"</span> <span class="ot">=</span> <span class="st">"cod.mun"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="wikidata-a-global-index-of-unique-identifiers" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="wikidata-a-global-index-of-unique-identifiers">Wikidata: A global index of unique identifiers</h2>
+<p>Put most simply, Wikidata as an open knowledge graph that anyone can edit and approve. Where Wikipedia primarily hosts article, Wikidata is filled with structured data, something familiar to most people only through the infoboxes at the upper right of Wikipedia pages and the similar tables of properties served alongside Google searches (which have become much less common there recently, supplanted by paragraph-long AI summaries). A popular single-domain knowledge graph is the Internet Movie Database</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><img src="../images/anthro/Mooney-Occaneechi-Synonymy.png" class="img-fluid"></p>
-</div></div><div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_multiple_redirects_to_one</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Alpha"</span>, <span class="st">"Beta"</span>, <span class="st">"Gamma"</span>, <span class="st">"Delta"</span>),</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Greek Letters"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># A Native American settlement known by multiple names</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">create_multiple_redirects_to_one</span>( <span class="fu">c</span>(<span class="st">"Otciapofa"</span>, <span class="st">"Odshiapofa"</span>, <span class="st">"Ocheopofau"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Ocheubofau"</span>, <span class="st">"Oce Vpofa"</span>), <span class="st">"Hickory Ground"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># A Native American people referenced by different names in the historical record</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">create_multiple_redirects_to_one</span>( <span class="fu">c</span>(<span class="st">"Achonechy"</span>, <span class="st">"Aconechos"</span>, <span class="st">"Akenatzy"</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Hockinechy"</span>, <span class="st">"Occaneches"</span>, <span class="st">"Occaanechy"</span>, <span class="st">"Occhonechee"</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Occonacheans"</span>, <span class="st">"Occoneechee"</span>, <span class="st">"Ockanechees"</span>, <span class="st">"Ockanigee"</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Okenechee"</span>, <span class="st">"Acconeechy"</span>, <span class="st">"Occaneeches"</span>, <span class="st">"Ochineeches"</span>, <span class="st">"Ockinagee"</span>),</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Occaneechi"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-</section>
-<section id="redirects-to-greek-letters" class="level2">
-<h2 class="anchored" data-anchor-id="redirects-to-greek-letters">Redirects to ‘Greek Letters’</h2>
-<p>Page <a href="https://en.wikipedia.org/wiki/Alpha">Alpha</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Beta">Beta</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Gamma">Gamma</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Delta">Delta</a> already exists.</p>
-</section>
-<section id="redirects-to-hickory-ground" class="level2">
-<h2 class="anchored" data-anchor-id="redirects-to-hickory-ground">Redirects to ‘Hickory Ground’</h2>
-<p>Page <a href="https://en.wikipedia.org/wiki/Otciapofa">Otciapofa</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Odshiapofa">Odshiapofa</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Ocheopofau">Ocheopofau</a> already exists.</p>
-<hr>
-<a href="https://en.wikipedia.org/w/index.php?title=Ocheubofau&amp;action=edit&amp;preloadtext=%23REDIRECT%20%5B%5BHickory%20Ground%5D%5D&amp;summary=Redirecting%20to%20%5B%5BHickory%20Ground%5D%5D" target="_blank" style="color: #0056b3; text-decoration: underline; font-weight: bold;">🚀 Create redirect: Ocheubofau → Hickory Ground</a> <br>Add this text:<br>
-<div style="display: flex; align-items: center; width: 80%; border: 1px solid #dee2e6; border-radius: 4px; padding: 5px; background-color: #f8f9fa; margin: 10px 0;">
-<code style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#REDIRECT [[Hickory Ground]]</code><button onclick="navigator.clipboard.writeText('#REDIRECT [[Hickory Ground]]'); this.innerText='✅'; setTimeout(()=>this.innerText='📋', 1000)" style="border:none; background:none; cursor:pointer; padding-left: 10px;">📋</button>
-</div>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Oce_Vpofa">Oce Vpofa</a> already exists.</p>
-</section>
-<section id="redirects-to-occaneechi" class="level2">
-<h2 class="anchored" data-anchor-id="redirects-to-occaneechi">Redirects to ‘Occaneechi’</h2>
-<p>Page <a href="https://en.wikipedia.org/wiki/Achonechy">Achonechy</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Aconechos">Aconechos</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Akenatzy">Akenatzy</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Hockinechy">Hockinechy</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Occaneches">Occaneches</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Occaanechy">Occaanechy</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Occhonechee">Occhonechee</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Occonacheans">Occonacheans</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Occoneechee">Occoneechee</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Ockanechees">Ockanechees</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Ockanigee">Ockanigee</a> already exists.</p>
-<hr>
-<a href="https://en.wikipedia.org/w/index.php?title=Okenechee&amp;action=edit&amp;preloadtext=%23REDIRECT%20%5B%5BOccaneechi%5D%5D&amp;summary=Redirecting%20to%20%5B%5BOccaneechi%5D%5D" target="_blank" style="color: #0056b3; text-decoration: underline; font-weight: bold;">🚀 Create redirect: Okenechee → Occaneechi</a> <br>Add this text:<br>
-<div style="display: flex; align-items: center; width: 80%; border: 1px solid #dee2e6; border-radius: 4px; padding: 5px; background-color: #f8f9fa; margin: 10px 0;">
-<code style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#REDIRECT [[Occaneechi]]</code><button onclick="navigator.clipboard.writeText('#REDIRECT [[Occaneechi]]'); this.innerText='✅'; setTimeout(()=>this.innerText='📋', 1000)" style="border:none; background:none; cursor:pointer; padding-left: 10px;">📋</button>
-</div>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Acconeechy">Acconeechy</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Occaneeches">Occaneeches</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Ochineeches">Ochineeches</a> already exists.</p>
-<hr>
-<p>Page <a href="https://en.wikipedia.org/wiki/Ockinagee">Ockinagee</a> already exists.</p>
+<p><img src="../images/wikipedia/Wikidata-logo-en.svg.png" class="img-fluid" alt="The Wikidata logo, a stylized barcode in red, green, and blue over the word Wikidata"></p>
+</div></div><p>Arguably what Wikidata is best use for is an index. Started as a way of aligning the various Wikipedia article with one another across all of the online encyclopedia editions, Wikidata has become a massive respository of entities and their properties, stored in a structured data format whose basic elements are items and their properties.</p>
+<p>Each item is a single entity, typically a noun and prototypically one element in a large conceptual set, whether an administrative or a species or human being or a work of art. And such categories are merely the root values of long conceptual chains of categories. For example, New York City (assigned the sequential code <a href="https://wikidata.org/wiki/Q60">Q60</a>) is an instance of a city (<a href="https://wikidata.org/wiki/Q515">Q515</a>), which is a subclass of a human settlement (<a href="https://wikidata.org/wiki/Q486972">Q486972</a>), through several intermediate categories (city or town, urban settlement). Embedded in this chain of connections is a complex conceptual answer about what New York City is. And this is only one of three chains extending upwards from New York City’s <a href="https://wikidata.org/wiki/Q60">Q60</a> page, which also lead through “municipality in the United States” (<a href="https://wikidata.org/wiki/Q3327870">Q3327870</a>) to “administrative territorial entity of a single country” (<a href="https://wikidata.org/wiki/Q12076836">Q12076836</a>) ultimately to “type of region” (<a href="https://wikidata.org/wiki/Q137022846">Q137022846</a>).</p>
+<p>These are kinds of descriptions that librarians, archivists, encyclopedia designers, and computer programmers might all love. Given a well-organized system, you can do a lot with such indices. And if nothing else, Wikidata has become a global repository for this kind of index. Once the meeting place just for Wikipedia entries, it now archives hundreds (perhaps thousands of such indices).</p>
+<p>One might know a lot about New York City (my former home of seven years) and only encounter a few such indices for the city in the course of a year: its six area codes and a couple dozen ZIP codes, its three major airport AITA codes (none of which directly link to Q60 since they are all describe smaller entities within it). You might come across its top-level Internet domain .nyc, which is on Q60. But there you’ll also find scores of other index ID’s: codes used to identify the city in library catalogs, online encyclopedias, even as a sub-Reddit.</p>
+<p>Where this really matters is in research applications, like genomics or data science, where knowing which precise entity is being named and measured across different sources is absolutely crucial. In any one source, we use unique identifier codes to tell things apart. Wikidata makes it possible to link those codes together and thereby to combine different forms of data without going line-by-line through the datasets to find matches. (Possible, but not easy, it must be said.)</p>
 
 
 </section>
@@ -1176,13 +1330,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../posts/political-violence-2023-24.html" class="pagination-link" aria-label="Conflict deaths in Bolivia, 2023--24">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Conflict deaths in Bolivia, 2023–24</span>
+      <a href="../posts/wiki-rewriting.html" class="pagination-link" aria-label="Breaking &quot;Margaret Mead&quot; out of a Wikipedia Rut">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Breaking “Margaret Mead” out of a Wikipedia Rut</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../posts/sexual-assault-avoidance.html" class="pagination-link" aria-label="What do you do to avoid sexual assault?">
-        <span class="nav-page-text">What do you do to avoid sexual assault?</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../index.html#teaching-notes" class="pagination-link" aria-label="Teaching Notes">
+        <span class="nav-page-text">Teaching Notes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

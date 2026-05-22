@@ -157,5 +157,3 @@ I think it's fair to say that most Wikipedians use the mere presence of citation
 Finally, I think this experience suggests that **instructors assigning Wikipedia editing** need to teach more about verification more. Assignments that focus on verifying and improving existing text, rather than just adding new text, could help a lot. That inculdes assignments were students check each citation in a section, or a deeper verification where they look into how later scholarship views a scientist, study, or topic. And teaching students to use tools like the Internet Archive and library databases to find original sources is essential. 
 
 
-
-
