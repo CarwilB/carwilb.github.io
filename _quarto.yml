@@ -13,11 +13,14 @@ execute:
 website: 
   page-navigation: true
   title: "Carwil Bjork-James"
-  site-url: "https://carwilb.github.io/quarto-website" 
+  site-url: https://carwilb.github.io/ 
   favicon: favicon.ico
   
   page-footer:
-    right: "This page is built with [Quarto](https://quarto.org/)."
+    right:
+      - icon: rss
+        href: index.xml
+        aria-label: RSS Feed
     left: "Carwil Bjork-James's research, teaching, and data science website"
     
   sidebar:

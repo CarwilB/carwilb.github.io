@@ -6,6 +6,7 @@ listing:
     contents: posts
     sort: "date desc"
     type: grid
+    feed: true
   - id: teaching-listing
     contents: teaching
     sort: "date desc"
