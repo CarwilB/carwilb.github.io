@@ -27,8 +27,8 @@ Most decennial census data is distributed via **Summary Files**. (*Actually, tha
 
 To facilitate this process, we utilize two specialized R packages:
 
--   **`tabulapdf`**: A wrapper for the Tabula Java library that allows for precise extraction of tables from PDF documents. It is invaluable for turning "trapped" data in technical PDFs into actionable tibbles.
--   **`libr`**: A package designed for data management that includes a `dictionary()` function. It can scan data frames for metadata attributes and generate a comprehensive codebook.
+- **`tabulapdf`**: A wrapper for the Tabula Java library that allows for precise extraction of tables from PDF documents. It is invaluable for turning "trapped" data in technical PDFs into actionable tibbles.
+- **`libr`**: A package designed for data management that includes a `dictionary()` function. It can scan data frames for metadata attributes and generate a comprehensive codebook.
 
 ------------------------------------------------------------------------
 
@@ -247,18 +247,11 @@ Once a dataset is cleaned and labeled, the next step in the research workflow is
 
 ## Moving from Data to Narrative
 
-[**Prompt 11:** Write code in R to analyze tn_counties_race_ethnicity, and specifically its total population (P0010001) and Black or African American alone (P0010004) columns to replicate the following data summary, but using 2020 Census data. The output should be, like this example, in Wikitext…]{.aside}
-The goal of this workflow is to replicate a historical population summary—originally written for the 2010 Census—using the latest 2020 data. By automating this, we ensure that the narrative remains accurate, reproducible, and formatted correctly for specific platforms like Wikipedia.
+[**Prompt 11:** Write code in R to analyze tn_counties_race_ethnicity, and specifically its total population (P0010001) and Black or African American alone (P0010004) columns to replicate the following data summary, but using 2020 Census data. The output should be, like this example, in Wikitext…]{.aside} The goal of this workflow is to replicate a historical population summary—originally written for the 2010 Census—using the latest 2020 data. By automating this, we ensure that the narrative remains accurate, reproducible, and formatted correctly for specific platforms like Wikipedia.
 
 *Here's the sample text, which I wrote myself on Wikipedia in 2015, consulting a Census publication by hand:*
 
-> In the [2010 Census](https://en.wikipedia.org/wiki/2010_United_States_Census "2010 United States Census"), 1,057,315 Tennessee residents were identified as African American (of the total 6,346,105). In 19 of the state's 95 counties, African Americans make up more than 10% of the population: [Shelby](https://en.wikipedia.org/wiki/Shelby_County,_Tennessee "Shelby County, Tennessee") (52.1%), [Haywood](https://en.wikipedia.org/wiki/Haywood_County,_Tennessee "Haywood County, Tennessee") (50.4%), [Hardeman](https://en.wikipedia.org/wiki/Hardeman_County,_Tennessee "Hardeman County, Tennessee") (41.4%), [Madison](https://en.wikipedia.org/wiki/Madison_County,_Tennessee "Madison County, Tennessee") (36.3%), [Lauderdale](https://en.wikipedia.org/wiki/Lauderdale_County,_Tennessee "Lauderdale County, Tennessee") (34.9%), [Fayette](https://en.wikipedia.org/wiki/Fayette_County,_Tennessee "Fayette County, Tennessee") (28.1%), [Davidson](https://en.wikipedia.org/wiki/Davidson_County,_Tennessee "Davidson County, Tennessee") (27.7%), [Lake](https://en.wikipedia.org/wiki/Lake_County,_Tennessee "Lake County, Tennessee") (27.7%), [Hamilton](https://en.wikipedia.org/wiki/Hamilton_County,_Tennessee "Hamilton County, Tennessee") (20.2%), [Montgomery](https://en.wikipedia.org/wiki/Montgomery_County,_Tennessee "Montgomery County, Tennessee") (19.1%), [Gibson](https://en.wikipedia.org/wiki/Gibson_County,_Tennessee "Gibson County, Tennessee") (18.8%), [Tipton](https://en.wikipedia.org/wiki/Tipton_County,_Tennessee "Tipton County, Tennessee") (18.7%), [Dyer](https://en.wikipedia.org/wiki/Dyer_County,_Tennessee "Dyer County, Tennessee") (14.3%), [Crockett](https://en.wikipedia.org/wiki/Crockett_County,_Tennessee "Crockett County, Tennessee") (12.6%), [Rutherford](https://en.wikipedia.org/wiki/Rutherford_County,_Tennessee "Rutherford County, Tennessee") (12.5%), [Obion](https://en.wikipedia.org/wiki/Obion_County,_Tennessee "Obion County, Tennessee") (10.6%), [Giles](https://en.wikipedia.org/wiki/Giles_County,_Tennessee "Giles County, Tennessee") (10.2%), and [Carroll](https://en.wikipedia.org/wiki/Carroll_County,_Tennessee "Carroll County, Tennessee")
-> (10.1%). Most of these counties are in West Tennessee, where plantation
-> agriculture was concentrated. African Americans in the seven counties
-> of Shelby (483,381), Davidson (173,730), Hamilton (67,900), [Knox](https://en.wikipedia.org/wiki/Knox_County,_Tennessee "Knox County, Tennessee")
-> (38,045), Madison (35,636), Montgomery (32,982), and Rutherford
-> (32,886) make up more than 81% of the all African Americans in the
-> state.
+> In the [2010 Census](https://en.wikipedia.org/wiki/2010_United_States_Census "2010 United States Census"), 1,057,315 Tennessee residents were identified as African American (of the total 6,346,105). In 19 of the state's 95 counties, African Americans make up more than 10% of the population: [Shelby](https://en.wikipedia.org/wiki/Shelby_County,_Tennessee "Shelby County, Tennessee") (52.1%), [Haywood](https://en.wikipedia.org/wiki/Haywood_County,_Tennessee "Haywood County, Tennessee") (50.4%), [Hardeman](https://en.wikipedia.org/wiki/Hardeman_County,_Tennessee "Hardeman County, Tennessee") (41.4%), [Madison](https://en.wikipedia.org/wiki/Madison_County,_Tennessee "Madison County, Tennessee") (36.3%), [Lauderdale](https://en.wikipedia.org/wiki/Lauderdale_County,_Tennessee "Lauderdale County, Tennessee") (34.9%), [Fayette](https://en.wikipedia.org/wiki/Fayette_County,_Tennessee "Fayette County, Tennessee") (28.1%), [Davidson](https://en.wikipedia.org/wiki/Davidson_County,_Tennessee "Davidson County, Tennessee") (27.7%), [Lake](https://en.wikipedia.org/wiki/Lake_County,_Tennessee "Lake County, Tennessee") (27.7%), [Hamilton](https://en.wikipedia.org/wiki/Hamilton_County,_Tennessee "Hamilton County, Tennessee") (20.2%), [Montgomery](https://en.wikipedia.org/wiki/Montgomery_County,_Tennessee "Montgomery County, Tennessee") (19.1%), [Gibson](https://en.wikipedia.org/wiki/Gibson_County,_Tennessee "Gibson County, Tennessee") (18.8%), [Tipton](https://en.wikipedia.org/wiki/Tipton_County,_Tennessee "Tipton County, Tennessee") (18.7%), [Dyer](https://en.wikipedia.org/wiki/Dyer_County,_Tennessee "Dyer County, Tennessee") (14.3%), [Crockett](https://en.wikipedia.org/wiki/Crockett_County,_Tennessee "Crockett County, Tennessee") (12.6%), [Rutherford](https://en.wikipedia.org/wiki/Rutherford_County,_Tennessee "Rutherford County, Tennessee") (12.5%), [Obion](https://en.wikipedia.org/wiki/Obion_County,_Tennessee "Obion County, Tennessee") (10.6%), [Giles](https://en.wikipedia.org/wiki/Giles_County,_Tennessee "Giles County, Tennessee") (10.2%), and [Carroll](https://en.wikipedia.org/wiki/Carroll_County,_Tennessee "Carroll County, Tennessee") (10.1%). Most of these counties are in West Tennessee, where plantation agriculture was concentrated. African Americans in the seven counties of Shelby (483,381), Davidson (173,730), Hamilton (67,900), [Knox](https://en.wikipedia.org/wiki/Knox_County,_Tennessee "Knox County, Tennessee") (38,045), Madison (35,636), Montgomery (32,982), and Rutherford (32,886) make up more than 81% of the all African Americans in the state.
 
 ### 1. Defining the Analytical Scope
 
@@ -321,8 +314,8 @@ top_7_list <- top_7_counties %>%
 
 Raw numbers (e.g., `1057315`) are difficult for human readers to process. The `scales` package is used within the script to apply comma separators and precision-controlled percentages.
 
--   **`comma()`**: Used for large population counts like `{comma(state_black_pop)}`.
--   **`number()`**: Used to ensure percentages have a consistent accuracy (e.g., `accuracy = 0.1` for one decimal place).
+- **`comma()`**: Used for large population counts like `{comma(state_black_pop)}`.
+- **`number()`**: Used to ensure percentages have a consistent accuracy (e.g., `accuracy = 0.1` for one decimal place).
 
 ------------------------------------------------------------------------
 
@@ -355,7 +348,7 @@ cat(wikitext_summary)
 
 ### Dynamic Citation Management
 
-A key feature of this script is the inclusion of a dynamic citation (_Actually a Wikipedia Citation Template_) that links back to the **Tennessee State Data Center**. This ensures that any reader of the generated Wikitext can immediately verify the source of the 2020 redistricting data. _Gemini doesn't handle these mell, so I generated it in Zotero._
+A key feature of this script is the inclusion of a dynamic citation (*Actually a Wikipedia Citation Template*) that links back to the **Tennessee State Data Center**. This ensures that any reader of the generated Wikitext can immediately verify the source of the 2020 redistricting data. *Gemini doesn't handle these mell, so I generated it in Zotero.*
 
 ------------------------------------------------------------------------
 

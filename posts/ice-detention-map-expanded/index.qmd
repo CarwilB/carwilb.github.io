@@ -1,0 +1,84 @@
+---
+title: "Expanded Interactive Map of ICE Detention Facilities"
+description: "An interactive map of ~790 ICE detention facilities combining annual statistics (FY2010–FY2026) with Deportation Data Project daily population data (FY2024–FY2026)"
+author: "Carwil Bjork-James"
+date: "2026-05-22"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+This expanded map combines two sources to show a fuller picture of ICE detention in the United States.
+
+The [core ICE map](/posts/ice-detention-map/) covers approximately 390 facilities reported in ICE's annual detention statistics (FY2010–FY2026). This version adds facilities visible only in the [Deportation Data Project](https://deportationdata.org/)'s daily population records (FY2024–FY2026): hold rooms at ICE ERO field offices, county jails under short-term intergovernmental agreements, federal and state prisons, staging facilities, and CBP processing sites.
+
+Circle size represents average daily population (ADP). Color indicates facility type. Open facilities are shown in saturated colors sized by their most recent ADP; closed facilities appear in desaturated tones. Facilities with peak population below 2 (brief transits or one-off transfers) are hidden by default — toggle them on with the **Low population (peak < 2)** layer control.
+
+::: column-screen-inset
+```{r map}
+#| fig-asp: 1.1
+source("facilities-map-post.R")
+facilities_map_expanded
+```
+:::
+
+### Reading the popup charts
+
+Each facility popup shows an ADP bar chart across all available fiscal years. Bar color indicates data source:
+
+- **Gray bars** — ICE annual statistics (FY2010–FY2026, minus FY2018)
+- **Blue bars** — Deportation Data Project daily counts (FY2024–FY2026)
+- **Gray + blue pair** — Both sources present but ADP differs by more than 25%; gray shows ICE figure, blue shows DDP figure
+
+Facilities with only gray bars appear in ICE annual reports but were not matched in DDP data. Facilities with only blue bars are absent from ICE annual statistics — these are largely the hold rooms, jails, and staging sites that ICE does not publicly report.
+
+### Facility types
+
+| Color          | Type                                                           |
+|----------------|----------------------------------------------------------------|
+| Blue           | Jail / Prison (IGSA, USMS IGA)                                 |
+| Steel blue     | State Prison                                                   |
+| Pink           | Federal Prison (BOP)                                           |
+| Green          | Dedicated Migrant Detention Center (DIGSA)                     |
+| Purple         | ICE Migrant Detention Center (SPC)                             |
+| Red            | Private Migrant Detention Center (CDF)                         |
+| Gold           | State Migrant Detention Center                                 |
+| Orange         | ICE Short-Term Migrant Detention Center                        |
+| Pale blue-gray | ICE Hold Room (includes ERO field offices and sub-offices)     |
+| Light blue     | CBP Hold Facility                                              |
+| Brown          | Family Detention Center                                        |
+| Dark brown     | Juvenile Detention Center                                      |
+| Light green    | Medical Facility                                               |
+| Teal           | Military Detention Center                                      |
+| Dark teal      | Other                                                          |
+
+### Data sources
+
+-   **ICE annual statistics (FY2019–FY2026)**: ICE annual detention statistics spreadsheets, published by the [ICE Detention Management Division](https://www.ice.gov/detain/detention-management).
+-   **DMCP facility listings (FY2010–FY2017)**: ICE Detention Management Compliance Program authorized facility listings ([December 2015 Excel file](https://www.ice.gov/doclib/foia/dfs/2015IceDetentionFacilityListing.xlsx) and [July 2017 PDF](https://www.prisonlegalnews.org/media/publications/ICE_DMCP_Facility_List_ERO_Custody_Management_Division_2017.pdf)). The 2017 file was obtained in litigation against the government.
+-   **Deportation Data Project (Sep 2023–Oct 2025)**: Daily detainee counts by facility, obtained via FOIA from the Deportation Data Project at [deportationdata.org](https://deportationdata.org/). Annualized to fiscal-year averages for FY2024 and FY2025; FY2026 coverage is partial.
+-   **Geocoding**: Addresses and coordinates from the Google Maps Geocoding API, supplemented by Vera Institute and The Marshall Project location data.
+-   FY2018 data was not available in any source.
+
+### Facility count
+
+```{r counts}
+library(dplyr)
+expanded_panel <- readRDS("data/expanded_panel.rds")
+expanded_geocoded <- readRDS("data/expanded_geocoded.rds")
+
+cat(sprintf(
+  "%d facilities mapped (%d with ICE annual statistics, %d DDP-only).",
+  sum(!is.na(expanded_geocoded$lat)),
+  n_distinct(expanded_panel$canonical_id[
+    expanded_panel$data_source %in% c("ice_only","ice_ddp_agree",
+                                       "ice_ddp_diverge_high","ice_ddp_diverge_low") &
+    !is.na(expanded_panel$canonical_id)
+  ]),
+  n_distinct(expanded_panel$canonical_id[
+    expanded_panel$data_source == "ddp_only" &
+    !is.na(expanded_panel$canonical_id)
+  ])
+))
+```
