@@ -3,6 +3,7 @@ title: "Expanded Interactive Map of ICE Detention Facilities"
 description: "An interactive map of ~790 ICE detention facilities combining annual statistics (FY2010–FY2026) with Deportation Data Project daily population data (FY2024–FY2026)"
 author: "Carwil Bjork-James"
 date: "2026-05-22"
+image: facilities-map-expanded-screenshot.png
 ---
 
 ```{r setup, include=FALSE}
