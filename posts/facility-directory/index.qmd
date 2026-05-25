@@ -1,0 +1,45 @@
+---
+title: "ICE Detention Facility Directory"
+description: "Searchable directory of U.S. immigration detention facilities with population data from FY 2010 through early 2026"
+author: "Carwil Bjork-James"
+date: last-modified
+format:
+  html:
+    toc: false
+    margin-left: auto
+bibliography: references.bib
+execute:
+  echo: false
+  warning: false
+  message: false
+image: facility-directory.png
+---
+
+```{r setup}
+source("facility-table.R")
+facility_tbl <- readRDS("data/facility_tbl.rds")
+```
+
+This directory covers `r nrow(facility_tbl)` U.S. immigration detention facilities across all data sources. The table combines ICE annual detention statistics (FY 2010–2026) with daily population data from the Deportation Data Project (October 2022–March 2026). Use the filter boxes and the peak population slider to narrow the list.
+
+**Columns:** *ADP* is the reported average daily population (most recent available year). *DDP Peak* is the single-day peak recorded in the Deportation Data Project daily counts. The bar chart shows ADP by fiscal year (FY10–FY26, with a gap for FY18 where no data was published). The sparkline shows daily population from the DDP dataset; thin white lines mark January 1.
+
+::: {.column-page-right}
+
+```{r table}
+make_facility_table(
+  facility_tbl,
+  columns = c("facility", "type", "status", "adp", "ddp_peak",
+              "detloc", "adp_bars", "ddp_sparkline")
+)
+```
+
+:::
+
+## Data Sources
+
+**ICE annual detention statistics (FY 2010–2026).** Average daily population figures by facility come from two ICE sources. Fiscal years 2019–2026 use ICE's published annual detention statistics spreadsheets [@ice-fy19; @ice-fy20; @ice-fy21; @ice-fy22; @ice-fy23; @ice-fy24; @ice-fy25; @ice-fy26], released by the ICE Detention Management Division. Fiscal years 2010–2017 use the ICE Detention Management and Compliance Program (DMCP) facility authorization listings [@ice-dmcp-fy17; @ice-dmcp-fy15]. No FY 2018 data was published.
+
+**Deportation Data Project daily population data (Oct 2022–Mar 2026).** Daily detention counts, peak populations, and the sparkline charts use government data provided by ICE in response to a FOIA request to the Deportation Data Project and analyzed by Carwil Bjork-James. Data archived at the [Deportation Data Project](https://deportationdata.org/data/processed/ice.html) [@deportation-data-project].
+
+## References

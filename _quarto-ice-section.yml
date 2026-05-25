@@ -1,0 +1,100 @@
+project: 
+  type: website
+  output-dir: docs
+  resources: 
+    - images/*
+    - private/*
+    
+pagetitle: "{{< meta title >}} | Carwil Bjork-James"
+    
+execute:
+  freeze: auto    
+
+website: 
+  page-navigation: true
+  title: "Carwil Bjork-James"
+  site-url: https://carwilb.github.io/ 
+  favicon: favicon.ico
+  
+  page-footer:
+    right:
+      - icon: rss
+        href: index.xml
+        aria-label: RSS Feed
+    left: "Carwil Bjork-James's research, teaching, and data science website"
+    
+  sidebar:
+    logo: "images/carwil-bjork-james-hex.png"
+    logo-alt: "Carwil Bjork-James in a data science hexagon"
+    title: "Carwil Bjork-James"
+    subtitle: "Research notes on violence, human rights, social movements, and open data"
+    pinned: true
+    align: center
+    tools: 
+      - icon: globe
+        href: https://ultimateconsequences.github.io
+        text: "Ultimate Consequences Project Website"
+      - icon: wordpress
+        href: https://woborders.blog
+        text: "Carwil without Borders"
+      - icon: mastodon
+        href: https://mastodon.online/@Carwil
+        text: "Carwil on Mastodon"
+      - icon: twitter
+        href: https://twitter.com/CarwilBJ
+        text: "Carwil Bjork-James on Twitter" 
+      - icon: twitter
+        href: https://carwilb.github.io/twitter
+        text: "Twitter archive" 
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Welcome
+      - text: "---"
+      - href: about-bio.qmd
+        text: "Biography"
+      - text: "---"
+      - href: posts/ice-arrests-by-state/index.qmd
+        text: "ICE Arrests by State"
+      - text: "---"
+      - href: index.qmd#posts
+        text: Posts
+        sort: "date desc"
+        contents:
+          - posts/**/*.qmd
+          - "!posts/ice-arrests-by-state/arrests-by-state/*.qmd"
+      - href: index.qmd#teaching-notes
+        text: Teaching Notes
+        sort: "date desc" # Ensure this is aligned with 'contents' or under the section
+        contents: teaching/*
+      - text: "---"
+      - section: "Tools"
+        collapsed: false
+        contents:
+          - href: tools/wiki-to-ris.html
+            text: "Wikipedia → RIS"
+    footer: |
+      <div style="text-align: center; padding: 0.5em 0;">
+        <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcarwilb.github.io&label=Pageviews&icon=github&color=%230f5132&message=&style=flat&tz=UTC"
+             alt="Visit counter" />
+      </div>
+
+format:
+  html:
+    theme: 
+      light: cosmo
+      dark: slate
+    mainfont: "Source Sans Pro"
+    code-copy: true
+    code-overflow: wrap
+    toc: false
+    citation-style: csl/chicago-notes.csl
+    link-citations: false
+    pagetitle: "{{< meta title >}}"
+
+filters:
+  - include-files.lua
+ 
+  
