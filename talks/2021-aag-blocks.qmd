@@ -1,0 +1,16 @@
+---
+title: "Blocks, spiraling open pits, and wily start-ups: Spatialities of Andean Extractivism"
+author: "Carwil Bjork-James" 
+image: "aag-2021-title.jpeg"
+'Referrer-Policy': 'strict-origin-when-cross-origin'
+---
+
+A talk at the American Association of Geographers Annual Meeting, 2021
+
+{{< video https://www.youtube.com/watch?v=39OdBsNe9lE&t=48s >}}
+
+## Abstract
+
+This paper explores how extractive industries and technologies bring the abstract consumptive power of the global economy into contact with the material landscape. I analyze this process of material extraction and financial abstraction by focusing on two open-pit mining projects, the Sumitomo Corporation’s San Cristóbal mine, currently the largest in Bolivia, and Bear Creek Mining’s fruitless Santa Ana mine, which was blocked by protests in Peru in 2011.
+
+The global demand for precious metals has to be operationalized through a series of schema that operate at the levels of engineering, property ownership, territorial governance, national “investment climate,” and capital mobilization. At each level of the process, there is an effort to streamline and routinize the process, and to offer the underlying precious minerals for sale within containers that bear successively less trace of the material realities of the minerals, their extraction, and its impact on the environment. Neoliberal investment policies standardized many of these schemas, making them equally accessible to any foreign direct investor, and ultimately to both Sumitomo and Bear Creek. If Sumitomo’s San Cristobal mine fulfilled neoliberal planners’ vision of attracting foreign direct investment, Bear Creek’s arbitration case represented an attempt to hack the same system and claim the profits it guaranteed without building a mine at all. By packaging mining prospects into accessible investment vehicles for liquid capital, the process of optimization, intensification, and financial abstraction widens mining’s impact on the land, ecology, and society.

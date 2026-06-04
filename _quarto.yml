@@ -64,6 +64,10 @@ website:
         text: Teaching Notes
         sort: "date desc" # Ensure this is aligned with 'contents' or under the section
         contents: teaching/*
+      - href: talks.qmd
+        text: Talks and Presentations
+        sort: "date desc" # Ensure this is aligned with 'contents' or under the section
+        contents: talks/*
       - text: "---"
       - section: "Tools"
         collapsed: false
@@ -88,6 +92,9 @@ format:
     citation-style: csl/chicago-notes.csl
     link-citations: false
     pagetitle: "{{< meta title >}}"
+    include-in-header: 
+      - text: '<meta name="google-site-verification" content="oYAivVKE7UFgQ66hZw62En45B3ax7yay-PnLASmXZoM" />'
+
 
 filters:
   - include-files.lua

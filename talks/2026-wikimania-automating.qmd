@@ -1,0 +1,20 @@
+---
+title: "Making Open Data into Public Knowledge"
+subtitle: "Automating Contributions to Wikimedia Projects"
+author: "Carwil Bjork-James" 
+image: "wikimania-2026-cr.png"
+---
+
+## Abstract
+
+The open data community is, like Wikimedia, a global community of people sharing information and knowledge, while building new tools to make that process easier. Researchers, advocates, governments, and organizations are increasingly making the data they use shareable and interoperable.
+
+This workshop shares experiences, tools, sample templates, and best practices for using open datasets to increase the breadth, quality, and up-to-the-minute accuracy of content on Wikipedia and Wikidata. It will include presentations from two example projects: on immigration enforcement in the United States and on the geography, demography, and politics of Bolivia.
+
+By using data science tools, including code in the programming language R, I have used publicly available data to generate and expand Wikipedia lists, produce infoboxes, automatically calculate prose summarizing demographic changes, and produce starter stubs for use in edit-a-thons. For Wikidata, R scripts can produce batteries of QuickStatements that add census data to municipalities, help clean up and organize taxonomies, and attach geographic coordinates to items at scale. Mapping and data visualization tools can produce multiple, regularly updating images for Commons. Finally, each of these outputs can be produced multilingually.
+
+In the interest of reliability, each of these processes need to be carried out in a transparent, human-in-the-loop way, and provide other editors with a way to look into the scripts, calculations, and decisions that drive this kind of creating. The workshop will both show the tools for this and have time for discussion about best practices for scaling up contributions to Wikipedia.
+
+**Who is this for?** This workshop is intended for people who are curious about whether Wikipedia can benefit from the explosion in open data science, where both tools and participants are multiplying rapidly. And it is intended for people who use such tools as part of their research lives and want to know some of the details on how to include an output-to-Wikimedia option when they are working with reliable, previously published datasets.
+
+![Wikimania_2026_long_banner_coloured_drawings.jpg](https://wikimania.wikimedia.org)
