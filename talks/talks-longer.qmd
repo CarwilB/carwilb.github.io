@@ -1,0 +1,31 @@
+---
+title: Full List
+subtitle: of talks, presentations, and panels
+author: "Carwil Bjork-James"
+---
+
+```{r}
+#| echo: false
+source("render_talks.R")
+lists <- render_talks_list(
+  c("talks.ris", "conftalks.ris"),
+  format         = "cv_year",
+  include_cpaper = FALSE
+)
+```
+
+## Invited Talks
+
+```{r}
+#| echo: false
+#| results: asis
+cat(lists$talks)
+```
+
+## Conference Presentations
+
+```{r}
+#| echo: false
+#| results: asis
+cat(lists$papers)
+```
