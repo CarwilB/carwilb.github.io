@@ -1,10 +1,9 @@
 ---
-title: "Making Open Data into Public Knowledge: Automating Contributions to Wikimedia Projects"
+title: "Making Open Data into Public Knowledge"
+subtitle: "Automating Contributions to Wikimedia Projects"
 author: "Carwil Bjork-James" 
 image: "wikimania-2026-cr.png"
 ---
-
-An upcoming talk at Wikimania 2026 in Paris, July 21-25, 2026.
 
 ## Abstract
 

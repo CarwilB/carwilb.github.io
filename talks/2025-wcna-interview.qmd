@@ -1,0 +1,10 @@
+---
+title: "Where Wikipedia fits in my research life"
+author: "Carwil Bjork-James" 
+image: "/images/talks/cbj-rabbit-hole-interview.png"
+'Referrer-Policy': 'strict-origin-when-cross-origin'
+---
+
+… is the subject of this short interview segment I did at WikiConference North America 2025. The interview was with the team creating Rabbbit Hole, a documentary on Wikipedia currently in the final stages of production. But it’s also an introduction of how creating knowledge on open platforms can be part of a your research trajectory.
+
+{{< video https://www.youtube.com/watch?v=mEzqHIF-sjo >}}

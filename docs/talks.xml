@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Carwil Bjork-James</title>
+<link>https://carwilb.github.io/talks.html</link>
+<atom:link href="https://carwilb.github.io/talks.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.8.21</generator>
+<lastBuildDate>Thu, 04 Jun 2026 14:55:37 GMT</lastBuildDate>
+<item>
+  <title>Making Open Data into Public Knowledge</title>
+  <dc:creator>Carwil Bjork-James</dc:creator>
+  <link>https://carwilb.github.io/talks/2026-wikimania-automating.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>The open data community is, like Wikimedia, a global community of people sharing information and knowledge, while building new tools to make that process easier. Researchers, advocates, governments, and organizations are increasingly making the data they use shareable and interoperable.</p>
+<p>This workshop shares experiences, tools, sample templates, and best practices for using open datasets to increase the breadth, quality, and up-to-the-minute accuracy of content on Wikipedia and Wikidata. It will include presentations from two example projects: on immigration enforcement in the United States and on the geography, demography, and politics of Bolivia.</p>
+<p>By using data science tools, including code in the programming language R, I have used publicly available data to generate and expand Wikipedia lists, produce infoboxes, automatically calculate prose summarizing demographic changes, and produce starter stubs for use in edit-a-thons. For Wikidata, R scripts can produce batteries of QuickStatements that add census data to municipalities, help clean up and organize taxonomies, and attach geographic coordinates to items at scale. Mapping and data visualization tools can produce multiple, regularly updating images for Commons. Finally, each of these outputs can be produced multilingually.</p>
+<p>In the interest of reliability, each of these processes need to be carried out in a transparent, human-in-the-loop way, and provide other editors with a way to look into the scripts, calculations, and decisions that drive this kind of creating. The workshop will both show the tools for this and have time for discussion about best practices for scaling up contributions to Wikipedia.</p>
+<p><strong>Who is this for?</strong> This workshop is intended for people who are curious about whether Wikipedia can benefit from the explosion in open data science, where both tools and participants are multiplying rapidly. And it is intended for people who use such tools as part of their research lives and want to know some of the details on how to include an output-to-Wikimedia option when they are working with reliable, previously published datasets.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wikimania.wikimedia.org" class="img-fluid figure-img"></p>
+<figcaption>Wikimania_2026_long_banner_coloured_drawings.jpg</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://carwilb.github.io/talks/2026-wikimania-automating.html</guid>
+  <pubDate>Thu, 04 Jun 2026 14:55:37 GMT</pubDate>
+  <media:content url="https://carwilb.github.io/talks/wikimania-2026-cr.png" medium="image" type="image/png" height="70" width="144"/>
+</item>
+<item>
+  <title>Blocks, spiraling open pits, and wily start-ups: Spatialities of Andean Extractivism</title>
+  <dc:creator>Carwil Bjork-James</dc:creator>
+  <link>https://carwilb.github.io/talks/2021-aag-blocks.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>A talk at the American Association of Geographers Annual Meeting, 2021</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/39OdBsNe9lE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>This paper explores how extractive industries and technologies bring the abstract consumptive power of the global economy into contact with the material landscape. I analyze this process of material extraction and financial abstraction by focusing on two open-pit mining projects, the Sumitomo Corporation’s San Cristóbal mine, currently the largest in Bolivia, and Bear Creek Mining’s fruitless Santa Ana mine, which was blocked by protests in Peru in 2011.</p>
+<p>The global demand for precious metals has to be operationalized through a series of schema that operate at the levels of engineering, property ownership, territorial governance, national “investment climate,” and capital mobilization. At each level of the process, there is an effort to streamline and routinize the process, and to offer the underlying precious minerals for sale within containers that bear successively less trace of the material realities of the minerals, their extraction, and its impact on the environment. Neoliberal investment policies standardized many of these schemas, making them equally accessible to any foreign direct investor, and ultimately to both Sumitomo and Bear Creek. If Sumitomo’s San Cristobal mine fulfilled neoliberal planners’ vision of attracting foreign direct investment, Bear Creek’s arbitration case represented an attempt to hack the same system and claim the profits it guaranteed without building a mine at all. By packaging mining prospects into accessible investment vehicles for liquid capital, the process of optimization, intensification, and financial abstraction widens mining’s impact on the land, ecology, and society.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://carwilb.github.io/talks/2021-aag-blocks.html</guid>
+  <pubDate>Thu, 04 Jun 2026 14:55:37 GMT</pubDate>
+  <media:content url="https://carwilb.github.io/talks/aag-2021-title.jpeg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Where Wikipedia fits in my research life</title>
+  <dc:creator>Carwil Bjork-James</dc:creator>
+  <link>https://carwilb.github.io/talks/2025-wcna-interview.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>… is the subject of this short interview segment I did at WikiConference North America 2025. The interview was with the team creating Rabbbit Hole, a documentary on Wikipedia currently in the final stages of production. But it’s also an introduction of how creating knowledge on open platforms can be part of a your research trajectory.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/mEzqHIF-sjo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+
+
+
+ ]]></description>
+  <guid>https://carwilb.github.io/talks/2025-wcna-interview.html</guid>
+  <pubDate>Thu, 04 Jun 2026 14:55:37 GMT</pubDate>
+  <media:content url="https://carwilb.github.io/images/talks/cbj-rabbit-hole-interview.png" medium="image" type="image/png" height="98" width="144"/>
+</item>
+</channel>
+</rss>
