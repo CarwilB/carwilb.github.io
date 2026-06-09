@@ -1,0 +1,12 @@
+---
+title: "Mapping the Fourth World"
+subtitle: "The Global Indigenous Population"
+author: "Carwil Bjork-James" 
+date: 2025/02/12
+image: "mapping-fourth-mexico.png"
+'Referrer-Policy': 'strict-origin-when-cross-origin'
+---
+
+A global look at how many Indigenous peoples there are, and where they live around the world.
+
+{{< video https://www.youtube.com/watch?v=cLD6JGc_EJk >}}

@@ -1,6 +1,7 @@
 ---
 title: "Where Wikipedia fits in my research life"
 author: "Carwil Bjork-James" 
+date: 2025-10-18
 image: "/images/talks/cbj-rabbit-hole-interview.png"
 'Referrer-Policy': 'strict-origin-when-cross-origin'
 ---

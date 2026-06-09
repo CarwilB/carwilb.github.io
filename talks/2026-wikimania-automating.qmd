@@ -3,6 +3,7 @@ title: "Making Open Data into Public Knowledge"
 subtitle: "Automating Contributions to Wikimedia Projects"
 author: "Carwil Bjork-James" 
 image: "wikimania-2026-cr.png"
+date: 2026-07-22
 ---
 
 ## Abstract

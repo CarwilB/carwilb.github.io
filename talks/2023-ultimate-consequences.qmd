@@ -1,0 +1,11 @@
+---
+title: "Ultimate Consequences: A digital archive on lethal conflict in Bolivia"
+author: "Carwil Bjork-James" 
+image: "ultimate-consequences-aaa-2022.png"
+date: 2022/11/18
+'Referrer-Policy': 'strict-origin-when-cross-origin'
+---
+
+Presented virtually at AAA 2022.
+
+{{< video https://www.youtube.com/watch?v=mEzqHIF-sjo >}}

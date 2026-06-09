@@ -1,6 +1,7 @@
 ---
 title: "Blocks, spiraling open pits, and wily start-ups: Spatialities of Andean Extractivism"
-author: "Carwil Bjork-James" 
+author: "Carwil Bjork-James"
+date: 2021-04-21
 image: "aag-2021-title.jpeg"
 'Referrer-Policy': 'strict-origin-when-cross-origin'
 ---
