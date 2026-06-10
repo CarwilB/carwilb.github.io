@@ -10,7 +10,7 @@
 <atom:link href="https://carwilb.github.io/talks.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.21</generator>
-<lastBuildDate>Wed, 10 Jun 2026 20:49:07 GMT</lastBuildDate>
+<lastBuildDate>Wed, 10 Jun 2026 21:36:39 GMT</lastBuildDate>
 <item>
   <title>Making Open Data into Public Knowledge</title>
   <dc:creator>Carwil Bjork-James</dc:creator>
@@ -40,7 +40,7 @@
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2026-wikimania-automating.html</guid>
-  <pubDate>Wed, 10 Jun 2026 20:49:07 GMT</pubDate>
+  <pubDate>Wed, 10 Jun 2026 21:36:39 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/wikimania-2026-cr.png" medium="image" type="image/png" height="70" width="144"/>
 </item>
 <item>
@@ -65,7 +65,7 @@
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2021-aag-blocks.html</guid>
-  <pubDate>Wed, 10 Jun 2026 20:49:07 GMT</pubDate>
+  <pubDate>Wed, 10 Jun 2026 21:36:39 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/aag-2021-title.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -85,7 +85,7 @@
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2025-wcna-interview.html</guid>
-  <pubDate>Wed, 10 Jun 2026 20:49:07 GMT</pubDate>
+  <pubDate>Wed, 10 Jun 2026 21:36:39 GMT</pubDate>
   <media:content url="https://carwilb.github.io/images/talks/cbj-rabbit-hole-interview.png" medium="image" type="image/png" height="98" width="144"/>
 </item>
 </channel>
