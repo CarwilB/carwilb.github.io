@@ -1,0 +1,32 @@
+---
+title: Publications
+author: "Carwil Bjork-James"
+listing:
+  - id: pubs-listing
+    contents:
+      - "pubs"
+      - "!pubs/pubs-longer.qmd"
+    sort: "date desc"
+    type: grid
+    feed: true
+---
+
+###
+
+::: {#pubs-listing}
+:::
+
+### Recent Publications
+
+[*Click here*](pubs/pubs-longer.html) *for a full list of publications.*
+
+```{r}
+#| echo: false
+#| results: asis
+source("pubs/render_pubs.R")
+cat(render_pubs_list(
+  "pubs/pubs.ris",
+  format   = "cv_year",
+  min_year = 2020
+))
+```

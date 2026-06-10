@@ -1,0 +1,48 @@
+---
+title: Full List
+subtitle: of publications
+author: "Carwil Bjork-James"
+---
+
+```{r}
+#| echo: false
+source("render_pubs.R")
+```
+
+## Journal Articles
+
+```{r}
+#| echo: false
+#| results: asis
+cat(render_pubs_list(
+  "pubs.ris",
+  format = "cv_year",
+  types  = "JOUR"
+))
+```
+
+## Book Chapters
+
+```{r}
+#| echo: false
+#| results: asis
+chap_list <- render_pubs_list(
+  "pubs.ris",
+  format = "cv_year",
+  types  = "CHAP"
+)
+if (nzchar(chap_list)) cat(chap_list)
+```
+
+## Books
+
+```{r}
+#| echo: false
+#| results: asis
+book_list <- render_pubs_list(
+  "pubs.ris",
+  format = "cv_year",
+  types  = "BOOK"
+)
+if (nzchar(book_list)) cat(book_list)
+```
