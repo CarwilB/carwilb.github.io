@@ -41,5 +41,12 @@
       "/teaching/intro-three-gorges.html",
       "/teaching/intro-stephanie-black.html"
     ]
+  },
+  {
+    "listing": "/pubs.html",
+    "items": [
+      "/pubs/2024-bsj-violence.html",
+      "/pubs/2024-jlas-lethal-repression.html"
+    ]
   }
 ]

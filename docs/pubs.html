@@ -8,7 +8,7 @@
 
 <meta name="author" content="Carwil Bjork-James">
 
-<title>Talks, presentations, and panels – Carwil Bjork-James</title>
+<title>Publications – Carwil Bjork-James</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./talks/2021-aag-blocks.html" rel="next">
-<link href="./teaching/intro-three-gorges.html" rel="prev">
+<link href="./pubs/2024-bsj-violence.html" rel="next">
+<link href="./talks/talks-longer.html" rel="prev">
 <link href="./favicon.ico" rel="icon">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
@@ -80,20 +80,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-talks-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-pubs-listing .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-talks-listing'] = new List('listing-talks-listing', options);
+    window['quarto-listings']['listing-pubs-listing'] = new List('listing-pubs-listing', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -138,7 +138,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="alternate" type="application/rss+xml" title="Carwil Bjork-James" href="talks.xml" data-external="1"></head>
+<link rel="alternate" type="application/rss+xml" title="Carwil Bjork-James" href="pubs.xml" data-external="1"></head>
 
 <body class="nav-sidebar docked fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -311,7 +311,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./talks.html">Talks and Presentations</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pubs.html">Publications</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -566,17 +566,29 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./talks.html" class="sidebar-item-text sidebar-link active">
+            <a href="./talks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Talks and Presentations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./talks/2021-aag-blocks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blocks, spiraling open pits, and wily start-ups: Spatialities of Andean Extractivism</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./talks/2022-ultimate-consequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ultimate Consequences: A digital archive on lethal conflict in Bolivia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./talks/2025-slaca-blood.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">‘It Has Cost Us Blood’: How Bolivian movements characterize death in protest</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -601,23 +613,23 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./pubs.html" class="sidebar-item-text sidebar-link">
+            <a href="./pubs.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Publications</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pubs/2023-bsj-320.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Black Studies Journal article (2023)</span></a>
+  <a href="./pubs/2024-bsj-violence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tactics of Political Violence in the 2019 Bolivian Crisis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pubs/2024-jlas-lethal-repression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">When does lethal repression fail? Unarmed militancy and backfire in Bolivia, 1982–2021</span></a>
+ <span class="menu-text">When does lethal repression fail?: Unarmed militancy and backfire in Bolivia, 1982–2021</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -657,12 +669,12 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Talks, presentations, and panels</h1>
+<h1 class="title">Publications</h1>
 </div>
 
 
@@ -687,66 +699,51 @@ window.Quarto = {
 
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section"></h3>
-<div id="listing-talks-listing" class="quarto-listing quarto-listing-container-grid">
+<div id="listing-pubs-listing" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1781124540726" data-listing-reading-time-sort="2" data-listing-word-count-sort="315">
-<a href="./talks/2026-wikimania-automating.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Qm9saXZpYSUyQ2pvdXJuYWwlMjBhcnRpY2xl" data-listing-date-sort="1732780800000" data-listing-file-modified-sort="1781126163532" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="281">
+<a href="./pubs/2024-bsj-violence.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./talks/wikimania-2026-cr.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./pubs/2024-violence-2019.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Making Open Data into Public Knowledge
+Tactics of Political Violence in the 2019 Bolivian Crisis
 </h5>
 <div class="card-text listing-description delink">
-The open data community is, like Wikimedia, a global community of people sharing information and knowledge, while building new tools to make that process easier.…
+Part of a <em>Bolivian Studies Journal</em>special issue on the 2019 crisis (2024)
 </div>
-<div class="card-attribution card-text-small start">
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Carwil Bjork-James
+</div>
+<div class="listing-date">
+Nov 28, 2024
 </div>
 </div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1781124540683" data-listing-reading-time-sort="2" data-listing-word-count-sort="250">
-<a href="./talks/2021-aag-blocks.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="Qm9saXZpYSUyQ3BvbGl0aWNhbCUyMHZpb2xlbmNlJTJDc29jaWFsJTIwbW92ZW1lbnRzJTJDcmVwcmVzc2lvbiUyQ2pvdXJuYWwlMjBhcnRpY2xl" data-listing-date-sort="1704096000000" data-listing-file-modified-sort="1781126214060" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="452">
+<a href="./pubs/2024-jlas-lethal-repression.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./talks/aag-2021-title.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./pubs/2024-lethal-repression.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Blocks, spiraling open pits, and wily start-ups: Spatialities of Andean Extractivism
+When does lethal repression fail?: Unarmed militancy and backfire in Bolivia, 1982–2021
 </h5>
 <div class="card-text listing-description delink">
-A talk at the American Association of Geographers Annual Meeting, 2021
+<em>Journal of Latin American Studies</em> (2024)
 </div>
-<div class="card-attribution card-text-small start">
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Carwil Bjork-James
 </div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1781124540701" data-listing-reading-time-sort="1" data-listing-word-count-sort="59">
-<a href="./talks/2025-wcna-interview.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/talks/cbj-rabbit-hole-interview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Where Wikipedia fits in my research life
-</h5>
-<div class="card-text listing-description delink">
-… is the subject of this short interview segment I did at WikiConference North America 2025. The interview was with the team creating Rabbbit Hole, a documentary on…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Carwil Bjork-James
+<div class="listing-date">
+Jan 1, 2024
 </div>
 </div>
 </div>
@@ -756,43 +753,34 @@ Carwil Bjork-James
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
-<section id="recent-talks" class="level3">
-<h3 class="anchored" data-anchor-id="recent-talks">Recent Talks</h3>
-<p><a href="talks/talks-longer.html"><em>Click here</em></a> <em>for a full list of talks, panels, and presentations.</em></p>
-<p><strong>2026</strong></p>
-<ul>
-<li>“Blockades Stronger than Bullets: The Continuing Power of Street Protest in a Changing Bolivia.” Northern Illinois University (DeKalb, Illinois, April 2026).</li>
-<li>“What Remains of Bolivia’s Grassroots Revolution?.” University of Mississippi (Oxford, Mississippi, March 2026).</li>
-</ul>
+<section id="recent-publications" class="level3">
+<h3 class="anchored" data-anchor-id="recent-publications">Recent Publications</h3>
+<p><a href="pubs/pubs-longer.html"><em>Click here</em></a> <em>for a full list of publications.</em></p>
 <p><strong>2025</strong></p>
 <ul>
-<li>Panelist, “Bearing ‘Freedom’ in Dark Times.” AAA Annual Meeting (New Orleans, November 2025).</li>
-<li>Panelist, “Empire and Its Haunts.” AAA Annual Meeting (New Orleans, November 2025).</li>
-<li>“Open Data for Public Memory: Building a Digital Archive of Bolivian Political Violence.” Public Anthropology Conference (Washington, November 2025).</li>
-<li>“Contributing to Wikimedia during an Open Data Human Rights Project.” Wiki Conference North America (New York City, October 2025).</li>
-<li>“Unarmed Militancy: Tactics and Subjectivity in Recent Disruptive Protest.” Department of Psychology, Sigmund Freud University (Berlin, June 2025).</li>
-<li>“Mapping Political Violence in Bolivia: The Ultimate Consequences Digital Archive.” Mobilization Annual Conference (San Diego, June 2025).</li>
-<li>“Direct Action, Syndicalism, and the Right to Strike.” Direct Action and Democracy: Histories and Transformations (Bochum, Germany, June 2025).</li>
-<li>“Mapping Political Violence in Bolivia: The Ultimate Consequences Digital Archive.” AAG Annual Conference (virtual, March 2025).</li>
-<li>“‘It Has Cost Us Blood’: How Bolivian Movements Characterize Death in Protest.” SLACA Biannual Conference (Panama City, Panama, March 2025). co-authored with Emma Banks.</li>
+<li>Bjork-James, Carwil. “Cuando los estados “plurinacionales” socavan los territorios indígenas: TIPNIS en Bolivia.” In <em>Paisajes de Inequidad La Justicia Ambiental en la Región Andino-Amazónica</em>, edited by Robins, Nicholas A. and Fraser, Barbara J.. Lima: Pontificia Universidad Católica del Perú, 2025. <a href="https://public.ebookcentral.proquest.com/choice/PublicFullRecord.aspx?p=32394425" class="uri">https://public.ebookcentral.proquest.com/choice/PublicFullRecord.aspx?p=32394425</a></li>
 </ul>
 <p><strong>2024</strong></p>
 <ul>
-<li>“Open Knowledge as Pedagogical Praxis: How Faculty and Students are Opening up the Field of Anthropology by Improving Wikipedia.” AAA Annual Meeting (Tampa, November 2024).</li>
-<li>“Generative AI and Wikipedia: A Discussion.” WikiConference North America (Columbus, October 2024).</li>
+<li>Bjork-James, Carwil. “When Does Lethal Repression Fail? Unarmed Militancy and Backfire in Bolivia, 1982–2021.” <em>Journal of Latin American Studies</em> 56, no.&nbsp;1 (2024): 1–36. <a href="https://doi.org/10.1017/S0022216X24000208" class="uri">https://doi.org/10.1017/S0022216X24000208</a></li>
+<li>Bjork-James, Carwil. “Del pluralismo indígena al extractivismo centralizado: Cómo las prerrogativas estatales reformaron el enfoque territorial de Bolivia plurinacional.” In <em>La Amazonía andina en el siglo XXI: Neoextractivismos, fronteras y resistencias</em>, edited by López, María Fernanda and García, Fernando, 113–143. Buenos Aires: CLACSO, 2024.</li>
+<li>Bjork-James, Carwil. “When Does Lethal Repression Fail? Unarmed Militancy and Backfire in Bolivia, 1982–2021.” <em>Journal of Latin American Studies</em> 56, no.&nbsp;1 (2024): 1–36. <a href="https://www.cambridge.org/core/journals/journal-of-latin-american-studies/article/when-does-lethal-repression-fail-unarmed-militancy-and-backfire-in-bolivia-19822021/EF57368D13F9C5683EE42BD9025F2B6B" class="uri">https://www.cambridge.org/core/journals/journal-of-latin-american-studies/article/when-does-lethal-repression-fail-unarmed-militancy-and-backfire-in-bolivia-19822021/EF57368D13F9C5683EE42BD9025F2B6B</a></li>
+<li>Bjork-James, Carwil. “Tactics of Political Violence in the 2019 Bolivian Crisis: Return of the Catastrophic Stalemate?.” <em>Bolivian Studies Journal</em> (2024): 188–226. <a href="http://bsj.pitt.edu/ojs/bsj/article/view/320" class="uri">http://bsj.pitt.edu/ojs/bsj/article/view/320</a></li>
 </ul>
-<p><strong>2023</strong></p>
+<p><strong>2021</strong></p>
 <ul>
-<li>“The Sovereign Street: How Bolivian Protesters Carried out a Revolution.” San Francisco State University (San Francisco, CA, September 2023).</li>
-<li>“Turns Toward and Away from Violent Repression in Democratic Bolivia.” Violent Turns: Sources, Interpretations, Responses (Paris, June 2023).</li>
+<li>Bjork-James, Carwil. “New maps for an inclusive Wikipedia: decolonial scholarship and strategies to counter systemic bias.” <em>New Review of Hypermedia and Multimedia</em> 27, no.&nbsp;3 (2021): 207–228. <a href="https://doi.org/10.1080/13614568.2020.1865463" class="uri">https://doi.org/10.1080/13614568.2020.1865463</a></li>
+<li>Bjork-James, Carwil. ““We Are MAS 2.0”.” <em>NACLA Report on the Americas</em> 53, no.&nbsp;1 (2021): 7–11. <a href="https://doi.org/10.1080/10714839.2021.1891626" class="uri">https://doi.org/10.1080/10714839.2021.1891626</a></li>
 </ul>
-</section>
-<section id="invocation" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="invocation">Invocation</h3>
-<div class="column-screen-inset-right">
-<p><img src="images/Morrison-ThePrize-NMPJ.jpeg" class="img-fluid" alt="A quote engraved in white text on nearly black marble:  '… AND O MY PEOPLE, OUT YONDER, HEAR ME, THEY DO NOT LOVE YOUR NECK UNNOOSED AND STRAIGHT. SO LOVE YOUR NECK; PUT A HAND ON IT, GRACE IT, STROKE IT AND HOLD IT UP. AND ALL YOUR INSIDE PART'S THAT THEY'D JUST AS SOON SLOP FOR HOGS YOU GOT TO LOVE THEM. THE DARK, DARK LIVER - LOVE IT, LOVE IT, AND THE BEAT AND BEATING HEART, LOVE THAT TOO. MORE THAN EYES OR FEET. MORE THAN LUNGS THAT HAVE YET TO DRAW FREE AIR. MORE THAN YOUR LIFE-HOLDING WOMB AND YOUR LIFE-GIVING PRIVATE PARTS, HEAR ME NOW, LOVE YOUR HEART. FOR THIS IS THE PRIZE.' - Toni Morrison"></p>
-</div>
-<p><a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fcarwilb.github.io&amp;count_bg=%2379C83D&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=visits&amp;edge_flat=false" class="img-fluid"></a></p>
+<p><strong>2020</strong></p>
+<ul>
+<li>Bjork-James, Carwil. “Unarmed Militancy: Tactical Victories, Subjectivity, and Legitimacy in Bolivian Street Protest.” <em>American Anthropologist</em> 122, no.&nbsp;3 (2020).</li>
+<li>Bjork-James, Carwil. “Tick-tock coverage of the overthrow of Evo Morales: An evolving list.” <em>Carwil without Borders</em> (2020). <a href="https://woborders.blog/2020/01/08/tick-tock-evo-overthrow/" class="uri">https://woborders.blog/2020/01/08/tick-tock-evo-overthrow/</a></li>
+<li>Bjork-James, Carwil. “When “Plurinational” States Undermine Indigenous Territories: TIPNIS in Bolivia.” In <em>Landscapes of Inequity: The Quest for Environmental Justice in the Andes/Amazon Region</em>, 127–165. Lincoln, NE: University of Nebraska Press, 2020.</li>
+<li>Bjork-James, Carwil. “Mass Protest and State Repression in Bolivian Political Culture: Putting the Gas War and the 2019 Crisis in Perspective.” <em>Research Working Paper Series</em> (2020). <a href="https://hrp.law.harvard.edu/wp-content/uploads/2020/05/CBjork-James_20_003.pdf" class="uri">https://hrp.law.harvard.edu/wp-content/uploads/2020/05/CBjork-James_20_003.pdf</a></li>
+<li>Bjork-James, Carwil. <em>The Sovereign Street: Making Revolution in Urban Bolivia</em>. Tucson: University of Arizona Press, 2020.</li>
+<li>Bjork-James, Carwil. “Left Populism in the Heart of South America: From Plurinational Promise to a Renewed Extractive Nationalism.” In <em>Beyond Populism: Angry Politics and the Twilight of Neoliberalism</em>, edited by Maskovsky, Jeff and Bjork-James, Sophie, 209–236. Morgantown, WV: West Virginia University Press, 2020.</li>
+</ul>
 
 
 
@@ -1213,13 +1201,13 @@ Carwil Bjork-James
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./teaching/intro-three-gorges.html" class="pagination-link" aria-label="Some updates on the Three Gorges Dam">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Some updates on the Three Gorges Dam</span>
+      <a href="./talks/talks-longer.html" class="pagination-link" aria-label="Full List">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Full List</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./talks/2021-aag-blocks.html" class="pagination-link" aria-label="Blocks, spiraling open pits, and wily start-ups: Spatialities of Andean Extractivism">
-        <span class="nav-page-text">Blocks, spiraling open pits, and wily start-ups: Spatialities of Andean Extractivism</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./pubs/2024-bsj-violence.html" class="pagination-link" aria-label="Tactics of Political Violence in the 2019 Bolivian Crisis">
+        <span class="nav-page-text">Tactics of Political Violence in the 2019 Bolivian Crisis</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

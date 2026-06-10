@@ -68,6 +68,10 @@ website:
         text: Talks and Presentations
         sort: "date desc" # Ensure this is aligned with 'contents' or under the section
         contents: talks/*
+      - href: pubs.qmd
+        text: Publications
+        sort: "date desc"
+        contents: pubs/*
       - text: "---"
       - section: "Tools"
         collapsed: false
