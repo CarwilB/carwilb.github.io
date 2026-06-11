@@ -70,7 +70,7 @@ website:
         contents: talks/*
       - href: pubs.qmd
         text: Publications
-        sort: "date desc"
+        sort: "date desc" # Ensure this is aligned with 'contents' or under the section
         contents: pubs/*
       - text: "---"
       - section: "Tools"
