@@ -33,12 +33,7 @@ citation:
 funding: This research is supported by a National Science Foundation grant (Award \#2116778 and ) and a Scaling Success grant from Vanderbilt University.
 bibliography: slaca-2025.bib
 citation-location: document
-format:
-  typst:
-    papersize: us-letter
-    margin:
-      x: 0.75in
-      y: 0.75in
+format: html
 ---
 
 # Opening
