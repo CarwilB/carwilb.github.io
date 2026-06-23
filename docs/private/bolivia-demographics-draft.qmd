@@ -17,7 +17,15 @@ This approach gives a few different answers to how much of Bolivia is Indigenous
 
 What I wanted to do was to reapply these criteria to newer data, something that became possible with the publication of line-by-line census data from Bolivia's 2024 National Census of Population and Housing, made available last September.
 
-\[skipping over methodology]
+\[skipping over methodology\]
+
+## Methodology
+
+This article draws on data provided by the Bolivian Instituto Nacional de Estadística ([website](https://www.ine.gob.bo/)\|Wikipedia) based on the 2024 Census, officially the Censo de Población y Vivienda 2024, which is [described in Spanish here](https://cpv2024.ine.gob.bo/index.php/censo-2024/). Data from the Census is published online in both tabulated and microdata (one-person, one-line, without names) format. To examine responses across multiple questions, I had to use the microdata, which is supplied as a \~3 GB comma-separate values (CSV) file with 11,365,333 rows × 118 columns. Working in the R programming language, I used the `arrow` package to query it without loading it into memory.
+
+For purposes of this
+
+## Results
 
 ![CEL-2001-vs-2024.png](/images/bolivia/CEL-2001-vs-2024.png)
 
@@ -25,13 +33,13 @@ The big picture: the share of Bolivians without any Indigenous identity or langu
 
 // Notably, almost all of this shift occurred between 2001 and 2012: total Indigenous identification had sunk to 40.57% in the 2012 Census. However, I was among those who were very skeptical of this number at the time. The 2012 Census took place in a highly politicized context in which the absence of a "mestizo" option from this census question was highly debated in the press. Many of us read the sharp decline as, in part, a temporary political choice. Survey data also from 2012 showed 72% of Bolivians describing themselves as belonging to an Indigenous people (LAPOP 2012, p.241). This wide divergence between answers to government surveyors and to foreign researchers suggested that much of the decline might be about who is asking the question.
 
-However, there is now a clear signature in the LAPOP survey data as well: In 2023, the share of LAPOP survey respondents indicating belonging to an Indigenous or Afrobolivian people was 54%. I now think it's fair to see this as an enduring change and not an artifact of respondents' stance towards the government. // 
+However, there is now a clear signature in the LAPOP survey data as well: In 2023, the share of LAPOP survey respondents indicating belonging to an Indigenous or Afrobolivian people was 54%. I now think it's fair to see this as an enduring change and not an artifact of respondents' stance towards the government. //
 
 Even as the non-indigenous population has enlarged everywhere, there is still a major divide between the five highland and valley departments, where Indigenous identity of some kind is in the majority and the lowlands, where it doesn't exceed 30%.
 
 ![cel-dept-total-1.png](/images/bolivia/cel-dept-total-1.png)
 
-But, for me, the most important shift is in Bolivian cities. In 2001, every highland city had an unmistakable Indigenous majority. This fact appeared in the first ten minutes of every talk I gave and the first section of many things I wrote. 
+But, for me, the most important shift is in Bolivian cities. In 2001, every highland city had an unmistakable Indigenous majority. This fact appeared in the first ten minutes of every talk I gave and the first section of many things I wrote.
 
 ![cel-mun-top30-2001-1.png](/images/bolivia/cel-mun-top30-2001-1.png)
 
@@ -39,7 +47,7 @@ In 2024, the picture is very different, with El Alto hanging on to a Indigenous 
 
 ![cel-mun-top30-1.png](/images/bolivia/cel-mun-top30-1.png)
 
-Where the main story I was telling for years was of an emergent urban Indigenous category, we now see dramatic contrasts in urban vs. rural identification. 
+Where the main story I was telling for years was of an emergent urban Indigenous category, we now see dramatic contrasts in urban vs. rural identification.
 
 ![cel-dept-1.png](/images/bolivia/cel-dept-1.png)
 

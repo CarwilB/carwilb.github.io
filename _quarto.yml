@@ -78,6 +78,10 @@ website:
         contents:
           - href: tools/wiki-to-ris.html
             text: "Wikipedia → RIS"
+          - href: tools/bolivia-muni-infobox-en.html
+            text: "Bolivia municipality infoboxes"
+          - href: tools/bolivia-muni-generator-en.html
+            text: "Bolivia municipality article content"
     footer: |
       <div style="text-align: center; padding: 0.5em 0;">
         <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcarwilb.github.io&label=Pageviews&icon=github&color=%230f5132&message=&style=flat&tz=UTC"
