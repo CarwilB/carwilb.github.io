@@ -1,0 +1,305 @@
+---
+title: "African Americans in US States"
+summary: "Summarizing Census 2020 Data for Wikipedia"
+author: "Carwil Bjork-James, using Gemini 3"
+date: "2026-01-30"
+format: 
+  html:
+    code-fold: true
+    toc: true
+    toc-location: left
+execute:
+  echo: true
+  warning: false
+---
+
+# Code to Generate This File
+
+```{r setup}
+library(tidycensus)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(scales)
+library(glue)
+library(purrr)
+library(knitr)
+library(kableExtra)
+library(english)
+```
+
+```{r enable-copy-to-github, echo=FALSE}
+source(here::here("src","gh-copy-assets.R"), local = knitr::knit_global())
+include_table_assets() # This injects the CSS and JS once
+```
+
+## Core Functions
+
+```{r core-functions}
+# Get state abbreviation from name
+get_state_abbr <- function(state_name) {
+  data("fips_codes")
+  abbr <- fips_codes %>%
+    filter(state_name == str_to_title(!!state_name)) %>%
+    pull(state) %>%
+    unique()
+  if (length(abbr) == 0) stop(paste("No state abbreviation found for:", state_name))
+  return(abbr)
+}
+
+# Construct Census Table URL
+get_census_url <- function(state_abbr) {
+  data("fips_codes")
+  fips <- fips_codes %>%
+    filter(state == toupper(state_abbr)) %>%
+    pull(state_code) %>%
+    unique()
+  if (length(fips) == 0) stop("Invalid state abbreviation.")
+  base_url <- "https://data.census.gov/table/DECENNIALPL2020.P1"
+  geo_param <- glue("040XX00US{fips}$0500000")
+  query_params <- "y=2020&d=DEC+Redistricting+Data+(PL+94-171)&tp=true"
+  return(glue("{base_url}?g={geo_param}&{query_params}"))
+}
+
+# Generate Wikitext Citation
+cite_census_p1 <- function(state_abbr, access_date = "2026-01-03") {
+  census_url <- get_census_url(state_abbr)
+  glue(
+    "<ref>{{{{Cite web ",
+    "| title = RACE ",
+    "| work = Decennial Census, DEC Redistricting Data (PL 94-171), Table P1 ",
+    "| publisher = U.S. Census Bureau ",
+    "| url = {census_url} ",
+    "| access-date = {access_date} ",
+    "}}}}</ref>"
+  )
+}
+
+# Generate Wikitext Narrative
+black_population_summary_by_county <- function(state_race_data_by_county, 
+                                               pct_threshold = 10, 
+                                               n_top_counties = 7) {
+  max_listed <- 10
+  counties_race_table <- state_race_data_by_county %>% 
+    select(-description) %>% pivot_wider(names_from = variable, values_from = value)
+  
+  county_stats <- counties_race_table %>%
+    mutate(
+      BASENAME   = gsub(" County,.*$", "", NAME),
+      STATE_NAME = str_extract(NAME, "(?<=, ).*$"),
+      black_pct  = (P1_004N / P1_001N) * 100
+    )
+  
+  state_name <- unique(county_stats$STATE_NAME)
+  state_abbr <- get_state_abbr(state_name)
+  n_counties <- nrow(county_stats)
+  state_total_pop <- sum(county_stats$P1_001N)
+  state_black_pop <- sum(county_stats$P1_004N)
+  
+  over_threshold <- county_stats %>% filter(black_pct > pct_threshold) %>% arrange(desc(black_pct))
+  n_threshold <- nrow(over_threshold)
+  
+  if (n_threshold <= max_listed + 1) {
+    links_vector <- over_threshold %>%
+      mutate(link = glue("[[{BASENAME} County, {state_name}|{BASENAME}]] ",
+                     "({number(black_pct, accuracy = 0.1)}%)")) %>%
+      pull(link)
+    # combine_words adds the "and" and Oxford comma automatically
+    over_threshold_list <- knitr::combine_words(links_vector) %>% paste0(".")
+  } else {
+    nn <- n_threshold - max_listed
+    truncated_list <- over_threshold %>% slice(1:max_listed) %>%
+      mutate(link = glue("[[{BASENAME} County, {state_name}|{BASENAME}]] ",
+                         "({number(black_pct, accuracy = 0.1)}%)")) %>%
+      pull(link) %>% paste(collapse = ", ")
+    over_threshold_list <- glue("{truncated_list}, and {nn} other counties.")
+  }
+  
+  already_linked <- over_threshold$BASENAME
+  top_n_counties <- county_stats %>% arrange(desc(P1_004N)) %>% slice(1:n_top_counties)
+  top_n_sum <- sum(top_n_counties$P1_004N); top_n_share <- (top_n_sum / state_black_pop) * 100
+  
+  top_n_list <- top_n_counties %>%
+    mutate(label = if_else(BASENAME %in% already_linked, 
+                           glue("{BASENAME} ({comma(P1_004N)})"), 
+                           glue("[[{BASENAME} County, {state_name}|{BASENAME}]] ({comma(P1_004N)})"))) %>%
+    pull(label) %>% knitr::combine_words()
+  
+  history_note <- ifelse(state_name == "Tennessee", "Most of these counties are in West Tennessee... ", "")
+  threshold_text <- ifelse(n_threshold > 0, glue("In {nrow(over_threshold)} of the state's {n_counties} counties, African Americans make up more than {pct_threshold}% of the population: "), "")
+  
+  wikitext_summary <- glue(
+    "In the [[2020 United States Census|2020 Census]], {comma(state_black_pop)} {state_name} residents were identified as African American ",
+    "(of the total {comma(state_total_pop)}).<ref>This figure refers to those who report African American and no other race.</ref> ",
+    "{threshold_text}{over_threshold_list} {history_note}African Americans in the {english::words(n_top_counties)} counties of {top_n_list} ",
+    "make up more than {floor(top_n_share)}% of all African Americans in the state."
+  )
+  
+  paste0(wikitext_summary, cite_census_p1(state_abbr = toupper(state_abbr)))
+}
+```
+
+## Data Preparation
+
+```{r}
+county_race_data <- readRDS(here::here("data", "county-race-data-list.rds"))
+
+# National average constant
+nat_avg_black_pct <- 14.2
+
+state_black_summary_table <- county_race_data %>%
+  map_dfr(function(df) {
+    
+    # 1. Pivot and calculate basics
+    wide_df <- df %>%
+      select(-description) %>%
+      pivot_wider(names_from = variable, values_from = value) %>%
+      mutate(
+        # Extract state name from the first row's NAME field
+        STATE_NAME = str_extract(NAME, "(?<=, ).*$"),
+        black_pct = (P1_004N / P1_001N) * 100
+      )
+    
+    # 2. Calculate state-wide totals
+    state_total <- sum(wide_df$P1_001N, na.rm = TRUE)
+    state_black <- sum(wide_df$P1_004N, na.rm = TRUE)
+    state_share <- (state_black / state_total) * 100
+    
+    # 3. Compile counts for the specific row
+    tibble(
+      state_name         = unique(wide_df$STATE_NAME),
+      state_abbr         = unique(fips_codes$state[fips_codes$state_name == state_name]),
+      black_pct          = round(state_share, 1),
+      
+      # Percentage Thresholds
+      c_lt_1pct   = sum(wide_df$black_pct < 1),
+      c_gt_1pct   = sum(wide_df$black_pct > 1),
+      c_gt_10pct  = sum(wide_df$black_pct > 10),
+      c_gt_natavg = sum(wide_df$black_pct > nat_avg_black_pct),
+      c_gt_stshare = sum(wide_df$black_pct > state_share),
+      c_gt_50pct  = sum(wide_df$black_pct > 50),
+      
+      # Population Volume Thresholds
+      c_gt_30k    = sum(wide_df$P1_004N > 30000),
+      c_gt_100k   = sum(wide_df$P1_004N > 100000),
+      c_gt_250k   = sum(wide_df$P1_004N > 250000)
+    )
+  })
+
+state_black_summary_table %>% filter(c_gt_50pct >= 5) %>% 
+  pull(state_abbr) -> majority_counties
+state_black_summary_table %>% filter((c_gt_50pct <= 5) & (black_pct > 10)) %>% 
+  pull(state_abbr) -> medium_counties
+state_black_summary_table %>% filter(black_pct <= 10) %>% filter(c_gt_10pct > 0) %>%
+  pull(state_abbr) -> gt_10_counties
+setdiff(names(county_race_data),
+        c(majority_counties, medium_counties, gt_10_counties)) -> lt_10_counties
+
+wikitext_summaries <- list()
+for (state in majority_counties) {
+  wikitext_summaries[[state]] <- 
+    black_population_summary_by_county(county_race_data[[state]], 
+                                       pct_threshold = 50, 
+                                       n_top_counties = 10)
+}
+for (state in medium_counties) {
+  wikitext_summaries[[state]] <- 
+    black_population_summary_by_county(county_race_data[[state]], 
+                                       pct_threshold = 20, 
+                                       n_top_counties = 7)
+}
+for (state in gt_10_counties) {
+  wikitext_summaries[[state]] <- 
+    black_population_summary_by_county(county_race_data[[state]], 
+                                       pct_threshold = 10, 
+                                       n_top_counties = 7)
+}
+for (state in lt_10_counties) {
+  wikitext_summaries[[state]] <-
+    black_population_summary_by_county(county_race_data[[state]], 
+                                       pct_threshold = 100, 
+                                       n_top_counties = 5)
+}
+```
+
+## Suggested edit rendering
+```{r editorial-renderer}
+render_state_editorial_section <- function(state_abbr, summary_table, wikitext_list) {
+  state_row <- summary_table %>% filter(state_abbr == !!state_abbr)
+  state_full_name <- state_row$state_name
+  
+  cat(glue("### {state_full_name} ({state_abbr})"), "\n\n")
+  
+  # Print Summary Stats Table
+  cat("::: {style=\"font-size: 0.8em;\"}\n")
+  print(state_row %>% select(1, 3, 4:9) %>% kable(format = "markdown") %>%
+          kable_styling(full_width = FALSE))
+  cat("\n")
+  print(state_row %>% select(1, 3, 10:12) %>% kable(format = "markdown") %>%
+          kable_styling(full_width = FALSE))
+  cat("\n")
+  
+  # Wikitext Copy Box
+  cat("::: {.code-copy}\n")
+  cat("```text\n")
+  cat(str_wrap(wikitext_list[[state_abbr]]), "\n")
+  cat("```\n")
+  cat(":::\n")
+  cat(":::\n\n")
+  
+  # Copy to Clipboard Button
+  button_obj <- copy_to_clipboard_button_wt(wikitext_list[[state_abbr]], 
+                              button_label = "Copy Wikitext to Clipboard")
+  print(button_obj)
+
+  # Wikipedia Link
+  wiki_url <- glue("https://en.wikipedia.org/wiki/African_Americans_in_{gsub(' ', '_', state_full_name)}")
+  cat(glue("[Edit Wikipedia Page: African Americans in {state_full_name}]({wiki_url})"), "\n\n")
+  cat("---\n\n")
+}
+
+```
+
+## State Data Processing
+
+```{r processing}
+# Organize states for looping
+majority_counties <- state_black_summary_table %>% 
+  filter(c_gt_50pct >= 5) %>%
+  pull(state_abbr)
+medium_counties <- state_black_summary_table %>% 
+  filter((c_gt_50pct < 5) & (black_pct > 10)) %>% 
+  pull(state_abbr)
+gt_10_counties <- state_black_summary_table %>% 
+  filter(black_pct <= 10 & c_gt_10pct > 0) %>% 
+  pull(state_abbr)
+lt_10_counties <- setdiff(names(county_race_data), 
+                          c(majority_counties, medium_counties,
+                            gt_10_counties))
+
+# Generate the Wikitext Narratives
+wikitext_summaries <- list()
+for (s in majority_counties) wikitext_summaries[[s]] <-
+  black_population_summary_by_county(county_race_data[[s]], 50, 10)
+for (s in medium_counties) wikitext_summaries[[s]] <- 
+  black_population_summary_by_county(county_race_data[[s]], 20, 7)
+for (s in gt_10_counties) wikitext_summaries[[s]] <- 
+  black_population_summary_by_county(county_race_data[[s]], 10, 7)
+for (s in lt_10_counties) wikitext_summaries[[s]] <- 
+  black_population_summary_by_county(county_race_data[[s]], 100, 5)
+
+```
+
+# Sections to add to Wikipedia
+
+```{r output-sections}
+#| results: asis
+#| echo: false
+
+# Render each state section
+for (st in names(county_race_data)) {
+  render_state_editorial_section(st, state_black_summary_table,
+                                 wikitext_summaries)
+}
+
+```

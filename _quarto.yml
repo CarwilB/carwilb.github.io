@@ -82,6 +82,8 @@ website:
             text: "Bolivia municipality infoboxes"
           - href: tools/bolivia-muni-generator-en.html
             text: "Bolivia municipality article content"
+          - href: tools/us-aa-census-wikitext.qmd
+            text: "African Americans by state wikitext"            
     footer: |
       <div style="text-align: center; padding: 0.5em 0;">
         <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcarwilb.github.io&label=Pageviews&icon=github&color=%230f5132&message=&style=flat&tz=UTC"

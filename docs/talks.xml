@@ -10,7 +10,7 @@
 <atom:link href="https://carwilb.github.io/talks.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.21</generator>
-<lastBuildDate>Thu, 13 Mar 2025 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 13 Mar 2025 05:00:00 GMT</lastBuildDate>
 <item>
   <title>‘It Has Cost Us Blood’: How Bolivian movements characterize death in protest</title>
   <dc:creator>Carwil Bjork-James</dc:creator>
@@ -140,7 +140,7 @@ Society of Latin American and Caribbean Anthropology</em>. Society of
 Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/talks/2025-slaca-blood.html">https://carwilb.github.io/talks/2025-slaca-blood.html</a>.
 </div></div></section></div> ]]></description>
   <guid>https://carwilb.github.io/talks/2025-slaca-blood.html</guid>
-  <pubDate>Thu, 13 Mar 2025 07:00:00 GMT</pubDate>
+  <pubDate>Thu, 13 Mar 2025 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Ultimate Consequences: A digital archive on lethal conflict in Bolivia</title>
@@ -159,8 +159,39 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2022-ultimate-consequences.html</guid>
-  <pubDate>Fri, 18 Nov 2022 08:00:00 GMT</pubDate>
+  <pubDate>Fri, 18 Nov 2022 06:00:00 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/ultimate-consequences-aaa-2022.png" medium="image" type="image/png" height="108" width="144"/>
+</item>
+<item>
+  <title>The Racial Geography of Political Violence in Bolivia, 1982–2025</title>
+  <dc:creator>Carwil Bjork-James</dc:creator>
+  <link>https://carwilb.github.io/talks/2026-erip-geog-violence.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><em>To be presented at the ERIP–Bolivia 2026 Conference, “Land–Body–Nation,” in La Paz, July 27-29.</em></p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Political violence in Bolivia has taken a variety of forms over four decades since the 1982 restoration of democracy. This paper surveys the impact of deadly violence across the racially stratified geography of Bolivia, a largely Indigenous and increasingly urban country over the period in question. Drawing on Ultimate Consequences, a new, comprehensive dataset of deaths in political conflict and social movement activity, we show how distinct domains of protest have had differing ethnoracial profiles.</p>
+<p>Broadly, we periodize our data into four political eras defined by two broad ideological alignments: the political left (UDP and MAS) and the political right (the neoliberal period and the 2019–2020 interim government), with the two most expansive periods being the 1985–2005 neoliberal era and the nearly two-decade rule of the MAS. During the neoliberal period, state security forces were the predominant source of political violence, while during the MAS era violence among civilian movements accounted for the majority of recorded deaths. By stratifying these deaths by arena of conflict (such as economic governance, partisan politics, the coca conflict, interethnic struggles, and mining, to name five leading areas), we highlight clear patterns in both the character of deadly violence and the ethnic and geographical makeup of its victims.</p>
+<p>This presentation also introduces Ultimate Consequences, a digital archive that documents nearly seven hundred lives lost in political conflict and social movement activity in Bolivia since 1982. The archive interweaves a rigorously coded database of individuals and events, interactive maps, narratives, and a corpus of historical documents. It enables comparative analysis across twelve presidential administrations, four episodes where protesters successfully sought the end of a presidential term, and over 200 protest events in 17 domains of conflict.</p>
+</section>
+<section id="resumen" class="level2">
+<h2 class="anchored" data-anchor-id="resumen">Resumen</h2>
+<p>Dividimos nuestros datos en cuatro épocas políticas definidas por dos grandes alineamientos ideológicos: la izquierda política (UDP y MAS) y la derecha política (el período neoliberal y el gobierno interino de 2019-2020), siendo los dos períodos más extensos la era neoliberal de 1985-2005 y los casi veinte años de gobierno del MAS. Durante el período neoliberal, las fuerzas de seguridad del Estado fueron la principal fuente de violencia política, mientras que durante la era del MAS la violencia entre grupos sociales opuestos representó la mayoría (¿pluralidad?) de las muertes registradas. Al estratificar estas muertes por ámbito de conflicto (como la gobernanza económica, la política partidista, el conflicto de la coca, las luchas interétnicas y la minería, por citar cinco áreas principales), ponemos de relieve patrones claros tanto en el carácter de la violencia letal como en la composición étnica y geográfica de sus víctimas.</p>
+<p>Esta presentación también presenta Últimas Consecuencias, un archivo digital que documenta las casi setecientas vidas perdidas en conflictos políticos y actividades de movimientos sociales en Bolivia desde 1982. El archivo entrelaza una base de datos rigurosamente codificada de personas y acontecimientos, mapas interactivos, narrativas y un corpus de documentos históricos. Permite realizar un análisis comparativo a lo largo de doce administraciones presidenciales, cuatro episodios en los que los manifestantes lograron el fin de un mandato presidencial y más de 200 actos de protesta en 17 ámbitos de conflicto.</p>
+<p>Conference <a href="https://sites.google.com/view/eripbolivia2026-englsih/">details here</a>.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://carwilb.github.io/talks/2026-erip-geog-violence.html</guid>
+  <pubDate>Tue, 14 Jul 2026 13:36:01 GMT</pubDate>
+  <media:content url="https://carwilb.github.io/talks/racial-geog-title-card.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
   <title>Making Open Data into Public Knowledge</title>
@@ -191,7 +222,7 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2026-wikimania-automating.html</guid>
-  <pubDate>Thu, 11 Jun 2026 06:08:21 GMT</pubDate>
+  <pubDate>Tue, 14 Jul 2026 13:36:01 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/wikimania-2026-cr.png" medium="image" type="image/png" height="70" width="144"/>
 </item>
 <item>
@@ -216,7 +247,7 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2021-aag-blocks.html</guid>
-  <pubDate>Thu, 11 Jun 2026 06:08:21 GMT</pubDate>
+  <pubDate>Tue, 14 Jul 2026 13:36:01 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/aag-2021-title.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -236,7 +267,7 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2025-wcna-interview.html</guid>
-  <pubDate>Thu, 11 Jun 2026 06:08:21 GMT</pubDate>
+  <pubDate>Tue, 14 Jul 2026 13:36:01 GMT</pubDate>
   <media:content url="https://carwilb.github.io/images/talks/cbj-rabbit-hole-interview.png" medium="image" type="image/png" height="98" width="144"/>
 </item>
 </channel>
