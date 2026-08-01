@@ -6,6 +6,7 @@ format:
     code-fold: true
 date: 2026-01-02
 editor: visual
+image: /images/anthro/Mooney-Occaneechi-Synonymy.png
 ---
 
 ## Using Quarto and R to generate text for Wikipedia

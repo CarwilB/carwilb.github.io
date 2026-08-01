@@ -6,6 +6,7 @@ date: 12 January 2026
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/anthro/mead-bateson-1938.jpg
 ---
 
 _I rode alongside my students' assignment to rewrite a Wikipedia article this semester and learned a ton about Margaret Mead. And also about what kind of material can stay on Wikipedia for many years without being updated or corrected. Here's what I think Wikipedia editors and those who teach with Wikipedia can learn from my experience._

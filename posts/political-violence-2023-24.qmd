@@ -3,6 +3,7 @@ title: "Conflict deaths in Bolivia, 2023--24"
 description: "Recent political violence in Bolivia is happening between social movements, not against them"
 author: "Carwil Bjork-James"
 date: "30 August 2024"
+image: /images/posts/waffle-deaths-by-president-2001-aug2024.png
 ---
 
 Eleven people have died in social movement-related violence in Bolivia since the beginning of 2023, ten of them the victims of violence carried out by other social groups. These conflicts pitted rural community members against miners, as well as disputes within the same profession, be it mining cooperatives, urban transit drivers, or rival claimants to rural land. Only one death, in January 2023, was caused by security forces, who fired a projectile into the eye of a bystander during raucous protests over the arrest of right-wing governor Luis Fernando Camacho.

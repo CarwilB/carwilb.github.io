@@ -6,6 +6,7 @@ date: 26 December 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/artificial-intelligence-machine-2.jpg
 ---
 
 ## Introductions to Generative AI

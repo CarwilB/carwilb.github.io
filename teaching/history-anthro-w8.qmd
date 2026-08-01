@@ -6,6 +6,7 @@ date: 14 October 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/anthro/Boas-1911-SamplePopulation.png
 ---
 
 Franz Boas and Paul Rivet, two long-distance friends and foundational colleagues in their discipline,[@laurière2010] each published major works around the same time that analyzed thousands of skulls using conventional anthropometric techniques. But these works, published on opposite sides of the Atlantic each upended long-held assumptions about racial types and the heritability of physical traits.

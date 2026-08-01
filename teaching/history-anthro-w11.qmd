@@ -6,6 +6,7 @@ date: 26 October 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/anthro/Mead-Samoa-2adolescents-1926.jpg
 ---
 
 > Margaret Mead's generation lived through the most rapid period of change in human history, before or since. People born in 1901, like her, had entered world that was still lit by candles, gas lamps, and kerosene lanterns a world in which heavier-than-air flight was reckoned "a vain fantasy," China was an ancient dynastic empire, the British Empire covered nearly one fourth of the planet's land area, no nation allowed women to vote, and hundreds of thousands still carried the living memory of being enslaved. And the youthful, utopian Margaret Mead of the 1920s and 1930s had been almost unique in predicting the scope of the changes to come. While her peers continued to imagine the future as one dominated by Western empires and by traditional social norms, she predicted an age of upheaval that would alter the *experience of being human itself*—an era of transformed consciousness. —Benjamin Breen[@breenTrippingUtopiaMargaret2024, p. 266]

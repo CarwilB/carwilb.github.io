@@ -6,6 +6,7 @@ date: 10 October 2018
 editor: 
   markdown: 
     wrap: 100
+image: /images/Students-Sexual-Assault-Avoidance.png
 ---
 
 I asked fourteen men and eighteen women in an Intro to Anthropology class, "What do you do regularly

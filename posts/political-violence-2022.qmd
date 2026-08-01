@@ -3,6 +3,7 @@ title: Conflict deaths in Bolivia, 2022
 description: Fifteen Bolivians were killed in social movement conflicts in 2022
 author: Carwil Bjork-James
 date: 8 January 2023
+image: /images/posts/conflict-death-2023-table.png
 ---
 
 Violent death cast a shadow over multiple social movements in Bolivia during the third calendar year of President Luis Arce. Deliberate killings came in clashes over land, mining, and the planned census, claiming eight lives, while tear gas detonated in a student meeting led to a stampede in which five were killed. A government bureaucrat who exposed a major corruption scandal died of years of mistreatment in prison. A motorcyclist was killed by a wire strung as part of a road blockade. And a brutal stabbing killed another participant in road blockades. Altogether, fifteen Bolivians lost their lives in or around Bolivia’s often charged movement conflicts.

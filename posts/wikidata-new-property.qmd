@@ -7,6 +7,7 @@ bibliography: references.bib
 reference-location: margin
 citation-location: margin
 eval: false
+image: /images/wikipedia/Wikidata-logo-en.svg.png
 ---
 
 This post walks through how I added a new property to Wikidata: the codes assigned to Bolivian geographic features by the Instituto Nacional de Estadística (INE, National Statistical Institute). You can read more about just what unique identifiers like INE codes are good for, and how Wikidata has become a repository for them below.

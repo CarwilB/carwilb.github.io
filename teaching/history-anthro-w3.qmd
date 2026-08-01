@@ -6,6 +6,7 @@ date: 11 September 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/Cuvier-Butterflies-Skulls.jpeg
 ---
 
 This week's readings attempt to capture anthropological thinking at the moment when Enlightenment thought is seeding the formation of the modern research university. While it will take some further decades for "the science of man" to escape from Natural History and take its place alongside other social scientific disciplines in the Western Academy, essential foundation for all three of these elements in that story (anthropology, the research university, and the social sciences) were all being laid around 1800.

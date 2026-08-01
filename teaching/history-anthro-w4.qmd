@@ -6,6 +6,7 @@ date: 12 September 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/pitt-rivers-which-we-destroy.jpeg
 ---
 
 **"Anthropology, as it was practiced throughout much of the 19th century," writes Rachel Caspari, "was a single biocultural discipline, with race linking the components."**[@caspari2003] Even though the nineteenth century saw a tremendous intellectual revolution in human biology—the introduction of a formal understanding of evolution—the foundational role of race remained unshaken, even reinforced, by this change.

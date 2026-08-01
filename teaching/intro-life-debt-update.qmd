@@ -3,6 +3,7 @@ title: "“Life and Debt” Follow-up: Jamaica and Structural Adjustment"
 date: 2014-11-19
 bibliography: references.bib
 reference-location: margin
+image: /images/teaching/jmd-1000-jamaican-dollars-Manley.jpg
 ---
 
 Nick Dearden writing in *The Guardian* (London) offers an overall update on Jamaica, debt and development,[@dearden2013] which continues to be heavily shaped by the neoliberal policies described in *Life and Debt*. Some highlights of his description:

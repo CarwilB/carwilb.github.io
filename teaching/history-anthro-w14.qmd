@@ -6,6 +6,7 @@ date: 24 November 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/anthro/rubin-traffic-kinship-diagram.jpg
 ---
 
 For our final week together, we will be reading **Gayle Rubin's article "The Traffic in Women,"** which offers a sophisticated analysis of the interconnection between social taboos, gender identity development, and compulsory heterosexuality, knitting these forces together into a composite "sex/gender system." Drawing on but greatly extending prior Marxist work on kinship, Rubin proposes that this system functions prior to and alongside the economic sphere investigated by Marx and Engels. Like the economy, the sex/gender system can take multiple shapes over time, with collective action capable of overthrowing one system and instituting another. Rubin suggests (with some ambivalence) the term "patriarchy" to refer to the current dominant mode of the sex/gender system and urges that "Feminism must call for a revolution in kinship" (199).

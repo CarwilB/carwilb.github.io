@@ -6,6 +6,7 @@ date: 28 August 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/Bartolomé_de_las_Casas_(1552)_Brevisima_relación_de_la_destrucción_de_las_Indias.png
 ---
 
 The second week's readings tries to capture the "dawn" of anthropology in the Western Hemisphere (or perhaps the world engaged by European colonialism). It works not so much by seeking out the first sources chronologically as by capturing the range of different possible voices describing human and cultural others.[@bjork-james2011]

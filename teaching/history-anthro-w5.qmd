@@ -6,6 +6,7 @@ date: 19 September 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/anthro/Ghost_Dance_at_Pine_Ridge-2.png
 ---
 
 The research monographs that this week's readings shadow are Lewis Henry Morgan's [*League of the Ho-dé-no-sau-nee, or Iroquois*](https://archive.org/details/leagueofhodnos00inmorg/page/n11/mode/2up) and James Mooney's [*The ghost-dance religion and the Sioux outbreak of 1890*](https://archive.org/details/ghostdancesioux00moonrich/page/n7/mode/2up). For a recommended sample of Mooney's work, see Chapter 2: ["The Doctrine of the Ghost Dance"](https://pages.ucsd.edu/~rfrank/class_web/ES-110/ETHN110articles/Plains/mooney_ps.pdf).

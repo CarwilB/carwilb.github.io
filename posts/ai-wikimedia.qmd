@@ -6,6 +6,7 @@ date: 2 January 2026
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
+image: /images/wikimedia-human-first.png
 ---
 
 ## What is Wikimedia Foundation doing about AI?

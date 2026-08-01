@@ -3,6 +3,7 @@ title: "Filmmaker Stephanie Black on “Life and Debt”"
 author: Carwil Bjork-James
 date: 2014-11-06
 bibliography: references.bib
+image: /images/teaching/stephanie-black-ig.jpg
 ---
 
 ### Stephanie Black

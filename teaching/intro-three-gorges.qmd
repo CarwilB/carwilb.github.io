@@ -2,6 +2,7 @@
 title: "Some updates on the Three Gorges Dam"
 author: Carwil Bjork-James
 date: 2014-11-10
+image: /images/teaching/3-Gorges-Construction.jpg
 ---
 
 Since *Manufactured Landscapes* was released in 2006, the **Three Gorges Dam** ([Wikipedia entry](https://en.wikipedia.org/wiki/Three_Gorges_Dam)) in China has been completed and made operational. Several of you mentioned its effects in your commentaries. Here are some further resources on the issue:

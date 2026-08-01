@@ -3,6 +3,7 @@ title: Palestinian fatalities surpass 40,000 in under 11 months
 description: The scale and disparity of death continue to grow at a staggering pace.
 author: Carwil Bjork-James
 date: 5 September 2024
+image: /images/IP-fatalities-5Sep2024.png
 ---
 
 ## This is not just another turn in the Israeli–Palestinian conflict.
