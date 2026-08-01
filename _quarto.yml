@@ -83,7 +83,32 @@ website:
           - href: tools/bolivia-muni-generator-en.html
             text: "Bolivia municipality article content"
           - href: tools/us-aa-census-wikitext.qmd
-            text: "African Americans by state wikitext"            
+            text: "African Americans by state wikitext"
+      - text: "---"
+      - section: "Wiki Automation"
+        href: wiki-automation/index.qmd
+        collapsed: true
+        contents:
+          - href: wiki-automation/bolivia-muni-infobox-en.html
+            text: "Municipality Infoboxes (EN)"
+          - href: wiki-automation/bolivia-muni-generator-en.html
+            text: "Municipality Article Content (EN)"
+          - href: wiki-automation/bolivia-muni-generator-es.html
+            text: "Tablas del Concejo Municipal (ES)"
+          - href: wiki-automation/cpv2024-population-quickstatements.html
+            text: "CPV 2024 Population QuickStatements"
+          - href: wiki-automation/bo-muni-flag-coat-wikidata-review.html
+            text: "Flag & Coat of Arms Review"
+          - href: wiki-automation/pcode-crosswalk.html
+            text: "Wikidata QID ↔ Pcode Crosswalk"
+          - href: wiki-automation/locator-maps-process.html
+            text: "Municipal Locator Maps"
+          - href: wiki-automation/bolivia-wikipedia-completeness.html
+            text: "Wikipedia Coverage by Language"
+          - href: wiki-automation/bolivia-municipality-wikipedia.html
+            text: "Bolivia Municipality Wikipedia Pages"
+          - href: wiki-automation/wiki-cleanup-bolivia-municipalities.html
+            text: "Cleanup Tracker"            
     footer: |
       <div style="text-align: center; padding: 0.5em 0;">
         <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcarwilb.github.io&label=Pageviews&icon=github&color=%230f5132&message=&style=flat&tz=UTC"

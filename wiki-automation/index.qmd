@@ -1,0 +1,40 @@
+---
+title: "Making Open Data into Public Knowledge"
+subtitle: "Supplemental materials: Bolivia municipality automation pipeline"
+description: "Scripts, workflows, and interactive tools from Carwil Bjork-James's Wikimania 2026 workshop on automating contributions to Wikipedia, Wikidata, and Commons."
+date: 2026-08-01
+---
+
+These pages document the data pipelines behind a set of semi-automated contributions to [Wikipedia](https://en.wikipedia.org), [Wikidata](https://wikidata.org), and [Wikimedia Commons](https://commons.wikimedia.org), presented at [Wikimania 2026](../talks/2026-wikimania-automating.html). All source code is available in the [wiki-graph repository](https://github.com/carwilb/wiki-graph) on GitHub.
+
+Each page shows the R code alongside its outputs — wikitext ready to paste, QuickStatements batches, or maps for upload — so other editors can inspect the calculations and decisions behind each contribution.
+
+## Wikipedia: article content
+
+| Page | Description |
+|------|-------------|
+| [Municipality Infoboxes (EN)](bolivia-muni-infobox-en.html) | Generates `{{Infobox settlement}}` wikitext for all 336 Bolivian municipalities, incorporating 2024 census population data and 2026 election results. |
+| [Municipality Article Content (EN)](bolivia-muni-generator-en.html) | Produces prose paragraphs, municipal council tables, and election result sections in English — ready to paste into new or existing Wikipedia articles. |
+| [Tablas del Concejo Municipal (ES)](bolivia-muni-generator-es.html) | Same pipeline for Spanish Wikipedia: council composition tables with party affiliations from the 2026 elections. |
+
+## Wikidata: QuickStatements and data quality
+
+| Page | Description |
+|------|-------------|
+| [CPV 2024 Population QuickStatements](cpv2024-population-quickstatements.html) | Generates QuickStatements V2 batches to add 2024 census population figures (P1082) to all 336 municipality items, with pre-flight checks to remove stale values. |
+| [Flag & Coat of Arms Review](bo-muni-flag-coat-wikidata-review.html) | Visual review interface for matching Commons flag and coat-of-arms images to Wikidata municipality items before running P41/P94 QuickStatements. |
+| [Wikidata QID ↔ OCHA Pcode Crosswalk](pcode-crosswalk.html) | Reconciles Wikidata QIDs with OCHA p-codes (COD-AB), enabling joins between humanitarian datasets and Wikidata items at municipality level. |
+
+## Wikimedia Commons: maps
+
+| Page | Description |
+|------|-------------|
+| [Municipal Locator Maps: Production Process](locator-maps-process.html) | Documents the R pipeline for generating and uploading SVG locator maps for each of Bolivia's 336 municipalities to Wikimedia Commons. |
+
+## Analysis: Wikipedia coverage and data quality
+
+| Page | Description |
+|------|-------------|
+| [Wikipedia Coverage by Language](bolivia-wikipedia-completeness.html) | Tracks which of Bolivia's 336 municipalities have articles across Wikipedia language editions, drawn from Wikidata. |
+| [Bolivia Municipality Wikipedia Pages](bolivia-municipality-wikipedia.html) | Scrapes the English Wikipedia category tree for Bolivian municipality articles and compares coverage with the Wikidata inventory. |
+| [Cleanup Tracker](wiki-cleanup-bolivia-municipalities.html) | Running audit of Wikidata item types, Wikipedia category membership, and expected page existence — re-render after each editing session to see progress. |

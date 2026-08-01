@@ -1,25 +1,8 @@
 [
   {
-    "listing": "/pubs.html",
-    "items": [
-      "/pubs/2024-bsj-violence.html",
-      "/pubs/2024-jlas-lethal-repression.html"
-    ]
-  },
-  {
-    "listing": "/talks.html",
-    "items": [
-      "/talks/2026-erip-geog-violence.html",
-      "/talks/2026-wikimania-automating.html",
-      "/talks/2021-aag-blocks.html",
-      "/talks/2025-wcna-interview.html",
-      "/talks/2025-slaca-blood.html",
-      "/talks/2022-ultimate-consequences.html"
-    ]
-  },
-  {
     "listing": "/index.html",
     "items": [
+      "/posts/wiki-language-diversity-v2.html",
       "/posts/facility-directory/index.html",
       "/posts/ice-detention-map-expanded/index.html",
       "/posts/wikidata-new-property.html",
@@ -50,6 +33,24 @@
       "/teaching/intro-life-debt-update.html",
       "/teaching/intro-three-gorges.html",
       "/teaching/intro-stephanie-black.html"
+    ]
+  },
+  {
+    "listing": "/talks.html",
+    "items": [
+      "/talks/2026-erip-geog-violence.html",
+      "/talks/2026-wikimania-automating.html",
+      "/talks/2021-aag-blocks.html",
+      "/talks/2025-wcna-interview.html",
+      "/talks/2025-slaca-blood.html",
+      "/talks/2022-ultimate-consequences.html"
+    ]
+  },
+  {
+    "listing": "/pubs.html",
+    "items": [
+      "/pubs/2024-bsj-violence.html",
+      "/pubs/2024-jlas-lethal-repression.html"
     ]
   }
 ]
