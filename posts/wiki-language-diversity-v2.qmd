@@ -24,8 +24,8 @@ execute:
 
 # Languages and Wikipedia Articles
 
-:::{.column-margin}
-![The largest Wikipedia editions by number of articles](/images/wikipedia/List_of_Wikipedia_articles_by_language_-_March_2024.svg.png){.lightbox}
+::: column-margin
+![The largest Wikipedia editions by number of articles, as visualized by [Arief Azazie Zain](https://commons.wikimedia.org/wiki/User:Arief_Azazie_Zain) in 2024.](/images/wikipedia/List_of_Wikipedia_articles_by_language\_-\_March_2024.svg.png){.lightbox}
 :::
 
 ```{r setup, include=FALSE}
@@ -407,7 +407,8 @@ format_for_display <- function(df, show_rank = TRUE) {
                                                "abh", "acy", "azj", "kpv"),
           paste0("In ", wp_edition_display),
           wp_edition_display
-        ),
+        ) |> 
+        str_replace_all(",simplified Chinese", ", Simplified Chinese"),
         "—"
       )
     )
@@ -473,7 +474,7 @@ render_table <- function(df) {
 # Also bring in wiki_name_native and wp_edition_display from the wiki table
 wiki_special_enriched <- wiki_special |>
   left_join(
-    wiki_special_info |> select(wp_code, description_en, en_url),
+    wiki_special_info |> select(wp_code, description_en, en_url, lang_type),
     by = "wp_code"
   ) |>
   left_join(
@@ -487,6 +488,12 @@ format_for_display_special <- function(df) {
     mutate(
       articles_fmt = format(articles, big.mark = ","),
       description = replace_na(description_en, ""),
+      lang_type = case_when(
+        lang_type == "auxiliary" ~ "Auxiliary / Constructed",
+        lang_type == "classical" ~ "Classical / Historical",
+        lang_type == "spoken"    ~ "Spoken / Regional",
+        TRUE                     ~ lang_type
+      ),
       # Create Wikipedia edition display: linked article count + native name + transliteration
       wiki_edition_fmt = if_else(
         !is.na(wp_edition_display),
@@ -494,7 +501,7 @@ format_for_display_special <- function(df) {
         "—"
       )
     ) |>
-    select(language, description, articles_fmt, wiki_edition_fmt)
+    select(language, description, lang_type, articles_fmt, wiki_edition_fmt)
 }
 ```
 
@@ -606,7 +613,8 @@ render_table <- function(df) {
     compact = TRUE,
     style = list(
       fontSize = "14px",
-      fontFamily = "inherit"
+      fontFamily = "inherit",
+      width = "100%"
     ),
     defaultColDef = colDef(
       headerStyle = list(
@@ -619,13 +627,13 @@ render_table <- function(df) {
       language_display = colDef(
         name = "Language",
         html = TRUE,
-        width = 250,
+        width = 180,
         align = "left"
       ),
       wikidata_description = colDef(
         name = "Language Description",
         html = TRUE,
-        width = 250,
+        width = 200,
         align = "left",
         class = "col-hide-mobile",
         headerClass = "col-hide-mobile"
@@ -633,7 +641,7 @@ render_table <- function(df) {
       speakers_fmt = colDef(
         name = "Speakers (L1 est.)",
         align = "right",
-        width = 120,
+        width = 100,
         filterInput = numeric_filter_input,
         filterMethod = numeric_filter_method,
         style = function(value, index) {
@@ -645,7 +653,7 @@ render_table <- function(df) {
       articles_fmt = colDef(
         name = "Wikipedia Articles",
         align = "right",
-        width = 120,
+        width = 100,
         filterInput = numeric_filter_input,
         filterMethod = numeric_filter_method,
         style = function(value, index) {
@@ -657,8 +665,8 @@ render_table <- function(df) {
       wiki_edition_fmt = colDef(
         name = "Wikipedia Edition",
         html = TRUE,
-        width = 260,
-        align = "right"
+        width = 220,
+        align = "left"
       )
     )
   )
@@ -823,8 +831,8 @@ wiki_special_fmt |>
   kable(
     format    = "html",
     escape    = FALSE,
-    col.names = c("Language", "Language Description", "Articles", "Wikipedia Edition"),
-    align     = "llrr"
+    col.names = c("Language", "Language Description", "Language Type", "Articles", "Wikipedia Edition"),
+    align     = "lllrr"
   ) |>
   kable_styling(
     bootstrap_options = c("hover", "condensed"),
@@ -832,9 +840,10 @@ wiki_special_fmt |>
     htmltable_class   = "table table-hover table-condensed"
   ) |>
   column_spec(1, width = "20%") |>
-  column_spec(2, width = "30%") |>
-  column_spec(3, background = article_colors_s, width = "12%") |>
-  column_spec(4, width = "38%") |>
+  column_spec(2, width = "20%") |>
+  column_spec(3, width = "15%") |>
+  column_spec(4, background = article_colors_s, width = "12%") |>
+  column_spec(5, width = "33%") |>
   row_spec(0, background = "white", color = "black", bold = TRUE)
 
 ```
