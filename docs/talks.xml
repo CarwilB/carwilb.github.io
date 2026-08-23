@@ -159,7 +159,7 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2022-ultimate-consequences.html</guid>
-  <pubDate>Fri, 18 Nov 2022 04:00:00 GMT</pubDate>
+  <pubDate>Fri, 18 Nov 2022 05:00:00 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/ultimate-consequences-aaa-2022.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
@@ -190,7 +190,7 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2026-erip-geog-violence.html</guid>
-  <pubDate>Sat, 01 Aug 2026 14:31:09 GMT</pubDate>
+  <pubDate>Sun, 23 Aug 2026 12:00:24 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/racial-geog-title-card.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
@@ -210,19 +210,22 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 <p>By using data science tools, including code in the programming language R, I have used publicly available data to generate and expand Wikipedia lists, produce infoboxes, automatically calculate prose summarizing demographic changes, and produce starter stubs for use in edit-a-thons. For Wikidata, R scripts can produce batteries of QuickStatements that add census data to municipalities, help clean up and organize taxonomies, and attach geographic coordinates to items at scale. Mapping and data visualization tools can produce multiple, regularly updating images for Commons. Finally, each of these outputs can be produced multilingually.</p>
 <p>In the interest of reliability, each of these processes need to be carried out in a transparent, human-in-the-loop way, and provide other editors with a way to look into the scripts, calculations, and decisions that drive this kind of creating. The workshop will both show the tools for this and have time for discussion about best practices for scaling up contributions to Wikipedia.</p>
 <p><strong>Who is this for?</strong> This workshop is intended for people who are curious about whether Wikipedia can benefit from the explosion in open data science, where both tools and participants are multiplying rapidly. And it is intended for people who use such tools as part of their research lives and want to know some of the details on how to include an output-to-Wikimedia option when they are working with reliable, previously published datasets.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://wikimania.wikimedia.org" class="img-fluid figure-img"></p>
-<figcaption>Wikimania_2026_long_banner_coloured_drawings.jpg</figcaption>
-</figure>
-</div>
+</section>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQyQ0zWoAA_DT2LfbWWD5w-FuMYWnF3wUCfablTaji6yXg6aOuMrhsaX_buSpraHzHng2HJrSFFPCbc/pubembed?start=false&amp;loop=false&amp;delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</section>
+<section id="video-of-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="video-of-presentation">Video of presentation</h2>
+<p>The recorded presentation session is <a href="https://www.youtube.com/watch?v=hvpOFVZhgnE&amp;list=PLfq0CVoHfK80&amp;t=6433s">online here</a>.</p>
+<p><img src="https://carwilb.github.io/talks/Wikimania_2026_long_banner_coloured_drawings.jpg" class="img-fluid"></p>
 
 
 </section>
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2026-wikimania-automating.html</guid>
-  <pubDate>Sat, 01 Aug 2026 14:31:09 GMT</pubDate>
+  <pubDate>Sun, 23 Aug 2026 12:00:24 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/wikimania-2026-cr.png" medium="image" type="image/png" height="70" width="144"/>
 </item>
 <item>
@@ -247,7 +250,7 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2021-aag-blocks.html</guid>
-  <pubDate>Sat, 01 Aug 2026 14:31:09 GMT</pubDate>
+  <pubDate>Sun, 23 Aug 2026 12:00:24 GMT</pubDate>
   <media:content url="https://carwilb.github.io/talks/aag-2021-title.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -267,7 +270,7 @@ Latin American and Caribbean Anthropology. <a href="https://carwilb.github.io/ta
 
  ]]></description>
   <guid>https://carwilb.github.io/talks/2025-wcna-interview.html</guid>
-  <pubDate>Sat, 01 Aug 2026 14:31:09 GMT</pubDate>
+  <pubDate>Sun, 23 Aug 2026 12:00:24 GMT</pubDate>
   <media:content url="https://carwilb.github.io/images/talks/cbj-rabbit-hole-interview.png" medium="image" type="image/png" height="98" width="144"/>
 </item>
 </channel>

@@ -17,4 +17,14 @@ In the interest of reliability, each of these processes need to be carried out i
 
 **Who is this for?** This workshop is intended for people who are curious about whether Wikipedia can benefit from the explosion in open data science, where both tools and participants are multiplying rapidly. And it is intended for people who use such tools as part of their research lives and want to know some of the details on how to include an output-to-Wikimedia option when they are working with reliable, previously published datasets.
 
-![Wikimania_2026_long_banner_coloured_drawings.jpg](https://wikimania.wikimedia.org)
+## Slides
+
+```{=html}
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQyQ0zWoAA_DT2LfbWWD5w-FuMYWnF3wUCfablTaji6yXg6aOuMrhsaX_buSpraHzHng2HJrSFFPCbc/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+```
+
+## Video of presentation
+
+The recorded presentation session is [online here](https://www.youtube.com/watch?v=hvpOFVZhgnE&list=PLfq0CVoHfK80&t=6433s).
+
+![](Wikimania_2026_long_banner_coloured_drawings.jpg)
