@@ -1,0 +1,42 @@
+---
+title: What is anthropological theory? What are the aims of anthropology?
+description: Situating readings for Week 1 of the History of Anthropological Theory
+author: Carwil Bjork-James
+date: 29 August 2026
+bibliography: references.bib
+reference-location: margin
+format: 
+  html:
+    css: ../styles.css
+    citation-location: margin
+image: /images/decolonizing-methodologies.jpg
+---
+
+[This course will introduce and interrogate]{.smallcaps} a variety of ideas that have structured the discipline of anthropology. Anthropology emerged as a formal discipline within the modern Western research university, as part of a division of conceptual terrain with other historical social sciences. State-sponsored and state-aligned efforts to gather knowledge about colonial domains became incorporated in the discipline. Within this context, ideas crossed over between anthropology and other fields: philosophy, history, dialectical materialism, and sociology.
+
+Over the last half millennium, the aims of anthropological writings have ranged from providing justifications for colonization to witnessing and refusing it; situating cultural others as childlike primitives, as comprehensible equals, and as aspirational ideals. We will encounter anthropologists at work: classifying, downgrading, salvaging, valorizing, or witnessing on behalf of their research subjects.
+
+We will use this course to directly engage with the ideas of anthropologists across three centuries, reading their concepts and practices as fundamental premises for our work, and reading their work as cultural objects that help us understand the cultural and political positions of the discipline itself. Accordingly, our shared reading list includes primary texts, biographies and intellectual histories, and more recent critical contextualization.
+
+## About Week 1’s readings
+
+French anthropologist **Claude Lévi-Strauss** {{< wikilink "Claude Lévi-Strauss" >}} attempts to describe the broadest purpose of anthropology. This text, a talk given an the College de France, dives first into the long chain of anthropological scholars, using them to suggest ultimate purposes of the discipline. Lévi-Strauss offers several answers, ranging from studying "the life of signs at the heart of social life" to a retort to colonialism that recognizes "the forms of life and thought" in other societies as "a permanent hope for mankind." Inverting the power relations often attending colonial research, Lévi-Strauss names himself with respect to non-state societies: "their pupil and their witness."
+
+Ella Shohat and Robert Stam write that "Lévi-Strauss constitutes a clear case of circum-Atlantic connectivities among France, the United States, Brazil, and indigenous America."[@shohat2012, p. 34]
+
+Writing less than two decades later, American anthropologist **Catherine Lutz** {{< wikilink "Catherine Lutz" >}} addresses the narrower question of what anthropological theory is, making observations about the writing, reading, and citing of history. She argues that theoretical writing is deliberately shorn of facts, making it open to interpretation, and that this flexibility is part of why it is used.
+
+Lutz makes all these points as part of an investigation into the prevalence of male writers in the anthropological canon and into how much a gendered division of labor exists between theoretical and non-theoretical anthropological writing. Her text appeared in *Women Writing Culture*, an anthology that provided a rejoinder to the Writing Culture seminar at the School for Advanced Research and the influential edited that followed. Somewhat infamously, *Writing Culture* featured entirely male writers save one, a non-anthropologist.
+
+In *The Invention of Prehistory ,*[@geroulanos2024] **Stefanos Geroulanos** pursues the approach of reading anthropological and other accounts of deep human history as a cultural object. Geroulanos is interested in the stories cultures tell about "prehistory" and people imagined to still be living prehistorical lives. This approach allows the critic and the reader to focus on themes and the conceptual, rather than primarily on the truth or errors of a perspective.
+
+This approach is also called bracketing. As in, "for purposes of discussion we bracket the truth value of these statements," meaning we leave evaluating truth or falsehood to the side and focus on talking about language and concepts.
+
+There are more than a few approaches in the social sciencies in the last six decades that do this. In *Metahistories* (1973),[@white1973] Hayden White took the previously unthinkable step of treating historical writing the same way as fiction writing, and forced historians to think about how they reshaped to the past through their efforts to tell a story. We'll see in a couple weeks how Foucault's history of science work took a similar approach.
+
+**Linda Tuhiwai Smith**'s {{< wikilink "Linda Tuhiwai Smith" >}} *Decolonizing Methodologies* combines a frontal critique of research in the context of colonization and an exploration of self-determined methods for Indigenous research. She writes that “Indigenous peoples as an international group have had to challenge, understand and have a shared language for talking about the history, the sociology, the psychology and the politics of imperialism and colonialism as an epic story telling of huge devastation, painful struggle and persistent survival.” *Decolonizing Methodologies*, currently in its third edition has become a foundational text in Indigenous Studies. Tuhiwai Smith teaches at Te Whare Wānanga o Awanuiārangi.
+
+**Marlene Daut**'s intellectual history of the (1791–1804) Haitian Revolution, *Awakening the Ashes*,[@daut2023] draws attention to the history-telling, witnessing, and theorizing of freedom that was a part of the hemisphere's first successful antislavery revolution. In important ways, Daut's book is a successor to Haitian-American anthropologist Michel-Rolph Trouillot's Silencing the Past,[@trouillot1995] and to his less-well-known *Ti difé boulé sou istwa Ayiti* (A Small Fire Burning on Haitian History; 1977),[@michel-rolphtrouillot1977] reportedly the first nonfiction book published in Haitian Creole.
+
+![Claude and Dani Lévi-Strauss in Nalike encapment, Serra Bodoquena, southern Mato Grosso, Brazil, 1935-1936](/images/levi3.large.jpg)
+

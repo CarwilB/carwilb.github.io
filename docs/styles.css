@@ -1,0 +1,6 @@
+/* target Quarto's dynamically generated margin containers */
+.no-row-height.column-margin {
+  position: relative !important; /* Forces elements back into normal document flow */
+  top: auto !important;          /* Overrides Quarto's absolute pixel calculations */
+  margin-bottom: 2rem;           /* Safely spaces elements out sequentially */
+}
