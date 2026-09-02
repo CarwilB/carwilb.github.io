@@ -10,7 +10,41 @@
 <atom:link href="https://carwilb.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.21</generator>
-<lastBuildDate>Sat, 29 Aug 2026 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 02 Sep 2026 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>History of Anthropological Theory, fall 2026</title>
+  <dc:creator>Carwil Bjork-James</dc:creator>
+  <link>https://carwilb.github.io/teaching/history-anthro-overview.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>An index of materials for the course</p>
+<ol type="1">
+<li>Situating Anthropology: <a href="../teaching/history-anthro-w1.html">What is anthropological theory? What are the aims of anthropology?</a></li>
+<li>Dawn of Anthropology in the Western Hemisphere: <a href="../teaching/history-anthro-w2.html">When did anthropology begin in the Western Hemisphere?</a></li>
+<li>The Enlightenment and the Social Scientific Project: <a href="../teaching/history-anthro-w3.html">Anthropology and the Enlightenment</a></li>
+<li>Science and Classification</li>
+<li>Nineteenth Century Evolutionary Anthropology: <a href="../teaching/history-anthro-w5.html">Ninetenth-Century Evolutionary Anthropology</a></li>
+<li>Nineteenth Century Ethnography: Morgan and Mooney: <a href="../teaching/history-anthro-w6.html">Nineteenth-century North American ethnography by Mooney and Morgan</a></li>
+<li>Marx and Historical Materialism</li>
+<li>Physical Anthropology and Archaeology: History and Early Methods</li>
+<li>Cultural Anthropology / Boas: <a href="../teaching/history-anthro-w9.html">Boas, Rivet, and the End of the Craniometry of Race</a></li>
+<li>Du Bois and Vindicationism</li>
+<li>Twentieth Century Ethnographic Methods</li>
+<li>Mead, Gender and Sexuality: <a href="../teaching/history-anthro-w12.html">Margaret Mead</a></li>
+<li>The Gift and Symbolic Anthropology: <a href="../teaching/history-anthro-w13.html">Gifts, Boundaries, and Taboos</a></li>
+</ol>
+
+
+
+ ]]></description>
+  <guid>https://carwilb.github.io/teaching/history-anthro-overview.html</guid>
+  <pubDate>Wed, 02 Sep 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://carwilb.github.io/images/9_Bisonte_Magdaleniense_polícromo.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>What is anthropological theory? What are the aims of anthropology?</title>
   <dc:creator>Carwil Bjork-James</dc:creator>
@@ -10651,7 +10685,7 @@ font-style: inherit;">"Occaneechi"</span>)</span></code></pre></div></div>
 <item>
   <title>Gifts, Boundaries, and Taboos</title>
   <dc:creator>Carwil Bjork-James</dc:creator>
-  <link>https://carwilb.github.io/teaching/history-anthro-w12.html</link>
+  <link>https://carwilb.github.io/teaching/history-anthro-w13.html</link>
   <description><![CDATA[ 
 
 
@@ -10718,14 +10752,14 @@ font-style: inherit;">"Occaneechi"</span>)</span></code></pre></div></div>
 
 
  ]]></description>
-  <guid>https://carwilb.github.io/teaching/history-anthro-w12.html</guid>
+  <guid>https://carwilb.github.io/teaching/history-anthro-w13.html</guid>
   <pubDate>Tue, 04 Nov 2025 06:00:00 GMT</pubDate>
   <media:content url="https://carwilb.github.io/images/anthro/levi-strauss-elementary-structures-fig3.png" medium="image" type="image/png" height="241" width="144"/>
 </item>
 <item>
   <title>Landmarks in conceptualizing the ethnographic field by Malinowski and Gluckman</title>
   <dc:creator>Carwil Bjork-James</dc:creator>
-  <link>https://carwilb.github.io/teaching/history-anthro-w10.html</link>
+  <link>https://carwilb.github.io/teaching/history-anthro-w11.html</link>
   <description><![CDATA[ 
 
 
@@ -10777,14 +10811,14 @@ font-style: inherit;">"Occaneechi"</span>)</span></code></pre></div></div>
 
 
  ]]></description>
-  <guid>https://carwilb.github.io/teaching/history-anthro-w10.html</guid>
+  <guid>https://carwilb.github.io/teaching/history-anthro-w11.html</guid>
   <pubDate>Sun, 26 Oct 2025 05:00:00 GMT</pubDate>
   <media:content url="https://carwilb.github.io/images/anthro/Malinowski-Argonauts-Plate1-p45.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Margaret Mead</title>
   <dc:creator>Carwil Bjork-James</dc:creator>
-  <link>https://carwilb.github.io/teaching/history-anthro-w11.html</link>
+  <link>https://carwilb.github.io/teaching/history-anthro-w12.html</link>
   <description><![CDATA[ 
 
 
@@ -10916,14 +10950,14 @@ font-style: inherit;">"Occaneechi"</span>)</span></code></pre></div></div>
 
 
  ]]></description>
-  <guid>https://carwilb.github.io/teaching/history-anthro-w11.html</guid>
+  <guid>https://carwilb.github.io/teaching/history-anthro-w12.html</guid>
   <pubDate>Sun, 26 Oct 2025 05:00:00 GMT</pubDate>
   <media:content url="https://carwilb.github.io/images/anthro/Mead-Samoa-2adolescents-1926.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Boas, Rivet, and the End of the Craniometry of Race</title>
   <dc:creator>Carwil Bjork-James</dc:creator>
-  <link>https://carwilb.github.io/teaching/history-anthro-w8.html</link>
+  <link>https://carwilb.github.io/teaching/history-anthro-w9.html</link>
   <description><![CDATA[ 
 
 
@@ -10984,55 +11018,9 @@ font-style: inherit;">"Occaneechi"</span>)</span></code></pre></div></div>
 
 
  ]]></description>
-  <guid>https://carwilb.github.io/teaching/history-anthro-w8.html</guid>
+  <guid>https://carwilb.github.io/teaching/history-anthro-w9.html</guid>
   <pubDate>Tue, 14 Oct 2025 05:00:00 GMT</pubDate>
   <media:content url="https://carwilb.github.io/images/anthro/Boas-1911-SamplePopulation.png" medium="image" type="image/png" height="38" width="144"/>
-</item>
-<item>
-  <title>Nineteenth-century North American ethnography by Mooney and Morgan</title>
-  <dc:creator>Carwil Bjork-James</dc:creator>
-  <link>https://carwilb.github.io/teaching/history-anthro-w5.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>The research monographs that this week’s readings shadow are Lewis Henry Morgan’s <a href="https://archive.org/details/leagueofhodnos00inmorg/page/n11/mode/2up"><em>League of the Ho-dé-no-sau-nee, or Iroquois</em></a> and James Mooney’s <a href="https://archive.org/details/ghostdancesioux00moonrich/page/n7/mode/2up"><em>The ghost-dance religion and the Sioux outbreak of 1890</em></a>. For a recommended sample of Mooney’s work, see Chapter 2: <a href="https://pages.ucsd.edu/~rfrank/class_web/ES-110/ETHN110articles/Plains/mooney_ps.pdf">“The Doctrine of the Ghost Dance”</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://carwilb.github.io/images/anthro/Ghost_Dance_at_Pine_Ridge-2.png" class="img-fluid figure-img"></p>
-<figcaption>he Ghost dance by the Oglala Lakota at Pine Ridge Agency-Drawn by Frederic Remington from sketches taken on the spot.</figcaption>
-</figure>
-</div>
-<section id="historical-context-of-the-ghost-dance" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="historical-context-of-the-ghost-dance">Historical context of the Ghost Dance</h2>
-<p>The colonization of the Great Plains through the Indian Wars is the context for the spread of the Ghost Dance religion. The Fort Laramie Treaties had recognized native sovereignty over the Great Plains in 1851, but volunteer and Federal Army troops began a new round of Indian Wars in the 1860s. Genocidal massacres, military internment, and the undermining of the Indian food supply followed in the succeeding decades. Killing buffalo as a tactic of counterinsurgency was pursued with abandon, as praised by General Philip Sheridan in 1875:</p>
-<div class="page-columns page-full"><blockquote class="blockquote">
-<p>These men [the buffalo hunters] have done … more to settle the vexed Indian question than the entire regular army has done in the last 30 years. They are destroying the Indians’ commissary. … Send them powder and lead if you will, but for the sake of lasting peace let them kill, skin, and sell until the buffalo are exterminated.<span class="citation" data-cites="laduke1999"><sup>1</sup></span></p>
-</blockquote><div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Quoted in Winona LaDuke, <em>All Our Relations: Native Struggles for Land and Life</em> (South End Press, 1999), 141.</p></div></div></div>
-<p>These measures constituted successive attacks on the physical and cultural mechanisms of survival of the Indians. And consciously so, as can be seen from the opinion of General William Tecumseh Sherman as early as 1867, “We must act with vindictive earnestness against the [Lakota], even to their extermination, men, women and children.”<span class="citation" data-cites="churchill1997">.<sup>2</sup></span> The impact was devastating, as Dee Brown describes for the summer of 1874,</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Ward Churchill, <em>A Little Matter of Genocide: Holocaust and Denial in the Americas, 1492 to the Present</em> (City Lights, 1997), 240.</p></div></div><div class="page-columns page-full"><blockquote class="blockquote">
-<p>If such a season [of drought] had come upon this land a few years earlier, a thunder of a million buffalo hooves would have shaken the prairie in frantic stampedes for water. But now the herds were gone, replaced by an endless desolation of bones and skulls and rotting hooves. … Bands of Comanches, Kiowas, Cheyennes, and Arapahos roamed restlessly, finding a few small herds, but many had to return to their reservations to keep from starving.<span class="citation" data-cites="brown2001"><sup>3</sup></span></p>
-</blockquote><div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Dee Brown, <em>Bury My Heart at Wounded Knee: An Indian History of the American West</em>, Thirtieth Anniversary ed. (H. Holt, 2001), 268.</p></div></div></div>
-<p>Those who chose the path of a negotiated surrender to reservations, as did those led by Sitting Bull in 1881, saw agreements for rations and safety undermined. Just two years after that agreement, Sitting Bull—noting “our rations have been reduced to almost nothing” and “many of our people have starved to death”—made a plea for material equality as a corollary of negotiation:</p>
-<div class="page-columns page-full"><blockquote class="blockquote">
-<p>You white men advise us to follow your ways, and therefore I talk as I do. When you have a piece of land, and anyone trespasses on it, you catch them, and keep them until you get damages, and I am doing the same thing now…. I see my people starving, and I want the Great Father to make an increase in the amount of food that is allowed us now, so that they may be able to live. We want cattle to butcher—I want to kill 300 head of cattle at a time. That is the way you live and we want to live the same way.<span class="citation" data-cites="laduke1999"><sup>4</sup></span></p>
-</blockquote><div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;LaDuke, <em>All Our Relations</em>, 97.</p></div></div></div>
-<p>Notwithstanding their pleas, more than one-third of the Lakota would die of starvation and disease between 1877 and 1890.<span class="citation" data-cites="laduke1999"><sup>5</sup></span> The self-sufficiency of the Indians of the Great Plains was undermined on the terrain of physical survival, through the imposition of facts on the ground.</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;LaDuke, <em>All Our Relations</em>, 97.</p></div></div><p>Here is my recorded lecture segment on the historical context of the Ghost Dance:</p>
-<p>{{&lt;video https://youtu.be/dCuBskJzLo4 &gt;}}</p>
-<p>Anthropologist Ella Deloria featured an eyewitness account of the Ghost Dance from an elder who a child during the peak of the religion.</p>
-<p><img src="https://carwilb.github.io/images/deloria-ghost-dance-1.png" class="img-fluid"> <img src="https://carwilb.github.io/images/deloria-ghost-dance-2.png" class="img-fluid"> <img src="https://carwilb.github.io/images/deloria-ghost-dance-3.png" class="img-fluid"></p>
-
-
-</section>
-
-
- ]]></description>
-  <guid>https://carwilb.github.io/teaching/history-anthro-w5.html</guid>
-  <pubDate>Fri, 19 Sep 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://carwilb.github.io/images/anthro/Ghost_Dance_at_Pine_Ridge-2.png" medium="image" type="image/png" height="100" width="144"/>
 </item>
 </channel>
 </rss>

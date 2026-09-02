@@ -1,68 +1,72 @@
 ---
-title: Gifts, Boundaries, and Taboos
+title: Margaret Mead
 description: Situating readings for Week 12 of the History of Anthropological Theory
 author: Carwil Bjork-James
-date: 4 November 2025
+date: 26 October 2025
 bibliography: references.bib
 reference-location: margin
 citation-location: margin
-image: /images/anthro/levi-strauss-elementary-structures-fig3.png
+image: /images/anthro/Mead-Samoa-2adolescents-1926.jpg
 ---
 
-### The Gift
+> Margaret Mead's generation lived through the most rapid period of change in human history, before or since. People born in 1901, like her, had entered world that was still lit by candles, gas lamps, and kerosene lanterns a world in which heavier-than-air flight was reckoned "a vain fantasy," China was an ancient dynastic empire, the British Empire covered nearly one fourth of the planet's land area, no nation allowed women to vote, and hundreds of thousands still carried the living memory of being enslaved. And the youthful, utopian Margaret Mead of the 1920s and 1930s had been almost unique in predicting the scope of the changes to come. While her peers continued to imagine the future as one dominated by Western empires and by traditional social norms, she predicted an age of upheaval that would alter the *experience of being human itself*—an era of transformed consciousness. —Benjamin Breen[@breenTrippingUtopiaMargaret2024, p. 266]
 
-Marcel Mauss wrote *Essai sur le don* (*Essay on the Gift*) as the main work of *L'Année Sociologique* of 1923/24. This brief, comparative work is his best known contribution to anthropology and one of the most widely cited anthropological works. As editor of the journal, co-author of multiple works, and as chair of Sociology at the College de France, was key to the growth of social anthropology in France. (And is even credited by Claude Lévi-Strauss with importing the term social anthropology into France.[@levi-strauss1966])
+Margaret Mead already had her PhD in hand when she traveled across the United States (by train with Ruth Benedict) and then further from San Francisco to Honolulu and onward to Samoa in 1925. Her fieldwork there on adolescent sexuality, published in *Coming of Age in Samoa*[@mead1943] generated extensive publicity and launched her career as a public intellectual. Her subsequent work in *Sex and Temperament in Three Primitive Societies*[@mead1935] profiled three New Guinea cultures with distinct gender systems, and explored the question of what happens when an individual's emotional disposition is at odd's with society's gender expectations.
 
-Mauss's essay reoriented the anthropological study of the circulation of goods, intangible offerings, services, and honors in multiple ways. It widened the scope of "stuff" considered possible to exchange, sets up social collectivities (and also deities) rather than individuals as the participants in these exchanges, recognizes that that which is exchanged is charged with spiritual power, explains that this system morally demands reciprocity, and argues that such reciprocity is the foundation of social relations.
+![Margaret Mead sitting between two Samoan girls, ca. 1926. The photo was enclosed in one of her nearly daily letters to Ruth Benedict, in which she wrote, "I look very prim and proper and unpolynesian."[@francisSamoaAdolescentGirl2001]](/images/anthro/Mead-Samoa-2adolescents-1926.jpg)
 
-> All these institutions reveal the same kind of social and! psychological pattern. Food, women, children, possessions, charms, land, labour, services, religious offices, rank—every- thing is stuff to be given away and repaid. In perpetual interchange of what we may call spiritual matter, comprising men and things, these elements pass and repass between clans \^and individuals, ranks, sexes and generations.[@maussGiftFormsFunctions1954, p. 11-12]
+Mead's social relevance and ultimately the popularity of her work is largely a product of her ability to present ethnographic conclusions as relevant to American society, rather than a collection of curiosities that describe peoples seen as primitive and lesser. We can see in this an intellectual move to position ethnographic expertise as a resource for understanding all human societies, including her own. However, it's also worth taking the time to read Mead's latter chapters of these works as ethnographic treatment's of Western culture in their own right.
 
-The essay appears within a journal (*L'Année Sociologique*) that Mauss was resurrecting following World War I and the death of both his uncle and mentor Émile Durkheim and many of his scholarly peers. The entire issue is included in the 2016 translation by Jane Guyer, published by the anthropological collective Hau, which in turn owes its name to the Polynesian concept as explored in the essay.
+At the start of World War II, Mead joined in a group of four anthropologists -- Ruth Benedict, Gregory Bateson, and Geoffrey Gorer -- in the Committee for National Morale. "From the first we felt it was only a matter of time before this country would be drawn into the conflict, and we hoped to put our growing knowledge of the human sciences at the services of the Allied fight against Nazism." Mead's main contribution was *And Keep Your Powder Dry*. In her introduction to a 1965 reprint, Mead looked back both on her practice of writing about Western culture in the final chapters of her previous books and on the sudden challenge of constructing an ethnographic description of her own culture.
 
-Specifically Māori culture occupies a turning point in the essay, one partly grounded on misinterpretation between anthropologist Elsdon Best and Māori informant and scholarl Tamati Ranapati. Georgina Stewart has critically examined the relationship and the multiple points of cultural communication, miscommunication, and supposition that culminate in "the hau of the gift" as conceptualized by Mauss.
+> My own interests had always turned on the relevance of the study of primitive peoples to our understanding of our own customary behavior and our attempts to modify it. Ruth Benedict had called anthropology the science of custom. And I had been in the habit of ending my books, which dealt with the ways faraway South Sea peoples worked out universal human problems, with a discussion of how some of my results could be applied to the modern world. But in 1939 we had no formal rules to go by in our new undertaking. We did not yet know how to combine anthropological detachment, which was achieved by traveling to and studying intensively a people distant in time and place, and awareness of our own culture in which we ourselves had a place.[@meadKeepYourPowder1965]
 
-> Ranapiri was inventing Māori academic writing as he wrote: writing about and in language that hitherto had existed only in oral registers. Other than Ranapiri, only one other scholar of Māori ethnicity, namely Biggs, appears in the history of debate about the hau of the gift.
+Mead's early work in Samoa ad New Guinea became the subject of a series of controversies, most visibly Derek Freeman's 1983 *Margaret Mead and Samoa: The Making and Unmaking of an Anthropological Myth*. However, Freeman's argument that Mead had been misled by her Samoan interviewees has largely been discredited in the discipline.
 
-> Mauss failed to account for the personified Māori cosmos, and ended up invalidly personifying ‘hau’ instead, in his delineation of ‘hau taonga’ as the ‘hau of the gift’—the ‘spirit’ of the object given. In this way, Mauss distorted the Māori concept of hau to serve his preconceived search for universal social truth, and a general theory of exchange.[@stewartHauofResearchMauss2017]
+Other controversies of interpretation surround the particular characterizations of the three cultures profiled in *Sex and Temperament*, where they interlock with the personal lives of Mead and her collaborators Reo Fortune and Gregory Bateson, the former her husband at the time of that fieldwork and the latter her future spouse. David Lipset reviews Mead's work and rival interpretations in "Rereading Margaret Mead's Sepik Triptych and its Ethnographic Critics."[@lipset2003] Lise M. Dobrin and Ira Bashkow’s “The Truth in Anthropology Does Not Travel First Class”[@dobrin2010] exposes the four-way correspondence behind Mead’s break with Fortune while defending the latter’s read of local mythology.
 
-Amber Nicholson likewise explores the Māori concept of hau in depth using numerous Māori sources.[@nicholson2019] In my view, this rich exposition breaks with some anthropological elaborations on the term (which Nicholson maps out in a dramatic side-by-side table with Māori ideas), but still resonates with the concepts of spiritual force, reciprocity, and enmeshment in larger entities emphasized by Mauss.
+Mead was active in the American Association of Anthropology, and its elected president in 1975. During the 1960s and 1970s, this pitted her in a generational struggle between older anthropologists like herself who had taken involvement in the US government's overseas empire as a routine pre-requisite for their work, and a younger generation that was staunchly against the Vietnam War and developing a critique of anthropology's implication in colonialism. (Mead and Bateson had both been involved with the Office of Strategic Services (OSS) during World War II, with Bateson's involvement considerably deeper and extending to covert service in South Asia. However, he would more publicly repudiate this course by the late 1960s.) Eric Wolf, then a rising star in the discipline, publicly confronted Mead at the 1971 AAA meeting over her ethics report downplaying American social scientists' collaboration in the Vietnam war effort, which had been exposed by a student report.[@shenkerAnthropologistsClashTheir1971]
 
-There have been three English translations of The Gift:
+Mead's overall legacy was the subject of a 1992 book and a 2003 conference at the Barnard Center for Research on Women. The speeches from the latter are collected as an issue of *Scholar and Feminist Online*.[@MargaretMeadsLegacy] Leonora Foerstel and Angela Gilliam's *Confronting the Margaret Mead Legacy: Scholarship, Empire, and the South Pacific* represents the primary example of post/anticolonial critique of Mead's work. As Foerstel observes:
 
--   A 1954 translation by Ian Cunnison, introduced by E. E. Evans-Pritchard.[@maussGiftFormsFunctions1954]
+> We are now at the point in history where the views of Western anthropologists are no longer judged by their peers alone, but are being examined by rising new scholars from Pacific islands, scholars whose families and culture had been the subject of anthropological study. These indige- nous scholars reject Western racism and remain suspicious of the work of Mead and others, work which propagated and imposed the Western model for progress and change.[@foerstelConfrontingMargaretMead1992, p. 72]
 
--   A 1990 translation by W. D. Halls, introduced by Mary Douglas.[@mauss2002]
+Three of the authors are scholars at the University of Papua New Guinea. The co-editors also narrate the Mead-Wolf-Vietnam controversy in chapter 5.
 
--   A 2016 translation by Jane I. Guyer, introduced by Guyer and Bill Maurer.[@mauss2016]
+![Mead and Bateson recording fieldnotes in Iatmul, 1938.](/images/anthro/mead-bateson-1938.jpg)
 
-The Gift is written in the tradition of an open-ended essay, and draws many threads across a remarkable sweep of time and geography. This comment from Claude Lévi-Strauss emphasizes the creative and connective, rather than scientific and deductive aspect of such writing:
+## Fieldwork by Margaret Mead
 
-> Without a doubt, the proof will remain largely illusory: we will never know if the other, with whom we cannot, after all, identify, makes from the elements of his social existence a synthesis exactly superposable on that which we have worked out. But it is not necessary to go so far; all that is needed-and for this, inner feeling is sufficient-is that the synthesis, how- ever approximate, arises from human experience. We must be sure of this, since we study men; and as we are ourselves men, we have that possibility. The way in which Mauss (1950:285) poses and resolves the problem in the *Essay on the Gift* brings to view, in the intersection of two subjectivities, the nearest order of truth to which the sciences of man can aspire when they confront the wholeness of their object.[@levi-strauss1966, p. 114]
+List consolidated from @libraryofcongress.manuscriptdivisionMargaretMeadPapers2024
 
-With that said, The Gift attacks and perhaps overthrows many prior certainties in anthropological studies of the economy, not least of which is the refutation of the existence of a "free gift," as highlighted in Mary Douglas's introduction. Think about which ones you find.
+| Year | Field Visit |
+|-------------|----------------------------------------------------------|
+| 1925-1926 | American Samoa (study of adolescent girls) |
+| 1928-1929 | Manus, Admiralty Islands (with Reo Fortune, study of young children) |
+| 1930 | Omaha (Umonhon) Tribe, Nebraska |
+| 1931-1933 | New Guinea (study of Arapesh, Biwat, and Chambri people) |
+| 1936-1939 | Bali and New Guinea (study of Iatmul people) |
+| 1953 | Manus, Admiralty Islands (with Theodore and Lenora Schwartz) |
+| 1957-1958 | Bali (with Ken Heyman) |
+| 1964-1965 | Manus, Admiralty Islands |
+| 1967 | Manus, Admiralty Islands; New Guinea |
+| 1971 | Manus, Admiralty Islands; New Guinea and American Samoa |
+| 1973 | Hoskins Bay, New Britain (study of Arapesh people) |
+| 1975 | Manus, Admiralty Islands |
+| 1977 | Bali |
 
-### On Boundaries: *Purity and Danger*
+## Biography
 
-Mary Douglas's *Purity and Danger: An Analysis of Concepts of Pollution and Taboo*[@douglas1966] stands as a historical landmark in the anthropology of religion.
+Margaret Mead's life is the subject of books including:
 
-A signature phrase in it is "matter out of place," Douglas' definition of the otherwise form-shifting concept of dirt. She sets up categorization and boundary drawing as a core element of religion. Given this, one need not think of the Kosher laws in Leviticus as primitive hygenic codes, nor of magical incantations as ways of causing miracles. [Douglas revises her specific interpretations of Kosher practices in her 2002 introduction. [@douglas2003]]{.aside} Rather, she argues, both express ritual concern with maintaining social order.
+-   Charles King's *Gods of the Upper Air* on multiple members of the Boas circle.
+-   Mary Catherine Bateson's *With a Daughter's Eye: A Memoir of Margaret Mead and Gregory Bateson* on her parents.
+-   Paul Shankman's *The Trashing of Margaret Mead* on the posthumous Freeman controversy over her Samoa fieldwork.
+-   Elesha Coffman's *Margaret Mead: A Twentieth-Century Faith*, which makes senes of the Christianity of a woman who once wrote, "Shorn of all the things in which I can’t believe—and don’t want to—an omnipotent God, immortality, and original sin—Christianity is still the most beautiful thing I know, and the fact that Jesus lived the most satisfactory justification of life.” See also, Coffman's [summaries of her favorite Mead books](https://shepherd.com/best-books/margaret-mead).
+-   Benjamin Breen's *Tripping on Utopia: Margaret Mead, the Cold War, and the Troubled Birth of Psychedelic Science*[@breenTrippingUtopiaMargaret2024] on Mead and Bateson's intersections with both early experiments in psychedelic use and covert experimentation organized by the US government.
+-   Lily King's novel *Euphoria*, a very thinly pseudonymized retelling of Margaret Mead, Reo Fortune, and Gregory Bateson in Papua New Guinea, *Euphoria* fleshes out these young Euro-Americans rethinking gender and community in the 1930s. Substantial attention is paid to Mead and Bateson’s ill-fated theory of the Squares among cultural personalities and individuals, and its entanglement with the love triangle of these three.
+-   Deborah Blum's *Coming of Age: The Sexual Awakening of Margaret Mead*, covering Mead's education at Barnard/Columbia, fieldwork in Samoa, and summer in Europe, and relationships with Cressman, Benedict, Sapir, and Fortune from 1921 to 1926.
+-   Jean Walton's *Fair Sex, Savage Dreams: Race, Psychoanalysis, Sexual Difference* devotes its last two chapters to Mead, with a lengthy interpretation of her conversation with James Baldwin in *A Rap on Race*.
+-   Nancy Lutkehaus's *Margaret Mead: The Making of an American Icon*, which intertwines her look at Mead with "the study of fame … as a particular social practice" and of "the meanings associated with her that transcend or go beyond Mead."
 
-> It is only by exaggerating the difference between within and without,<br> above and below,<br> male and female,<br> with and against,<br> that a semblance of order is created.
-
-Her chapter on magic and religion confronts and challenges the line of anthropological scholarship on "primitive religion" going back to James Frazer's *The Golden Bough*.
-
-### Structures of Kinship
-
-::: aside
-!["Although less important than those associated with funerals, the astonishing complexity of the matrimonial exchanges illustrated in Fig. 3 deserves to engage our attention."](/images/anthro/levi-strauss-elementary-structures-fig3.png)
-:::
-
-In *Elementary Structures of Kinship*,[@lévi-strauss1969] Claude Lévi-Strauss proposes a structuralist explanation for the circulation of spouses mentioned in Mauss's *The Gift*. The core insight of the book is to unite the near-universal taboo on incest (in some form) with the complex kinship structures that anthropologists had been mapping since at least Lewis Henry Morgan. (Like Douglas, he rejects the functionalist explanation that incest taboos prevent interbreeding.)
-
-Lévi-Strauss argues that by separating marriageable from un-marriageable individuals, kinship systems generate the necessary boundaries for lineages that are the collective social actors which exchange spouses—glossed in his account, as in Mauss's brief phrase, exclusively as women.
-
-Gayle Rubin will build upon *Elementary Structures of Kinship* in her pivotal essay "The Traffic in Women,"[@rubin1975] which theorizes kinship and gender systems as integrated whole, subject to historical change, and as systems of power.
-
-> And if men have been sexual subjects—exchangers—and women sexual semi-objects—gifts—for much of human history, then a great many customs, clichés, and personality traits seem to make a great deal of sense (among others, the curious custom by which a father gives away a bride).
-
-This essay proves foundational to Gender Studies. Both Rubin and Judith Butler will bring vast inquiries into gender, the body, and sexuality into dialogue with Lévi-Strauss' account.
+![I Ketut Ngéndon of Batuan, “Goodbye and Good Luck to Margaret Mead and Gregory Bateson,” 1938. Commissioned by I Madé Kalér, their research assistant.](/images/anthro/i-ketut-ngendon-goodbye-mead-bateson-1938.jpg)

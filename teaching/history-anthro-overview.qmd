@@ -1,0 +1,23 @@
+---
+title: "History of Anthropological Theory, fall 2026"
+subtitle: "An index of materials for the course" 
+author: Carwil Bjork-James
+date: 2 September 2026
+image: /images/9_Bisonte_Magdaleniense_polícromo.jpg
+---
+
+An index of materials for the course
+
+1.  Situating Anthropology: [What is anthropological theory? What are the aims of anthropology?](history-anthro-w1.qmd)
+2.  Dawn of Anthropology in the Western Hemisphere: [When did anthropology begin in the Western Hemisphere?](history-anthro-w2.qmd)
+3.  The Enlightenment and the Social Scientific Project: [Anthropology and the Enlightenment](history-anthro-w3.qmd)
+4.  Science and Classification
+5.  Nineteenth Century Evolutionary Anthropology: [Ninetenth-Century Evolutionary Anthropology](history-anthro-w5.qmd)
+6.  Nineteenth Century Ethnography: Morgan and Mooney: [Nineteenth-century North American ethnography by Mooney and Morgan](history-anthro-w6.qmd)
+7.  Marx and Historical Materialism
+8.  Physical Anthropology and Archaeology: History and Early Methods
+9.  Cultural Anthropology / Boas: [Boas, Rivet, and the End of the Craniometry of Race](history-anthro-w9.qmd)
+10. Du Bois and Vindicationism
+11. Twentieth Century Ethnographic Methods
+12. Mead, Gender and Sexuality: [Margaret Mead](history-anthro-w12.qmd)
+13. The Gift and Symbolic Anthropology: [Gifts, Boundaries, and Taboos](history-anthro-w13.qmd)
