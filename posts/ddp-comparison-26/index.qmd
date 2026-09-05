@@ -362,7 +362,7 @@ map_sf$peak_class <- factor(map_sf$peak_class, levels = c("Peak < 2", "Peak \u22
 
 leaflet(map_sf) |>
   fitBounds(lng1 = -125, lat1 = 17.5, lng2 = -65, lat2 = 49.5) |>
-  addProviderTiles("CartoDB.Positron") |>
+  addCartoTiles("CartoDB.Positron") |>
 
   addCircleMarkers(
     data        = subset(map_sf, peak_class == "Peak < 2"),
