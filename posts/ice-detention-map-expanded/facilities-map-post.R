@@ -15,6 +15,8 @@ library(scales)
 library(htmltools)
 library(leaflet.extras)
 
+source("add-carto-tiles.R")
+
 # ── Load data ────────────────────────────────────────────────────────────────
 
 expanded_panel   <- readRDS("data/expanded_panel.rds")
@@ -452,7 +454,7 @@ all_groups <- c("Open (ICE-reported)", "Closed (ICE-reported)",
 
 facilities_map_expanded <- leaflet() |>
   fitBounds(lng1 = -125, lat1 = 17.5, lng2 = -65, lat2 = 49.5) |>
-  addProviderTiles(providers$CartoDB.Positron) |>
+  addCartoTiles("CartoDB.Positron") |> # custom function to send API key
   # Closed ICE-reported facilities
   addCircleMarkers(
     data = map_sf[is_closed, ],

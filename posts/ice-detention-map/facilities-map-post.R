@@ -12,6 +12,8 @@ library(scales)
 library(htmltools)
 library(leaflet.extras)
 
+source("add-carto-tiles.R")
+
 # ── Load data from local RDS files ──────────────────────────────────────────
 
 facilities_geocoded_full <- readRDS("data/facilities_geocoded_full.rds")
@@ -267,7 +269,7 @@ legend_colors <- unname(type_colors[legend_types])
 
 facilities_map <- leaflet() |>
   fitBounds(lng1 = -125, lat1 = 17.5, lng2 = -65, lat2 = 49.5) |>
-  addProviderTiles(providers$CartoDB.Positron) |>
+  addCartoTiles("CartoDB.Positron") |> # custom function to send API key
   addCircleMarkers(
     data = map_sf[!is_open, ],
     radius = ~radius,
