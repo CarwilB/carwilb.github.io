@@ -1,1 +1,4 @@
-Sitemap: https://carwilb.github.io/quarto-website/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://carwilb.github.io/sitemap.xml
