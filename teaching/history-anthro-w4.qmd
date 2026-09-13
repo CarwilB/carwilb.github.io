@@ -1,0 +1,38 @@
+---
+title: Science and Classification
+description: Situating readings for Week 4 of the History of Anthropological Theory
+author: Carwil Bjork-James
+date: 13 September 2026
+bibliography: references.bib
+reference-location: margin
+citation-location: margin
+image: /images/Cuvier-Butterflies-Skulls.jpeg
+---
+
+This week's readings delve further into the formalization of scientific knowledge in the late 18th and early 19th centuries.
+
+::: column-margin
+![Leaf forms from Linnaeus' Hortus Cliffortianus](/images/anthro/Hortus_Cliffortianus_folia_compos.png)
+:::
+
+Carl Linnaeus {{< wikilink "Carl Linnaeus" >}} was the founding figure of biological taxanomy, the originator of the term Homo sapiens, and the first to group humans and apes together as Anthropomorpha (in succeeding editions, Primates) in his *Systema Naturae*.[@linnæi1748]
+
+Linnaeus and Baron Georges Cuvier {{< wikilink "Georges Cuvier" >}} (who we [encountered last week](history-anthro-w3.qmd), and who is a key figure in Foucault's analysis) typify this moment of classification, systematization, and hierarchical arrangement of the entities of nature. This project is simultaneously visual and abstract, demanding the work of putting nature on paper and organizing it in hierarchical tables. Visual detail serves to make a system feel both true and verifiable, while small details are shown abstractly (as in many of the images in Cuvier's Animal Kingdom shown here) to explain exact distinctions between species.
+
+<iframe src="https://archive.org/embed/iconographiedur1182944gu/page/n10" width="560" height="840" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen>
+
+</iframe>
+
+We meet Michel Foucault {{< wikilink "Michel Foucault" >}} in the third of his three works on the history of science: *History of Madness* on the management and characterization of insanity during the Age of Reason; *The Birth of the Clinic* on the practice of clinical medicine; and *The Order of Things* on the human sciences, and especially General Grammar/linguistics, Natural History/biology, and economics. In all, the focus is on how the same phenomena are treated in fundamentally different ways by scholars and investigators in different times.
+
+As Bruce Trigger summarizes, Foucault conceived, "four successive but radically different and in his view discontinuous *epistemes* or modes of knowledge: Renaissance (ca. 1400–1650), Classical (ca. 1650–1800), Modern (ca. 1800–1950), and Postmodern (ca. 1950–). Foucault understands these epistemes as general modes of thought, each of which in turn influenced all fields of knowledge and dominated an era of modern Western civilization. Each episteme is radically different from any other. No one could escape the episteme of the time in which they lived, which imposed a particular set of norms and postulates on all thinking."[@trigger2006, p. 9]
+
+At the same, Foucault's explanation of the Renaissance episteme describes a world held together by "resemblance," in which the world is a network of signs and symbols, and the task of the scholar is to read these signs. They therefore presumed a deep connection between words (the names of objects) and living creatures, providing a basis for spellcraft. Foucault is arguing that Renaissance scholars, easily labeled as "pre-scientific," were just as observant and curious as their successors, perhaps even more so.
+
+::: column-margin
+!["Museum label in the form of a clay cylinder containing a scholarly copy of writing found on historical Babylonian bricks, displayed at the museum at the temple of Ur. London, The British Museum, excavated by Sir Leonard Woolley, Ur, acquired in 1927, 10,8 x 6 cm, 119014. © The Trustees of the British Museum." (as captioned [here](https://journals.openedition.org/lha/10902?lang=en))](/images/anthro/ennegaldi-nanna-museum-label-img-2.jpg)
+:::
+
+Assyriologist Moudhy Al-Rashid's chapter takes us two millennia deeper into the past to Ennigaldi-Nanna {{< wikilink "Ennigaldi-Nanna" >}}, a priestess and museum curator in Neo-Babylonian Ur. Whether her father Nabonidus' excavations of antiquities and her archiving of them qualify as "archaeology" has been a subject of much debate, much of it drawn into the discipline's efforts to distinguish itself from prior "antiquarian" collecting with science itself as the key marker of the difference. "The Babylonians were well aware that history, and perhaps rich treasure, lay beneath their feet; but Nabonidus can hardly be called an archaeologist," wrote Brue Fagan in multiple introductory archaeology texts, proceeding to say, "The history of archaeology really begins in the European Renaissance." Bruce Trigger joins the other side of this this debate arguing, "In ancient Egypt and Mesopotamia, artifacts and ancient buildings came to be valued not only as relics of former rulers and periods of political greatness but as sources of information about the past," and noting "Great effort also went into cultivating the skills needed to read the ancient texts associated with these finds."[@trigger2006, p. 43-44] (By contrast, giving her the humanistic titles of archivist and curator seems to occasion less controversy.)
+
+Al-Rashid both engages in this debate and leads us through a deeper story about science and religion, which are presumed to be naturally opposed in a modern heroic narrative. She illustrates how the imperative to read the writing of the gods in nature, and in the skies, drove centuries of progress and precision in Mesopotamian astronomy and biology, posing important questions about science and secularism.

@@ -8,6 +8,9 @@ callouts:
    color: purple
 
 url: https://ultimateconsequences.github.io
+baseurl: ""   # user site; for project site use "/repo-name"
+plugins:
+  - jekyll-sitemap
 
 aux_links:
   Carwil Bjork-James at Vanderbilt: https://my.vanderbilt.edu/cbjorkjames/
