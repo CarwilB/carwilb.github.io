@@ -1,0 +1,52 @@
+---
+title: Deaths in the Israeli-Palestinian conflict through 2025
+description: Palestinian fatalities remained at staggering levels, sometimes over 100x those among Israelis
+author: Carwil Bjork-James
+date: 16 September 2026
+image: /images/IP-fatalities-Dec2025.png
+---
+
+Gaza's death toll remains the most staggering data point about the
+Israeli war that brought it about. Month after month, the Gaza health
+ministry continued to compile both total numbers of those violently 
+killed and lists of the names of the dead. 
+
+It remains among the most extraordinary human acts I have come into
+contact with, from the day I first held the scores of pages of names,
+identity numbers, and ages in my hands, to the searches I made 
+among the compiled birth dates for my own and those of my children.
+
+Every two weeks, United Nations Office of Coordination for Humanitarian
+Affairs in the Occupied Palestinian Territories has added new details of 
+individual violent acts and new totals of destruction. Recently, I
+brought this biggest picture back up-to-date, at least through the
+end of 2025. 
+
+The calendar year of 2025 was deadlier than that of 2024, and both 
+exceeded the toll of the devastating last three months of 2023.  
+
+As the Palestinian population of Gaza increasingly lived in tents
+and makeshift dwellings, the genocide wore on.
+
+:::{.column-screen-inset-right}
+{{< pdf /images/IP-fatalities-Dec2025.pdf width=100% height=700px border=1 image=/images/IP-fatalities-Dec2025.png image_width=80% image_border=1 >}} 
+:::
+
+The comparisons [I made about the first eleven months](israel-palestine-fatalities-40k.qmd) now apply with equal force to each of three years of violence. Palestine's loss in each year exceeds…
+
+- Israeli losses on October 7 (1139 including, 373 security forces, 36 children) by a factor of 36 to one.
+- 2,162 total Palestinian and Israeli deaths in First Intifada Dec 1987–Sep 1993 (2,106 days)
+- 2,996 deaths in 11 September 2001 attacks on USA (1 day)
+- 4,364 total Palestinian and Israeli deaths in Second Intifada Sep 2000–Jan 2005 (1,555 days)
+- 6,412 total Palestinian deaths 2008–Sep 2023 (5,751 days)
+- 8,372 deaths in the genocidal Srebrenica massacre, Jul 1995 (22 days)
+
+… combined.
+
+By all measures but territorial loss and villages destroyed, but including deaths, deaths of children, number of people displaced, and number of homes and building destroyed, this assault is far larger than the first Nakba. During those 598 days, Palestine suffered 15,000 to 20,000 estimated deaths. We now stand at twice that toll. Upwards of 1.9 million Palestinians have been expelled from their homes, over twice as many as during the event Palestinians have remembered as their greatest tragedy.
+
+### Why this update
+
+While not the most current visual on the scale of the Gaza genocide, my fall 2023 graphic on fatalities remains one of the most frequently documents on my website, viewed over 3,500 times this year. I needed to bring it closer to current and also share it in a [comparison-free form](https://commons.wikimedia.org/wiki/File:Israel-Palestine_fatalities_2004-2025.svg) for use on Wikipedia's [Israeli-Palestinian conflict](https://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_conflict) page.
+
+
